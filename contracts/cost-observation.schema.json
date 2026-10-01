@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.local/cost-observation.schema.json",
+  "title": "cost-observation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "observation_id",
+    "budget_ref",
+    "estimated_cents",
+    "actual_cents",
+    "utilization_percent",
+    "action",
+    "observed_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "observation_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "budget_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "estimated_cents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "actual_cents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "utilization_percent": {
+      "type": "number",
+      "minimum": 0
+    },
+    "action": {
+      "enum": [
+        "allow",
+        "warn",
+        "block"
+      ]
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

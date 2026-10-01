@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.com/real-discovery-import.schema.json",
+  "title": "real-discovery-import",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "import_id",
+    "intent_ref",
+    "source",
+    "resource_count",
+    "resources",
+    "read_only",
+    "external_changes",
+    "import_digest",
+    "imported_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "import_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "intent_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "enum": [
+        "cloudflare-read",
+        "synthetic-rehearsal"
+      ]
+    },
+    "resource_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "kind",
+          "logical_name",
+          "provider_id_fingerprint",
+          "configuration_digest",
+          "status"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "minLength": 1
+          },
+          "logical_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "provider_id_fingerprint": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "configuration_digest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "status": {
+            "enum": [
+              "active",
+              "inactive",
+              "unknown"
+            ]
+          }
+        }
+      }
+    },
+    "read_only": {
+      "const": true
+    },
+    "external_changes": {
+      "const": false
+    },
+    "import_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "imported_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

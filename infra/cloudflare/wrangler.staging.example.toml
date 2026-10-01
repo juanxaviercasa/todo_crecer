@@ -1,0 +1,21 @@
+name = "hazlocrecer-site-router-staging"
+main = "workers/site-router/index.js"
+compatibility_date = "2026-09-30"
+
+# Ejemplo documental: completar mediante configuración externa autorizada.
+[[d1_databases]]
+binding = "DB"
+database_name = "REPLACE_WITH_STAGING_DATABASE_NAME"
+database_id = "REPLACE_WITH_STAGING_DATABASE_ID"
+
+[[r2_buckets]]
+binding = "SITE_ARTIFACTS"
+bucket_name = "REPLACE_WITH_STAGING_BUCKET_NAME"
+
+[[queues.producers]]
+binding = "DEPLOYMENT_EVENTS"
+queue = "REPLACE_WITH_STAGING_QUEUE_NAME"
+
+[vars]
+ENVIRONMENT = "staging"
+APPLY_ENABLED = "false"

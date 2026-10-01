@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.local/signing-key-record.schema.json",
+  "title": "signing-key-record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "key_id",
+    "algorithm",
+    "status",
+    "public_key_fingerprint",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "key_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "algorithm": {
+      "const": "Ed25519"
+    },
+    "status": {
+      "enum": [
+        "active",
+        "retiring",
+        "retired",
+        "revoked"
+      ]
+    },
+    "public_key_fingerprint": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "grace_ends_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "retired_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/no-response-policy.schema.json",
+  "title": "no-response-policy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "policy_id",
+    "wait_hours",
+    "max_reminders",
+    "stop_after_hours",
+    "quiet_hours",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "policy_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "wait_hours": {
+      "type": "integer",
+      "minimum": 12
+    },
+    "max_reminders": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3
+    },
+    "stop_after_hours": {
+      "type": "integer",
+      "minimum": 24
+    },
+    "quiet_hours": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 23
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

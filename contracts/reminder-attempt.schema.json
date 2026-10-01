@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/reminder-attempt.schema.json",
+  "title": "reminder-attempt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "attempt_id",
+    "case_ref",
+    "number",
+    "sandbox",
+    "external_delivery",
+    "status",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "attempt_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "case_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "number": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 3
+    },
+    "sandbox": {
+      "const": true
+    },
+    "external_delivery": {
+      "const": false
+    },
+    "status": {
+      "enum": [
+        "simulated",
+        "suppressed",
+        "stopped"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

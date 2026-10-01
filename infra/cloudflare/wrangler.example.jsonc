@@ -1,0 +1,41 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "hazlocrecer-private-platform",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-09-30",
+  "workers_dev": false,
+  "vars": {
+    "CF_ACCESS_AUD": "<CF_ACCESS_AUD>",
+    "CF_ACCESS_TEAM_DOMAIN": "<CF_ACCESS_TEAM_DOMAIN>",
+    "MALWARE_SCANNER_ENDPOINT": "<MALWARE_SCANNER_ENDPOINT>"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "hazlocrecer-platform",
+      "database_id": "<CF_D1_DATABASE_ID>"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "PRIVATE_ASSETS",
+      "bucket_name": "<CF_R2_BUCKET_NAME>"
+    }
+  ],
+  "queues": {
+    "producers": [
+      {"binding": "ASSET_JOBS", "queue": "<CF_QUEUE_NAME>"}
+    ],
+    "consumers": [
+      {"queue": "<CF_QUEUE_NAME>", "max_batch_size": 10, "max_batch_timeout": 5, "max_retries": 3, "dead_letter_queue": "<CF_DEAD_LETTER_QUEUE_NAME>"}
+    ]
+  },
+  "secrets": {
+    "required": [
+      "VAULT_KEY",
+      "AUDIT_KEY",
+      "SESSION_SIGNING_KEY",
+      "MALWARE_SCANNER_TOKEN"
+    ]
+  }
+}

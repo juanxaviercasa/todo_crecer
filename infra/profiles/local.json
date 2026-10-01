@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "profile_id": "local-development",
+  "environment": "local",
+  "mode": "executable",
+  "services": {
+    "identity": {"provider": "local", "resource": "injected-session-store", "required_configuration": []},
+    "database": {"provider": "local", "resource": "atomic-json-metadata", "required_configuration": []},
+    "key_management": {"provider": "local", "resource": "process-memory-only", "required_configuration": ["VAULT_KEY", "AUDIT_KEY"]},
+    "object_storage": {"provider": "local", "resource": "private-filesystem", "required_configuration": []},
+    "queue": {"provider": "local", "resource": "append-only-jsonl", "required_configuration": []},
+    "malware_scan": {"provider": "local", "resource": "deny-until-explicit-verdict", "required_configuration": []}
+  },
+  "security": {"tenant_isolation": true, "encryption_at_rest": true, "audit_required": true, "secrets_in_repository": false},
+  "publication": {"allowed": false, "indexing": "blocked"},
+  "created_at": "2026-09-30T20:00:00Z"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://schemas.hazlocrecer.com/owner-pilot-acceptance.schema.json",
+  "title":"OwnerPilotAcceptance",
+  "type":"object","additionalProperties":false,
+  "required":["schema_version","acceptance_id","dossier_id","dossier_hash","tenant_id","business_id","scope","decision","acknowledgements","owner_id","created_at"],
+  "properties":{
+    "schema_version":{"const":"0.1.0"},
+    "acceptance_id":{"type":"string","pattern":"^pilota-[a-f0-9]{24}$"},
+    "dossier_id":{"type":"string","pattern":"^pilotd-[a-f0-9]{24}$"},
+    "dossier_hash":{"type":"string","pattern":"^[a-f0-9]{64}$"},
+    "tenant_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},
+    "business_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},
+    "scope":{"type":"array","minItems":7,"maxItems":7,"uniqueItems":true,"items":{"enum":["identity","copy","design","assets","contact","domain","privacy"]}},
+    "decision":{"enum":["accepted","changes_requested","declined"]},
+    "acknowledgements":{"type":"object","additionalProperties":false,"required":["reviewed","authority_confirmed","facts_confirmed","asset_rights_confirmed","contact_publication_approved","domain_use_approved","privacy_notice_reviewed"],"properties":{"reviewed":{"type":"boolean"},"authority_confirmed":{"type":"boolean"},"facts_confirmed":{"type":"boolean"},"asset_rights_confirmed":{"type":"boolean"},"contact_publication_approved":{"type":"boolean"},"domain_use_approved":{"type":"boolean"},"privacy_notice_reviewed":{"type":"boolean"}}},
+    "owner_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},
+    "created_at":{"type":"string","format":"date-time"}
+  },
+  "allOf":[{"if":{"properties":{"decision":{"const":"accepted"}}},"then":{"properties":{"acknowledgements":{"properties":{"reviewed":{"const":true},"authority_confirmed":{"const":true},"facts_confirmed":{"const":true},"asset_rights_confirmed":{"const":true},"contact_publication_approved":{"const":true},"domain_use_approved":{"const":true},"privacy_notice_reviewed":{"const":true}}}}}}]
+}

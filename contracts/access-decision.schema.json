@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.local/access-decision.schema.json",
+  "title": "access-decision",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "decision_id",
+    "identity_ref",
+    "tenant_id",
+    "capability",
+    "audience",
+    "result",
+    "reason_code",
+    "decided_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "decision_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "identity_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "capability": {
+      "type": "string"
+    },
+    "audience": {
+      "type": "string"
+    },
+    "result": {
+      "enum": [
+        "allow",
+        "deny"
+      ]
+    },
+    "reason_code": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9_]{2,79}$"
+    },
+    "policy_ref": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "decided_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

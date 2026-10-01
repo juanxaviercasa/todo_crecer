@@ -1,0 +1,65 @@
+{
+  "schema_version": "0.1.0",
+  "site_id": "valor-claro",
+  "business_id": "pilot-valor-claro",
+  "tenant_id": null,
+  "mode": "demo",
+  "status": "DRAFT",
+  "truth_snapshot": {
+    "business_truth_version": "0.1.0",
+    "content_hash": "1a4b5c6c042a6a9be51668429f879ce6d9cfdeb082270498a71d70fe8595b254"
+  },
+  "recipe": {
+    "recipe_id": "real-estate-tasacion-propietarios",
+    "recipe_version": "0.1.0"
+  },
+  "brand_profile_ref": "brand-valor-claro",
+  "routing": {
+    "primary_hostname": "valor-claro.invalid",
+    "aliases": [],
+    "custom_domain_status": "none"
+  },
+  "seo": {
+    "indexing": "noindex",
+    "canonical_url": null,
+    "title": "Valor Claro — FICTICIO",
+    "meta_description": "Consultora inmobiliaria ficticia especializada en tasación y preparación de propiedades para venta o alquiler."
+  },
+  "claim": {
+    "banner_enabled": true,
+    "claim_url": null,
+    "disclosure_text": "DEMOSTRACIÓN FICTICIA. No representa un negocio real. No se aceptan solicitudes."
+  },
+  "sections": [
+    {
+      "section_id": "hero",
+      "component": "hero",
+      "enabled": true,
+      "order": 1,
+      "data": {
+        "headline": "Valor Claro — FICTICIO"
+      }
+    },
+    {
+      "section_id": "about",
+      "component": "about",
+      "enabled": true,
+      "order": 2,
+      "data": {
+        "body": "Consultora inmobiliaria ficticia especializada en tasación y preparación de propiedades para venta o alquiler."
+      }
+    }
+  ],
+  "assets": [],
+  "features": {
+    "whatsapp": false,
+    "phone": false,
+    "form": false,
+    "booking": false,
+    "analytics": false,
+    "seo_advanced": false,
+    "ai_agent": false,
+    "marketing_automation": false
+  },
+  "updated_at": "2026-09-29T12:00:00Z"
+}

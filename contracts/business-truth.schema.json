@@ -1,0 +1,199 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.com/business-truth.schema.json",
+  "title": "BusinessTruth",
+  "description": "Fuente de verdad estructurada y trazable de un negocio. Un dato no debe publicarse como hecho si no tiene provenance suficiente.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "business_id", "identity", "sources", "field_provenance", "publication_policy", "updated_at"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "0.1.0"},
+    "business_id": {"type": "string", "minLength": 1, "maxLength": 128},
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["display_name", "primary_category"],
+      "properties": {
+        "display_name": {"type": "string", "minLength": 1, "maxLength": 200},
+        "legal_name": {"type": ["string", "null"], "maxLength": 240},
+        "primary_category": {"type": "string", "minLength": 1, "maxLength": 120},
+        "secondary_categories": {"type": "array", "items": {"type": "string", "maxLength": 120}, "uniqueItems": true, "maxItems": 20}
+      }
+    },
+    "description": {"type": ["string", "null"], "maxLength": 5000},
+    "location": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "address_line": {"type": ["string", "null"], "maxLength": 300},
+        "district": {"type": ["string", "null"], "maxLength": 120},
+        "city": {"type": ["string", "null"], "maxLength": 120},
+        "region": {"type": ["string", "null"], "maxLength": 120},
+        "country_code": {"type": ["string", "null"], "pattern": "^[A-Z]{2}$"},
+        "postal_code": {"type": ["string", "null"], "maxLength": 20},
+        "latitude": {"type": ["number", "null"], "minimum": -90, "maximum": 90},
+        "longitude": {"type": ["number", "null"], "minimum": -180, "maximum": 180}
+      }
+    },
+    "contacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "phones": {"type": "array", "items": {"$ref": "#/$defs/contactPoint"}, "maxItems": 20},
+        "emails": {"type": "array", "items": {"$ref": "#/$defs/emailPoint"}, "maxItems": 20},
+        "websites": {"type": "array", "items": {"$ref": "#/$defs/urlPoint"}, "maxItems": 20},
+        "social_profiles": {"type": "array", "items": {"$ref": "#/$defs/socialPoint"}, "maxItems": 30}
+      }
+    },
+    "hours": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/openingHours"},
+      "maxItems": 14
+    },
+    "services": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/service"},
+      "maxItems": 100
+    },
+    "assets": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/asset"},
+      "maxItems": 500
+    },
+    "owner_confirmed_at": {"type": ["string", "null"], "format": "date-time"},
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/source"}
+    },
+    "field_provenance": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/provenance"}
+    },
+    "publication_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["may_generate_demo", "may_index_demo", "reason"],
+      "properties": {
+        "may_generate_demo": {"type": "boolean"},
+        "may_index_demo": {"type": "boolean", "default": false},
+        "reason": {"type": "string", "minLength": 1, "maxLength": 1000},
+        "requires_human_review": {"type": "boolean", "default": false}
+      }
+    },
+    "created_at": {"type": ["string", "null"], "format": "date-time"},
+    "updated_at": {"type": "string", "format": "date-time"}
+  },
+  "$defs": {
+    "verification": {
+      "type": "string",
+      "enum": ["unverified", "inferred", "source_verified", "owner_verified", "disputed", "rejected"]
+    },
+    "contactPoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "kind"],
+      "properties": {
+        "value": {"type": "string", "minLength": 5, "maxLength": 40},
+        "kind": {"type": "string", "enum": ["phone", "whatsapp", "mobile", "landline", "other"]},
+        "label": {"type": ["string", "null"], "maxLength": 80},
+        "is_primary": {"type": "boolean", "default": false}
+      }
+    },
+    "emailPoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value"],
+      "properties": {
+        "value": {"type": "string", "format": "email"},
+        "label": {"type": ["string", "null"], "maxLength": 80},
+        "is_primary": {"type": "boolean", "default": false}
+      }
+    },
+    "urlPoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url"],
+      "properties": {
+        "url": {"type": "string", "format": "uri", "pattern": "^https?://"},
+        "label": {"type": ["string", "null"], "maxLength": 80},
+        "is_primary": {"type": "boolean", "default": false}
+      }
+    },
+    "socialPoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["platform", "url"],
+      "properties": {
+        "platform": {"type": "string", "enum": ["facebook", "instagram", "tiktok", "youtube", "linkedin", "x", "other"]},
+        "url": {"type": "string", "format": "uri", "pattern": "^https?://"},
+        "handle": {"type": ["string", "null"], "maxLength": 120}
+      }
+    },
+    "openingHours": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["day", "closed"],
+      "properties": {
+        "day": {"type": "string", "enum": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]},
+        "closed": {"type": "boolean"},
+        "opens": {"type": ["string", "null"], "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$"},
+        "closes": {"type": ["string", "null"], "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$"}
+      }
+    },
+    "service": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["service_id", "name", "verification_status"],
+      "properties": {
+        "service_id": {"type": "string", "minLength": 1, "maxLength": 128},
+        "name": {"type": "string", "minLength": 1, "maxLength": 200},
+        "description": {"type": ["string", "null"], "maxLength": 3000},
+        "price_amount": {"type": ["number", "null"], "minimum": 0},
+        "price_currency": {"type": ["string", "null"], "pattern": "^[A-Z]{3}$"},
+        "verification_status": {"$ref": "#/$defs/verification"}
+      }
+    },
+    "asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["asset_id", "kind", "uri", "relationship_to_business", "usage_status"],
+      "properties": {
+        "asset_id": {"type": "string", "minLength": 1, "maxLength": 128},
+        "kind": {"type": "string", "enum": ["logo", "photo", "illustration", "video", "document", "other"]},
+        "uri": {"type": "string", "format": "uri"},
+        "relationship_to_business": {"type": "string", "enum": ["real_business_asset", "owner_supplied", "licensed_stock", "generated_representational", "unknown"]},
+        "usage_status": {"type": "string", "enum": ["approved", "restricted", "pending_review", "do_not_use"]},
+        "license_or_permission": {"type": ["string", "null"], "maxLength": 500}
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "source_type", "captured_at", "rights_status"],
+      "properties": {
+        "source_id": {"type": "string", "minLength": 1, "maxLength": 128},
+        "source_type": {"type": "string", "enum": ["owner", "official_website", "official_social", "public_registry", "licensed_provider", "user_submission", "historical_import", "other"]},
+        "uri": {"type": ["string", "null"], "format": "uri"},
+        "captured_at": {"type": "string", "format": "date-time"},
+        "rights_status": {"type": "string", "enum": ["approved_for_publication", "approved_for_internal_use", "needs_review", "restricted", "unknown"]},
+        "acquisition_method": {"type": ["string", "null"], "maxLength": 300},
+        "notes": {"type": ["string", "null"], "maxLength": 1000}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["field_path", "source_ids", "verification_status", "confidence"],
+      "properties": {
+        "field_path": {"type": "string", "pattern": "^/"},
+        "source_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}, "uniqueItems": true},
+        "verification_status": {"$ref": "#/$defs/verification"},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "last_verified_at": {"type": ["string", "null"], "format": "date-time"},
+        "notes": {"type": ["string", "null"], "maxLength": 1000}
+      }
+    }
+  }
+}

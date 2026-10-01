@@ -1,0 +1,11 @@
+{
+  "schema_version":"0.1.0","submission_id":"onb-puerta-abierta-demo","business_id":"puerta-abierta-demo","status":"submitted",
+  "identity":{"display_name":"Puerta Abierta — FICTICIO","legal_name":null,"primary_category":"agentes-inmobiliarios","representative_role":"authorized_manager"},
+  "business_profile":{"description":"Agencia inmobiliaria ficticia orientada a familias que comparan alternativas residenciales en Lima.","ideal_customer":"Familias que buscan comparar ubicación, distribución y presupuesto con acompañamiento claro.","specialty":"Selección residencial y acompañamiento de visitas en zonas urbanas.","primary_action":"explore_catalog"},
+  "service_areas":["Surco","La Molina"],
+  "services":[{"service_id":"compra-residencial","name":"Compra residencial","description":"Acompañamiento ficticio para comparar alternativas residenciales."}],
+  "contacts":{"public_phone":null,"public_email":"puerta@example.invalid","preferred_channel":"email"},
+  "assets":[{"asset_id":"fachada-demo","kind":"photo","reference":"urn:hazlocrecer:onboarding:pending-photo","relationship":"unknown","usage_status":"pending_review","permission_note":null}],
+  "declarations":{"authorized_representative":true,"truthfulness_confirmed":true,"contact_permission":true,"asset_rights_confirmed":false},
+  "owner_confirmed_at":null,"created_at":"2026-09-30T13:10:00Z","updated_at":"2026-09-30T14:10:00Z"
+}

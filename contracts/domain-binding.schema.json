@@ -1,0 +1,13 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://schemas.hazlocrecer.com/domain-binding.schema.json",
+  "title":"DomainBinding","type":"object","additionalProperties":false,
+  "required":["schema_version","binding_id","tenant_id","hostname","kind","verification_status","certificate_status","provider_ref","last_checked_at","created_at","updated_at"],
+  "properties":{
+    "schema_version":{"const":"0.1.0"},"binding_id":{"type":"string","pattern":"^domain-[a-f0-9]{24}$"},"tenant_id":{"type":"string"},
+    "hostname":{"type":"string","pattern":"^(?=.{4,253}$)(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\\.)+[a-z]{2,63}$"},
+    "kind":{"enum":["managed_subdomain","custom_domain"]},"verification_status":{"enum":["pending","verified","failed","revoked"]},
+    "certificate_status":{"enum":["not_required","pending","active","failed","revoked"]},"provider_ref":{"type":["string","null"],"maxLength":256},
+    "last_checked_at":{"type":["string","null"],"format":"date-time"},"created_at":{"type":"string","format":"date-time"},"updated_at":{"type":"string","format":"date-time"}
+  }
+}

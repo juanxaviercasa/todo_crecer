@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.com/staging-launch-intent.schema.json",
+  "title": "staging-launch-intent",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "intent_id",
+    "environment",
+    "hostname",
+    "account_fingerprint",
+    "zone_fingerprint",
+    "data_classification",
+    "status",
+    "created_by",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "intent_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "environment": {
+      "const": "staging"
+    },
+    "hostname": {
+      "type": "string",
+      "pattern": "^[a-z0-9.-]+$"
+    },
+    "account_fingerprint": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "zone_fingerprint": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "data_classification": {
+      "enum": [
+        "synthetic",
+        "owner_confirmed"
+      ]
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "discovered",
+        "planned",
+        "approved",
+        "applied",
+        "verified",
+        "rolled_back",
+        "closed",
+        "blocked"
+      ]
+    },
+    "created_by": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

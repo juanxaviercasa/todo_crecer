@@ -1,0 +1,5 @@
+[
+  {"schema_version":"0.1.0","slo_id":"slo-site-router-staging","service":"site_router","environment":"staging","status":"active","window_minutes":60,"availability_target":99.0,"latency_percentile":95,"latency_threshold_ms":500,"minimum_events":20,"created_at":"2026-09-30T23:00:00Z"},
+  {"schema_version":"0.1.0","slo_id":"slo-publication-staging","service":"publication","environment":"staging","status":"active","window_minutes":60,"availability_target":99.0,"latency_percentile":95,"latency_threshold_ms":2000,"minimum_events":5,"created_at":"2026-09-30T23:00:00Z"},
+  {"schema_version":"0.1.0","slo_id":"slo-owner-portal-staging","service":"owner_portal","environment":"staging","status":"active","window_minutes":60,"availability_target":99.0,"latency_percentile":95,"latency_threshold_ms":800,"minimum_events":10,"created_at":"2026-09-30T23:00:00Z"}
+]

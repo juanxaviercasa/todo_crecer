@@ -1,0 +1,17 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://schemas.hazlocrecer.com/interaction-rejection.schema.json",
+  "title":"InteractionRejection",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["schema_version","rejection_id","tenant_id","decision","reason","occurred_at","fingerprint"],
+  "properties":{
+    "schema_version":{"const":"0.1.0"},
+    "rejection_id":{"type":"string","pattern":"^rej-[a-f0-9]{24}$"},
+    "tenant_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},
+    "decision":{"const":"rejected"},
+    "reason":{"enum":["invalid_shape","consent_missing","honeypot_triggered","submitted_too_fast","rate_limited","duplicate","unsafe_content"]},
+    "occurred_at":{"type":"string","format":"date-time"},
+    "fingerprint":{"type":"string","pattern":"^[a-f0-9]{64}$"}
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "schema_version": "0.1.0",
+  "synthetic": true,
+  "assets": [
+    {"asset_id": "asset-coastal-demo", "filename": "coastal.png", "kind": "photo", "origin": "synthetic_fixture"},
+    {"asset_id": "asset-courtyard-demo", "filename": "courtyard.png", "kind": "photo", "origin": "synthetic_fixture"},
+    {"asset_id": "asset-garden-demo", "filename": "garden.png", "kind": "photo", "origin": "synthetic_fixture"}
+  ]
+}

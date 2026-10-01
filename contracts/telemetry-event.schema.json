@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://schemas.hazlocrecer.com/telemetry-event.schema.json","title":"TelemetryEvent","type":"object","additionalProperties":false,
+  "required":["schema_version","event_id","tenant_id","service","release_ref","type","outcome","measurements","occurred_at"],
+  "properties":{"schema_version":{"const":"0.1.0"},"event_id":{"type":"string","pattern":"^telemetry-[a-f0-9]{24}$"},"tenant_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},"service":{"enum":["site_router","publication","lead_inbox","owner_portal","asset_pipeline","deployment"]},"release_ref":{"type":["string","null"],"maxLength":128},"type":{"enum":["request","operation","failure","usage"]},"outcome":{"enum":["success","failure","rejected"]},"measurements":{"type":"object","additionalProperties":false,"required":["count","duration_ms","bytes"],"properties":{"count":{"type":"integer","minimum":1,"maximum":1000000},"duration_ms":{"type":["integer","null"],"minimum":0,"maximum":60000},"bytes":{"type":["integer","null"],"minimum":0,"maximum":1073741824}}},"occurred_at":{"type":"string","format":"date-time"}}
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.local/audit-verification.schema.json",
+  "title": "audit-verification",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "verification_id",
+    "entries_scanned",
+    "chain_valid",
+    "signatures_valid",
+    "first_failure_sequence",
+    "status",
+    "verified_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "verification_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "entries_scanned": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "chain_valid": {
+      "type": "boolean"
+    },
+    "signatures_valid": {
+      "type": "boolean"
+    },
+    "first_failure_sequence": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "status": {
+      "enum": [
+        "passed",
+        "failed"
+      ]
+    },
+    "verified_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

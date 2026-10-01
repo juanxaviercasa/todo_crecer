@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="description" content="Consola sintética de preparación de infraestructura para HazloCrecer.">
+  <title>Infraestructura · HazloCrecer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="notice"><i></i> PERFIL DE DESARROLLO · SIN CREDENCIALES · PUBLICACIÓN BLOQUEADA</div>
+  <header>
+    <a class="brand" href="#"><b>H</b><span>HazloCrecer<small>Infrastructure control</small></span></a>
+    <div class="phase"><span>Entrega</span><strong>Fase 8 · 0.10.0</strong></div>
+    <div class="status"><i></i><span>Local operativo</span></div>
+  </header>
+  <main>
+    <aside>
+      <p class="label">Infraestructura</p>
+      <nav>
+        <button class="active" data-view="overview"><span>01</span> Resumen</button>
+        <button data-view="services"><span>02</span> Adaptadores</button>
+        <button data-view="cloud"><span>03</span> Producción</button>
+        <button data-view="inputs"><span>04</span> Datos pendientes</button>
+      </nav>
+      <div class="aside-card"><span>Regla activa</span><b>Ningún secreto entra al repositorio.</b></div>
+    </aside>
+    <section class="content">
+      <div class="view active" id="overview">
+        <div class="eyebrow">ARQUITECTURA PORTABLE</div>
+        <h1>El sistema ya no depende de un proveedor.</h1>
+        <p class="lead">Una interfaz estable conecta el motor privado con implementaciones locales hoy y recursos administrados cuando se configure producción.</p>
+        <div class="score"><div><span>Preparación local</span><strong>6 / 6</strong><em>Ejecutable</em></div><div><span>Preparación cloud</span><strong>0 / 6</strong><em>Esperando configuración</em></div><div><span>Publicación</span><strong>0</strong><em>Bloqueada por diseño</em></div></div>
+        <section class="flow"><div><span>01</span><b>Dominio</b><p>Onboarding, revisión y demos.</p></div><i></i><div><span>02</span><b>Puertos</b><p>Contratos estables y verificables.</p></div><i></i><div><span>03</span><b>Proveedores</b><p>Local o Cloudflare.</p></div></section>
+      </div>
+      <div class="view" id="services" hidden>
+        <div class="eyebrow">02 · ADAPTADORES</div><h1 class="compact">Seis servicios, una misma interfaz.</h1><p class="lead">Cada pieza puede cambiar de proveedor sin alterar el motor de negocio.</p>
+        <div class="service-grid">
+          <article><span>01</span><h2>Identidad</h2><p>Sesión inyectada, roles y límite por negocio.</p><em>LISTO LOCAL</em></article>
+          <article><span>02</span><h2>Base transaccional</h2><p>Metadatos atómicos y aislamiento por tenant.</p><em>LISTO LOCAL</em></article>
+          <article><span>03</span><h2>Gestión de claves</h2><p>Memoria de proceso, sin valores predeterminados.</p><em>LISTO LOCAL</em></article>
+          <article><span>04</span><h2>Objetos privados</h2><p>Cuarentena, hash y promoción controlada.</p><em>LISTO LOCAL</em></article>
+          <article><span>05</span><h2>Cola</h2><p>Persistencia, separación por negocio y confirmación.</p><em>LISTO LOCAL</em></article>
+          <article><span>06</span><h2>Antimalware</h2><p>Deniega mientras no exista un veredicto limpio.</p><em>GATE ACTIVO</em></article>
+        </div>
+      </div>
+      <div class="view" id="cloud" hidden>
+        <div class="eyebrow">03 · PERFIL CLOUDFLARE</div><h1 class="compact">El destino está definido. El despliegue espera credenciales.</h1><p class="lead">El plano asigna cada puerto a un recurso y conserva la publicación bloqueada.</p>
+        <div class="mapping">
+          <div><b>Identidad</b><span>Cloudflare Access + sesión de aplicación</span><em>PENDIENTE</em></div>
+          <div><b>Metadatos</b><span>D1 · migración incluida</span><em>PENDIENTE</em></div>
+          <div><b>Archivos</b><span>R2 privado · cuarentena / liberados</span><em>PENDIENTE</em></div>
+          <div><b>Tareas</b><span>Queues · reintentos y cola de errores</span><em>PENDIENTE</em></div>
+          <div><b>Claves</b><span>Workers Secrets + rotación versionada</span><em>PENDIENTE</em></div>
+          <div><b>Análisis</b><span>Proveedor externo mediante adaptador</span><em>PENDIENTE</em></div>
+        </div>
+      </div>
+      <div class="view" id="inputs" hidden>
+        <div class="eyebrow">04 · ENTRADAS NECESARIAS</div><h1 class="compact">Solo faltan identificadores y secretos de tus cuentas.</h1><p class="lead">No se solicitan todavía. El verificador los detectará cuando llegue el momento de conectar el entorno.</p>
+        <div class="input-list">
+          <article><span>CUENTA</span><h2>Cloudflare</h2><p>D1 database ID, nombre del bucket R2, cola y Access audience.</p></article>
+          <article><span>SEGURIDAD</span><h2>Claves</h2><p>Claves de bóveda, auditoría y sesiones generadas fuera del repositorio.</p></article>
+          <article><span>PROVEEDOR</span><h2>Antimalware</h2><p>Endpoint y token del servicio que se elija tras evaluar coste y privacidad.</p></article>
+        </div>
+        <div class="blocked"><i>×</i><div><b>Despliegue y publicación continúan bloqueados</b><p>Completar variables no publica nada. Una fase posterior debe validar seguridad, dominio y rollback.</p></div></div>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

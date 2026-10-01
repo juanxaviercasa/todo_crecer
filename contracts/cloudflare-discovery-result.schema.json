@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.local/cloudflare-discovery-result.schema.json",
+  "title": "cloudflare-discovery-result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "discovery_id",
+    "request_ref",
+    "resources",
+    "resource_count",
+    "pages_read",
+    "rate_limit_remaining",
+    "status",
+    "external_changes",
+    "completed_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "discovery_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "request_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schemas.hazlocrecer.local/cloudflare-resource-record.schema.json"
+      }
+    },
+    "resource_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "pages_read": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "rate_limit_remaining": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "status": {
+      "enum": [
+        "completed",
+        "partial",
+        "failed"
+      ]
+    },
+    "external_changes": {
+      "const": false
+    },
+    "completed_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

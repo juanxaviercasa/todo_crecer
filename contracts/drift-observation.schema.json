@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.local/drift-observation.schema.json",
+  "title": "drift-observation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "observation_id",
+    "environment_ref",
+    "inventory_ref",
+    "differences",
+    "secrets_compared",
+    "status",
+    "observed_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "observation_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "environment_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "inventory_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "differences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "resource_ref",
+          "field",
+          "expected",
+          "observed",
+          "severity"
+        ],
+        "properties": {
+          "resource_ref": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+          },
+          "field": {
+            "type": "string"
+          },
+          "expected": {},
+          "observed": {},
+          "severity": {
+            "enum": [
+              "info",
+              "warning",
+              "critical"
+            ]
+          }
+        }
+      }
+    },
+    "secrets_compared": {
+      "const": false
+    },
+    "status": {
+      "enum": [
+        "in_sync",
+        "drifted",
+        "critical"
+      ]
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

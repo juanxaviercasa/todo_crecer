@@ -1,0 +1,81 @@
+{
+  "schema_version": "0.1.0",
+  "brand_profile_id": "brand-prisma-desarrollos",
+  "business_id": "pilot-prisma-desarrollos",
+  "truth_snapshot": {
+    "business_truth_version": "0.1.0",
+    "content_hash": "e7e101368c9db98045a1476883e9648e1b6515fd69b8b159e08c5860975b7b0d"
+  },
+  "recipe": {
+    "recipe_id": "real-estate-desarrollador-proyectos",
+    "recipe_version": "0.1.0",
+    "content_hash": "9a38884d2dde612ad4341d16cf50f7608cd261d7f3c4b3547a32e01589f67b07"
+  },
+  "status": "proposed",
+  "personality": [
+    "clara",
+    "cercana"
+  ],
+  "visual_direction": "desarrollador-proyectos",
+  "primary_audience": "Familias e inversionistas que evalúan proyectos residenciales.",
+  "primary_goal": "inform",
+  "color_tokens": {
+    "primary": "#253d35",
+    "background": "#f3efe5",
+    "text": "#23332d",
+    "accent": "#b4783f"
+  },
+  "type_scale": {
+    "font_family": "system-ui",
+    "body_px": 16,
+    "heading_px": 36
+  },
+  "layout_family": "single-column",
+  "tone_of_voice": [
+    "informativo",
+    "sin superlativos"
+  ],
+  "cta_style": "text",
+  "image_policy": {
+    "allow_representational": false,
+    "require_disclosure": true,
+    "allow_unverified_business_assets": false
+  },
+  "content": {
+    "facts": [
+      {
+        "text": "Prisma Desarrollos — FICTICIO",
+        "evidence": [
+          {
+            "field_path": "/identity/display_name",
+            "source_ids": [
+              "fixture-prisma-desarrollos"
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Desarrolladora ficticia que presenta proyectos residenciales, gestión técnica y acompañamiento comercial.",
+        "evidence": [
+          {
+            "field_path": "/description",
+            "source_ids": [
+              "fixture-prisma-desarrollos"
+            ]
+          }
+        ]
+      }
+    ],
+    "editorial_framing": [
+      "Consulta la información de esta demostración."
+    ],
+    "suggestions": [
+      {
+        "text": "Solicitar al propietario una identidad visual antes de producción.",
+        "publish": false
+      }
+    ]
+  },
+  "design_origin": "generated_proposal",
+  "created_at": "2026-09-30T06:00:00Z"
+}

@@ -1,0 +1,23 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://schemas.hazlocrecer.com/private-demo-build.schema.json",
+  "title":"PrivateDemoBuild",
+  "description":"Manifiesto inmutable de una demo privada autorizada. No concede publicación pública.",
+  "type":"object","additionalProperties":false,
+  "required":["schema_version","build_id","business_id","site_id","source_hashes","review_id","mode","indexing","publication","created_at","entrypoint","artifacts"],
+  "properties":{
+    "schema_version":{"const":"0.1.0"},
+    "build_id":{"type":"string","pattern":"^pdb-[a-f0-9]{20}$"},
+    "business_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},
+    "site_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},
+    "source_hashes":{"type":"object","additionalProperties":false,"required":["owner_submission","business_truth","operator_review"],"properties":{"owner_submission":{"$ref":"#/$defs/hash"},"business_truth":{"$ref":"#/$defs/hash"},"operator_review":{"$ref":"#/$defs/hash"}}},
+    "review_id":{"type":"string","pattern":"^rev-"},
+    "mode":{"const":"private_demo"},
+    "indexing":{"const":"noindex"},
+    "publication":{"type":"object","additionalProperties":false,"required":["status","url"],"properties":{"status":{"const":"not_published"},"url":{"type":"null"}}},
+    "created_at":{"type":"string","format":"date-time"},
+    "entrypoint":{"const":"index.html"},
+    "artifacts":{"type":"array","minItems":4,"maxItems":20,"items":{"type":"object","additionalProperties":false,"required":["path","media_type","sha256","bytes"],"properties":{"path":{"type":"string","pattern":"^(?!.*(?:^|/)\\.\\.(?:/|$))[a-zA-Z0-9._/-]+$"},"media_type":{"type":"string","minLength":3},"sha256":{"$ref":"#/$defs/hash"},"bytes":{"type":"integer","minimum":1}}}}
+  },
+  "$defs":{"hash":{"type":"string","pattern":"^[a-f0-9]{64}$"}}
+}

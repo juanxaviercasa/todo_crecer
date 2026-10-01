@@ -1,0 +1,65 @@
+{
+  "schema_version": "0.1.0",
+  "site_id": "site-golden-001",
+  "business_id": "golden-business-synthetic-001",
+  "tenant_id": null,
+  "mode": "demo",
+  "status": "DRAFT",
+  "truth_snapshot": {
+    "business_truth_version": "0.1.0",
+    "content_hash": "de59f2135a5fa19bcd08b136d23574bd46a8e056098891f3d0e7b09526227e87"
+  },
+  "recipe": {
+    "recipe_id": "generic-information",
+    "recipe_version": "0.1.0"
+  },
+  "brand_profile_ref": "brand-golden-001",
+  "routing": {
+    "primary_hostname": "golden-business.example.invalid",
+    "aliases": [],
+    "custom_domain_status": "none"
+  },
+  "seo": {
+    "indexing": "noindex",
+    "canonical_url": null,
+    "title": "Taller Ejemplo — FICTICIO",
+    "meta_description": "Negocio ficticio creado exclusivamente para pruebas de contratos."
+  },
+  "claim": {
+    "banner_enabled": true,
+    "claim_url": null,
+    "disclosure_text": "DEMOSTRACIÓN FICTICIA. No representa un negocio real. No se aceptan solicitudes."
+  },
+  "sections": [
+    {
+      "section_id": "hero",
+      "component": "hero",
+      "enabled": true,
+      "order": 1,
+      "data": {
+        "headline": "Taller Ejemplo — FICTICIO"
+      }
+    },
+    {
+      "section_id": "about",
+      "component": "about",
+      "enabled": true,
+      "order": 2,
+      "data": {
+        "body": "Negocio ficticio creado exclusivamente para pruebas de contratos."
+      }
+    }
+  ],
+  "assets": [],
+  "features": {
+    "whatsapp": false,
+    "phone": false,
+    "form": false,
+    "booking": false,
+    "analytics": false,
+    "seo_advanced": false,
+    "ai_agent": false,
+    "marketing_automation": false
+  },
+  "updated_at": "2026-09-29T12:00:00Z"
+}

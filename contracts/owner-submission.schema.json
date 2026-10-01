@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.com/owner-submission.schema.json",
+  "title": "OwnerSubmission",
+  "description": "Declaración estructurada del propietario para preparar una demo privada. No autoriza publicación automática.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version","submission_id","business_id","status","identity","business_profile","service_areas","services","contacts","assets","declarations","created_at","updated_at"],
+  "properties": {
+    "schema_version": {"const": "0.1.0"},
+    "submission_id": {"type":"string","pattern":"^onb-[a-z0-9][a-z0-9-]{2,79}$"},
+    "business_id": {"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},
+    "status": {"enum":["draft","submitted","owner_confirmed","needs_changes","rejected"]},
+    "identity": {
+      "type":"object","additionalProperties":false,
+      "required":["display_name","primary_category","representative_role"],
+      "properties": {
+        "display_name":{"type":"string","minLength":2,"maxLength":200},
+        "legal_name":{"type":["string","null"],"maxLength":240},
+        "primary_category":{"type":"string","minLength":2,"maxLength":120},
+        "representative_role":{"enum":["owner","legal_representative","authorized_manager"]}
+      }
+    },
+    "business_profile": {
+      "type":"object","additionalProperties":false,
+      "required":["description","ideal_customer","specialty","primary_action"],
+      "properties": {
+        "description":{"type":"string","minLength":40,"maxLength":1500},
+        "ideal_customer":{"type":"string","minLength":20,"maxLength":1000},
+        "specialty":{"type":"string","minLength":10,"maxLength":500},
+        "primary_action":{"enum":["request_information","schedule_conversation","request_valuation","explore_catalog","visit_project"]}
+      }
+    },
+    "service_areas":{"type":"array","minItems":1,"maxItems":30,"uniqueItems":true,"items":{"type":"string","minLength":2,"maxLength":120}},
+    "services":{"type":"array","minItems":1,"maxItems":30,"items":{"$ref":"#/$defs/service"}},
+    "contacts": {
+      "type":"object","additionalProperties":false,
+      "required":["public_phone","public_email","preferred_channel"],
+      "properties": {
+        "public_phone":{"type":["string","null"],"pattern":"^\\+?[0-9 ()-]{7,30}$"},
+        "public_email":{"type":["string","null"],"format":"email"},
+        "preferred_channel":{"enum":["phone","whatsapp","email","none"]}
+      },
+      "allOf":[
+        {"if":{"properties":{"preferred_channel":{"const":"email"}}},"then":{"properties":{"public_email":{"type":"string","format":"email"}}}},
+        {"if":{"properties":{"preferred_channel":{"enum":["phone","whatsapp"]}}},"then":{"properties":{"public_phone":{"type":"string","pattern":"^\\+?[0-9 ()-]{7,30}$"}}}}
+      ]
+    },
+    "assets":{"type":"array","maxItems":100,"items":{"$ref":"#/$defs/assetDeclaration"}},
+    "declarations": {
+      "type":"object","additionalProperties":false,
+      "required":["authorized_representative","truthfulness_confirmed","contact_permission","asset_rights_confirmed"],
+      "properties": {
+        "authorized_representative":{"type":"boolean"},
+        "truthfulness_confirmed":{"type":"boolean"},
+        "contact_permission":{"type":"boolean"},
+        "asset_rights_confirmed":{"type":"boolean"}
+      }
+    },
+    "owner_confirmed_at":{"type":["string","null"],"format":"date-time"},
+    "created_at":{"type":"string","format":"date-time"},
+    "updated_at":{"type":"string","format":"date-time"}
+  },
+  "allOf":[
+    {
+      "if":{"properties":{"status":{"const":"owner_confirmed"}}},
+      "then":{
+        "required":["owner_confirmed_at"],
+        "properties":{
+          "owner_confirmed_at":{"type":"string","format":"date-time"},
+          "declarations":{"properties":{"authorized_representative":{"const":true},"truthfulness_confirmed":{"const":true},"contact_permission":{"const":true},"asset_rights_confirmed":{"const":true}}}
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "service": {
+      "type":"object","additionalProperties":false,"required":["service_id","name","description"],
+      "properties":{
+        "service_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{1,79}$"},
+        "name":{"type":"string","minLength":2,"maxLength":160},
+        "description":{"type":"string","minLength":10,"maxLength":800}
+      }
+    },
+    "assetDeclaration": {
+      "type":"object","additionalProperties":false,"required":["asset_id","kind","reference","relationship","usage_status","permission_note"],
+      "properties":{
+        "asset_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{1,79}$"},
+        "kind":{"enum":["logo","photo","video","document","other"]},
+        "reference":{"type":"string","minLength":1,"maxLength":500},
+        "relationship":{"enum":["owner_supplied","licensed_stock","commissioned","unknown"]},
+        "usage_status":{"enum":["approved","pending_review","do_not_use"]},
+        "permission_note":{"type":["string","null"],"maxLength":500}
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://schemas.hazlocrecer.com/operator-review.schema.json",
+  "title":"OperatorReview",
+  "description":"Decisión humana inmutable sobre una versión exacta de OwnerSubmission. Nunca concede publicación o indexación.",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["schema_version","review_id","submission_id","business_id","submission_hash","decision","checks","reason_codes","notes","reviewer","capabilities","created_at"],
+  "properties":{
+    "schema_version":{"const":"0.1.0"},
+    "review_id":{"type":"string","pattern":"^rev-[a-z0-9][a-z0-9-]{2,100}$"},
+    "submission_id":{"type":"string","pattern":"^onb-[a-z0-9][a-z0-9-]{2,79}$"},
+    "business_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},
+    "submission_hash":{"type":"string","pattern":"^[a-f0-9]{64}$"},
+    "decision":{"enum":["approved_private_demo","changes_requested","rejected"]},
+    "checks":{"type":"array","minItems":7,"maxItems":20,"items":{"$ref":"#/$defs/check"}},
+    "reason_codes":{"type":"array","maxItems":20,"uniqueItems":true,"items":{"enum":["identity_unclear","offer_incomplete","contact_unverified","asset_rights_missing","content_risk","duplicate_business","owner_authority_unclear","other"]}},
+    "notes":{"type":["string","null"],"maxLength":2000},
+    "reviewer":{"type":"object","additionalProperties":false,"required":["reviewer_id","role"],"properties":{"reviewer_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},"role":{"const":"hazlocrecer_operator"}}},
+    "capabilities":{"type":"object","additionalProperties":false,"required":["may_generate_private_demo","may_publish","may_index"],"properties":{"may_generate_private_demo":{"type":"boolean"},"may_publish":{"const":false},"may_index":{"const":false}}},
+    "created_at":{"type":"string","format":"date-time"}
+  },
+  "allOf":[
+    {"if":{"properties":{"decision":{"const":"approved_private_demo"}}},"then":{"properties":{"capabilities":{"properties":{"may_generate_private_demo":{"const":true}}},"reason_codes":{"maxItems":0},"checks":{"items":{"properties":{"status":{"const":"passed"}}}}}}},
+    {"if":{"properties":{"decision":{"enum":["changes_requested","rejected"]}}},"then":{"properties":{"capabilities":{"properties":{"may_generate_private_demo":{"const":false}}},"reason_codes":{"minItems":1}}}}
+  ],
+  "$defs":{"check":{"type":"object","additionalProperties":false,"required":["check_id","label","status","evidence"],"properties":{"check_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{1,79}$"},"label":{"type":"string","minLength":2,"maxLength":200},"status":{"enum":["passed","failed"]},"evidence":{"type":"string","minLength":2,"maxLength":500}}}}
+}

@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://schemas.hazlocrecer.com/tenant-guardrail-policy.schema.json","title":"TenantGuardrailPolicy","type":"object","additionalProperties":false,
+  "required":["schema_version","policy_id","tenant_id","status","period","limits","created_at"],
+  "properties":{"schema_version":{"const":"0.1.0"},"policy_id":{"type":"string","pattern":"^guardrail-[a-z0-9-]{3,80}$"},"tenant_id":{"type":"string"},"status":{"enum":["draft","active","retired"]},"period":{"const":"calendar_month"},"limits":{"type":"array","minItems":1,"maxItems":10,"items":{"type":"object","additionalProperties":false,"required":["resource","warning_at_percent","hard_limit","enforcement"],"properties":{"resource":{"enum":["requests","storage_bytes","queue_messages","asset_bytes","custom_hostnames"]},"warning_at_percent":{"type":"integer","minimum":50,"maximum":99},"hard_limit":{"type":"integer","minimum":1},"enforcement":{"enum":["observe","throttle","block_new"]}}}},"created_at":{"type":"string","format":"date-time"}}
+}

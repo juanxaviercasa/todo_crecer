@@ -1,0 +1,26 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://schemas.hazlocrecer.com/pilot-review-decision.schema.json",
+  "title":"PilotReviewDecision",
+  "type":"object","additionalProperties":false,
+  "required":["schema_version","review_id","dossier_id","dossier_hash","tenant_id","area","decision","checks","reason_codes","notes","reviewer","created_at"],
+  "properties":{
+    "schema_version":{"const":"0.1.0"},
+    "review_id":{"type":"string","pattern":"^pilotr-[a-f0-9]{24}$"},
+    "dossier_id":{"type":"string","pattern":"^pilotd-[a-f0-9]{24}$"},
+    "dossier_hash":{"type":"string","pattern":"^[a-f0-9]{64}$"},
+    "tenant_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},
+    "area":{"enum":["content","visual","privacy","technical"]},
+    "decision":{"enum":["approved","changes_requested","rejected"]},
+    "checks":{"type":"array","minItems":1,"maxItems":20,"items":{"$ref":"#/$defs/check"}},
+    "reason_codes":{"type":"array","maxItems":20,"uniqueItems":true,"items":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"}},
+    "notes":{"type":["string","null"],"maxLength":2000},
+    "reviewer":{"type":"object","additionalProperties":false,"required":["actor_id","role"],"properties":{"actor_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},"role":{"enum":["operator","admin"]}}},
+    "created_at":{"type":"string","format":"date-time"}
+  },
+  "allOf":[
+    {"if":{"properties":{"decision":{"const":"approved"}}},"then":{"properties":{"reason_codes":{"maxItems":0},"checks":{"items":{"properties":{"status":{"const":"passed"}}}}}}},
+    {"if":{"properties":{"decision":{"enum":["changes_requested","rejected"]}}},"then":{"properties":{"reason_codes":{"minItems":1}}}}
+  ],
+  "$defs":{"check":{"type":"object","additionalProperties":false,"required":["check_id","label","status","evidence"],"properties":{"check_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{1,79}$"},"label":{"type":"string","minLength":3,"maxLength":160},"status":{"enum":["passed","failed"]},"evidence":{"type":"string","minLength":3,"maxLength":500}}}}
+}

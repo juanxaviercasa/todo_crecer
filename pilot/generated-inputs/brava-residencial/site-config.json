@@ -1,0 +1,65 @@
+{
+  "schema_version": "0.1.0",
+  "site_id": "brava-residencial",
+  "business_id": "pilot-brava-residencial",
+  "tenant_id": null,
+  "mode": "demo",
+  "status": "DRAFT",
+  "truth_snapshot": {
+    "business_truth_version": "0.1.0",
+    "content_hash": "991e256d2ab1995cf3610dddfc7db97716c2002d6b2b74daea1428c890da3329"
+  },
+  "recipe": {
+    "recipe_id": "real-estate-catalogo-amplio",
+    "recipe_version": "0.1.0"
+  },
+  "brand_profile_ref": "brand-brava-residencial",
+  "routing": {
+    "primary_hostname": "brava-residencial.invalid",
+    "aliases": [],
+    "custom_domain_status": "none"
+  },
+  "seo": {
+    "indexing": "noindex",
+    "canonical_url": null,
+    "title": "Brava Residencial — FICTICIO",
+    "meta_description": "Agencia inmobiliaria ficticia con un catálogo residencial para comprar y alquilar en distintos distritos de Lima."
+  },
+  "claim": {
+    "banner_enabled": true,
+    "claim_url": null,
+    "disclosure_text": "DEMOSTRACIÓN FICTICIA. No representa un negocio real. No se aceptan solicitudes."
+  },
+  "sections": [
+    {
+      "section_id": "hero",
+      "component": "hero",
+      "enabled": true,
+      "order": 1,
+      "data": {
+        "headline": "Brava Residencial — FICTICIO"
+      }
+    },
+    {
+      "section_id": "about",
+      "component": "about",
+      "enabled": true,
+      "order": 2,
+      "data": {
+        "body": "Agencia inmobiliaria ficticia con un catálogo residencial para comprar y alquilar en distintos distritos de Lima."
+      }
+    }
+  ],
+  "assets": [],
+  "features": {
+    "whatsapp": false,
+    "phone": false,
+    "form": false,
+    "booking": false,
+    "analytics": false,
+    "seo_advanced": false,
+    "ai_agent": false,
+    "marketing_automation": false
+  },
+  "updated_at": "2026-09-29T12:00:00Z"
+}

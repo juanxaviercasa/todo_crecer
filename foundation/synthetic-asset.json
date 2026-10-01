@@ -1,0 +1,3 @@
+{
+  "schema_version":"0.1.0","asset_id":"asset-patio-demo","business_id":"horizonte-casa-demo","kind":"photo","original_filename":"patio-demo.jpg","media_type":"image/jpeg","bytes":1842000,"content_sha256":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","source":"owner_upload","rights":{"status":"pending_review","permission_note":"Fixture ficticio; pendiente de revisión simulada."},"security":{"quarantine_status":"quarantined","scan_status":"pending","active_content_detected":false},"created_at":"2026-09-30T17:00:00Z"
+}

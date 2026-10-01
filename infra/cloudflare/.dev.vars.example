@@ -1,0 +1,8 @@
+# Copiar como .dev.vars únicamente para desarrollo local. No confirmar el archivo real.
+VAULT_KEY=<32-bytes-en-base64>
+AUDIT_KEY=<32-bytes-en-base64>
+SESSION_SIGNING_KEY=<secreto-aleatorio>
+MALWARE_SCANNER_TOKEN=<token-del-proveedor-elegido>
+CF_ACCESS_AUD=<audience-tag>
+CF_ACCESS_TEAM_DOMAIN=<equipo.cloudflareaccess.com>
+MALWARE_SCANNER_ENDPOINT=<https://endpoint-del-proveedor>

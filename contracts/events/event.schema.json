@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.com/events/event.schema.json",
+  "title": "Phase0Event",
+  "oneOf": [
+    {
+      "$ref": "https://schemas.hazlocrecer.com/events/business-truth.validated.schema.json"
+    },
+    {
+      "$ref": "https://schemas.hazlocrecer.com/events/brand-profile.generated.schema.json"
+    },
+    {
+      "$ref": "https://schemas.hazlocrecer.com/events/site-config.created.schema.json"
+    },
+    {
+      "$ref": "https://schemas.hazlocrecer.com/events/site-snapshot.created.schema.json"
+    },
+    {
+      "$ref": "https://schemas.hazlocrecer.com/events/agent.succeeded.schema.json"
+    },
+    {
+      "$ref": "https://schemas.hazlocrecer.com/events/agent.failed.schema.json"
+    }
+  ]
+}

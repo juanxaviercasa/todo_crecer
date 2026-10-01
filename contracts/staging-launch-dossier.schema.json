@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.com/staging-launch-dossier.schema.json",
+  "title": "staging-launch-dossier",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "dossier_id",
+    "intent_ref",
+    "plan_ref",
+    "evidence_entries",
+    "outcome",
+    "external_changes",
+    "credentials_closed",
+    "dossier_digest",
+    "sealed_by",
+    "sealed_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "dossier_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "intent_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "plan_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_entries": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "$ref": "https://schemas.hazlocrecer.com/launch-evidence-entry.schema.json"
+      }
+    },
+    "outcome": {
+      "enum": [
+        "verified",
+        "rolled_back"
+      ]
+    },
+    "external_changes": {
+      "type": "boolean"
+    },
+    "credentials_closed": {
+      "const": true
+    },
+    "dossier_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "sealed_by": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sealed_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

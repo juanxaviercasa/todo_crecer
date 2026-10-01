@@ -1,0 +1,65 @@
+{
+  "schema_version": "0.1.0",
+  "site_id": "nido-asesores",
+  "business_id": "pilot-nido-asesores",
+  "tenant_id": null,
+  "mode": "demo",
+  "status": "DRAFT",
+  "truth_snapshot": {
+    "business_truth_version": "0.1.0",
+    "content_hash": "5db99ed4ec49eda619109ee4da9b1262709e049fd2eb742c24b9be032323f43a"
+  },
+  "recipe": {
+    "recipe_id": "real-estate-asesor-boutique",
+    "recipe_version": "0.1.0"
+  },
+  "brand_profile_ref": "brand-nido-asesores",
+  "routing": {
+    "primary_hostname": "nido-asesores.invalid",
+    "aliases": [],
+    "custom_domain_status": "none"
+  },
+  "seo": {
+    "indexing": "noindex",
+    "canonical_url": null,
+    "title": "Nido Asesores — FICTICIO",
+    "meta_description": "Estudio inmobiliario ficticio orientado a propietarios y compradores que buscan acompañamiento personalizado."
+  },
+  "claim": {
+    "banner_enabled": true,
+    "claim_url": null,
+    "disclosure_text": "DEMOSTRACIÓN FICTICIA. No representa un negocio real. No se aceptan solicitudes."
+  },
+  "sections": [
+    {
+      "section_id": "hero",
+      "component": "hero",
+      "enabled": true,
+      "order": 1,
+      "data": {
+        "headline": "Nido Asesores — FICTICIO"
+      }
+    },
+    {
+      "section_id": "about",
+      "component": "about",
+      "enabled": true,
+      "order": 2,
+      "data": {
+        "body": "Estudio inmobiliario ficticio orientado a propietarios y compradores que buscan acompañamiento personalizado."
+      }
+    }
+  ],
+  "assets": [],
+  "features": {
+    "whatsapp": false,
+    "phone": false,
+    "form": false,
+    "booking": false,
+    "analytics": false,
+    "seo_advanced": false,
+    "ai_agent": false,
+    "marketing_automation": false
+  },
+  "updated_at": "2026-09-29T12:00:00Z"
+}

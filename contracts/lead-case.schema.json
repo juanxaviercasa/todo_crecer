@@ -1,0 +1,12 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://schemas.hazlocrecer.com/lead-case.schema.json",
+  "title":"LeadCase","type":"object","additionalProperties":false,
+  "required":["schema_version","case_id","tenant_id","site_id","submission_ref","purpose","priority","status","assignee_id","sla","version","created_at","updated_at","closed_at","close_reason"],
+  "properties":{
+    "schema_version":{"const":"0.1.0"},"case_id":{"type":"string","pattern":"^case-[a-f0-9]{24}$"},"tenant_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},"site_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},"submission_ref":{"type":"string","pattern":"^sub-[a-f0-9]{24}$"},"purpose":{"enum":["contact_request","property_interest","valuation_request"]},"priority":{"enum":["normal","high","urgent"]},"status":{"enum":["new","assigned","contacted","qualified","closed"]},"assignee_id":{"type":["string","null"],"pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},
+    "sla":{"type":"object","additionalProperties":false,"required":["target_minutes","due_at","breached"],"properties":{"target_minutes":{"type":"integer","minimum":5,"maximum":1440},"due_at":{"type":"string","format":"date-time"},"breached":{"type":"boolean"}}},
+    "version":{"type":"integer","minimum":1},"created_at":{"type":"string","format":"date-time"},"updated_at":{"type":"string","format":"date-time"},"closed_at":{"type":["string","null"],"format":"date-time"},"close_reason":{"type":["string","null"],"enum":[null,"resolved","not_qualified","duplicate","withdrawn","expired"]}
+  },
+  "allOf":[{"if":{"properties":{"status":{"const":"new"}}},"then":{"properties":{"assignee_id":{"const":null}}}},{"if":{"properties":{"status":{"const":"closed"}}},"then":{"properties":{"closed_at":{"type":"string"},"close_reason":{"type":"string"}}},"else":{"properties":{"closed_at":{"const":null},"close_reason":{"const":null}}}}]
+}

@@ -1,0 +1,6 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://schemas.hazlocrecer.com/cloudflare-preflight.schema.json","title":"CloudflarePreflight","type":"object","additionalProperties":false,
+  "required":["schema_version","preflight_id","plan_id","execution_mode","status","checks","missing_configuration","may_simulate","may_apply","generated_at"],
+  "properties":{"schema_version":{"const":"0.1.0"},"preflight_id":{"type":"string","pattern":"^preflight-[a-f0-9]{24}$"},"plan_id":{"type":"string"},"execution_mode":{"enum":["dry_run","apply"]},"status":{"enum":["simulated","ready","blocked"]},"checks":{"type":"array","minItems":8,"maxItems":8,"items":{"type":"object","additionalProperties":false,"required":["service","status","evidence"],"properties":{"service":{"enum":["account","zone","worker","r2","d1","queue","custom_hostnames","health_endpoint"]},"status":{"enum":["simulated","ready","blocked"]},"evidence":{"type":"string","minLength":3,"maxLength":240}}}},"missing_configuration":{"type":"array","uniqueItems":true,"items":{"type":"string"}},"may_simulate":{"type":"boolean"},"may_apply":{"type":"boolean"},"generated_at":{"type":"string","format":"date-time"}},
+  "allOf":[{"if":{"properties":{"execution_mode":{"const":"dry_run"}}},"then":{"properties":{"may_apply":{"const":false}}}}]
+}

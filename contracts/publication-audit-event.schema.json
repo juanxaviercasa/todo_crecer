@@ -1,0 +1,11 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://schemas.hazlocrecer.com/publication-audit-event.schema.json",
+  "title":"PublicationAuditEvent","type":"object","additionalProperties":false,
+  "required":["schema_version","event_id","tenant_id","site_id","type","subject_id","actor_id","previous_hash","event_hash","occurred_at"],
+  "properties":{
+    "schema_version":{"const":"0.1.0"},"event_id":{"type":"string","pattern":"^pubevt-[a-f0-9]{24}$"},"tenant_id":{"type":"string"},"site_id":{"type":"string"},
+    "type":{"enum":["build.registered","build.approved","domain.bound","route.created","release.promoted","release.rolled_back","cache.purged"]},
+    "subject_id":{"type":"string"},"actor_id":{"type":"string"},"previous_hash":{"type":["string","null"],"pattern":"^[a-f0-9]{64}$"},"event_hash":{"type":"string","pattern":"^[a-f0-9]{64}$"},"occurred_at":{"type":"string","format":"date-time"}
+  }
+}

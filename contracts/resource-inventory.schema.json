@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.local/resource-inventory.schema.json",
+  "title": "resource-inventory",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "inventory_id",
+    "environment_ref",
+    "resources",
+    "inventory_digest",
+    "external_query",
+    "generated_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "inventory_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "environment_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "resource_ref",
+          "kind",
+          "logical_name",
+          "observed_digest",
+          "status",
+          "provider_ref"
+        ],
+        "properties": {
+          "resource_ref": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "logical_name": {
+            "type": "string"
+          },
+          "observed_digest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "status": {
+            "enum": [
+              "ready",
+              "missing",
+              "changed",
+              "unknown"
+            ]
+          },
+          "provider_ref": {
+            "type": "string"
+          }
+        }
+      },
+      "uniqueItems": false
+    },
+    "inventory_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "external_query": {
+      "type": "boolean"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

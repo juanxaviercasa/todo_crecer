@@ -1,0 +1,14 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://schemas.hazlocrecer.com/tenant-route.schema.json",
+  "title":"TenantRoute","type":"object","additionalProperties":false,
+  "required":["schema_version","route_id","tenant_id","site_id","environment","hostname","path_prefix","domain_binding_ref","status","active_release_id","created_at","updated_at"],
+  "properties":{
+    "schema_version":{"const":"0.1.0"},"route_id":{"type":"string","pattern":"^route-[a-f0-9]{24}$"},
+    "tenant_id":{"type":"string"},"site_id":{"type":"string"},"environment":{"enum":["preview","production"]},
+    "hostname":{"type":"string","pattern":"^(?=.{4,253}$)(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\\.)+[a-z]{2,63}$"},
+    "path_prefix":{"type":"string","pattern":"^/(?:[a-z0-9/_-]*)$"},"domain_binding_ref":{"type":["string","null"]},
+    "status":{"enum":["reserved","ready","active","suspended"]},"active_release_id":{"type":["string","null"]},
+    "created_at":{"type":"string","format":"date-time"},"updated_at":{"type":"string","format":"date-time"}
+  }
+}

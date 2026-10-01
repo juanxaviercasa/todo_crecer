@@ -1,0 +1,10 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://schemas.hazlocrecer.com/cloudflare-deployment-plan.schema.json","title":"CloudflareDeploymentPlan","type":"object","additionalProperties":false,
+  "required":["schema_version","plan_id","tenant_id","site_id","release_id","build_id","environment","hostname","artifact_digest","execution_mode","status","resource_actions","configuration_requirements","created_by","approved_by","approved_at","created_at"],
+  "properties":{
+    "schema_version":{"const":"0.1.0"},"plan_id":{"type":"string","pattern":"^deployplan-[a-f0-9]{24}$"},"tenant_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},"site_id":{"type":"string"},"release_id":{"type":"string"},"build_id":{"type":"string"},"environment":{"const":"staging"},
+    "hostname":{"type":"string","pattern":"^(?=.{4,253}$)(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\\.)+[a-z]{2,63}$"},"artifact_digest":{"type":"string","pattern":"^[a-f0-9]{64}$"},"execution_mode":{"enum":["dry_run","apply"]},"status":{"enum":["draft","approved","simulated","executed","failed"]},
+    "resource_actions":{"type":"array","minItems":6,"maxItems":12,"items":{"type":"object","additionalProperties":false,"required":["resource","action","logical_ref","depends_on"],"properties":{"resource":{"enum":["worker","r2_artifacts","d1_routes","queue","custom_hostname","cache"]},"action":{"enum":["create","update","noop"]},"logical_ref":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,100}$"},"depends_on":{"type":"array","uniqueItems":true,"items":{"type":"string"}}}}},
+    "configuration_requirements":{"type":"array","minItems":6,"uniqueItems":true,"items":{"type":"string","pattern":"^[A-Z][A-Z0-9_]{2,79}$"}},"created_by":{"type":"string"},"approved_by":{"type":["string","null"]},"approved_at":{"type":["string","null"],"format":"date-time"},"created_at":{"type":"string","format":"date-time"}
+  }
+}

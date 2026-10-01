@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://schemas.hazlocrecer.com/canary-check.schema.json","title":"CanaryCheck","type":"object","additionalProperties":false,
+  "required":["schema_version","check_id","plan_id","stage_percent","hostname","status_code","latency_ms","content_digest_match","security_headers","indexing_policy","status","checked_at"],
+  "properties":{"schema_version":{"const":"0.1.0"},"check_id":{"type":"string","pattern":"^canary-[a-f0-9]{24}$"},"plan_id":{"type":"string"},"stage_percent":{"enum":[5,25,50,100]},"hostname":{"type":"string"},"status_code":{"type":"integer","minimum":100,"maximum":599},"latency_ms":{"type":"integer","minimum":0,"maximum":60000},"content_digest_match":{"type":"boolean"},"security_headers":{"type":"boolean"},"indexing_policy":{"enum":["noindex","index"]},"status":{"enum":["passed","failed"]},"checked_at":{"type":"string","format":"date-time"}}
+}

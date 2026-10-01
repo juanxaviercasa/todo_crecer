@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.com/private-promotion-package.schema.json",
+  "title": "private-promotion-package",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "package_id",
+    "candidate_ref",
+    "variant_ref",
+    "acceptance_ref",
+    "target",
+    "public_publish_allowed",
+    "package_digest",
+    "status",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "package_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "variant_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "acceptance_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target": {
+      "const": "private-staging"
+    },
+    "public_publish_allowed": {
+      "const": false
+    },
+    "package_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "status": {
+      "enum": [
+        "sealed",
+        "revoked"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

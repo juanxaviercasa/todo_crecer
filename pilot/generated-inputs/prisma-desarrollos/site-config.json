@@ -1,0 +1,65 @@
+{
+  "schema_version": "0.1.0",
+  "site_id": "prisma-desarrollos",
+  "business_id": "pilot-prisma-desarrollos",
+  "tenant_id": null,
+  "mode": "demo",
+  "status": "DRAFT",
+  "truth_snapshot": {
+    "business_truth_version": "0.1.0",
+    "content_hash": "e7e101368c9db98045a1476883e9648e1b6515fd69b8b159e08c5860975b7b0d"
+  },
+  "recipe": {
+    "recipe_id": "real-estate-desarrollador-proyectos",
+    "recipe_version": "0.1.0"
+  },
+  "brand_profile_ref": "brand-prisma-desarrollos",
+  "routing": {
+    "primary_hostname": "prisma-desarrollos.invalid",
+    "aliases": [],
+    "custom_domain_status": "none"
+  },
+  "seo": {
+    "indexing": "noindex",
+    "canonical_url": null,
+    "title": "Prisma Desarrollos — FICTICIO",
+    "meta_description": "Desarrolladora ficticia que presenta proyectos residenciales, gestión técnica y acompañamiento comercial."
+  },
+  "claim": {
+    "banner_enabled": true,
+    "claim_url": null,
+    "disclosure_text": "DEMOSTRACIÓN FICTICIA. No representa un negocio real. No se aceptan solicitudes."
+  },
+  "sections": [
+    {
+      "section_id": "hero",
+      "component": "hero",
+      "enabled": true,
+      "order": 1,
+      "data": {
+        "headline": "Prisma Desarrollos — FICTICIO"
+      }
+    },
+    {
+      "section_id": "about",
+      "component": "about",
+      "enabled": true,
+      "order": 2,
+      "data": {
+        "body": "Desarrolladora ficticia que presenta proyectos residenciales, gestión técnica y acompañamiento comercial."
+      }
+    }
+  ],
+  "assets": [],
+  "features": {
+    "whatsapp": false,
+    "phone": false,
+    "form": false,
+    "booking": false,
+    "analytics": false,
+    "seo_advanced": false,
+    "ai_agent": false,
+    "marketing_automation": false
+  },
+  "updated_at": "2026-09-29T12:00:00Z"
+}

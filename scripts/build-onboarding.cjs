@@ -1,0 +1,10 @@
+'use strict';
+const fs=require('node:fs');const path=require('node:path');const {validateSubmission,readiness,toBusinessTruth,publicSummary}=require('../packages/owner-onboarding/index.cjs');
+const ROOT=path.resolve(__dirname,'..'),source=path.join(ROOT,'onboarding/app'),destination=path.join(ROOT,'dist/onboarding');
+const submission=JSON.parse(fs.readFileSync(path.join(ROOT,'onboarding/synthetic-owner-submission.json'),'utf8'));validateSubmission(submission);
+fs.rmSync(destination,{recursive:true,force:true});fs.mkdirSync(destination,{recursive:true});
+for(const name of ['index.html','styles.css','app.js'])fs.copyFileSync(path.join(source,name),path.join(destination,name));
+fs.writeFileSync(path.join(destination,'synthetic-owner-submission.json'),JSON.stringify(submission,null,2)+'\n');
+fs.writeFileSync(path.join(destination,'generated-business-truth.json'),JSON.stringify(toBusinessTruth(submission),null,2)+'\n');
+fs.writeFileSync(path.join(destination,'onboarding-manifest.json'),JSON.stringify({version:'0.6.0',synthetic:true,summary:publicSummary(submission),readiness:readiness(submission),publication:'blocked'},null,2)+'\n');
+console.log('Onboarding local generado: contrato, interfaz y BusinessTruth sintético.');

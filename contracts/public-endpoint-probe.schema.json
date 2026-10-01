@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.local/public-endpoint-probe.schema.json",
+  "title": "public-endpoint-probe",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "probe_id",
+    "hostname",
+    "dns_resolved",
+    "https_reachable",
+    "status_code",
+    "tls",
+    "security_headers",
+    "indexing_policy",
+    "status",
+    "checked_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "probe_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "hostname": {
+      "type": "string",
+      "format": "hostname"
+    },
+    "dns_resolved": {
+      "type": "boolean"
+    },
+    "https_reachable": {
+      "type": "boolean"
+    },
+    "status_code": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 599
+    },
+    "tls": {
+      "type": "boolean"
+    },
+    "security_headers": {
+      "type": "boolean"
+    },
+    "indexing_policy": {
+      "enum": [
+        "noindex",
+        "index",
+        "unknown"
+      ]
+    },
+    "status": {
+      "enum": [
+        "passed",
+        "warning",
+        "failed"
+      ]
+    },
+    "checked_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

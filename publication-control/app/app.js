@@ -1,0 +1,3 @@
+'use strict';
+const buttons=[...document.querySelectorAll('nav button')],views=[...document.querySelectorAll('.view')];
+buttons.forEach(button=>button.addEventListener('click',()=>{buttons.forEach(item=>item.classList.toggle('active',item===button));views.forEach(view=>{const active=view.id===button.dataset.view;view.hidden=!active;view.classList.toggle('active',active)});window.scrollTo({top:0,behavior:'instant'});}));

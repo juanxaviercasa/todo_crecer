@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.local/smoke-test-suite.schema.json",
+  "title": "smoke-test-suite",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "suite_id",
+    "environment_ref",
+    "checks",
+    "minimum_passed",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "suite_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "environment_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "health",
+          "artifact_digest",
+          "security_headers",
+          "noindex",
+          "identity_allow",
+          "identity_deny",
+          "database_roundtrip",
+          "object_roundtrip",
+          "queue_roundtrip",
+          "audit_chain"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "minimum_passed": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

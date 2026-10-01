@@ -1,0 +1,49 @@
+{
+  "version": "0.5.0",
+  "synthetic": true,
+  "disclosure": "Catálogo y fotografías creados exclusivamente para esta demostración ficticia.",
+  "items": [
+    {
+      "id": "terraza-horizonte",
+      "asset_id": "asset-coastal-demo",
+      "name": "Terraza al horizonte",
+      "location": "Miraflores",
+      "operation": "Venta",
+      "price": "US$ 385,000",
+      "area": "148 m²",
+      "bedrooms": "3 dormitorios",
+      "bathrooms": "2 baños",
+      "image": "coastal.png",
+      "summary": "Un departamento de líneas serenas, luz amplia y una terraza que prolonga la sala hacia el cielo de Lima.",
+      "features": ["Terraza social", "Cocina integrada", "Estudio flexible"]
+    },
+    {
+      "id": "casa-entre-patios",
+      "asset_id": "asset-courtyard-demo",
+      "name": "Casa entre patios",
+      "location": "Barranco",
+      "operation": "Venta",
+      "price": "US$ 520,000",
+      "area": "240 m²",
+      "bedrooms": "3 dormitorios",
+      "bathrooms": "3 baños",
+      "image": "courtyard.png",
+      "summary": "Una casa pensada alrededor de dos patios: calma, privacidad y espacios que respiran durante todo el día.",
+      "features": ["Patio central", "Suite principal", "Taller independiente"]
+    },
+    {
+      "id": "ventanas-al-parque",
+      "asset_id": "asset-garden-demo",
+      "name": "Ventanas al parque",
+      "location": "San Isidro",
+      "operation": "Alquiler",
+      "price": "US$ 1,800 / mes",
+      "area": "110 m²",
+      "bedrooms": "2 dormitorios",
+      "bathrooms": "2 baños",
+      "image": "garden.png",
+      "summary": "Un hogar funcional frente al verde, con proporciones generosas y una atmósfera tranquila para vivir y trabajar.",
+      "features": ["Vista al parque", "Balcón corrido", "Área de trabajo"]
+    }
+  ]
+}

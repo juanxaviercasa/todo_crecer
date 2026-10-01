@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.1.0",
+  "business_id": "golden-business-synthetic-001",
+  "identity": {
+    "display_name": "Taller Ejemplo — FICTICIO",
+    "primary_category": "servicios-genericos"
+  },
+  "description": "Negocio ficticio creado exclusivamente para pruebas de contratos.",
+  "sources": [
+    {
+      "source_id": "fixture-author",
+      "source_type": "other",
+      "uri": "urn:todolima:fixture:golden-business",
+      "captured_at": "2026-09-29T12:00:00Z",
+      "rights_status": "approved_for_internal_use",
+      "acquisition_method": "Fixture sintético escrito para pruebas",
+      "notes": "No representa un negocio real ni datos del usuario."
+    }
+  ],
+  "field_provenance": [
+    {
+      "field_path": "/identity/display_name",
+      "source_ids": [
+        "fixture-author"
+      ],
+      "verification_status": "source_verified",
+      "confidence": 1,
+      "last_verified_at": "2026-09-29T12:00:00Z",
+      "notes": "Verificado solo contra el fixture sintético; no es verificación del mundo real."
+    },
+    {
+      "field_path": "/identity/primary_category",
+      "source_ids": [
+        "fixture-author"
+      ],
+      "verification_status": "source_verified",
+      "confidence": 1,
+      "last_verified_at": "2026-09-29T12:00:00Z",
+      "notes": "Verificado solo contra el fixture sintético; no es verificación del mundo real."
+    },
+    {
+      "field_path": "/description",
+      "source_ids": [
+        "fixture-author"
+      ],
+      "verification_status": "source_verified",
+      "confidence": 1,
+      "last_verified_at": "2026-09-29T12:00:00Z",
+      "notes": "Verificado solo contra el fixture sintético; no es verificación del mundo real."
+    }
+  ],
+  "publication_policy": {
+    "may_generate_demo": true,
+    "may_index_demo": false,
+    "reason": "Prueba local sintética, sin autorización de publicación externa.",
+    "requires_human_review": true
+  },
+  "updated_at": "2026-09-29T12:00:00Z"
+}

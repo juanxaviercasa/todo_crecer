@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.local/activation-readiness.schema.json",
+  "title": "activation-readiness",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "readiness_id",
+    "permission_probe_ref",
+    "discovery_ref",
+    "plan_ref",
+    "ci_workflow_ref",
+    "public_evidence_ref",
+    "checks",
+    "status",
+    "blockers",
+    "generated_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "readiness_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "permission_probe_ref": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "discovery_ref": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "plan_ref": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "ci_workflow_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "public_evidence_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "status"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "passed",
+              "blocked",
+              "pending"
+            ]
+          }
+        }
+      }
+    },
+    "status": {
+      "enum": [
+        "ready_for_approval",
+        "blocked",
+        "activated"
+      ]
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

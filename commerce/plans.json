@@ -1,0 +1,35 @@
+[
+  {
+    "schema_version":"0.1.0",
+    "plan_id":"plan-pilot",
+    "plan_version":"1.0.0",
+    "label":"Perfil técnico piloto",
+    "status":"draft",
+    "commercial_terms_ref":null,
+    "capabilities":[
+      {"key":"site.preview","mode":"enabled","limit":null},
+      {"key":"lead.capture","mode":"limited","limit":50},
+      {"key":"content.change.request","mode":"enabled","limit":null},
+      {"key":"asset.upload","mode":"limited","limit":25}
+    ],
+    "created_at":"2026-09-30T00:00:00Z"
+  },
+  {
+    "schema_version":"0.1.0",
+    "plan_id":"plan-growth-draft",
+    "plan_version":"1.0.0",
+    "label":"Perfil técnico crecimiento",
+    "status":"draft",
+    "commercial_terms_ref":null,
+    "capabilities":[
+      {"key":"site.preview","mode":"enabled","limit":null},
+      {"key":"site.publish","mode":"enabled","limit":null},
+      {"key":"lead.capture","mode":"limited","limit":500},
+      {"key":"custom.domain","mode":"enabled","limit":null},
+      {"key":"analytics.basic","mode":"enabled","limit":null},
+      {"key":"content.change.request","mode":"enabled","limit":null},
+      {"key":"asset.upload","mode":"limited","limit":100}
+    ],
+    "created_at":"2026-09-30T00:00:00Z"
+  }
+]

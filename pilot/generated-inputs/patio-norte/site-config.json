@@ -1,0 +1,65 @@
+{
+  "schema_version": "0.1.0",
+  "site_id": "patio-norte",
+  "business_id": "pilot-patio-norte",
+  "tenant_id": null,
+  "mode": "demo",
+  "status": "DRAFT",
+  "truth_snapshot": {
+    "business_truth_version": "0.1.0",
+    "content_hash": "4850eaa694d3aa47de2f63893edade659846bbc77eb87093bbdf24ddeace2f1a"
+  },
+  "recipe": {
+    "recipe_id": "real-estate-proyectos-lotes",
+    "recipe_version": "0.1.0"
+  },
+  "brand_profile_ref": "brand-patio-norte",
+  "routing": {
+    "primary_hostname": "patio-norte.invalid",
+    "aliases": [],
+    "custom_domain_status": "none"
+  },
+  "seo": {
+    "indexing": "noindex",
+    "canonical_url": null,
+    "title": "Patio Norte — FICTICIO",
+    "meta_description": "Empresa ficticia que presenta proyectos de lotes y vivienda con información clara de ubicación y etapas."
+  },
+  "claim": {
+    "banner_enabled": true,
+    "claim_url": null,
+    "disclosure_text": "DEMOSTRACIÓN FICTICIA. No representa un negocio real. No se aceptan solicitudes."
+  },
+  "sections": [
+    {
+      "section_id": "hero",
+      "component": "hero",
+      "enabled": true,
+      "order": 1,
+      "data": {
+        "headline": "Patio Norte — FICTICIO"
+      }
+    },
+    {
+      "section_id": "about",
+      "component": "about",
+      "enabled": true,
+      "order": 2,
+      "data": {
+        "body": "Empresa ficticia que presenta proyectos de lotes y vivienda con información clara de ubicación y etapas."
+      }
+    }
+  ],
+  "assets": [],
+  "features": {
+    "whatsapp": false,
+    "phone": false,
+    "form": false,
+    "booking": false,
+    "analytics": false,
+    "seo_advanced": false,
+    "ai_agent": false,
+    "marketing_automation": false
+  },
+  "updated_at": "2026-09-29T12:00:00Z"
+}

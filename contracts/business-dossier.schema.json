@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.com/business-dossier.schema.json",
+  "title": "business-dossier",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "dossier_id",
+    "candidate_ref",
+    "fact_scope",
+    "facts",
+    "confirmation_ref",
+    "status",
+    "dossier_digest",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "dossier_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "fact_scope": {
+      "enum": [
+        "public_candidate",
+        "owner_confirmed"
+      ]
+    },
+    "facts": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "field",
+          "value",
+          "evidence",
+          "verified"
+        ],
+        "properties": {
+          "field": {
+            "type": "string",
+            "minLength": 1
+          },
+          "value": {
+            "type": [
+              "string",
+              "number",
+              "boolean",
+              "null"
+            ]
+          },
+          "evidence": {
+            "enum": [
+              "public_listing",
+              "owner_confirmation",
+              "placeholder"
+            ]
+          },
+          "verified": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "confirmation_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "enum": [
+        "candidate_only",
+        "confirmed"
+      ]
+    },
+    "dossier_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

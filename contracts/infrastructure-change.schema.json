@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.local/infrastructure-change.schema.json",
+  "title": "infrastructure-change",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "change_id",
+    "plan_ref",
+    "resource_ref",
+    "action",
+    "status",
+    "provider_ref",
+    "external_change",
+    "started_at",
+    "finished_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "change_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "plan_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "resource_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "action": {
+      "enum": [
+        "create",
+        "update",
+        "verify",
+        "delete"
+      ]
+    },
+    "status": {
+      "enum": [
+        "simulated",
+        "applied",
+        "verified",
+        "rolled_back",
+        "failed",
+        "skipped"
+      ]
+    },
+    "provider_ref": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 240
+    },
+    "external_change": {
+      "type": "boolean"
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "finished_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

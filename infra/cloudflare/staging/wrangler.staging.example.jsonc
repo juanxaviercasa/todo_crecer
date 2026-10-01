@@ -1,0 +1,24 @@
+{
+  // REVIEW TEMPLATE ONLY. Do not deploy without replacing every placeholder,
+  // validating least-privilege access and approving the exact plan digest.
+  "$schema": "../../../node_modules/wrangler/config-schema.json",
+  "name": "hazlocrecer-control-plane",
+  "main": "../../../workers/site-router/index.js",
+  "compatibility_date": "2026-09-30",
+  "workers_dev": false,
+  "env": {
+    "staging": {
+      "name": "hazlocrecer-control-plane-staging",
+      "routes": [{ "pattern": "staging.guialima.online/*", "zone_name": "guialima.online" }],
+      "d1_databases": [{ "binding": "CONTROL_DB", "database_name": "hc-staging-control", "database_id": "<D1_DATABASE_ID>" }],
+      "r2_buckets": [{ "binding": "SITE_ARTIFACTS", "bucket_name": "<R2_BUCKET_NAME>" }],
+      "queues": {
+        "producers": [{ "binding": "CONTROL_EVENTS", "queue": "<QUEUE_NAME>" }],
+        "consumers": [{ "queue": "<QUEUE_NAME>", "max_batch_size": 10, "max_batch_timeout": 5 }]
+      },
+      "services": [{ "binding": "AUTH_SERVICE", "service": "hazlocrecer-auth-staging", "environment": "staging" }],
+      "secrets_store_secrets": [{ "binding": "AUDIT_SIGNING_KEY", "store_id": "<SECRETS_STORE_ID>", "secret_name": "<AUDIT_SIGNING_KEY_NAME>" }],
+      "observability": { "enabled": true }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.local/security-rehearsal.schema.json",
+  "title": "security-rehearsal",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "rehearsal_id",
+    "scenario",
+    "checks_total",
+    "checks_passed",
+    "checks_failed",
+    "external_changes",
+    "status",
+    "started_at",
+    "completed_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "rehearsal_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "scenario": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 160
+    },
+    "checks_total": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "checks_passed": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "checks_failed": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "external_changes": {
+      "const": false
+    },
+    "status": {
+      "enum": [
+        "passed",
+        "failed"
+      ]
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "completed_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

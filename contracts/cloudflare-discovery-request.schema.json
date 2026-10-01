@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.local/cloudflare-discovery-request.schema.json",
+  "title": "cloudflare-discovery-request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "request_id",
+    "session_ref",
+    "resource_kinds",
+    "read_only",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "request_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "session_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "resource_kinds": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "workers",
+          "d1",
+          "r2",
+          "queues",
+          "dns",
+          "secrets_store"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "read_only": {
+      "const": true
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

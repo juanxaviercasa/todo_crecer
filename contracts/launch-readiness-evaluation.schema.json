@@ -1,0 +1,25 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://schemas.hazlocrecer.com/launch-readiness-evaluation.schema.json",
+  "title":"LaunchReadinessEvaluation",
+  "type":"object","additionalProperties":false,
+  "required":["schema_version","evaluation_id","dossier_id","dossier_hash","tenant_id","status","checks","blockers","review_refs","acceptance_ref","evaluated_by","evaluated_at"],
+  "properties":{
+    "schema_version":{"const":"0.1.0"},
+    "evaluation_id":{"type":"string","pattern":"^pilote-[a-f0-9]{24}$"},
+    "dossier_id":{"type":"string","pattern":"^pilotd-[a-f0-9]{24}$"},
+    "dossier_hash":{"type":"string","pattern":"^[a-f0-9]{64}$"},
+    "tenant_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},
+    "status":{"enum":["blocked","ready_for_rehearsal"]},
+    "checks":{"type":"array","minItems":7,"maxItems":30,"items":{"type":"object","additionalProperties":false,"required":["key","status","evidence_ref"],"properties":{"key":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{1,79}$"},"status":{"enum":["passed","failed"]},"evidence_ref":{"type":["string","null"],"maxLength":240}}}},
+    "blockers":{"type":"array","maxItems":30,"uniqueItems":true,"items":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"}},
+    "review_refs":{"type":"array","maxItems":4,"uniqueItems":true,"items":{"type":"string","pattern":"^pilotr-[a-f0-9]{24}$"}},
+    "acceptance_ref":{"type":["string","null"],"pattern":"^pilota-[a-f0-9]{24}$"},
+    "evaluated_by":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},
+    "evaluated_at":{"type":"string","format":"date-time"}
+  },
+  "allOf":[
+    {"if":{"properties":{"status":{"const":"ready_for_rehearsal"}}},"then":{"properties":{"blockers":{"maxItems":0},"review_refs":{"minItems":4},"acceptance_ref":{"type":"string"},"checks":{"items":{"properties":{"status":{"const":"passed"}}}}}}},
+    {"if":{"properties":{"status":{"const":"blocked"}}},"then":{"properties":{"blockers":{"minItems":1}}}}
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.local/cloudflare-resource-record.schema.json",
+  "title": "cloudflare-resource-record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "resource_ref",
+    "kind",
+    "logical_name",
+    "provider_id_fingerprint",
+    "configuration_digest",
+    "status",
+    "discovered_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "resource_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "kind": {
+      "enum": [
+        "workers",
+        "d1",
+        "r2",
+        "queues",
+        "dns",
+        "secrets_store"
+      ]
+    },
+    "logical_name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "provider_id_fingerprint": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "configuration_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "status": {
+      "enum": [
+        "active",
+        "inactive",
+        "unknown"
+      ]
+    },
+    "discovered_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

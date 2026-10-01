@@ -1,0 +1,19 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://schemas.hazlocrecer.com/pilot-acceptance-audit-event.schema.json",
+  "title":"PilotAcceptanceAuditEvent",
+  "type":"object","additionalProperties":false,
+  "required":["schema_version","event_id","tenant_id","dossier_id","type","subject_ref","actor_id","occurred_at","previous_hash","event_hash"],
+  "properties":{
+    "schema_version":{"const":"0.1.0"},
+    "event_id":{"type":"string","pattern":"^pilotev-[a-f0-9]{24}$"},
+    "tenant_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},
+    "dossier_id":{"type":"string","pattern":"^pilotd-[a-f0-9]{24}$"},
+    "type":{"enum":["dossier.created","requirement.updated","dossier.submitted","review.recorded","owner.accepted","readiness.evaluated","rehearsal.completed","package.sealed","package.revoked"]},
+    "subject_ref":{"type":"string","minLength":3,"maxLength":160},
+    "actor_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},
+    "occurred_at":{"type":"string","format":"date-time"},
+    "previous_hash":{"type":["string","null"],"pattern":"^[a-f0-9]{64}$"},
+    "event_hash":{"type":"string","pattern":"^[a-f0-9]{64}$"}
+  }
+}

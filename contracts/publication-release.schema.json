@@ -1,0 +1,14 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://schemas.hazlocrecer.com/publication-release.schema.json",
+  "title":"PublicationRelease","type":"object","additionalProperties":false,
+  "required":["schema_version","release_id","tenant_id","site_id","environment","build_id","route_id","sequence","reason","rollback_of","previous_release_id","status","created_by","created_at"],
+  "properties":{
+    "schema_version":{"const":"0.1.0"},"release_id":{"type":"string","pattern":"^release-[a-f0-9]{24}$"},
+    "tenant_id":{"type":"string"},"site_id":{"type":"string"},"environment":{"enum":["preview","production"]},
+    "build_id":{"type":"string"},"route_id":{"type":"string"},"sequence":{"type":"integer","minimum":1},
+    "reason":{"type":"string","minLength":8,"maxLength":500},"rollback_of":{"type":["string","null"]},
+    "previous_release_id":{"type":["string","null"]},"status":{"enum":["active","superseded","failed"]},
+    "created_by":{"type":"string","minLength":3,"maxLength":128},"created_at":{"type":"string","format":"date-time"}
+  }
+}

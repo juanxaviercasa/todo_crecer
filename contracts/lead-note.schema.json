@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://schemas.hazlocrecer.com/lead-note.schema.json","title":"LeadNote","type":"object","additionalProperties":false,
+  "required":["schema_version","note_id","case_id","tenant_id","author_id","visibility","body","created_at"],
+  "properties":{"schema_version":{"const":"0.1.0"},"note_id":{"type":"string","pattern":"^note-[a-f0-9]{24}$"},"case_id":{"type":"string","pattern":"^case-[a-f0-9]{24}$"},"tenant_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},"author_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},"visibility":{"const":"internal"},"body":{"type":"string","minLength":1,"maxLength":2000},"created_at":{"type":"string","format":"date-time"}}
+}

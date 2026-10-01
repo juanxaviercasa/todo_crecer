@@ -1,0 +1,81 @@
+{
+  "schema_version": "0.1.0",
+  "brand_profile_id": "brand-brava-residencial",
+  "business_id": "pilot-brava-residencial",
+  "truth_snapshot": {
+    "business_truth_version": "0.1.0",
+    "content_hash": "991e256d2ab1995cf3610dddfc7db97716c2002d6b2b74daea1428c890da3329"
+  },
+  "recipe": {
+    "recipe_id": "real-estate-catalogo-amplio",
+    "recipe_version": "0.1.0",
+    "content_hash": "b0c78c95460c45e485e1e59dba93f8a609c52d102435481b0014aaa0b4858eaf"
+  },
+  "status": "proposed",
+  "personality": [
+    "clara",
+    "cercana"
+  ],
+  "visual_direction": "catalogo-amplio",
+  "primary_audience": "Personas que necesitan comparar inmuebles por zona y tipo de operación.",
+  "primary_goal": "inform",
+  "color_tokens": {
+    "primary": "#123c48",
+    "background": "#f7f4ed",
+    "text": "#183138",
+    "accent": "#bd6445"
+  },
+  "type_scale": {
+    "font_family": "system-ui",
+    "body_px": 16,
+    "heading_px": 36
+  },
+  "layout_family": "single-column",
+  "tone_of_voice": [
+    "informativo",
+    "sin superlativos"
+  ],
+  "cta_style": "text",
+  "image_policy": {
+    "allow_representational": false,
+    "require_disclosure": true,
+    "allow_unverified_business_assets": false
+  },
+  "content": {
+    "facts": [
+      {
+        "text": "Brava Residencial — FICTICIO",
+        "evidence": [
+          {
+            "field_path": "/identity/display_name",
+            "source_ids": [
+              "fixture-brava-residencial"
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Agencia inmobiliaria ficticia con un catálogo residencial para comprar y alquilar en distintos distritos de Lima.",
+        "evidence": [
+          {
+            "field_path": "/description",
+            "source_ids": [
+              "fixture-brava-residencial"
+            ]
+          }
+        ]
+      }
+    ],
+    "editorial_framing": [
+      "Consulta la información de esta demostración."
+    ],
+    "suggestions": [
+      {
+        "text": "Solicitar al propietario una identidad visual antes de producción.",
+        "publish": false
+      }
+    ]
+  },
+  "design_origin": "generated_proposal",
+  "created_at": "2026-09-30T06:00:00Z"
+}

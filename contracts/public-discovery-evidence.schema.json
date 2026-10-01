@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.local/public-discovery-evidence.schema.json",
+  "title": "public-discovery-evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "evidence_id",
+    "probes",
+    "evidence_digest",
+    "network_read_only",
+    "external_changes",
+    "generated_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "evidence_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "probes": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schemas.hazlocrecer.local/public-endpoint-probe.schema.json"
+      },
+      "minItems": 1
+    },
+    "evidence_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "network_read_only": {
+      "const": true
+    },
+    "external_changes": {
+      "const": false
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

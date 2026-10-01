@@ -1,0 +1,9 @@
+[
+  {"schema_version":"0.1.0","policy_id":"guardrail-horizonte-synthetic","tenant_id":"tenant-horizonte","status":"active","period":"calendar_month","limits":[
+    {"resource":"requests","warning_at_percent":80,"hard_limit":100000,"enforcement":"throttle"},
+    {"resource":"storage_bytes","warning_at_percent":75,"hard_limit":1073741824,"enforcement":"block_new"},
+    {"resource":"queue_messages","warning_at_percent":80,"hard_limit":10000,"enforcement":"block_new"},
+    {"resource":"asset_bytes","warning_at_percent":75,"hard_limit":524288000,"enforcement":"block_new"},
+    {"resource":"custom_hostnames","warning_at_percent":80,"hard_limit":5,"enforcement":"observe"}
+  ],"created_at":"2026-09-30T23:00:00Z"}
+]

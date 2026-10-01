@@ -1,0 +1,38 @@
+name: first-staging-launch-example
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  deployments: write
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm ci --ignore-scripts
+      - run: npm run discover:cloudflare
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_READ_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+  reconcile-and-plan:
+    needs: discover
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Generate reconciliation, budget and exact plan artifacts"
+  apply:
+    if: ${{ false }} # Enable only after approving the exact digest in the staging environment.
+    needs: reconcile-and-plan
+    environment: staging
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Apply remains intentionally disabled in this template"
+  smoke-and-close:
+    if: ${{ false }}
+    needs: apply
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Run smoke, rollback if required, revoke credentials and seal evidence"

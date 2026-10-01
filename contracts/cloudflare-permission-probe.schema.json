@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.local/cloudflare-permission-probe.schema.json",
+  "title": "cloudflare-permission-probe",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "probe_id",
+    "session_ref",
+    "checks",
+    "required_granted",
+    "status",
+    "generated_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "probe_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "session_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "capability",
+          "endpoint",
+          "result",
+          "http_status"
+        ],
+        "properties": {
+          "capability": {
+            "type": "string"
+          },
+          "endpoint": {
+            "type": "string"
+          },
+          "result": {
+            "enum": [
+              "granted",
+              "denied",
+              "unavailable"
+            ]
+          },
+          "http_status": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 599
+          }
+        }
+      }
+    },
+    "required_granted": {
+      "type": "boolean"
+    },
+    "status": {
+      "enum": [
+        "passed",
+        "blocked"
+      ]
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

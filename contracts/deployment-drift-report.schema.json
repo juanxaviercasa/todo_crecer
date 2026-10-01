@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://schemas.hazlocrecer.com/deployment-drift-report.schema.json","title":"DeploymentDriftReport","type":"object","additionalProperties":false,
+  "required":["schema_version","report_id","plan_id","status","differences","secrets_compared","generated_at"],
+  "properties":{"schema_version":{"const":"0.1.0"},"report_id":{"type":"string","pattern":"^drift-[a-f0-9]{24}$"},"plan_id":{"type":"string"},"status":{"enum":["in_sync","drifted","unavailable"]},"differences":{"type":"array","maxItems":100,"items":{"type":"object","additionalProperties":false,"required":["resource","field","expected","observed","severity"],"properties":{"resource":{"type":"string"},"field":{"type":"string"},"expected":{"type":["string","number","boolean","null"]},"observed":{"type":["string","number","boolean","null"]},"severity":{"enum":["info","warning","critical"]}}}},"secrets_compared":{"const":false},"generated_at":{"type":"string","format":"date-time"}}
+}

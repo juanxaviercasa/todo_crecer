@@ -1,0 +1,6 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://schemas.hazlocrecer.com/change-freeze-record.schema.json","title":"ChangeFreezeRecord","type":"object","additionalProperties":false,
+  "required":["schema_version","freeze_id","plan_id","plan_digest","tenant_id","baseline_ref","allowed_changes","status","created_by","created_at","released_at"],
+  "properties":{"schema_version":{"const":"0.1.0"},"freeze_id":{"type":"string","pattern":"^golivef-[a-f0-9]{24}$"},"plan_id":{"type":"string","pattern":"^golivep-[a-f0-9]{24}$"},"plan_digest":{"type":"string","pattern":"^[a-f0-9]{64}$"},"tenant_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},"baseline_ref":{"type":"string","minLength":3,"maxLength":160},"allowed_changes":{"type":"array","minItems":1,"maxItems":2,"uniqueItems":true,"items":{"enum":["incident_mitigation","rollback"]}},"status":{"enum":["active","released"]},"created_by":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},"created_at":{"type":"string","format":"date-time"},"released_at":{"type":["string","null"],"format":"date-time"}},
+  "allOf":[{"if":{"properties":{"status":{"const":"active"}}},"then":{"properties":{"released_at":{"type":"null"}}}},{"if":{"properties":{"status":{"const":"released"}}},"then":{"properties":{"released_at":{"type":"string"}}}}]
+}

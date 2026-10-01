@@ -1,0 +1,11 @@
+{
+  "schema_version":"0.1.0","submission_id":"onb-linea-urbana-demo","business_id":"linea-urbana-demo","status":"draft",
+  "identity":{"display_name":"Línea Urbana — FICTICIO","legal_name":null,"primary_category":"desarrolladores-inmobiliarios","representative_role":"owner"},
+  "business_profile":{"description":"Desarrolladora ficticia que organiza información inicial sobre proyectos residenciales y sus etapas.","ideal_customer":"Personas interesadas en entender un proyecto antes de solicitar información comercial.","specialty":"Presentación ordenada de proyectos residenciales y sus etapas.","primary_action":"visit_project"},
+  "service_areas":["Lima Metropolitana"],
+  "services":[{"service_id":"proyectos-residenciales","name":"Proyectos residenciales","description":"Información ficticia sobre conceptos, etapas y recorridos de proyecto."}],
+  "contacts":{"public_phone":null,"public_email":null,"preferred_channel":"none"},
+  "assets":[],
+  "declarations":{"authorized_representative":false,"truthfulness_confirmed":false,"contact_permission":false,"asset_rights_confirmed":false},
+  "owner_confirmed_at":null,"created_at":"2026-09-30T13:20:00Z","updated_at":"2026-09-30T14:20:00Z"
+}

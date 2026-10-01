@@ -1,0 +1,404 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.com/site-snapshot.schema.json",
+  "title": "SiteSnapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "snapshot_id",
+    "site_id",
+    "business_id",
+    "site_config_hash",
+    "truth_snapshot",
+    "brand_profile",
+    "recipe",
+    "mode",
+    "indexing",
+    "build",
+    "entrypoint",
+    "artifacts",
+    "qa",
+    "publication"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "snapshot_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "site_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "business_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "site_config_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "truth_snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "business_truth_version",
+        "content_hash"
+      ],
+      "properties": {
+        "business_truth_version": {
+          "type": "string",
+          "const": "0.1.0"
+        },
+        "content_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "brand_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "brand_profile_id",
+        "content_hash"
+      ],
+      "properties": {
+        "brand_profile_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "content_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "recipe": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recipe_id",
+        "recipe_version",
+        "content_hash"
+      ],
+      "properties": {
+        "recipe_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "recipe_version": {
+          "type": "string",
+          "const": "0.1.0"
+        },
+        "content_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "demo",
+        "production"
+      ]
+    },
+    "indexing": {
+      "type": "string",
+      "enum": [
+        "noindex",
+        "index"
+      ]
+    },
+    "build": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "build_id",
+        "engine_version",
+        "created_at"
+      ],
+      "properties": {
+        "build_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "engine_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "entrypoint": {
+      "type": "string",
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[A-Za-z0-9._/-]+$",
+      "maxLength": 300
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "media_type",
+          "sha256",
+          "bytes"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[A-Za-z0-9._/-]+$",
+            "maxLength": 300
+          },
+          "media_type": {
+            "type": "string",
+            "enum": [
+              "text/html",
+              "text/css",
+              "application/javascript",
+              "application/json",
+              "image/svg+xml",
+              "image/png",
+              "image/jpeg",
+              "image/webp"
+            ]
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      },
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+    "qa": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "report_ref"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "not_run",
+            "passed",
+            "failed"
+          ]
+        },
+        "report_ref": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 300
+        }
+      }
+    },
+    "publication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "url"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "not_published",
+            "published"
+          ]
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri",
+          "pattern": "^https://"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "demo"
+          }
+        },
+        "required": [
+          "mode"
+        ]
+      },
+      "then": {
+        "properties": {
+          "indexing": {
+            "const": "noindex"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "publication": {
+            "properties": {
+              "status": {
+                "const": "published"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          }
+        },
+        "required": [
+          "publication"
+        ]
+      },
+      "then": {
+        "properties": {
+          "qa": {
+            "properties": {
+              "status": {
+                "const": "passed"
+              },
+              "report_ref": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "publication": {
+            "properties": {
+              "url": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "publication": {
+            "properties": {
+              "status": {
+                "const": "not_published"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          }
+        },
+        "required": [
+          "publication"
+        ]
+      },
+      "then": {
+        "properties": {
+          "publication": {
+            "properties": {
+              "url": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "qa": {
+            "properties": {
+              "status": {
+                "const": "not_run"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          }
+        },
+        "required": [
+          "qa"
+        ]
+      },
+      "then": {
+        "properties": {
+          "qa": {
+            "properties": {
+              "report_ref": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "qa": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "passed",
+                  "failed"
+                ]
+              }
+            },
+            "required": [
+              "status"
+            ]
+          }
+        },
+        "required": [
+          "qa"
+        ]
+      },
+      "then": {
+        "properties": {
+          "qa": {
+            "properties": {
+              "report_ref": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

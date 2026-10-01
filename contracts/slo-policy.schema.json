@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://schemas.hazlocrecer.com/slo-policy.schema.json","title":"SloPolicy","type":"object","additionalProperties":false,
+  "required":["schema_version","slo_id","service","environment","status","window_minutes","availability_target","latency_percentile","latency_threshold_ms","minimum_events","created_at"],
+  "properties":{"schema_version":{"const":"0.1.0"},"slo_id":{"type":"string","pattern":"^slo-[a-z0-9-]{3,80}$"},"service":{"enum":["site_router","publication","lead_inbox","owner_portal","asset_pipeline","deployment"]},"environment":{"enum":["local","staging","production"]},"status":{"enum":["draft","active","retired"]},"window_minutes":{"type":"integer","minimum":5,"maximum":43200},"availability_target":{"type":"number","minimum":90,"maximum":100},"latency_percentile":{"const":95},"latency_threshold_ms":{"type":"integer","minimum":50,"maximum":30000},"minimum_events":{"type":"integer","minimum":1,"maximum":1000000},"created_at":{"type":"string","format":"date-time"}}
+}

@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://schemas.hazlocrecer.com/owner-preferences.schema.json","title":"OwnerPreferences","type":"object","additionalProperties":false,
+  "required":["schema_version","preference_id","tenant_id","principal_id","locale","timezone","notifications","digest","version","updated_at"],
+  "properties":{"schema_version":{"const":"0.1.0"},"preference_id":{"type":"string","pattern":"^pref-[a-f0-9]{24}$"},"tenant_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},"principal_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},"locale":{"enum":["es-PE","es-ES","en-US"]},"timezone":{"type":"string","pattern":"^[A-Za-z_]+(?:/[A-Za-z_+-]+)+$","maxLength":80},"notifications":{"type":"object","additionalProperties":false,"required":["new_lead","sla_breach","privacy_updates"],"properties":{"new_lead":{"type":"boolean"},"sla_breach":{"type":"boolean"},"privacy_updates":{"type":"boolean"}}},"digest":{"enum":["immediate","daily","off"]},"version":{"type":"integer","minimum":1},"updated_at":{"type":"string","format":"date-time"}}
+}

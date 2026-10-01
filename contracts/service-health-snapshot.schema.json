@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://schemas.hazlocrecer.com/service-health-snapshot.schema.json","title":"ServiceHealthSnapshot","type":"object","additionalProperties":false,
+  "required":["schema_version","snapshot_id","tenant_id","status","services","open_alerts","open_incidents","generated_at"],
+  "properties":{"schema_version":{"const":"0.1.0"},"snapshot_id":{"type":"string","pattern":"^health-[a-f0-9]{24}$"},"tenant_id":{"type":"string"},"status":{"enum":["operational","degraded","incident"]},"services":{"type":"array","minItems":1,"items":{"type":"object","additionalProperties":false,"required":["service","status","slo_status","release_ref"],"properties":{"service":{"type":"string"},"status":{"enum":["operational","degraded","failed"]},"slo_status":{"enum":["not_evaluated","insufficient_data","healthy","at_risk","breached"]},"release_ref":{"type":["string","null"]}}}},"open_alerts":{"type":"integer","minimum":0},"open_incidents":{"type":"integer","minimum":0},"generated_at":{"type":"string","format":"date-time"}}
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.1.0",
+  "business_id": "pilot-brava-residencial",
+  "identity": {
+    "display_name": "Brava Residencial — FICTICIO",
+    "primary_category": "agentes-inmobiliarios"
+  },
+  "description": "Agencia inmobiliaria ficticia con un catálogo residencial para comprar y alquilar en distintos distritos de Lima.",
+  "sources": [
+    {
+      "source_id": "fixture-brava-residencial",
+      "source_type": "other",
+      "uri": "urn:todolima:fixture:brava-residencial",
+      "captured_at": "2026-09-29T12:00:00Z",
+      "rights_status": "approved_for_internal_use",
+      "acquisition_method": "Fixture sintético escrito para pruebas",
+      "notes": "Perfil sintético derivado de requisitos de experiencia; no representa al candidato real."
+    }
+  ],
+  "field_provenance": [
+    {
+      "field_path": "/identity/display_name",
+      "source_ids": [
+        "fixture-brava-residencial"
+      ],
+      "verification_status": "source_verified",
+      "confidence": 1,
+      "last_verified_at": "2026-09-29T12:00:00Z",
+      "notes": "Verificado únicamente contra el fixture sintético del piloto."
+    },
+    {
+      "field_path": "/identity/primary_category",
+      "source_ids": [
+        "fixture-brava-residencial"
+      ],
+      "verification_status": "source_verified",
+      "confidence": 1,
+      "last_verified_at": "2026-09-29T12:00:00Z",
+      "notes": "Verificado únicamente contra el fixture sintético del piloto."
+    },
+    {
+      "field_path": "/description",
+      "source_ids": [
+        "fixture-brava-residencial"
+      ],
+      "verification_status": "source_verified",
+      "confidence": 1,
+      "last_verified_at": "2026-09-29T12:00:00Z",
+      "notes": "Verificado únicamente contra el fixture sintético del piloto."
+    }
+  ],
+  "publication_policy": {
+    "may_generate_demo": true,
+    "may_index_demo": false,
+    "reason": "Prueba local sintética, sin autorización de publicación externa.",
+    "requires_human_review": true
+  },
+  "updated_at": "2026-09-30T06:00:00Z"
+}

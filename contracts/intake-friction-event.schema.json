@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/intake-friction-event.schema.json",
+  "title": "intake-friction-event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "event_id",
+    "case_ref",
+    "kind",
+    "severity",
+    "resolution",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "event_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "case_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "kind": {
+      "enum": [
+        "silence",
+        "question",
+        "missing_truth",
+        "missing_asset",
+        "rights_unclear",
+        "decline",
+        "token_expired"
+      ]
+    },
+    "severity": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "resolution": {
+      "enum": [
+        "auto_wait",
+        "human_review",
+        "request_changes",
+        "close_case",
+        "resolved"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

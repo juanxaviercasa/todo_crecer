@@ -1,0 +1,339 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.com/brand-profile.schema.json",
+  "title": "BrandProfile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "brand_profile_id",
+    "business_id",
+    "truth_snapshot",
+    "recipe",
+    "status",
+    "personality",
+    "visual_direction",
+    "primary_audience",
+    "primary_goal",
+    "color_tokens",
+    "type_scale",
+    "layout_family",
+    "tone_of_voice",
+    "cta_style",
+    "image_policy",
+    "content",
+    "design_origin",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "brand_profile_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "business_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "truth_snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "business_truth_version",
+        "content_hash"
+      ],
+      "properties": {
+        "business_truth_version": {
+          "type": "string",
+          "const": "0.1.0"
+        },
+        "content_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "recipe": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recipe_id",
+        "recipe_version",
+        "content_hash"
+      ],
+      "properties": {
+        "recipe_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "recipe_version": {
+          "type": "string",
+          "const": "0.1.0"
+        },
+        "content_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "proposed",
+        "approved",
+        "rejected"
+      ]
+    },
+    "personality": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 80
+      },
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+    "visual_direction": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "primary_audience": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "primary_goal": {
+      "type": "string",
+      "enum": [
+        "inform",
+        "whatsapp",
+        "phone",
+        "form",
+        "booking",
+        "quote",
+        "visit",
+        "menu"
+      ]
+    },
+    "color_tokens": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary",
+        "background",
+        "text",
+        "accent"
+      ],
+      "properties": {
+        "primary": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "background": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "text": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "accent": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        }
+      }
+    },
+    "type_scale": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "font_family",
+        "body_px",
+        "heading_px"
+      ],
+      "properties": {
+        "font_family": {
+          "type": "string",
+          "enum": [
+            "system-ui",
+            "serif",
+            "sans-serif"
+          ]
+        },
+        "body_px": {
+          "type": "integer",
+          "minimum": 14,
+          "maximum": 24
+        },
+        "heading_px": {
+          "type": "integer",
+          "minimum": 24,
+          "maximum": 80
+        }
+      }
+    },
+    "layout_family": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "tone_of_voice": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 80
+      },
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+    "cta_style": {
+      "type": "string",
+      "enum": [
+        "solid",
+        "outline",
+        "text"
+      ]
+    },
+    "image_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "allow_representational",
+        "require_disclosure",
+        "allow_unverified_business_assets"
+      ],
+      "properties": {
+        "allow_representational": {
+          "type": "boolean"
+        },
+        "require_disclosure": {
+          "const": true
+        },
+        "allow_unverified_business_assets": {
+          "const": false
+        }
+      }
+    },
+    "content": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "facts",
+        "editorial_framing",
+        "suggestions"
+      ],
+      "properties": {
+        "facts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "text",
+              "evidence"
+            ],
+            "properties": {
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1000
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "field_path",
+                    "source_ids"
+                  ],
+                  "properties": {
+                    "field_path": {
+                      "type": "string",
+                      "format": "json-pointer",
+                      "pattern": "^/"
+                    },
+                    "source_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 128
+                      },
+                      "minItems": 1,
+                      "maxItems": 100,
+                      "uniqueItems": true
+                    }
+                  }
+                },
+                "minItems": 1,
+                "maxItems": 100,
+                "uniqueItems": true
+              }
+            }
+          },
+          "minItems": 0,
+          "maxItems": 100,
+          "uniqueItems": true
+        },
+        "editorial_framing": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          },
+          "minItems": 0,
+          "maxItems": 100,
+          "uniqueItems": true
+        },
+        "suggestions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "text",
+              "publish"
+            ],
+            "properties": {
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1000
+              },
+              "publish": {
+                "const": false
+              }
+            }
+          },
+          "minItems": 0,
+          "maxItems": 100,
+          "uniqueItems": true
+        }
+      }
+    },
+    "design_origin": {
+      "type": "string",
+      "enum": [
+        "generated_proposal",
+        "owner_supplied"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://schemas.hazlocrecer.com/portal-session.schema.json","title":"PortalSession","type":"object","additionalProperties":false,
+  "required":["schema_version","session_id","principal_id","tenant_id","role","assurance","issued_at","expires_at","idle_expires_at","last_seen_at","reauthenticated_at","csrf_sha256","status"],
+  "properties":{"schema_version":{"const":"0.1.0"},"session_id":{"type":"string","pattern":"^session-[a-f0-9]{24}$"},"principal_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},"tenant_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},"role":{"enum":["owner","operator","admin"]},"assurance":{"enum":["aal1","aal2"]},"issued_at":{"type":"string","format":"date-time"},"expires_at":{"type":"string","format":"date-time"},"idle_expires_at":{"type":"string","format":"date-time"},"last_seen_at":{"type":"string","format":"date-time"},"reauthenticated_at":{"type":["string","null"],"format":"date-time"},"csrf_sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"},"status":{"enum":["active","revoked","expired"]}}
+}

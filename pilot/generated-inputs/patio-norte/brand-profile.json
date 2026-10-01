@@ -1,0 +1,81 @@
+{
+  "schema_version": "0.1.0",
+  "brand_profile_id": "brand-patio-norte",
+  "business_id": "pilot-patio-norte",
+  "truth_snapshot": {
+    "business_truth_version": "0.1.0",
+    "content_hash": "4850eaa694d3aa47de2f63893edade659846bbc77eb87093bbdf24ddeace2f1a"
+  },
+  "recipe": {
+    "recipe_id": "real-estate-proyectos-lotes",
+    "recipe_version": "0.1.0",
+    "content_hash": "8bb4a9455e20e67142f58002e19862587f0089abe983946c5e4e2aa48a4b0d06"
+  },
+  "status": "proposed",
+  "personality": [
+    "clara",
+    "cercana"
+  ],
+  "visual_direction": "proyectos-lotes",
+  "primary_audience": "Personas que comparan proyectos, ubicación y formas de acceso.",
+  "primary_goal": "inform",
+  "color_tokens": {
+    "primary": "#33412e",
+    "background": "#f5f1df",
+    "text": "#293025",
+    "accent": "#a66c32"
+  },
+  "type_scale": {
+    "font_family": "system-ui",
+    "body_px": 16,
+    "heading_px": 36
+  },
+  "layout_family": "single-column",
+  "tone_of_voice": [
+    "informativo",
+    "sin superlativos"
+  ],
+  "cta_style": "text",
+  "image_policy": {
+    "allow_representational": false,
+    "require_disclosure": true,
+    "allow_unverified_business_assets": false
+  },
+  "content": {
+    "facts": [
+      {
+        "text": "Patio Norte — FICTICIO",
+        "evidence": [
+          {
+            "field_path": "/identity/display_name",
+            "source_ids": [
+              "fixture-patio-norte"
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Empresa ficticia que presenta proyectos de lotes y vivienda con información clara de ubicación y etapas.",
+        "evidence": [
+          {
+            "field_path": "/description",
+            "source_ids": [
+              "fixture-patio-norte"
+            ]
+          }
+        ]
+      }
+    ],
+    "editorial_framing": [
+      "Consulta la información de esta demostración."
+    ],
+    "suggestions": [
+      {
+        "text": "Solicitar al propietario una identidad visual antes de producción.",
+        "publish": false
+      }
+    ]
+  },
+  "design_origin": "generated_proposal",
+  "created_at": "2026-09-30T06:00:00Z"
+}

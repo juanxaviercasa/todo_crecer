@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.com/staging-cost-envelope.schema.json",
+  "title": "staging-cost-envelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "cost_id",
+    "intent_ref",
+    "currency",
+    "line_items",
+    "estimated_monthly_cents",
+    "warning_cents",
+    "hard_limit_cents",
+    "status",
+    "approved_by",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "cost_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "intent_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "currency": {
+      "const": "USD"
+    },
+    "line_items": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "resource",
+          "monthly_cents"
+        ],
+        "properties": {
+          "resource": {
+            "type": "string",
+            "minLength": 1
+          },
+          "monthly_cents": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "estimated_monthly_cents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "warning_cents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "hard_limit_cents": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "status": {
+      "enum": [
+        "within_budget",
+        "warning",
+        "blocked"
+      ]
+    },
+    "approved_by": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

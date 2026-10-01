@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.com/asset-rights-record.schema.json",
+  "title": "asset-rights-record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "rights_id",
+    "candidate_ref",
+    "assets",
+    "status",
+    "reviewed_by",
+    "reviewed_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "rights_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "asset_ref",
+          "kind",
+          "rights"
+        ],
+        "properties": {
+          "asset_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "logo",
+              "portrait",
+              "property",
+              "office",
+              "team",
+              "project"
+            ]
+          },
+          "rights": {
+            "enum": [
+              "approved",
+              "pending",
+              "rejected"
+            ]
+          }
+        }
+      }
+    },
+    "status": {
+      "enum": [
+        "approved",
+        "partial",
+        "rejected"
+      ]
+    },
+    "reviewed_by": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewed_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

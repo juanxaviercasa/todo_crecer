@@ -1,0 +1,71 @@
+{
+  "schema_version": "0.1.0",
+  "recipe_id": "real-estate-desarrollador-proyectos",
+  "name": "Receta sintética: desarrollador-proyectos",
+  "verticals": [
+    "agentes-inmobiliarios"
+  ],
+  "truth_requirements": {
+    "minimum_paths": [
+      "/identity/display_name",
+      "/identity/primary_category",
+      "/description"
+    ],
+    "prohibited_inventions": [
+      "reseñas",
+      "precios",
+      "direcciones",
+      "teléfonos",
+      "antigüedad"
+    ]
+  },
+  "sections": [
+    {
+      "component": "hero",
+      "priority": 1,
+      "enabled_by_default": true,
+      "requires_truth_paths": [
+        "/identity/display_name"
+      ]
+    },
+    {
+      "component": "about",
+      "priority": 2,
+      "enabled_by_default": true,
+      "requires_truth_paths": [
+        "/description"
+      ]
+    }
+  ],
+  "cta_policy": {
+    "primary_intents": [
+      "other"
+    ],
+    "fallback_intent": "other"
+  },
+  "design_policy": {
+    "tone_keywords": [
+      "claro",
+      "editorial",
+      "desarrollador-proyectos"
+    ],
+    "avoid_patterns": [
+      "testimonios inventados"
+    ],
+    "allowed_layout_families": [
+      "single-column"
+    ]
+  },
+  "seo_policy": {
+    "demo_indexing": "noindex",
+    "structured_data_types": []
+  },
+  "quality_policy": {
+    "minimum_soft_score": 80,
+    "required_hard_gates": [
+      "provenance",
+      "noindex",
+      "synthetic_disclosure"
+    ]
+  }
+}

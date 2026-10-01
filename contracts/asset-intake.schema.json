@@ -1,0 +1,12 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://schemas.hazlocrecer.com/asset-intake.schema.json","title":"AssetIntake","type":"object","additionalProperties":false,
+  "required":["schema_version","asset_id","business_id","kind","original_filename","media_type","bytes","content_sha256","source","rights","security","created_at"],
+  "properties":{
+    "schema_version":{"const":"0.1.0"},"asset_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,100}$"},"business_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},"kind":{"enum":["logo","photo","video","document"]},"original_filename":{"type":"string","minLength":1,"maxLength":240,"pattern":"^[^/\\\\]+$"},"media_type":{"enum":["image/png","image/jpeg","image/webp","application/pdf","video/mp4"]},"bytes":{"type":"integer","minimum":1,"maximum":26214400},"content_sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"},
+    "source":{"enum":["owner_upload","commissioned","licensed_stock"]},
+    "rights":{"type":"object","additionalProperties":false,"required":["status","permission_note"],"properties":{"status":{"enum":["pending_review","approved","rejected"]},"permission_note":{"type":["string","null"],"maxLength":1000}}},
+    "security":{"type":"object","additionalProperties":false,"required":["quarantine_status","scan_status","active_content_detected"],"properties":{"quarantine_status":{"enum":["quarantined","released","rejected"]},"scan_status":{"enum":["pending","clean","malicious","failed"]},"active_content_detected":{"type":"boolean"}}},
+    "created_at":{"type":"string","format":"date-time"}
+  },
+  "allOf":[{"if":{"properties":{"security":{"properties":{"quarantine_status":{"const":"released"}}}}},"then":{"properties":{"rights":{"properties":{"status":{"const":"approved"}}},"security":{"properties":{"scan_status":{"const":"clean"},"active_content_detected":{"const":false}}}}}}]
+}

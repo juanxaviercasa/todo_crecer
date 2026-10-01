@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="description" content="Onboarding local y ficticio para validar información de un negocio antes de crear una demo privada.">
+  <title>Prepara tu sitio · Onboarding ficticio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="demo-bar"><span></span> DEMOSTRACIÓN LOCAL · NO ENVÍA NI PUBLICA INFORMACIÓN</div>
+  <header class="topbar">
+    <a class="brand" href="#inicio"><b>H</b><span>HazloCrecer<small>Preparación del sitio</small></span></a>
+    <div class="progress-copy"><span id="progress-label">Paso 1 de 5</span><div class="progress-track"><i id="progress-bar"></i></div></div>
+    <button class="quiet-button" id="reset" type="button">Restaurar ejemplo</button>
+  </header>
+
+  <main id="inicio">
+    <aside class="rail" aria-label="Pasos del onboarding">
+      <p>Tu expediente</p>
+      <ol>
+        <li class="active"><button type="button" data-step-target="0"><span>01</span> Identidad</button></li>
+        <li><button type="button" data-step-target="1"><span>02</span> Enfoque</button></li>
+        <li><button type="button" data-step-target="2"><span>03</span> Oferta</button></li>
+        <li><button type="button" data-step-target="3"><span>04</span> Contacto y activos</button></li>
+        <li><button type="button" data-step-target="4"><span>05</span> Confirmación</button></li>
+      </ol>
+      <div class="rail-note"><b>Privado por diseño</b><p>Este prototipo trabaja únicamente en tu navegador. No hay servidor de recepción ni publicación automática.</p></div>
+    </aside>
+
+    <section class="workspace">
+      <form id="onboarding-form" novalidate>
+        <section class="step active" data-step="0" aria-labelledby="step-1-title">
+          <div class="step-heading"><p>01 · Empecemos por lo esencial</p><h1 id="step-1-title">¿Cómo debe presentarse tu negocio?</h1><span>Usaremos este nombre como referencia editorial. La razón social puede quedar reservada para validación interna.</span></div>
+          <div class="field-grid">
+            <label class="field wide"><span>Nombre público del negocio</span><input name="display_name" required minlength="2" maxlength="200"><small>Ejemplo ficticio; no corresponde a un negocio real.</small></label>
+            <label class="field"><span>Categoría principal</span><select name="primary_category"><option value="agentes-inmobiliarios">Agencia inmobiliaria</option><option value="desarrolladores-inmobiliarios">Desarrolladora inmobiliaria</option><option value="tasacion-inmobiliaria">Tasación inmobiliaria</option></select></label>
+            <label class="field"><span>Tu relación con el negocio</span><select name="representative_role"><option value="owner">Propietario/a</option><option value="legal_representative">Representante legal</option><option value="authorized_manager">Responsable autorizado/a</option></select></label>
+            <label class="field wide"><span>Razón social <em>Opcional</em></span><input name="legal_name" maxlength="240"></label>
+          </div>
+        </section>
+
+        <section class="step" data-step="1" aria-labelledby="step-2-title" hidden>
+          <div class="step-heading"><p>02 · Dirección comercial</p><h2 id="step-2-title">Cuéntanos qué haces especialmente bien.</h2><span>No buscamos frases publicitarias perfectas. Buscamos hechos y contexto que podamos verificar contigo.</span></div>
+          <div class="field-grid">
+            <label class="field wide"><span>Descripción clara del negocio</span><textarea name="description" rows="5" required minlength="40" maxlength="1500"></textarea><small>40 a 1,500 caracteres.</small></label>
+            <label class="field wide"><span>¿A quién ayudas mejor?</span><textarea name="ideal_customer" rows="3" required minlength="20" maxlength="1000"></textarea></label>
+            <label class="field wide"><span>Especialidad o diferencia</span><textarea name="specialty" rows="3" required minlength="10" maxlength="500"></textarea></label>
+            <label class="field wide"><span>Acción principal que esperas del visitante</span><select name="primary_action"><option value="schedule_conversation">Agendar una conversación</option><option value="explore_catalog">Explorar el catálogo</option><option value="request_valuation">Solicitar una tasación</option><option value="visit_project">Visitar un proyecto</option><option value="request_information">Pedir información</option></select></label>
+          </div>
+        </section>
+
+        <section class="step" data-step="2" aria-labelledby="step-3-title" hidden>
+          <div class="step-heading"><p>03 · Oferta y cobertura</p><h2 id="step-3-title">¿Qué puede encontrar el cliente?</h2><span>Una primera versión concreta es más útil que una lista extensa. Podremos ampliarla después.</span></div>
+          <div class="field-grid">
+            <label class="field wide"><span>Zonas de servicio</span><input name="service_areas" required><small>Separa distritos o zonas con comas.</small></label>
+            <label class="field"><span>Servicio principal</span><input name="service_1_name" required minlength="2"></label>
+            <label class="field"><span>Qué incluye</span><textarea name="service_1_description" rows="3" required minlength="10"></textarea></label>
+            <label class="field"><span>Segundo servicio</span><input name="service_2_name" required minlength="2"></label>
+            <label class="field"><span>Qué incluye</span><textarea name="service_2_description" rows="3" required minlength="10"></textarea></label>
+          </div>
+        </section>
+
+        <section class="step" data-step="3" aria-labelledby="step-4-title" hidden>
+          <div class="step-heading"><p>04 · Contacto y material</p><h2 id="step-4-title">Define qué podremos mostrar.</h2><span>Declarar un activo no basta para publicarlo: registramos relación, permiso y revisión.</span></div>
+          <div class="field-grid">
+            <label class="field"><span>Canal preferido</span><select name="preferred_channel"><option value="email">Correo</option><option value="whatsapp">WhatsApp</option><option value="phone">Teléfono</option><option value="none">Aún no mostrar contacto</option></select></label>
+            <label class="field"><span>Correo público</span><input name="public_email" type="email"></label>
+            <label class="field"><span>Teléfono público</span><input name="public_phone" inputmode="tel"></label>
+            <div class="field asset-card"><span>Primer activo</span><strong>Logotipo del negocio</strong><p>En producción se cargaría el archivo en un almacén privado. Aquí solo registramos una referencia ficticia.</p><label><span>Origen</span><select name="asset_relationship"><option value="owner_supplied">Entregado por el propietario</option><option value="commissioned">Creado por encargo</option><option value="licensed_stock">Licencia de stock</option><option value="unknown">Por confirmar</option></select></label><label><span>Permiso o licencia</span><textarea name="permission_note" rows="3"></textarea></label></div>
+          </div>
+        </section>
+
+        <section class="step" data-step="4" aria-labelledby="step-5-title" hidden>
+          <div class="step-heading"><p>05 · Confirmación del propietario</p><h2 id="step-5-title">Revisa qué estás confirmando.</h2><span>Estas confirmaciones habilitan una demo privada. La revisión y la publicación son pasos posteriores.</span></div>
+          <div class="declarations">
+            <label><input type="checkbox" name="authorized_representative"><span><b>Puedo representar este negocio.</b> Soy propietario, representante legal o responsable autorizado.</span></label>
+            <label><input type="checkbox" name="truthfulness_confirmed"><span><b>La información es correcta.</b> He revisado los datos incluidos en este expediente de demostración.</span></label>
+            <label><input type="checkbox" name="contact_permission"><span><b>Autorizo el contacto declarado.</b> El canal indicado puede usarse en una futura demo, sujeto a revisión.</span></label>
+            <label><input type="checkbox" name="asset_rights_confirmed"><span><b>Tengo derechos sobre los activos.</b> Puedo autorizar el uso indicado o he identificado claramente sus límites.</span></label>
+          </div>
+          <div class="review-card"><div><p>Resultado esperado</p><h3>Expediente listo para revisión humana</h3></div><span>La web pública sigue bloqueada</span></div>
+        </section>
+
+        <div class="form-actions"><button class="back-button" id="back" type="button" disabled>Anterior</button><button class="next-button" id="next" type="button">Continuar <span>→</span></button><button class="generate-button" id="generate" type="button" hidden>Generar expediente local <span>↗</span></button></div>
+      </form>
+    </section>
+
+    <aside class="status-panel" aria-live="polite">
+      <div><p>Estado del expediente</p><strong id="status-title">Borrador local</strong></div>
+      <ul id="checklist"><li><span></span>Identidad pendiente</li><li><span></span>Oferta pendiente</li><li><span></span>Derechos pendientes</li><li class="blocked"><span></span>Publicación bloqueada</li></ul>
+      <div class="privacy-note"><span>◌</span><p><b>No se envía nada.</b><br>Los datos viven en esta pestaña durante la demostración.</p></div>
+    </aside>
+  </main>
+
+  <dialog id="result-dialog"><div class="dialog-head"><p>Expediente generado</p><button type="button" id="close-dialog" aria-label="Cerrar">×</button></div><div class="result-state"><span>✓</span><div><h2>Listo para revisión humana</h2><p>La demo privada puede prepararse. Publicación, indexación y contacto público permanecen bloqueados.</p></div></div><pre id="json-preview"></pre><div class="dialog-actions"><button type="button" id="download">Descargar JSON</button><button type="button" id="close-dialog-secondary">Volver al formulario</button></div></dialog>
+  <script src="app.js"></script>
+</body>
+</html>

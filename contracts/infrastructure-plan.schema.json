@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.local/infrastructure-plan.schema.json",
+  "title": "infrastructure-plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "plan_id",
+    "environment_ref",
+    "mode",
+    "resource_refs",
+    "ordered_actions",
+    "estimated_monthly_cost_cents",
+    "plan_digest",
+    "status",
+    "created_by",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "plan_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "environment_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "mode": {
+      "enum": [
+        "dry_run",
+        "apply"
+      ]
+    },
+    "resource_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "ordered_actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "order",
+          "resource_ref",
+          "action"
+        ],
+        "properties": {
+          "order": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "resource_ref": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+          },
+          "action": {
+            "enum": [
+              "create",
+              "update",
+              "verify"
+            ]
+          }
+        }
+      },
+      "minItems": 1
+    },
+    "estimated_monthly_cost_cents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "plan_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "approved",
+        "simulated",
+        "applied",
+        "rolled_back",
+        "blocked"
+      ]
+    },
+    "created_by": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "approved_by": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "approved_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  }
+}

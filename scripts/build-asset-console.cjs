@@ -1,0 +1,10 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path');const {inspectAsset,applyScan}=require('../packages/asset-pipeline/index.cjs');
+const ROOT=path.resolve(__dirname,'..'),source=path.join(ROOT,'asset-pipeline/app'),destination=path.join(ROOT,'dist/asset-pipeline');
+const bytes=Buffer.alloc(32);Buffer.from([0x89,0x50,0x4e,0x47,0x0d,0x0a,0x1a,0x0a]).copy(bytes);bytes.writeUInt32BE(13,8);bytes.write('IHDR',12);bytes.writeUInt32BE(2048,16);bytes.writeUInt32BE(1365,20);
+const inspected=inspectAsset({asset_id:'asset-photo-demo',tenant_id:'horizonte-casa-demo',kind:'photo',filename:'fachada-demo.png',declared_type:'image/png',bytes},'2026-09-30T22:00:00Z');
+const awaitingRights=applyScan(inspected,{status:'clean',provider:'synthetic-contract-test'},'2026-09-30T22:01:00Z');
+fs.rmSync(destination,{recursive:true,force:true});fs.mkdirSync(destination,{recursive:true});for(const name of ['index.html','styles.css','app.js'])fs.copyFileSync(path.join(source,name),path.join(destination,name));
+fs.writeFileSync(path.join(destination,'synthetic-lifecycle.json'),JSON.stringify({inspected,awaiting_rights:awaitingRights},null,2)+'\n');
+fs.writeFileSync(path.join(destination,'asset-manifest.json'),JSON.stringify({version:'0.11.0',synthetic:true,real_assets:0,allowed_types:5,gates:7,external_scanner_connected:false,image_transformer_connected:false,production_ready:false,publication:'blocked'},null,2)+'\n');
+console.log('Pipeline de activos generado: inspección ejecutable, proveedores externos pendientes.');

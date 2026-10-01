@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.com/private-cohort-readiness.schema.json",
+  "title": "private-cohort-readiness",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "readiness_id",
+    "cohort_ref",
+    "candidate_states",
+    "ready_count",
+    "blocked_count",
+    "status",
+    "external_messages",
+    "publications",
+    "generated_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "readiness_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "cohort_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate_states": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "candidate_ref",
+          "status",
+          "blockers"
+        ],
+        "properties": {
+          "candidate_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "blocked",
+              "private_ready",
+              "public_ready"
+            ]
+          },
+          "blockers": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "ready_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "blocked_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "status": {
+      "enum": [
+        "blocked",
+        "partial",
+        "private_ready",
+        "public_ready"
+      ]
+    },
+    "external_messages": {
+      "const": 0
+    },
+    "publications": {
+      "const": 0
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

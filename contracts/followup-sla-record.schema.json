@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/followup-sla-record.schema.json",
+  "title": "followup-sla-record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "sla_id",
+    "case_ref",
+    "stage",
+    "due_at",
+    "status",
+    "attempts",
+    "external_messages",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "sla_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "case_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "stage": {
+      "enum": [
+        "draft_review",
+        "authorization",
+        "owner_response",
+        "interview",
+        "intake_review",
+        "acceptance"
+      ]
+    },
+    "due_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "enum": [
+        "on_track",
+        "due",
+        "overdue",
+        "complete",
+        "paused"
+      ]
+    },
+    "attempts": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "external_messages": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

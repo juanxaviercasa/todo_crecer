@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.com/pilot-candidate-record.schema.json",
+  "title": "pilot-candidate-record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "candidate_id",
+    "public_name",
+    "category",
+    "district",
+    "archetype",
+    "source_ref",
+    "source_digest",
+    "owner_status",
+    "publication_authorized",
+    "contact_enabled",
+    "asset_rights",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "candidate_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]+$"
+    },
+    "public_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "category": {
+      "type": "string",
+      "minLength": 1
+    },
+    "district": {
+      "type": "string",
+      "minLength": 1
+    },
+    "archetype": {
+      "enum": [
+        "independent-advisor",
+        "established-agency",
+        "premium-consultancy",
+        "district-agency",
+        "project-specialist"
+      ]
+    },
+    "public_signals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rating",
+        "reviews_count",
+        "website_present"
+      ],
+      "properties": {
+        "rating": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 5
+        },
+        "reviews_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "website_present": {
+          "type": "boolean"
+        }
+      }
+    },
+    "source_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "owner_status": {
+      "enum": [
+        "uncontacted",
+        "invited",
+        "confirmed",
+        "declined"
+      ]
+    },
+    "publication_authorized": {
+      "type": "boolean"
+    },
+    "contact_enabled": {
+      "type": "boolean"
+    },
+    "asset_rights": {
+      "enum": [
+        "pending",
+        "partial",
+        "approved",
+        "rejected"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

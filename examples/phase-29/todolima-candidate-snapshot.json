@@ -1,0 +1,106 @@
+{
+  "schema_version": "0.1.0",
+  "snapshot_id": "todolima-real-estate-cohort-2026-09-30",
+  "source": {
+    "repository": "https://github.com/juanxaviercasa/todo_lima",
+    "default_branch": "main",
+    "tree_sha": "715861f626cccb1ebce4d5fd02ac491d724de3b1",
+    "source_file": "data/agentes-inmobiliarios.json",
+    "source_updated_at": "2026-09-09T21:01:52.181Z",
+    "source_sha256": "9b07c44eaa06e6062451120223fb8cff60b60423c147b5eda1f7d7bc74593406",
+    "fetched_at": "2026-09-30T00:00:00.000Z"
+  },
+  "privacy": {
+    "exact_addresses_included": false,
+    "phones_included": false,
+    "coordinates_included": false,
+    "website_urls_included": false
+  },
+  "candidates": [
+    {
+      "candidate_id": "biz_5",
+      "public_name": "Silvana Verano Agente Inmobiliario Registrado PN-11229-MVCS",
+      "category": "Agentes inmobiliarios",
+      "district": "San Isidro",
+      "archetype": "independent-advisor",
+      "public_signals": {
+        "rating": 5,
+        "reviews_count": 7,
+        "website_present": false
+      },
+      "maps_reference_fingerprint": "fc95304ca32f7cd2ad890a026720764d2e01098aa935f8259d7fd4f94f56a0a0",
+      "owner_status": "uncontacted",
+      "publication_authorized": false,
+      "contact_enabled": false,
+      "asset_rights": "pending"
+    },
+    {
+      "candidate_id": "biz_2",
+      "public_name": "Abad Inmobiliaria",
+      "category": "Agencia inmobiliaria",
+      "district": "Lima",
+      "archetype": "established-agency",
+      "public_signals": {
+        "rating": 5,
+        "reviews_count": 501,
+        "website_present": true
+      },
+      "maps_reference_fingerprint": "f73d4d5ba81a9a9f51de53e30d23e070ff56ced6f126303aad002a5220ce41ef",
+      "owner_status": "uncontacted",
+      "publication_authorized": false,
+      "contact_enabled": false,
+      "asset_rights": "pending"
+    },
+    {
+      "candidate_id": "biz_3",
+      "public_name": "LIMAin",
+      "category": "Consultor inmobiliario",
+      "district": "San Isidro",
+      "archetype": "premium-consultancy",
+      "public_signals": {
+        "rating": 5,
+        "reviews_count": 501,
+        "website_present": true
+      },
+      "maps_reference_fingerprint": "bc9dc545ab9139930c573cceabeab2e5b39f1cebc815173f13d7d3f1fde56d12",
+      "owner_status": "uncontacted",
+      "publication_authorized": false,
+      "contact_enabled": false,
+      "asset_rights": "pending"
+    },
+    {
+      "candidate_id": "biz_4",
+      "public_name": "INMOBILIARIA LIMA - SYG INMOBILIARIA LIMA",
+      "category": "Agencia inmobiliaria",
+      "district": "Los Olivos",
+      "archetype": "district-agency",
+      "public_signals": {
+        "rating": 5,
+        "reviews_count": 56,
+        "website_present": true
+      },
+      "maps_reference_fingerprint": "3648360ca8a78e21b6951557a30e90d45e7134a133531fb7322af257daa2a8c5",
+      "owner_status": "uncontacted",
+      "publication_authorized": false,
+      "contact_enabled": false,
+      "asset_rights": "pending"
+    },
+    {
+      "candidate_id": "biz_8",
+      "public_name": "Desarrollo Social Inmobiliario - Agencia Inmobiliaria en Perú / Proyectos Inmobiliarios",
+      "category": "Agencia inmobiliaria",
+      "district": "Miraflores",
+      "archetype": "project-specialist",
+      "public_signals": {
+        "rating": 5,
+        "reviews_count": 2,
+        "website_present": true
+      },
+      "maps_reference_fingerprint": "9ae9837adf7cc5bb4c91203d3d5e7da7a249345fc587eb6640e7a6ca0c65a028",
+      "owner_status": "uncontacted",
+      "publication_authorized": false,
+      "contact_enabled": false,
+      "asset_rights": "pending"
+    }
+  ]
+}

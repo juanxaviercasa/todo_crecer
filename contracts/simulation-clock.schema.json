@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/simulation-clock.schema.json",
+  "title": "simulation-clock",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "clock_id",
+    "started_at",
+    "current_at",
+    "elapsed_hours",
+    "mode"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "clock_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "current_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "elapsed_hours": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "mode": {
+      "const": "virtual"
+    }
+  }
+}

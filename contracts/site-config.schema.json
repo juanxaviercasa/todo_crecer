@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.com/site-config.schema.json",
+  "title": "SiteConfig",
+  "description": "Configuración declarativa de un sitio multi-tenant. El motor de sitios debe poder renderizarlo sin edición manual de código.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "site_id", "business_id", "mode", "status", "truth_snapshot", "recipe", "routing", "seo", "claim", "sections", "features", "updated_at"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "0.1.0"},
+    "site_id": {"type": "string", "minLength": 1, "maxLength": 128},
+    "business_id": {"type": "string", "minLength": 1, "maxLength": 128},
+    "tenant_id": {"type": ["string", "null"], "maxLength": 128},
+    "mode": {"type": "string", "enum": ["demo", "production"]},
+    "status": {"type": "string", "enum": ["DRAFT", "GENERATING", "QA_PENDING", "QA_FAILED", "DEMO_READY", "DEMO_PUBLISHED", "CLAIM_PENDING", "CLAIMED", "ONBOARDING", "PRODUCTION_PENDING", "ACTIVE", "PAST_DUE", "SUSPENDED", "CANCELLED", "ARCHIVED"]},
+    "truth_snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["business_truth_version", "content_hash"],
+      "properties": {
+        "business_truth_version": {"type": "string", "minLength": 1, "maxLength": 80},
+        "content_hash": {"type": "string", "minLength": 16, "maxLength": 256}
+      }
+    },
+    "recipe": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["recipe_id", "recipe_version"],
+      "properties": {
+        "recipe_id": {"type": "string", "minLength": 1, "maxLength": 100},
+        "recipe_version": {"type": "string", "minLength": 1, "maxLength": 40}
+      }
+    },
+    "brand_profile_ref": {"type": ["string", "null"], "maxLength": 200},
+    "routing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary_hostname"],
+      "properties": {
+        "primary_hostname": {"type": "string", "minLength": 3, "maxLength": 253},
+        "aliases": {"type": "array", "items": {"type": "string", "maxLength": 253}, "uniqueItems": true},
+        "custom_domain_status": {"type": "string", "enum": ["none", "pending", "verifying", "active", "failed"]}
+      }
+    },
+    "seo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["indexing", "canonical_url"],
+      "properties": {
+        "indexing": {"type": "string", "enum": ["noindex", "index"]},
+        "canonical_url": {"type": ["string", "null"], "format": "uri"},
+        "title": {"type": ["string", "null"], "maxLength": 160},
+        "meta_description": {"type": ["string", "null"], "maxLength": 320}
+      }
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["banner_enabled"],
+      "properties": {
+        "banner_enabled": {"type": "boolean"},
+        "claim_url": {"type": ["string", "null"], "format": "uri"},
+        "disclosure_text": {"type": ["string", "null"], "maxLength": 1000}
+      }
+    },
+    "sections": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["section_id", "component", "enabled", "order", "data"],
+        "properties": {
+          "section_id": {"type": "string", "minLength": 1, "maxLength": 128},
+          "component": {"type": "string", "minLength": 1, "maxLength": 80},
+          "enabled": {"type": "boolean"},
+          "order": {"type": "integer", "minimum": 1, "maximum": 1000},
+          "variant": {"type": ["string", "null"], "maxLength": 80},
+          "data": {"type": "object"}
+        }
+      }
+    },
+    "assets": {"type": "array", "items": {"type": "string", "maxLength": 256}, "uniqueItems": true},
+    "features": {
+      "type": "object",
+      "additionalProperties": {"type": "boolean"},
+      "properties": {
+        "whatsapp": {"type": "boolean"},
+        "phone": {"type": "boolean"},
+        "form": {"type": "boolean"},
+        "booking": {"type": "boolean"},
+        "analytics": {"type": "boolean"},
+        "seo_advanced": {"type": "boolean"},
+        "ai_agent": {"type": "boolean"},
+        "marketing_automation": {"type": "boolean"}
+      }
+    },
+    "analytics": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "business_dimension": {"type": ["string", "null"], "maxLength": 128},
+        "site_dimension": {"type": ["string", "null"], "maxLength": 128},
+        "consent_mode": {"type": "string", "enum": ["required", "not_required", "unknown"]}
+      }
+    },
+    "generated_by": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "workflow_id": {"type": ["string", "null"], "maxLength": 128},
+        "agent_run_ids": {"type": "array", "items": {"type": "string", "maxLength": 128}, "uniqueItems": true}
+      }
+    },
+    "created_at": {"type": ["string", "null"], "format": "date-time"},
+    "updated_at": {"type": "string", "format": "date-time"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"mode": {"const": "demo"}}, "required": ["mode"]},
+      "then": {
+        "properties": {
+          "seo": {"properties": {"indexing": {"const": "noindex"}}},
+          "claim": {"properties": {"banner_enabled": {"const": true}}}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"mode": {"const": "production"}}, "required": ["mode"]},
+      "then": {
+        "properties": {
+          "claim": {"properties": {"banner_enabled": {"const": false}}}
+        }
+      }
+    }
+  ]
+}

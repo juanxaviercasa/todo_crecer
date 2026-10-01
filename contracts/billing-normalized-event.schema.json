@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://schemas.hazlocrecer.com/billing-normalized-event.schema.json","title":"BillingNormalizedEvent","type":"object","additionalProperties":false,
+  "required":["schema_version","event_id","provider","tenant_id","subscription_id","plan_ref","type","new_status","occurred_at","idempotency_key","signature_verified"],
+  "properties":{"schema_version":{"const":"0.1.0"},"event_id":{"type":"string","pattern":"^billing-[a-f0-9]{24}$"},"provider":{"enum":["local_sandbox","billing_adapter"]},"tenant_id":{"type":"string","pattern":"^[a-z0-9][a-z0-9-]{2,79}$"},"subscription_id":{"type":"string","pattern":"^subscription-[a-f0-9]{24}$"},"plan_ref":{"type":["string","null"],"pattern":"^plan-[a-z0-9-]{2,60}$"},"type":{"enum":["subscription.created","subscription.activated","subscription.updated","subscription.past_due","subscription.suspended","subscription.cancelled"]},"new_status":{"enum":["trialing","active","past_due","suspended","cancelled"]},"occurred_at":{"type":"string","format":"date-time"},"idempotency_key":{"type":"string","pattern":"^[a-f0-9]{64}$"},"signature_verified":{"const":true}}
+}

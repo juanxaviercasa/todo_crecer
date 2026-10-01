@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.com/real-estate-experience.schema.json",
+  "title": "RealEstateExperience",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "profile_id", "archetype", "module_type", "eyebrow", "headline", "description", "payload", "action", "synthetic", "created_at"],
+  "properties": {
+    "schema_version": {"const": "0.1.0"},
+    "profile_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,79}$"},
+    "archetype": {"enum": ["catalogo-amplio", "desarrollador-proyectos", "asesor-boutique", "proyectos-lotes", "tasacion-propietarios"]},
+    "module_type": {"enum": ["catalog_search", "project_timeline", "advisory_path", "lot_comparison", "valuation_brief"]},
+    "eyebrow": {"type": "string", "minLength": 3, "maxLength": 100},
+    "headline": {"type": "string", "minLength": 10, "maxLength": 160},
+    "description": {"type": "string", "minLength": 20, "maxLength": 400},
+    "payload": {"oneOf": [
+      {"$ref": "#/$defs/catalog"}, {"$ref": "#/$defs/timeline"}, {"$ref": "#/$defs/questions"}, {"$ref": "#/$defs/comparison"}
+    ]},
+    "action": {"type": "object", "additionalProperties": false, "required": ["label", "enabled", "reason"], "properties": {"label": {"type": "string", "minLength": 3}, "enabled": {"const": false}, "reason": {"type": "string", "minLength": 10}}},
+    "synthetic": {"const": true},
+    "created_at": {"type": "string", "format": "date-time"}
+  },
+  "$defs": {
+    "catalog": {"type": "object", "additionalProperties": false, "required": ["filters", "result_refs"], "properties": {"filters": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/control"}}, "result_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}}}},
+    "timeline": {"type": "object", "additionalProperties": false, "required": ["stages", "result_refs"], "properties": {"stages": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/stage"}}, "result_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}}}},
+    "questions": {"type": "object", "additionalProperties": false, "required": ["questions"], "properties": {"questions": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/control"}}}},
+    "comparison": {"type": "object", "additionalProperties": false, "required": ["criteria", "result_refs"], "properties": {"criteria": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/control"}}, "result_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}}}},
+    "control": {"type": "object", "additionalProperties": false, "required": ["key", "label", "options"], "properties": {"key": {"type": "string", "pattern": "^[a-z][a-z0-9_]{2,39}$"}, "label": {"type": "string", "minLength": 3}, "options": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}}},
+    "stage": {"type": "object", "additionalProperties": false, "required": ["order", "label", "status"], "properties": {"order": {"type": "integer", "minimum": 1, "maximum": 10}, "label": {"type": "string", "minLength": 3}, "status": {"enum": ["reference", "requires_verification"]}}}
+  }
+}

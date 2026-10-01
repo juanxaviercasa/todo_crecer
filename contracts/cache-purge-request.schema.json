@@ -1,0 +1,12 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://schemas.hazlocrecer.com/cache-purge-request.schema.json",
+  "title":"CachePurgeRequest","type":"object","additionalProperties":false,
+  "required":["schema_version","purge_id","tenant_id","route_id","release_id","scope","paths","idempotency_key","provider","status","requested_by","requested_at","completed_at"],
+  "properties":{
+    "schema_version":{"const":"0.1.0"},"purge_id":{"type":"string","pattern":"^purge-[a-f0-9]{24}$"},"tenant_id":{"type":"string"},"route_id":{"type":"string"},"release_id":{"type":"string"},
+    "scope":{"enum":["release","paths"]},"paths":{"type":"array","maxItems":100,"uniqueItems":true,"items":{"type":"string","pattern":"^/(?!.*\\.\\.)[A-Za-z0-9._~!$&'()*+,;=:@%/-]*$"}},
+    "idempotency_key":{"type":"string","pattern":"^[a-f0-9]{64}$"},"provider":{"enum":["local_sandbox","cloudflare"]},"status":{"enum":["queued","completed","failed"]},
+    "requested_by":{"type":"string"},"requested_at":{"type":"string","format":"date-time"},"completed_at":{"type":["string","null"],"format":"date-time"}
+  }
+}

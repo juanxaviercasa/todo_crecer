@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.hazlocrecer.local/workload-identity-binding.schema.json",
+  "title": "workload-identity-binding",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "binding_id",
+    "identity_ref",
+    "runtime",
+    "subject",
+    "environment",
+    "status",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "binding_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "identity_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9:._-]{2,159}$"
+    },
+    "runtime": {
+      "enum": [
+        "local",
+        "cloudflare-worker",
+        "github-actions",
+        "container",
+        "external"
+      ]
+    },
+    "subject": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 240
+    },
+    "environment": {
+      "enum": [
+        "local",
+        "development",
+        "staging",
+        "production"
+      ]
+    },
+    "status": {
+      "enum": [
+        "active",
+        "revoked"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "revoked_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  }
+}

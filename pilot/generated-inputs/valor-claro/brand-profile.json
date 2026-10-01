@@ -1,0 +1,81 @@
+{
+  "schema_version": "0.1.0",
+  "brand_profile_id": "brand-valor-claro",
+  "business_id": "pilot-valor-claro",
+  "truth_snapshot": {
+    "business_truth_version": "0.1.0",
+    "content_hash": "1a4b5c6c042a6a9be51668429f879ce6d9cfdeb082270498a71d70fe8595b254"
+  },
+  "recipe": {
+    "recipe_id": "real-estate-tasacion-propietarios",
+    "recipe_version": "0.1.0",
+    "content_hash": "57e7a9a68d9244157bae1f2f9573c626162e8a13ff10f8cf8a1aec62fedef660"
+  },
+  "status": "proposed",
+  "personality": [
+    "clara",
+    "cercana"
+  ],
+  "visual_direction": "tasacion-propietarios",
+  "primary_audience": "Propietarios que necesitan entender el valor y el siguiente paso de su inmueble.",
+  "primary_goal": "inform",
+  "color_tokens": {
+    "primary": "#28384a",
+    "background": "#f4f1eb",
+    "text": "#252e39",
+    "accent": "#a25545"
+  },
+  "type_scale": {
+    "font_family": "system-ui",
+    "body_px": 16,
+    "heading_px": 36
+  },
+  "layout_family": "single-column",
+  "tone_of_voice": [
+    "informativo",
+    "sin superlativos"
+  ],
+  "cta_style": "text",
+  "image_policy": {
+    "allow_representational": false,
+    "require_disclosure": true,
+    "allow_unverified_business_assets": false
+  },
+  "content": {
+    "facts": [
+      {
+        "text": "Valor Claro — FICTICIO",
+        "evidence": [
+          {
+            "field_path": "/identity/display_name",
+            "source_ids": [
+              "fixture-valor-claro"
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Consultora inmobiliaria ficticia especializada en tasación y preparación de propiedades para venta o alquiler.",
+        "evidence": [
+          {
+            "field_path": "/description",
+            "source_ids": [
+              "fixture-valor-claro"
+            ]
+          }
+        ]
+      }
+    ],
+    "editorial_framing": [
+      "Consulta la información de esta demostración."
+    ],
+    "suggestions": [
+      {
+        "text": "Solicitar al propietario una identidad visual antes de producción.",
+        "publish": false
+      }
+    ]
+  },
+  "design_origin": "generated_proposal",
+  "created_at": "2026-09-30T06:00:00Z"
+}

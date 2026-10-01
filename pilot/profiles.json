@@ -1,0 +1,13 @@
+{
+  "version":"0.4.0",
+  "policy":"synthetic-only",
+  "profiles":[
+    {"id":"brava-residencial","name":"Brava Residencial — FICTICIO","archetype":"catalogo-amplio","description":"Agencia inmobiliaria ficticia con un catálogo residencial para comprar y alquilar en distintos distritos de Lima.","audience":"Personas que necesitan comparar inmuebles por zona y tipo de operación.","colors":{"primary":"#123c48","background":"#f7f4ed","text":"#183138","accent":"#bd6445"}},
+    {"id":"prisma-desarrollos","name":"Prisma Desarrollos — FICTICIO","archetype":"desarrollador-proyectos","description":"Desarrolladora ficticia que presenta proyectos residenciales, gestión técnica y acompañamiento comercial.","audience":"Familias e inversionistas que evalúan proyectos residenciales.","colors":{"primary":"#253d35","background":"#f3efe5","text":"#23332d","accent":"#b4783f"}},
+    {"id":"nido-asesores","name":"Nido Asesores — FICTICIO","archetype":"asesor-boutique","description":"Estudio inmobiliario ficticio orientado a propietarios y compradores que buscan acompañamiento personalizado.","audience":"Propietarios y compradores que valoran una conversación antes de decidir.","colors":{"primary":"#43382f","background":"#f8f3ea","text":"#302a25","accent":"#a85f45"}},
+    {"id":"patio-norte","name":"Patio Norte — FICTICIO","archetype":"proyectos-lotes","description":"Empresa ficticia que presenta proyectos de lotes y vivienda con información clara de ubicación y etapas.","audience":"Personas que comparan proyectos, ubicación y formas de acceso.","colors":{"primary":"#33412e","background":"#f5f1df","text":"#293025","accent":"#a66c32"}},
+    {"id":"valor-claro","name":"Valor Claro — FICTICIO","archetype":"tasacion-propietarios","description":"Consultora inmobiliaria ficticia especializada en tasación y preparación de propiedades para venta o alquiler.","audience":"Propietarios que necesitan entender el valor y el siguiente paso de su inmueble.","colors":{"primary":"#28384a","background":"#f4f1eb","text":"#252e39","accent":"#a25545"}}
+  ],
+  "requirements_models":["Masterhouse: catalog structure","LIMAin: project structure","Abad: owner advisory structure","DSI: development services structure","Lago y Alva: project landing structure"],
+  "note":"Los nombres, descripciones y marcas generados son ficticios. Los modelos reales solo informan requisitos internos."
+}

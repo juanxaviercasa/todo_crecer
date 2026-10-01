@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://schemas.hazlocrecer.com/operational-alert.schema.json","title":"OperationalAlert","type":"object","additionalProperties":false,
+  "required":["schema_version","alert_id","dedupe_key","tenant_id","service","release_ref","kind","severity","status","summary","source_ref","occurrences","first_seen_at","last_seen_at"],
+  "properties":{"schema_version":{"const":"0.1.0"},"alert_id":{"type":"string","pattern":"^alert-[a-f0-9]{24}$"},"dedupe_key":{"type":"string","pattern":"^[a-f0-9]{64}$"},"tenant_id":{"type":"string"},"service":{"type":"string"},"release_ref":{"type":["string","null"]},"kind":{"enum":["slo_at_risk","slo_breached","usage_warning","usage_exhausted","health_failed","drift_detected"]},"severity":{"enum":["info","warning","critical"]},"status":{"enum":["open","acknowledged","resolved"]},"summary":{"type":"string","minLength":8,"maxLength":300},"source_ref":{"type":"string"},"occurrences":{"type":"integer","minimum":1},"first_seen_at":{"type":"string","format":"date-time"},"last_seen_at":{"type":"string","format":"date-time"}}
+}

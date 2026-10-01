@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.1.0",
+  "business_id": "pilot-valor-claro",
+  "identity": {
+    "display_name": "Valor Claro — FICTICIO",
+    "primary_category": "agentes-inmobiliarios"
+  },
+  "description": "Consultora inmobiliaria ficticia especializada en tasación y preparación de propiedades para venta o alquiler.",
+  "sources": [
+    {
+      "source_id": "fixture-valor-claro",
+      "source_type": "other",
+      "uri": "urn:todolima:fixture:valor-claro",
+      "captured_at": "2026-09-29T12:00:00Z",
+      "rights_status": "approved_for_internal_use",
+      "acquisition_method": "Fixture sintético escrito para pruebas",
+      "notes": "Perfil sintético derivado de requisitos de experiencia; no representa al candidato real."
+    }
+  ],
+  "field_provenance": [
+    {
+      "field_path": "/identity/display_name",
+      "source_ids": [
+        "fixture-valor-claro"
+      ],
+      "verification_status": "source_verified",
+      "confidence": 1,
+      "last_verified_at": "2026-09-29T12:00:00Z",
+      "notes": "Verificado únicamente contra el fixture sintético del piloto."
+    },
+    {
+      "field_path": "/identity/primary_category",
+      "source_ids": [
+        "fixture-valor-claro"
+      ],
+      "verification_status": "source_verified",
+      "confidence": 1,
+      "last_verified_at": "2026-09-29T12:00:00Z",
+      "notes": "Verificado únicamente contra el fixture sintético del piloto."
+    },
+    {
+      "field_path": "/description",
+      "source_ids": [
+        "fixture-valor-claro"
+      ],
+      "verification_status": "source_verified",
+      "confidence": 1,
+      "last_verified_at": "2026-09-29T12:00:00Z",
+      "notes": "Verificado únicamente contra el fixture sintético del piloto."
+    }
+  ],
+  "publication_policy": {
+    "may_generate_demo": true,
+    "may_index_demo": false,
+    "reason": "Prueba local sintética, sin autorización de publicación externa.",
+    "requires_human_review": true
+  },
+  "updated_at": "2026-09-30T06:00:00Z"
+}

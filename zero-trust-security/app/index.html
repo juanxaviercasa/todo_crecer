@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Identidad y control privilegiado · HazloCrecer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="mobile.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="environment">LOCAL · DATOS SINTÉTICOS · CERO SECRETOS PERSISTIDOS · SIN PRODUCCIÓN</div>
+  <header class="masthead"><a class="brand" href="#postura"><span>HC</span><b>HazloCrecer</b></a><div><small>FASE 25</small><h1>Identidad y control privilegiado</h1></div><p>ZERO TRUST ROOM</p></header>
+  <div class="shell">
+    <aside>
+      <p class="eyebrow">TRUST CONTROL</p>
+      <nav aria-label="Secciones">
+        <button class="active" data-view="postura"><i>01</i>Postura</button>
+        <button data-view="identidades"><i>02</i>Identidades</button>
+        <button data-view="credenciales"><i>03</i>Credenciales</button>
+        <button data-view="privilegios"><i>04</i>Privilegios</button>
+        <button data-view="emergencia"><i>05</i>Emergencia</button>
+        <button data-view="auditoria"><i>06</i>Auditoría</button>
+      </nav>
+      <div class="principle"><small>REGLA</small><p>Ningún servicio recibe más acceso del que necesita, ni durante más tiempo del necesario.</p></div>
+    </aside>
+    <main>
+      <section id="postura" class="view active">
+        <p class="kicker">01 · POSTURA VERIFICADA</p>
+        <h2>Confiar es una<br><em>decisión comprobable.</em></h2>
+        <p class="intro">Cada solicitud demuestra identidad, audiencia, tenant, capacidad, contexto y vigencia. La decisión queda firmada en una cadena de auditoría.</p>
+        <div class="scorecard">
+          <article><span class="ring">6</span><div><small>IDENTIDADES</small><h3>Servicios delimitados</h3><p>Dos tenants sintéticos y capacidades mínimas.</p></div></article>
+          <article><span class="ring">0</span><div><small>SECRETOS GUARDADOS</small><h3>Credenciales efímeras</h3><p>Solo queda el hash; el token no se persiste.</p></div></article>
+          <article><span class="ring">2</span><div><small>DENEGACIONES</small><h3>Controles ejercitados</h3><p>Audiencia y tenant incorrectos fueron bloqueados.</p></div></article>
+        </div>
+        <div class="flow"><span>SERVICIO</span><b>identidad</b><i>→</i><b>credencial</b><i>→</i><b>política</b><i>→</i><strong>DECISIÓN</strong></div>
+      </section>
+      <section id="identidades" class="view">
+        <p class="kicker">02 · INVENTARIO DE WORKLOADS</p><h2>Cada proceso tiene<br><em>nombre y frontera.</em></h2><p class="intro">Una identidad no es una contraseña compartida. Vincula un workload concreto con tenants y capacidades explícitas.</p>
+        <div class="identity-grid">
+          <article><b>SR</b><div><small>svc-site-renderer</small><h3>Site renderer</h3><p>site.read · site.render</p></div><span>ACTIVE</span></article>
+          <article><b>PB</b><div><small>svc-publisher</small><h3>Publisher</h3><p>site.publish · artifact.attest</p></div><span>ACTIVE</span></article>
+          <article><b>FO</b><div><small>svc-fleet-observer</small><h3>Fleet observer</h3><p>fleet.observe</p></div><span>ACTIVE</span></article>
+          <article><b>OR</b><div><small>svc-outbox-relay</small><h3>Outbox relay</h3><p>outbox.consume</p></div><span>ACTIVE</span></article>
+          <article><b>BV</b><div><small>svc-backup-verifier</small><h3>Backup verifier</h3><p>backup.verify</p></div><span>ACTIVE</span></article>
+          <article><b>PR</b><div><small>svc-preview-builder</small><h3>Preview builder</h3><p>site.read · site.render</p></div><span>ACTIVE</span></article>
+        </div>
+      </section>
+      <section id="credenciales" class="view">
+        <p class="kicker">03 · CREDENCIALES BREVES</p><h2>Minutos de vigencia.<br><em>Cero llaves eternas.</em></h2><p class="intro">Los tokens Ed25519 duran cinco minutos, declaran audiencia y alcance, y dejan de servir al vencer, revocarse o retirarse su clave.</p>
+        <div class="timeline"><div><span>15:00</span><b>Emitida</b><p>Identidad y alcance comprobados</p></div><div><span>15:02</span><b>Usada</b><p>Política y contexto evaluados</p></div><div><span>15:05</span><b>Expirada</b><p>Reemisión obligatoria</p></div></div>
+        <div class="facts"><p><small>ALGORITMO</small><b>Ed25519</b></p><p><small>TTL</small><b>300 s</b></p><p><small>AUDIENCIA</small><b>control-plane</b></p><p><small>PERSISTENCIA</small><b>Solo hash</b></p></div>
+      </section>
+      <section id="privilegios" class="view">
+        <p class="kicker">04 · OPERACIÓN CRÍTICA</p><h2>Solicitar. Revisar.<br><em>Ejecutar por separado.</em></h2><p class="intro">La revocación de una clave crítica exige dos aprobaciones independientes y un ejecutor que no participó en la solicitud ni en las revisiones.</p>
+        <div class="approval-lane"><article><span>01</span><small>SOLICITA</small><b>ops-lead</b><p>Justificación y caducidad</p></article><i>→</i><article><span>02</span><small>APRUEBAN</small><b>2 revisores</b><p>Decisiones independientes</p></article><i>→</i><article><span>03</span><small>EJECUTA</small><b>change-executor</b><p>Resultado auditable</p></article></div>
+        <div class="operation"><div><small>OPERACIÓN</small><h3>signing-key.revoke</h3><p>Recurso: sigk-root-001</p></div><span>EXECUTED</span></div>
+      </section>
+      <section id="emergencia" class="view">
+        <p class="kicker">05 · BREAK GLASS</p><h2>Acceso urgente,<br><em>con límites visibles.</em></h2><p class="intro">La emergencia no elimina controles. Exige ticket, razón, aprobación externa, tenant y capacidades exactas, con vencimiento automático.</p>
+        <div class="emergency-card"><div class="alarm">BG</div><div><small>INC-SYNTH-2501</small><h3>Inspección temporal</h3><p>tenant-horizonte · tenant.inspect · audit.read</p></div><div class="countdown"><small>VENTANA</small><b>05:00</b><span>EXPIRA SOLA</span></div></div>
+        <ul class="guardrails"><li>Solicitante ≠ aprobador</li><li>Sin ampliación de alcance</li><li>Revocable inmediatamente</li><li>Cada uso queda registrado</li></ul>
+      </section>
+      <section id="auditoria" class="view">
+        <p class="kicker">06 · EVIDENCIA ENCADENADA</p><h2>Si alguien altera algo,<br><em>la cadena lo revela.</em></h2><p class="intro">Cada entrada incorpora el hash anterior, un digest de sus detalles y una firma. El ensayo verifica secuencia, contenido y firma.</p>
+        <div class="audit-result"><span>✓</span><div><small>VERIFICACIÓN COMPLETA</small><h3>Cadena y firmas válidas</h3><p>Ensayo local · datos sintéticos · sin cambios externos</p></div><b>PASS</b></div>
+        <div class="hash-chain"><code>000…000</code><i>→</i><code>71f…a92</code><i>→</i><code>ac4…e10</code><i>→</i><code>f38…9bd</code></div>
+      </section>
+    </main>
+  </div>
+  <footer><span>HAZLOCRECER · ZERO TRUST CONTROL</span><span>LOCAL · SYNTHETIC SECURITY REHEARSAL</span></footer>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "version":"0.7.0",
+  "synthetic":true,
+  "items":[
+    {"queue_id":"q-horizonte","submission_ref":"onboarding/synthetic-owner-submission.json","priority":"normal","received_at":"2026-09-30T14:05:00Z","label":"Listo para revisión"},
+    {"queue_id":"q-puerta","submission_ref":"review/fixtures/puerta-abierta-draft.json","priority":"normal","received_at":"2026-09-30T14:10:00Z","label":"Faltan derechos"},
+    {"queue_id":"q-linea","submission_ref":"review/fixtures/linea-urbana-draft.json","priority":"low","received_at":"2026-09-30T14:20:00Z","label":"Borrador incompleto"}
+  ]
+}
