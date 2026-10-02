@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/vault-provider-config.schema.json",
+  "title": "vault-provider-config",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "vault_id",
+    "mode",
+    "storage_adapter",
+    "key_adapter",
+    "external_connections",
+    "status",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "vault_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "mode": {
+      "enum": [
+        "local_rehearsal",
+        "production"
+      ]
+    },
+    "storage_adapter": {
+      "enum": [
+        "local_memory",
+        "external_object_store"
+      ]
+    },
+    "key_adapter": {
+      "enum": [
+        "local_ephemeral",
+        "external_kms"
+      ]
+    },
+    "external_connections": {
+      "type": "boolean"
+    },
+    "status": {
+      "enum": [
+        "ready",
+        "blocked"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

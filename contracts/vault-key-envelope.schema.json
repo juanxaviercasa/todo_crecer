@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/vault-key-envelope.schema.json",
+  "title": "vault-key-envelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "envelope_id",
+    "object_ref",
+    "key_ref",
+    "algorithm",
+    "adapter",
+    "key_material_persisted",
+    "status",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "envelope_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "object_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "key_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "algorithm": {
+      "const": "aes-256-gcm"
+    },
+    "adapter": {
+      "enum": [
+        "local_ephemeral",
+        "external_kms"
+      ]
+    },
+    "key_material_persisted": {
+      "const": false
+    },
+    "status": {
+      "enum": [
+        "active",
+        "revoked",
+        "destroyed"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

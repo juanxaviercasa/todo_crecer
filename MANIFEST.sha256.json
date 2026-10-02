@@ -1,7 +1,7 @@
 {
   "format": "sha256-manifest-v1",
-  "package": "todolima-platform-phase34",
-  "version": "0.36.0",
+  "package": "todolima-platform-phase35",
+  "version": "0.37.0",
   "generated_at": "2026-09-30T00:00:00.000Z",
   "entries": [
     {
@@ -126,8 +126,8 @@
     },
     {
       "path": "CONTINUAR_TODO_CRECER.md",
-      "bytes": 1866,
-      "sha256": "ced123a50b64d2dff9ab2f5a13d4688cb4ac5add38b9e96106cbecc25fcce55a"
+      "bytes": 2184,
+      "sha256": "c9d2f18776bc88685b32af5e6f6aa391f94311d39fad4cfd655178a971b7167e"
     },
     {
       "path": "contracts/access-decision.schema.json",
@@ -945,6 +945,11 @@
       "sha256": "86bd80765928ce0bcada05b500d6a8443ac4a584b88615328af2efca40d4b165"
     },
     {
+      "path": "contracts/phase35-vault-readiness.schema.json",
+      "bytes": 1594,
+      "sha256": "fbce7c1d6f83e79036626755e7e06debbeb29517df5866b1cddebc9ab90bf696"
+    },
+    {
       "path": "contracts/pilot-acceptance-audit-event.schema.json",
       "bytes": 1183,
       "sha256": "02f73530298e2e2f5daeb8eb015d007c4b15ac0e7cb35b2d5409587acba75711"
@@ -1405,6 +1410,66 @@
       "sha256": "01d18da83e6499c620fef606f27cb9085e0e52ba7ee15344e8ee59630d305f7f"
     },
     {
+      "path": "contracts/vault-access-grant.schema.json",
+      "bytes": 1577,
+      "sha256": "ed122ecbaa0378a27eb73f1404a7cbeff7ff881496864aa0be2041ddf3ed5f88"
+    },
+    {
+      "path": "contracts/vault-access-policy.schema.json",
+      "bytes": 1192,
+      "sha256": "388286112310ad688fcb80afe2ce8fca68cd848c1bda53b487a8005d4c28c433"
+    },
+    {
+      "path": "contracts/vault-audit-entry.schema.json",
+      "bytes": 1337,
+      "sha256": "2100a735ef2665ddc24040dab0c891dda70b554b2d1aa8a08a8f927edf80d252"
+    },
+    {
+      "path": "contracts/vault-backup-snapshot.schema.json",
+      "bytes": 1455,
+      "sha256": "4ed171c66c0d2b0a1de03a8965394b2ee60fb43485eba0afa03fc1b805d56498"
+    },
+    {
+      "path": "contracts/vault-destruction-certificate.schema.json",
+      "bytes": 1316,
+      "sha256": "d25514488aed66ff0b85c6e3f63e0a603b9ce9453aeff090da13e494126856e1"
+    },
+    {
+      "path": "contracts/vault-key-envelope.schema.json",
+      "bytes": 1149,
+      "sha256": "07e4a02ae7ab3bf60e6eeef990a5c05f3bbdb9a2255a56a4a270180c1c3cf67d"
+    },
+    {
+      "path": "contracts/vault-legal-hold.schema.json",
+      "bytes": 1124,
+      "sha256": "6e3422269f6aed0908f254a00a94727bac77736f7aa66ec478b4dfecff453391"
+    },
+    {
+      "path": "contracts/vault-object.schema.json",
+      "bytes": 1363,
+      "sha256": "8c7e5a9db0c715560e915fd2b852019733eac3ea768788a37558c9b479aafb9f"
+    },
+    {
+      "path": "contracts/vault-provider-config.schema.json",
+      "bytes": 1094,
+      "sha256": "5c68fea95b015ee503c66ad2064cdc0c0d52c7a11c3752e5256fb99926e8b014"
+    },
+    {
+      "path": "contracts/vault-recovery-drill.schema.json",
+      "bytes": 1891,
+      "sha256": "a1c3de9d2becd78a785ec187379e796dd98224bbde9370279024506c5fedbd58"
+    },
+    {
+      "path": "contracts/vault-retention-schedule.schema.json",
+      "bytes": 1095,
+      "sha256": "7f9834c091c52a101c028d4241c63b3928da910dfaf91b9753a729f856711d48"
+    },
+    {
+      "path": "contracts/vault-revocation-record.schema.json",
+      "bytes": 1040,
+      "sha256": "5eecab4059a4a895efb37145e0093e7670336f42151dfa96d3658dcb46252d3c"
+    },
+    {
       "path": "contracts/verified-destination.schema.json",
       "bytes": 1273,
       "sha256": "2ed08fdfa7c45d481a2fae3b05a84cd0260172fb6e0fce2e68d0990b94ed9b55"
@@ -1428,6 +1493,11 @@
       "path": "contracts/visual-qa-review.schema.json",
       "bytes": 1444,
       "sha256": "b3ea556c1c95ef98d4dd5594a7a8c212ef4d67997e0ead6fc1498bc1e3309eb0"
+    },
+    {
+      "path": "contracts/watermarked-vault-export.schema.json",
+      "bytes": 1160,
+      "sha256": "ae734d9e32079aec9849a8a6dd1e54ae3da1b8a5dd1e9ba69b4fcb35889b740f"
     },
     {
       "path": "contracts/web-vitals-snapshot.schema.json",
@@ -1633,6 +1703,11 @@
       "path": "docs/adr/ADR-042-private-evidence-and-fixture-replacement.md",
       "bytes": 558,
       "sha256": "a48334230f259771523f76cffd097dcfc0efd0bf8055b699c6bf2be23268a50f"
+    },
+    {
+      "path": "docs/adr/ADR-043-operational-evidence-vault.md",
+      "bytes": 497,
+      "sha256": "e299b55cbdc0a26011defb37f76c83622b37d3bab5c3252f988f4d712bbd9948"
     },
     {
       "path": "docs/CHAT_WORKFLOW.md",
@@ -2280,6 +2355,36 @@
       "sha256": "f68e3d497d876aeed1188e5e6b682b359e2066137d753f5b3c25eb3afc8507c5"
     },
     {
+      "path": "docs/phase-35/AUDIT_LIFECYCLE.md",
+      "bytes": 267,
+      "sha256": "f14e742988969f496d3ab7052c4fc1e8ab46c00308c20e7fd523d678ab2e892c"
+    },
+    {
+      "path": "docs/phase-35/BACKUP_AND_RECOVERY.md",
+      "bytes": 250,
+      "sha256": "85b78383a578a375be9d5d5cf646397fcec2bc77567c6915fe3a8794af9d2189"
+    },
+    {
+      "path": "docs/phase-35/OPERATIONAL_VAULT.md",
+      "bytes": 305,
+      "sha256": "f406b14041a9de9592cdfe20cf67fb795be9d0098664635ad46aec694af0cca9"
+    },
+    {
+      "path": "docs/phase-35/RETENTION_HOLD_DESTRUCTION.md",
+      "bytes": 251,
+      "sha256": "d3e749329b3cadd61e478dbabd28df1a2ee833d71876ab32853884719cc9882b"
+    },
+    {
+      "path": "docs/phase-35/TEMPORARY_ACCESS.md",
+      "bytes": 235,
+      "sha256": "97a25cdb85eeba32b1bc32a6a02afe7d2508b88ca79d9987b3390903366ab48f"
+    },
+    {
+      "path": "docs/phase-35/VALIDATION.md",
+      "bytes": 1020,
+      "sha256": "34d089ef90ca341dad693ce7384c86524d49c2e114c748e40a38106cfcd620a5"
+    },
+    {
       "path": "docs/phase-4/OWNER_ONBOARDING.md",
       "bytes": 2599,
       "sha256": "ae057bddec20143bb65341766b1bd4a91a3a6890485576a7c06b1b0713070e16"
@@ -2760,6 +2865,21 @@
       "sha256": "8f68f63b8b806b6f10059a1cffc9bc550f7b5f7ce82df04e24330c66caf3bd26"
     },
     {
+      "path": "operational-vault/app/app.js",
+      "bytes": 1176,
+      "sha256": "2b63b7bdfc01630cfd800fece9cc3b375808a4d976e85cc1973559260fa6d18e"
+    },
+    {
+      "path": "operational-vault/app/index.html",
+      "bytes": 3656,
+      "sha256": "67803f294e11701ae3883d3b18d0b89ddedaea01718453609336a0b04515820a"
+    },
+    {
+      "path": "operational-vault/app/styles.css",
+      "bytes": 4347,
+      "sha256": "fca760a51378f4386a4c9b6c33135600cefb26e3f389a8d6a7409ecf44e04d53"
+    },
+    {
       "path": "ops/slo-policies.json",
       "bytes": 860,
       "sha256": "be7882495d5540a523b66a5c4cd62d16997c5ec0ea8247f94dee9b3932e69129"
@@ -2817,12 +2937,12 @@
     {
       "path": "package-lock.json",
       "bytes": 4423,
-      "sha256": "6bf86e5c37b1a84042b608f0ff6d08852e5b8b129da10601513bb4586ae0752e"
+      "sha256": "d86812f46d24079c9fd0f4ae2ffcd572edabf14170640c78d48948be1ea99c2c"
     },
     {
       "path": "package.json",
-      "bytes": 6988,
-      "sha256": "fe52b3c2fbf9449b01b9bb039f71236570c03e87074132724ec85ec3b6e9439a"
+      "bytes": 7191,
+      "sha256": "5940ef506464d458628b6dbc0642344fc37491ebee4dd71b37d7340aa34e71a8"
     },
     {
       "path": "packages/.gitkeep",
@@ -2908,6 +3028,11 @@
       "path": "packages/observability-guardrails/index.cjs",
       "bytes": 12647,
       "sha256": "d17293d33d6d9bf357035df10bd593fafe40598bc3e6d65bb0c11fe2c9e6d6a3"
+    },
+    {
+      "path": "packages/operational-evidence-vault/index.cjs",
+      "bytes": 14888,
+      "sha256": "bae5eed01fe9b4a368cb2871f3668df7358562925981e79f8cadfcd1bb01b4d2"
     },
     {
       "path": "packages/operator-review/index.cjs",
@@ -3276,8 +3401,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 43063,
-      "sha256": "28b876d5a5b1e19a15a0c86bd876565ec52915b470b4563619827e30b830bc2a"
+      "bytes": 43701,
+      "sha256": "3b31b44479f689b23a6f2d5810e75af8f56f68f074c1e1744677439dc7a0299d"
     },
     {
       "path": "review/app/app.js",
@@ -3380,6 +3505,11 @@
       "sha256": "f409b99a29b0c8f2d9b74a21b67429a7bd36f406ba3be0ff624e4228bfadf85d"
     },
     {
+      "path": "scripts/build-operational-vault.cjs",
+      "bytes": 3470,
+      "sha256": "fc6cbbc224d9600641259936f6577760d015d0b025fe044e45257aa25bf1fbda"
+    },
+    {
       "path": "scripts/build-owner-intake-desk.cjs",
       "bytes": 1944,
       "sha256": "368cb9a34950d298ef35d98cc6e1903e6a8f6c4acd87d7201d141d271425ce62"
@@ -3477,7 +3607,7 @@
     {
       "path": "scripts/release-manifest.cjs",
       "bytes": 1095,
-      "sha256": "e1adefae05574bf5cd391b148c60219f83d49bacda0c822f911efee0f086daf8"
+      "sha256": "2a952219f7c30085c6ac46916a35f8d1722be58d93d3596f50648b04ee2d69a9"
     },
     {
       "path": "scripts/run-cloudflare-discovery.cjs",
@@ -3568,6 +3698,11 @@
       "path": "scripts/serve-onboarding.cjs",
       "bytes": 1536,
       "sha256": "43bc70fc4c6d1aea77d5869f0be578e98385be4823b063e0d9c3e323543490b5"
+    },
+    {
+      "path": "scripts/serve-operational-vault.cjs",
+      "bytes": 1493,
+      "sha256": "2ee53389b94c50af5cb476174613e063bb20c354a32add5bb547f94507615118"
     },
     {
       "path": "scripts/serve-owner-intake-desk.cjs",
@@ -3803,6 +3938,11 @@
       "path": "tests/observability-guardrails.test.cjs",
       "bytes": 11097,
       "sha256": "9d5aa93c31e5769e8b0f0c90233348ad88514dc3a50e0d1aed95de989d836f60"
+    },
+    {
+      "path": "tests/operational-evidence-vault.test.cjs",
+      "bytes": 12210,
+      "sha256": "c2868305322c26981b963a1731a4308f293d87b4048eb1cf2144d272d8f39483"
     },
     {
       "path": "tests/operator-review.test.cjs",

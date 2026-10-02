@@ -1,3 +1,14 @@
+# Fase 35 · Bóveda operativa y ciclo de vida
+
+La plataforma ensaya el ciclo completo de evidencia cifrada: almacenamiento, acceso temporal, watermark, revocación, retención, legal hold, destrucción, backup, recuperación y auditoría. Los adaptadores son locales y producción permanece bloqueada.
+
+- Bóveda: `npm run build && npm run start:vault` → http://127.0.0.1:4209/
+- Documento: [docs/phase-35/OPERATIONAL_VAULT.md](docs/phase-35/OPERATIONAL_VAULT.md)
+- Recuperación: [docs/phase-35/BACKUP_AND_RECOVERY.md](docs/phase-35/BACKUP_AND_RECOVERY.md)
+- Decisión: [ADR-043](docs/adr/ADR-043-operational-evidence-vault.md)
+
+---
+
 # Fase 34 · Motor privado de evidencia
 
 La plataforma clasifica, minimiza, cifra y revisa evidencia antes de sustituir fixtures campo por campo. La ejecución incluida es sintética: no contiene datos reales ni habilita publicación.

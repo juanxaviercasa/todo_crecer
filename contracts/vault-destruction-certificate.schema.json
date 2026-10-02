@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/vault-destruction-certificate.schema.json",
+  "title": "vault-destruction-certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "certificate_id",
+    "object_ref",
+    "schedule_ref",
+    "ciphertext_absent",
+    "key_absent",
+    "backup_absent",
+    "status",
+    "destroyed_by",
+    "destroyed_at",
+    "certificate_digest"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "certificate_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "object_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "schedule_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "ciphertext_absent": {
+      "const": true
+    },
+    "key_absent": {
+      "const": true
+    },
+    "backup_absent": {
+      "const": true
+    },
+    "status": {
+      "const": "verified_destroyed"
+    },
+    "destroyed_by": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "destroyed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "certificate_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  }
+}
