@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/assisted-pilot-gate.schema.json",
+  "title": "assisted-pilot-gate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "gate_id",
+    "selection_ref",
+    "checks",
+    "blockers",
+    "status",
+    "external_send_allowed",
+    "evaluated_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "gate_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "selection_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "checks": {
+      "type": "array",
+      "minItems": 7,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "passed"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "passed": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "status": {
+      "enum": [
+        "blocked",
+        "ready_for_human_send"
+      ]
+    },
+    "external_send_allowed": {
+      "type": "boolean"
+    },
+    "evaluated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/contact-authorization.schema.json",
+  "title": "contact-authorization",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "authorization_id",
+    "selection_ref",
+    "destination_ref",
+    "script_ref",
+    "script_digest",
+    "authorized",
+    "authorized_by",
+    "expires_at",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "authorization_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "selection_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "destination_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "script_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "script_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "authorized": {
+      "type": "boolean"
+    },
+    "authorized_by": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/verified-destination.schema.json",
+  "title": "verified-destination",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "destination_id",
+    "selection_ref",
+    "channel",
+    "masked_destination",
+    "verification_method",
+    "verified",
+    "verified_by",
+    "verified_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "destination_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "selection_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "channel": {
+      "enum": [
+        "whatsapp",
+        "email",
+        "phone",
+        "manual"
+      ]
+    },
+    "masked_destination": {
+      "type": "string",
+      "pattern": "^.{3,120}$"
+    },
+    "verification_method": {
+      "enum": [
+        "owner_provided",
+        "official_source_review",
+        "manual_confirmation"
+      ]
+    },
+    "verified": {
+      "type": "boolean"
+    },
+    "verified_by": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "verified_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

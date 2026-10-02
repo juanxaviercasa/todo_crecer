@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/assisted-pilot-handoff.schema.json",
+  "title": "assisted-pilot-handoff",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "handoff_id",
+    "selection_ref",
+    "artifact_refs",
+    "gate_ref",
+    "status",
+    "external_messages",
+    "publications",
+    "handoff_digest",
+    "sealed_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "handoff_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "selection_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "artifact_refs": {
+      "type": "array",
+      "minItems": 7,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9_-]{3,96}$"
+      }
+    },
+    "gate_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "status": {
+      "enum": [
+        "prepared_blocked",
+        "ready_for_operator"
+      ]
+    },
+    "external_messages": {
+      "const": 0
+    },
+    "publications": {
+      "const": 0
+    },
+    "handoff_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "sealed_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

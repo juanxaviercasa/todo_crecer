@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/private-consent-kit.schema.json",
+  "title": "private-consent-kit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "kit_id",
+    "selection_ref",
+    "scopes",
+    "plain_language_notice",
+    "withdrawal_method",
+    "token_policy",
+    "external_link_issued",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "kit_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "selection_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "scopes": {
+      "type": "array",
+      "minItems": 5,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "plain_language_notice": {
+      "type": "string",
+      "minLength": 80
+    },
+    "withdrawal_method": {
+      "type": "string",
+      "minLength": 1
+    },
+    "token_policy": {
+      "const": "one_time_hash_only"
+    },
+    "external_link_issued": {
+      "const": false
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

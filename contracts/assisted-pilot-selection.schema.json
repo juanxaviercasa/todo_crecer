@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/assisted-pilot-selection.schema.json",
+  "title": "assisted-pilot-selection",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "selection_id",
+    "candidate_ref",
+    "public_name",
+    "archetype",
+    "reason",
+    "scope",
+    "status",
+    "selected_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "selection_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "candidate_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "public_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "archetype": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "const": "single_business"
+    },
+    "status": {
+      "const": "prepared"
+    },
+    "selected_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

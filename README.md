@@ -1,3 +1,14 @@
+# Fase 32 · Piloto asistido con un único negocio
+
+La plataforma prepara una conversación humana completa para un solo candidato: Silvana Verano. El paquete incluye guion, FAQ, consentimiento, entrevista, activos, ensayo y gate. El contacto real continúa bloqueado hasta verificar el destino y autorizar el texto exacto.
+
+- Tablero: `npm run build && npm run start:assisted-pilot` → http://127.0.0.1:4206/
+- Documento: [docs/phase-32/ASSISTED_SINGLE_BUSINESS_PILOT.md](docs/phase-32/ASSISTED_SINGLE_BUSINESS_PILOT.md)
+- Guía: [docs/phase-32/OPERATOR_PLAYBOOK.md](docs/phase-32/OPERATOR_PLAYBOOK.md)
+- Decisión: [ADR-040](docs/adr/ADR-040-human-assisted-single-business-pilot.md)
+
+---
+
 # Fase 31 · Owner Simulation Lab
 
 Esta fase prueba el recorrido del propietario con cinco gemelos sintéticos. Cubre aceptación, silencio, preguntas, activos incompletos y rechazo sin contactar a ningún negocio real.

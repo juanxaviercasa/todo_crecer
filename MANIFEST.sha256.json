@@ -1,7 +1,7 @@
 {
   "format": "sha256-manifest-v1",
-  "package": "todolima-platform-phase31",
-  "version": "0.33.0",
+  "package": "todolima-platform-phase32",
+  "version": "0.34.0",
   "generated_at": "2026-09-30T00:00:00.000Z",
   "entries": [
     {
@@ -16,8 +16,8 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 138,
-      "sha256": "39e1d0317c01551f8454e86732a2a867b3a28af0427383f898cbc3b05aabe6d8"
+      "bytes": 149,
+      "sha256": "e8e1e46def20c7176d4462c36a1a2b84e658a48317565e6f558d8b2215d368a4"
     },
     {
       "path": "agents/.gitkeep",
@@ -43,6 +43,21 @@
       "path": "asset-pipeline/app/styles.css",
       "bytes": 6837,
       "sha256": "251f590c77af26f857dcb17e14b1ccf669c4fd4eaec4217a05ac7eb5869cd3bf"
+    },
+    {
+      "path": "assisted-pilot/app/app.js",
+      "bytes": 2525,
+      "sha256": "041e889195a369c1c69da3936bcb4b41fdf187019e298cb15c084d8c534e16a7"
+    },
+    {
+      "path": "assisted-pilot/app/index.html",
+      "bytes": 3385,
+      "sha256": "5edfb5565579c5e03ec2cd2e267819ac2a613dadcc4a1a7a5f39c44be5ced2c5"
+    },
+    {
+      "path": "assisted-pilot/app/styles.css",
+      "bytes": 4539,
+      "sha256": "516f87295fbd83f68c92a42b6caae45ca1a90cde0562d1371003005f80628420"
     },
     {
       "path": "claim-entitlements/app/app.js",
@@ -111,8 +126,8 @@
     },
     {
       "path": "CONTINUAR_TODO_CRECER.md",
-      "bytes": 1897,
-      "sha256": "81d800ccd2e1152d1e6d57f87c17bd051d4d9d1df17ed1ad68e702af4c58c53c"
+      "bytes": 1822,
+      "sha256": "b54d19ecf16cbfad41567d983800a5737f39d294212962740f0fa0b3322b9996"
     },
     {
       "path": "contracts/access-decision.schema.json",
@@ -183,6 +198,31 @@
       "path": "contracts/asset-usage-index.schema.json",
       "bytes": 1557,
       "sha256": "9a6cfd3f1ea98edcf8ad2b8d4ea413fb86391bfd5859df5be0fbc8f4327fbf1f"
+    },
+    {
+      "path": "contracts/assisted-contact-plan.schema.json",
+      "bytes": 1360,
+      "sha256": "693ac753535f1870e93bada201285675c909c182c0a70d9ea88f18838d10d2dd"
+    },
+    {
+      "path": "contracts/assisted-pilot-gate.schema.json",
+      "bytes": 1428,
+      "sha256": "d8bce9c69c63f8ed4cfe705811a52ca1a4c30c40de20dd2d506abb069a8484c6"
+    },
+    {
+      "path": "contracts/assisted-pilot-handoff.schema.json",
+      "bytes": 1352,
+      "sha256": "6c9ddc3a4ff445feceb76e91073e7d7f9a8815a812de12a0225ef91054acd46b"
+    },
+    {
+      "path": "contracts/assisted-pilot-rehearsal.schema.json",
+      "bytes": 1419,
+      "sha256": "7068fb58993301dc55b8e2e530751e7b97b717ad96e236b40af3a98c03818245"
+    },
+    {
+      "path": "contracts/assisted-pilot-selection.schema.json",
+      "bytes": 1070,
+      "sha256": "47bfa1af1980e059e5de32d73c6d04e8e65134770726fd436a53f0b51d9840fb"
     },
     {
       "path": "contracts/audit-entry.schema.json",
@@ -345,9 +385,19 @@
       "sha256": "5ba9ea4924a5ea6549890f300117c1afa4cf282893f6b516be78a3e36ba1e62e"
     },
     {
+      "path": "contracts/contact-authorization.schema.json",
+      "bytes": 1289,
+      "sha256": "fcb38bb976e505d57cfce3b353765bf7158e19f3fb1c25a346823f24f6c5af11"
+    },
+    {
       "path": "contracts/control-plane-transaction.schema.json",
       "bytes": 799,
       "sha256": "b112713b44a18f5a63b286da0b63d4d6bb09a48bf526c7574c846b2e3dd0ad09"
+    },
+    {
+      "path": "contracts/conversation-script.schema.json",
+      "bytes": 1435,
+      "sha256": "edc30294df48db50b991b0f6dc08387a18c7b202470fbeab8fb57e52c6d70b6a"
     },
     {
       "path": "contracts/conversion-event.schema.json",
@@ -483,6 +533,11 @@
       "path": "contracts/experiment-result.schema.json",
       "bytes": 1875,
       "sha256": "e83d3c643a3998a19aedbbf4a40071684499357c01cabdac7f574bdebe5ab772"
+    },
+    {
+      "path": "contracts/faq-pack.schema.json",
+      "bytes": 1377,
+      "sha256": "8eff2b2e61cf28cc623d1ac221fc97fcd79e7cac69ad57e738c8b6800f488bc9"
     },
     {
       "path": "contracts/fleet-drift-report.schema.json",
@@ -740,6 +795,11 @@
       "sha256": "55ce55e327d6333e2830be617cfabaf50bb048893f2c618a68c00a8c43e25ad4"
     },
     {
+      "path": "contracts/owner-interview-form.schema.json",
+      "bytes": 1500,
+      "sha256": "391aa5886067aa597009e1d4099c29e90fe0b20358dadb566a388bbade8ea4a8"
+    },
+    {
       "path": "contracts/owner-interview-plan.schema.json",
       "bytes": 1390,
       "sha256": "f91bb8a9c6d2a45bc95512165d9fa396a9d35060085ffeeeb923bdb7e71232c4"
@@ -838,6 +898,11 @@
       "path": "contracts/private-cohort-readiness.schema.json",
       "bytes": 1880,
       "sha256": "b98ec198ae9a12275596511a4ff3fa31f8b741417e8fa24623d45ebbc50df7f6"
+    },
+    {
+      "path": "contracts/private-consent-kit.schema.json",
+      "bytes": 1223,
+      "sha256": "e6f8e02d14f12cf26eb29ffdb4c4208d8620ad12e5ebcc5dd5fce1bc3f445530"
     },
     {
       "path": "contracts/private-demo-build.schema.json",
@@ -1003,6 +1068,11 @@
       "path": "contracts/sandbox-message.schema.json",
       "bytes": 1121,
       "sha256": "b29bd5fa8ed49e077b6a4d2b9808a54df1c95275689e3dd9a1963c2f7f708421"
+    },
+    {
+      "path": "contracts/secure-asset-folder-plan.schema.json",
+      "bytes": 1128,
+      "sha256": "1de875b42e6430447dc56cb3de6056a05520ec0610051143a7759674b2f8af40"
     },
     {
       "path": "contracts/secure-asset-upload-grant.schema.json",
@@ -1208,6 +1278,11 @@
       "path": "contracts/usage-snapshot.schema.json",
       "bytes": 1136,
       "sha256": "01d18da83e6499c620fef606f27cb9085e0e52ba7ee15344e8ee59630d305f7f"
+    },
+    {
+      "path": "contracts/verified-destination.schema.json",
+      "bytes": 1273,
+      "sha256": "2ed08fdfa7c45d481a2fae3b05a84cd0260172fb6e0fce2e68d0990b94ed9b55"
     },
     {
       "path": "contracts/version-compatibility.schema.json",
@@ -1418,6 +1493,11 @@
       "path": "docs/adr/ADR-039-synthetic-owner-simulation.md",
       "bytes": 394,
       "sha256": "212052bdd770fbeecc2a4699187252982fec8acb346e6684e1c6035414fc31cd"
+    },
+    {
+      "path": "docs/adr/ADR-040-human-assisted-single-business-pilot.md",
+      "bytes": 670,
+      "sha256": "f05fe5f516f6262bf39a245ce647d8ce52ccf665c653e89533183566f5a12bc3"
     },
     {
       "path": "docs/CHAT_WORKFLOW.md",
@@ -1985,6 +2065,31 @@
       "sha256": "ec8fe1f508343b7bcf0a5fe56a570006f1294f43b2d94ed85b9f0e55080c617b"
     },
     {
+      "path": "docs/phase-32/ASSISTED_SINGLE_BUSINESS_PILOT.md",
+      "bytes": 485,
+      "sha256": "243bc722ab204f2564d71294138c70ee8dd099aa35e5d79518bf9af4898fbfcb"
+    },
+    {
+      "path": "docs/phase-32/CONTACT_GATE.md",
+      "bytes": 329,
+      "sha256": "36ca9ecab58dd983a78a78905a5dc42e8f7e6551a3558a68003109aa932158c2"
+    },
+    {
+      "path": "docs/phase-32/FAQ.md",
+      "bytes": 261,
+      "sha256": "10a95736cf08c6623f3a78b2fa1820fc5fb1e066501ca2218f0f597eefea1118"
+    },
+    {
+      "path": "docs/phase-32/OPERATOR_PLAYBOOK.md",
+      "bytes": 410,
+      "sha256": "497d7a40511b5f5879db1bc9e7cb192bf96a0ec85c96673be3e9133ca3026ab6"
+    },
+    {
+      "path": "docs/phase-32/VALIDATION.md",
+      "bytes": 1164,
+      "sha256": "a78f508eeccf36bd6eff4aa9f685321a0e90f3d81373c383737a22aec9fbcbc9"
+    },
+    {
       "path": "docs/phase-4/OWNER_ONBOARDING.md",
       "bytes": 2599,
       "sha256": "ae057bddec20143bb65341766b1bd4a91a3a6890485576a7c06b1b0713070e16"
@@ -2053,6 +2158,21 @@
       "path": "docs/phase-9/VALIDATION.md",
       "bytes": 1048,
       "sha256": "e3c2dc3e528d10e83b8c4b1e552205af9de882948d86ec74262c57fa6188c924"
+    },
+    {
+      "path": "docs/PROMPT_MAESTRO_BLUEPRINT.md",
+      "bytes": 30096,
+      "sha256": "f16aec2e97af489224ca5c16e0cce3ec07dee383a9c662bc9d13414141c14a89"
+    },
+    {
+      "path": "docs/revision-repositorios/category-inventory.csv",
+      "bytes": 985,
+      "sha256": "04d67209d732df91dea94711a216b1f384879bb7b8b52bbf3b757be58b8148ab"
+    },
+    {
+      "path": "docs/revision-repositorios/REVISION_Y_DECISION.md",
+      "bytes": 13164,
+      "sha256": "effa3ae1d7edd30c9f9dbae6a2c6d24cb62af089d11417a47131a08b56a06b21"
     },
     {
       "path": "docs/runbooks/.gitkeep",
@@ -2507,12 +2627,12 @@
     {
       "path": "package-lock.json",
       "bytes": 4423,
-      "sha256": "94a851ac15d71f66c8ce8137ae26f81171d29a450cf16afa94da74599bce819d"
+      "sha256": "90ccabc7caabc0081813a44c69cb52ef68133b90b40a37cfaa3d191168259d35"
     },
     {
       "path": "package.json",
-      "bytes": 6338,
-      "sha256": "1887994298139f526c3dba1e9f242849c0bb79eca690e90e9aecda8cce27ec45"
+      "bytes": 6551,
+      "sha256": "91c3e44522a718f1deaf738e4716329ed82de01762dda034b94007a2a7691ed5"
     },
     {
       "path": "packages/.gitkeep",
@@ -2528,6 +2648,11 @@
       "path": "packages/asset-publication/index.cjs",
       "bytes": 6772,
       "sha256": "7d4ceea108ef2ddd1e2a8cab892fd1607b245a0d84bf46b4bb293d7206825b7f"
+    },
+    {
+      "path": "packages/assisted-single-business-pilot/index.cjs",
+      "bytes": 13118,
+      "sha256": "ae6f2ea9703567532a05d0268820dc2bbc9a72469b1c4faf0b8316e5ba754bce"
     },
     {
       "path": "packages/claim-entitlements/index.cjs",
@@ -2693,6 +2818,16 @@
       "path": "packages/zero-trust-security/index.cjs",
       "bytes": 23178,
       "sha256": "ed790a25af7913d6f5c59d7f1142366b2dab8eaeb6845a12ff7d661d5ad34e8c"
+    },
+    {
+      "path": "phase31-verification.log",
+      "bytes": 109374,
+      "sha256": "be2aa1a05f6212f551ddee8ea99d59ac14921ef2e8b8849e6d277d5a5888e98f"
+    },
+    {
+      "path": "phase32-verification.log",
+      "bytes": 114300,
+      "sha256": "3c3889297a10a68d384d239486d41c1be83313c2f8b20117b86b413c900e9282"
     },
     {
       "path": "pilot/asset-sources.json",
@@ -2870,6 +3005,11 @@
       "sha256": "33eb5838dd4a839db00b4c1ed6e67b096167505551cbba74134c8b57b424b724"
     },
     {
+      "path": "powershell.bat",
+      "bytes": 71,
+      "sha256": "c1b8b1bd0f5f27d4bb40c09362140c8b821be15730d2feb0cf21af3bff3ba31f"
+    },
+    {
       "path": "prompts/.gitkeep",
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -2896,8 +3036,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 41093,
-      "sha256": "c471a85cd1bd71fba551ad0b61c03e0673bfc37917e571dd5e5d17891a6a1aaf"
+      "bytes": 41785,
+      "sha256": "be470a8ccbf83ccea90fd2ebad76e20d5ba03cc4642bb2b526329907350579a5"
     },
     {
       "path": "review/app/app.js",
@@ -2933,6 +3073,11 @@
       "path": "scripts/build-asset-console.cjs",
       "bytes": 1531,
       "sha256": "4d32f28291d8093f3118ea21d57a102233defbf2e393ec41446ba94dc8c1ad9b"
+    },
+    {
+      "path": "scripts/build-assisted-pilot.cjs",
+      "bytes": 2267,
+      "sha256": "acf390ab4945bed25c5db1ceae494c1700c98ff2768fb6756d21f4108a27f485"
     },
     {
       "path": "scripts/build-claim-entitlements.cjs",
@@ -3082,7 +3227,7 @@
     {
       "path": "scripts/release-manifest.cjs",
       "bytes": 1095,
-      "sha256": "6d8c87b1d6f00e667d922b1438df0ccb71df1e87be94d5f7202a688d3e6789f4"
+      "sha256": "ccd80aafa7ae42bb4c66c1823795b47af13379d0687ecba9261859ed2964151f"
     },
     {
       "path": "scripts/run-cloudflare-discovery.cjs",
@@ -3103,6 +3248,11 @@
       "path": "scripts/serve-asset-usage.cjs",
       "bytes": 1516,
       "sha256": "54115b49b1dc38712980ec6a49da663060baee39b202176873cfd85378e949d8"
+    },
+    {
+      "path": "scripts/serve-assisted-pilot.cjs",
+      "bytes": 1487,
+      "sha256": "a9cebeb6ffdc925736474447dd2ee6b02e7ee6b268a5adc4c834e8bef58c3d00"
     },
     {
       "path": "scripts/serve-claim-entitlements.cjs",
@@ -3323,6 +3473,11 @@
       "path": "tests/asset-publication.test.cjs",
       "bytes": 4557,
       "sha256": "83c6ee7762c4dbd88183eadd9796e69ffa76eb6febf10e74efdb572d3cee6537"
+    },
+    {
+      "path": "tests/assisted-single-business-pilot.test.cjs",
+      "bytes": 9828,
+      "sha256": "c140fc5af897f3321e4b76a3f64f8dc5871e1d0fe92c5ec18c0041d40576bcdc"
     },
     {
       "path": "tests/claim-entitlements.test.cjs",

@@ -1,10 +1,10 @@
 ﻿# TodoLima / HazloCrecer — estado y próximos pasos
 
-## Fase actual: 31
+## Fase actual: 32
 
-Ubicación de trabajo: `C:\Users\pc\Videos\todo_crecer\todolima-platform-phase31`.
+Ubicación de trabajo: `C:\Users\pc\Videos\todo_crecer\todo_crecer-repo`.
 
-La fase 31 incorpora un laboratorio de propietarios sintéticos. Permite probar el recorrido completo y la fricción sin contactar a ninguna empresa ni presentar datos inventados como reales.
+La fase 32 prepara un piloto humano asistido con un único negocio. El expediente seleccionado es Silvana Verano por representar una operación individual adecuada para validar confianza, claridad y acompañamiento antes de ampliar la cohorte.
 
 ## Ejecutar
 
@@ -12,32 +12,33 @@ La fase 31 incorpora un laboratorio de propietarios sintéticos. Permite probar 
 npm ci --ignore-scripts
 npm test
 npm run build
-npm run start:simulation
+npm run start:assisted-pilot
 ```
 
-Abrir http://127.0.0.1:4205/.
+Abrir http://127.0.0.1:4206/.
 
 ## Estado comprobado
 
-- 225 contratos JSON Schema.
-- 866 pruebas aprobadas y 0 fallidas.
-- 50 pruebas específicas de simulación.
+- 237 contratos JSON Schema.
+- 917 pruebas aprobadas y 0 fallidas.
+- 51 pruebas específicas del piloto asistido.
 - 0 vulnerabilidades de producción y 0 secretos detectados.
-- 5 propietarios sintéticos y 5 escenarios.
-- 11 mensajes internos de sandbox y 2 recordatorios simulados.
-- 0 contactos reales, 0 entregas externas y 0 publicaciones.
+- Un candidato y seis artefactos operativos preparados.
+- Ensayo sintético con 8 de 8 controles aprobados.
+- 0 destinos reales, 0 mensajes externos y 0 publicaciones.
 
-## Escenarios cubiertos
+## Paquete preparado
 
-1. Respuesta rápida y aceptación completa.
-2. Silencio: espera, dos recordatorios y cierre respetuoso a las 96 horas.
-3. Preguntas de privacidad derivadas a una persona.
-4. Activos o derechos incompletos devueltos para corrección.
-5. Rechazo registrado sin insistencia posterior.
+1. Guion de apertura y cierre respetuoso.
+2. FAQ con escalamiento humano.
+3. Consentimiento privado y retiro.
+4. Entrevista estructurada.
+5. Carpeta segura de activos y derechos.
+6. Gate de destino y autorización exacta.
 
-## Fase 32 recomendada
+## Fase 33 recomendada
 
-**Piloto asistido con un único negocio real.** Preparar un paquete final para un candidato: canal y destinatario verificados por una persona, mensaje exacto, hoja de conversación, respuestas a preguntas frecuentes, enlace privado de consentimiento, formulario de entrevista y carpeta segura de activos. La salida permanecerá bloqueada hasta recibir una instrucción explícita para ese destinatario concreto.
+**Sala privada de incorporación y regeneración del sitio.** Implementar la experiencia que usará el propietario después de aceptar: identidad, BusinessTruth, carga de activos, revisión del nuevo contenido, comparación visual y aceptación. Mientras no haya respuesta real, el flujo se validará con un expediente sintético claramente marcado.
 
 ## Dominios previstos
 
