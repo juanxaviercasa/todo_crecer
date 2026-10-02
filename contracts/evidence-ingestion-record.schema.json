@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/evidence-ingestion-record.schema.json",
+  "title": "evidence-ingestion-record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "evidence_id",
+    "case_ref",
+    "kind",
+    "source_type",
+    "synthetic",
+    "payload_digest",
+    "raw_persisted",
+    "status",
+    "received_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "evidence_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "case_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "kind": {
+      "enum": [
+        "owner_form",
+        "asset_declaration",
+        "acceptance_record"
+      ]
+    },
+    "source_type": {
+      "enum": [
+        "synthetic_fixture",
+        "verified_owner"
+      ]
+    },
+    "synthetic": {
+      "type": "boolean"
+    },
+    "payload_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "raw_persisted": {
+      "const": false
+    },
+    "status": {
+      "enum": [
+        "received",
+        "processed",
+        "rejected"
+      ]
+    },
+    "received_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/evidence-encryption-record.schema.json",
+  "title": "evidence-encryption-record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "encryption_id",
+    "evidence_ref",
+    "redaction_ref",
+    "algorithm",
+    "key_ref",
+    "iv",
+    "auth_tag",
+    "ciphertext",
+    "ciphertext_digest",
+    "key_persisted",
+    "encrypted_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "encryption_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "evidence_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "redaction_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "algorithm": {
+      "const": "aes-256-gcm"
+    },
+    "key_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "iv": {
+      "type": "string",
+      "minLength": 16
+    },
+    "auth_tag": {
+      "type": "string",
+      "minLength": 16
+    },
+    "ciphertext": {
+      "type": "string",
+      "minLength": 16
+    },
+    "ciphertext_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "key_persisted": {
+      "const": false
+    },
+    "encrypted_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

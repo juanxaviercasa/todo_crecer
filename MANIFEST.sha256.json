@@ -1,7 +1,7 @@
 {
   "format": "sha256-manifest-v1",
-  "package": "todolima-platform-phase33",
-  "version": "0.35.0",
+  "package": "todolima-platform-phase34",
+  "version": "0.36.0",
   "generated_at": "2026-09-30T00:00:00.000Z",
   "entries": [
     {
@@ -126,8 +126,8 @@
     },
     {
       "path": "CONTINUAR_TODO_CRECER.md",
-      "bytes": 1926,
-      "sha256": "4f541df14235b912b72bb75b8384298a4f91d16ca9f0d7f693d4ae7e244953d1"
+      "bytes": 1866,
+      "sha256": "ced123a50b64d2dff9ab2f5a13d4688cb4ac5add38b9e96106cbecc25fcce55a"
     },
     {
       "path": "contracts/access-decision.schema.json",
@@ -400,6 +400,11 @@
       "sha256": "b112713b44a18f5a63b286da0b63d4d6bb09a48bf526c7574c846b2e3dd0ad09"
     },
     {
+      "path": "contracts/controlled-field-replacement.schema.json",
+      "bytes": 1810,
+      "sha256": "36bbbe7bdccf098543dc5e38bcbd75c437274bb2566dbd1bc0098d9b1bbd65fc"
+    },
+    {
       "path": "contracts/conversation-script.schema.json",
       "bytes": 1435,
       "sha256": "edc30294df48db50b991b0f6dc08387a18c7b202470fbeab8fb57e52c6d70b6a"
@@ -525,6 +530,46 @@
       "sha256": "731405ac7cda6bcf54a63e57c7124ab16c21b18a9c79ee6287d41868b9776ca9"
     },
     {
+      "path": "contracts/evidence-case.schema.json",
+      "bytes": 947,
+      "sha256": "f14c31e5ca6dfe7d63adc500c10af9d68cf0ff136b802aef4b317c7f2399c4e5"
+    },
+    {
+      "path": "contracts/evidence-chain-entry.schema.json",
+      "bytes": 1349,
+      "sha256": "7463e51697314f69fe1d23782b3d33d549ce9d8cb3915d75e356ae4fd0e850bd"
+    },
+    {
+      "path": "contracts/evidence-classification.schema.json",
+      "bytes": 1354,
+      "sha256": "267e8a0deaebff689418242791a15d47f554b96fd7186cd1f5498c08e9fc70fa"
+    },
+    {
+      "path": "contracts/evidence-encryption-record.schema.json",
+      "bytes": 1411,
+      "sha256": "588d78fe9babe61394894c5a3f7df6157c13415289833e79e6dfa41779397ef0"
+    },
+    {
+      "path": "contracts/evidence-expiry-record.schema.json",
+      "bytes": 990,
+      "sha256": "35a24591c643fe03e71481c9d23c661e61f3e22587cb8a8c6933377c867a1a47"
+    },
+    {
+      "path": "contracts/evidence-ingestion-record.schema.json",
+      "bytes": 1299,
+      "sha256": "8fce8a5ad21cf639ee4cc07249165f94849ab5fe02ebff9cd672b91a403f11ab"
+    },
+    {
+      "path": "contracts/evidence-redaction-record.schema.json",
+      "bytes": 1230,
+      "sha256": "f2d72acd41b11fa84b04c93544e06fccf933a66da3dd1f802bb96d3e3f16e176"
+    },
+    {
+      "path": "contracts/evidence-review-decision.schema.json",
+      "bytes": 1432,
+      "sha256": "a9c2b504e5a1624c2c2834a429ad67f02cf99c7e82bfe83624213c0f8c7c7013"
+    },
+    {
       "path": "contracts/experiment-definition.schema.json",
       "bytes": 2527,
       "sha256": "87c503230490dcbedb25236ae2da106f219b125864cae83e183327bb38b26819"
@@ -543,6 +588,11 @@
       "path": "contracts/faq-pack.schema.json",
       "bytes": 1377,
       "sha256": "8eff2b2e61cf28cc623d1ac221fc97fcd79e7cac69ad57e738c8b6800f488bc9"
+    },
+    {
+      "path": "contracts/fixture-field-map.schema.json",
+      "bytes": 1154,
+      "sha256": "6efe00340c7b689f39d6427bed60772e5f9156b812e15ada3e39b7b1682d25c8"
     },
     {
       "path": "contracts/fleet-drift-report.schema.json",
@@ -890,6 +940,11 @@
       "sha256": "02ca358b66ee65ff9af8ba85e67ff13fe21075829bee06a689d990e10412b05f"
     },
     {
+      "path": "contracts/phase34-evidence-gate.schema.json",
+      "bytes": 1647,
+      "sha256": "86bd80765928ce0bcada05b500d6a8443ac4a584b88615328af2efca40d4b165"
+    },
+    {
       "path": "contracts/pilot-acceptance-audit-event.schema.json",
       "bytes": 1183,
       "sha256": "02f73530298e2e2f5daeb8eb015d007c4b15ac0e7cb35b2d5409587acba75711"
@@ -943,6 +998,11 @@
       "path": "contracts/private-demo-build.schema.json",
       "bytes": 1870,
       "sha256": "aff3a6a9476b15c9331906ab041650fc99c31a535eb9543aef705faeb4a001da"
+    },
+    {
+      "path": "contracts/private-evidence-package.schema.json",
+      "bytes": 1637,
+      "sha256": "88b7356035cb09e7a802fac8da738adf04954d1084b2aaec4737f8bbc552ffef"
     },
     {
       "path": "contracts/private-onboarding-room.schema.json",
@@ -1058,6 +1118,11 @@
       "path": "contracts/reminder-attempt.schema.json",
       "bytes": 1007,
       "sha256": "05e2957ca70ef896e51d3f926c87c1aade82b2c2ec64d188261a0c2b0275955f"
+    },
+    {
+      "path": "contracts/replacement-batch.schema.json",
+      "bytes": 1223,
+      "sha256": "5fbec7cbdebdf3b2fea77a770c80171328b4afa66a8e9555f6813f5762a061ab"
     },
     {
       "path": "contracts/resource-inventory.schema.json",
@@ -1563,6 +1628,11 @@
       "path": "docs/adr/ADR-041-private-owner-regeneration-room.md",
       "bytes": 502,
       "sha256": "098e4b5dcba83e9efe830a45d0283e3bcc2697b9ca4ffe1f0501c225a45915ff"
+    },
+    {
+      "path": "docs/adr/ADR-042-private-evidence-and-fixture-replacement.md",
+      "bytes": 558,
+      "sha256": "a48334230f259771523f76cffd097dcfc0efd0bf8055b699c6bf2be23268a50f"
     },
     {
       "path": "docs/CHAT_WORKFLOW.md",
@@ -2180,6 +2250,36 @@
       "sha256": "ca24d744a80fa7b420ee45fe0fb2e15289cf9f9c1af8e56a3328e2af455eea75"
     },
     {
+      "path": "docs/phase-34/CHAIN_AND_REPLACEMENT.md",
+      "bytes": 275,
+      "sha256": "794fe960af5e89aeba516a7da988e58a02874434ba9e722994ec9c8089ca5059"
+    },
+    {
+      "path": "docs/phase-34/DATA_MINIMIZATION.md",
+      "bytes": 292,
+      "sha256": "1751b7a009089b2c30aae7e5330ea89336d36ef1144b6f6bc9811e44e4c2b6f1"
+    },
+    {
+      "path": "docs/phase-34/DUAL_REVIEW_AND_EXPIRY.md",
+      "bytes": 266,
+      "sha256": "533f6c9ef6025cfba1f3180080052eac01cc064e7e7618852bae33a8c5a2dc84"
+    },
+    {
+      "path": "docs/phase-34/ENCRYPTION_AND_KEYS.md",
+      "bytes": 297,
+      "sha256": "1043df80f3e864d19fd0e1a18297c28ede649c7063d7c5366404f36670fac798"
+    },
+    {
+      "path": "docs/phase-34/PRIVATE_EVIDENCE_ENGINE.md",
+      "bytes": 327,
+      "sha256": "69431965d4df4622a7d82714c10fff44ae5250c691b7edd2aba0b54e99944a4d"
+    },
+    {
+      "path": "docs/phase-34/VALIDATION.md",
+      "bytes": 1189,
+      "sha256": "f68e3d497d876aeed1188e5e6b682b359e2066137d753f5b3c25eb3afc8507c5"
+    },
+    {
       "path": "docs/phase-4/OWNER_ONBOARDING.md",
       "bytes": 2599,
       "sha256": "ae057bddec20143bb65341766b1bd4a91a3a6890485576a7c06b1b0713070e16"
@@ -2717,12 +2817,12 @@
     {
       "path": "package-lock.json",
       "bytes": 4423,
-      "sha256": "d35e0d7439b2cfbf949bd9715dbeafe93a772b7f7198494ce60275da62ecc302"
+      "sha256": "6bf86e5c37b1a84042b608f0ff6d08852e5b8b129da10601513bb4586ae0752e"
     },
     {
       "path": "package.json",
-      "bytes": 6777,
-      "sha256": "5c69404cc7ca83bc61184108e1e707b49923af6a0533b3fa9363cba0a6f57153"
+      "bytes": 6988,
+      "sha256": "fe52b3c2fbf9449b01b9bb039f71236570c03e87074132724ec85ec3b6e9439a"
     },
     {
       "path": "packages/.gitkeep",
@@ -2855,6 +2955,11 @@
       "sha256": "5913d92e20114ab81b7ac55ab4044dd29044f5551c7af72c7ecf2e0d97c57a91"
     },
     {
+      "path": "packages/private-evidence-engine/index.cjs",
+      "bytes": 14430,
+      "sha256": "a8bf79b01ec93866c5f59bcd9efc480b0bb359e2bf676bf91cd552cd03b0da51"
+    },
+    {
       "path": "packages/private-foundation/index.cjs",
       "bytes": 8121,
       "sha256": "4a1685fb1cddfe644b8baf3556534bcf233b01a1dede85e699505c87e380a6cf"
@@ -2928,6 +3033,11 @@
       "path": "phase33-verification.log",
       "bytes": 120254,
       "sha256": "fe0c4f465adc1e2e0510ca8ed6813ed252146c09d0cc5dda9c8b7c0dfde3bf41"
+    },
+    {
+      "path": "phase34-verification.log",
+      "bytes": 126326,
+      "sha256": "4d179e1c5652c6116059cb6e745814efc9a2d7cc1f736a3755632535ec011670"
     },
     {
       "path": "pilot/asset-sources.json",
@@ -3110,6 +3220,21 @@
       "sha256": "c1b8b1bd0f5f27d4bb40c09362140c8b821be15730d2feb0cf21af3bff3ba31f"
     },
     {
+      "path": "private-evidence-room/app/app.js",
+      "bytes": 1798,
+      "sha256": "4f100e8562be82b5149bafef5e7aaaf7c09286689c0bc39f059ffea5302de0b7"
+    },
+    {
+      "path": "private-evidence-room/app/index.html",
+      "bytes": 4079,
+      "sha256": "75e9c5ccdf57806ba4839d1cd5d67675f26484c27d8f871c3e50d77e4447ac69"
+    },
+    {
+      "path": "private-evidence-room/app/styles.css",
+      "bytes": 4384,
+      "sha256": "1a41b428eef8ea69f0d276baf4e17e8d8536cb6c76904a094a7d40249f62e5a8"
+    },
+    {
       "path": "private-owner-room/app/app.js",
       "bytes": 330,
       "sha256": "c980fb5951fa904acb8e1a60d29b006480b2e3e65c3798200dac73015eb0cc1a"
@@ -3151,8 +3276,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 42442,
-      "sha256": "2564603fc03af13fde112523212db2b2b84ed73b8c0fb78d3e395d30727b4a3e"
+      "bytes": 43063,
+      "sha256": "28b876d5a5b1e19a15a0c86bd876565ec52915b470b4563619827e30b830bc2a"
     },
     {
       "path": "review/app/app.js",
@@ -3290,6 +3415,11 @@
       "sha256": "a7c50bba68de7d2d7d01df6a493ad7d04ac9eef9c02576b5ccca5dd9a2cee51f"
     },
     {
+      "path": "scripts/build-private-evidence-engine.cjs",
+      "bytes": 3333,
+      "sha256": "a6a62c56915fa763f06b85e59d1fd9e0af32088ebf9fc5a482e03cb422e7ba11"
+    },
+    {
       "path": "scripts/build-private-foundation.cjs",
       "bytes": 983,
       "sha256": "f6f61921fdbc0e5feb11562816cb3884e9a01a3a13a26ff9862ddb7390df9367"
@@ -3347,7 +3477,7 @@
     {
       "path": "scripts/release-manifest.cjs",
       "bytes": 1095,
-      "sha256": "8180b6625596be9e999d39cd736cea8d322f3a11d444f46d4b7fb0505b2b23ff"
+      "sha256": "e1adefae05574bf5cd391b148c60219f83d49bacda0c822f911efee0f086daf8"
     },
     {
       "path": "scripts/run-cloudflare-discovery.cjs",
@@ -3473,6 +3603,11 @@
       "path": "scripts/serve-private-demo.cjs",
       "bytes": 1635,
       "sha256": "4a6e1a20ed517e65b071f5a66e4d5689759ffc355910a5a2e5b565d20876bc4e"
+    },
+    {
+      "path": "scripts/serve-private-evidence-engine.cjs",
+      "bytes": 1505,
+      "sha256": "154fb076369cc1f4c8e71999bba99744d4e49e995b392ecd156ac5df2689542d"
     },
     {
       "path": "scripts/serve-private-foundation.cjs",
@@ -3708,6 +3843,11 @@
       "path": "tests/private-demo.test.cjs",
       "bytes": 3865,
       "sha256": "66214917f775ecbbcc18e2178a5eed42289e7ea7f59a6e0632de2d9316e31ad9"
+    },
+    {
+      "path": "tests/private-evidence-engine.test.cjs",
+      "bytes": 10854,
+      "sha256": "89f703627bb3a8d64f64c6ddb1cd0c7a37826ad9a971bb65a0503c3848a126e9"
     },
     {
       "path": "tests/private-foundation.test.cjs",

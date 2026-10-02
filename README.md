@@ -1,3 +1,14 @@
+# Fase 34 · Motor privado de evidencia
+
+La plataforma clasifica, minimiza, cifra y revisa evidencia antes de sustituir fixtures campo por campo. La ejecución incluida es sintética: no contiene datos reales ni habilita publicación.
+
+- Sala de evidencia: `npm run build && npm run start:evidence` → http://127.0.0.1:4208/
+- Documento: [docs/phase-34/PRIVATE_EVIDENCE_ENGINE.md](docs/phase-34/PRIVATE_EVIDENCE_ENGINE.md)
+- Cadena y sustitución: [docs/phase-34/CHAIN_AND_REPLACEMENT.md](docs/phase-34/CHAIN_AND_REPLACEMENT.md)
+- Decisión: [ADR-042](docs/adr/ADR-042-private-evidence-and-fixture-replacement.md)
+
+---
+
 # Fase 33 · Sala privada de incorporación y regeneración
 
 La plataforma ensaya el recorrido posterior a una aceptación: identidad, BusinessTruth, activos, regeneración, comparación, cambios y aprobación. El expediente ejecutable es sintético y no atribuye información inventada al negocio real.

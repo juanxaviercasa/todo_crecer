@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase34-evidence-gate.schema.json",
+  "title": "phase34-evidence-gate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "gate_id",
+    "case_ref",
+    "checks",
+    "blockers",
+    "simulation_status",
+    "real_evidence_status",
+    "publication_status",
+    "public_publish_allowed",
+    "evaluated_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "gate_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "case_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "checks": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "passed"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "passed": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "simulation_status": {
+      "enum": [
+        "complete",
+        "incomplete"
+      ]
+    },
+    "real_evidence_status": {
+      "enum": [
+        "pending",
+        "complete"
+      ]
+    },
+    "publication_status": {
+      "const": "blocked"
+    },
+    "public_publish_allowed": {
+      "const": false
+    },
+    "evaluated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

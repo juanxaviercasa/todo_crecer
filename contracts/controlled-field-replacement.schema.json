@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/controlled-field-replacement.schema.json",
+  "title": "controlled-field-replacement",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "replacement_id",
+    "case_ref",
+    "map_ref",
+    "evidence_ref",
+    "field",
+    "old_value_digest",
+    "new_value_digest",
+    "review_refs",
+    "mode",
+    "status",
+    "replaced_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "replacement_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "case_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "map_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "evidence_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "field": {
+      "enum": [
+        "business_name",
+        "services",
+        "service_areas",
+        "ideal_customer",
+        "differentiators",
+        "asset_rights",
+        "owner_acceptance"
+      ]
+    },
+    "old_value_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "new_value_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "review_refs": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9_-]{3,96}$"
+      }
+    },
+    "mode": {
+      "enum": [
+        "simulation",
+        "real_private"
+      ]
+    },
+    "status": {
+      "enum": [
+        "simulated_replacement",
+        "private_replacement"
+      ]
+    },
+    "replaced_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}
