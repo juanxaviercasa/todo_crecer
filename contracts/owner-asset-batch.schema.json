@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/owner-asset-batch.schema.json",
+  "title": "owner-asset-batch",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "batch_id",
+    "room_ref",
+    "assets",
+    "synthetic",
+    "status",
+    "batch_digest",
+    "received_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "batch_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "room_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "assets": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "asset_ref",
+          "kind",
+          "rights_basis",
+          "file_digest"
+        ],
+        "properties": {
+          "asset_ref": {
+            "type": "string",
+            "pattern": "^[a-z0-9_-]{3,96}$"
+          },
+          "kind": {
+            "enum": [
+              "logo",
+              "portrait",
+              "property",
+              "project",
+              "document"
+            ]
+          },
+          "rights_basis": {
+            "enum": [
+              "synthetic_fixture",
+              "owned",
+              "licensed",
+              "permission_granted"
+            ]
+          },
+          "file_digest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "alt_text": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "synthetic": {
+      "type": "boolean"
+    },
+    "status": {
+      "enum": [
+        "received",
+        "rights_reviewed",
+        "rejected"
+      ]
+    },
+    "batch_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "received_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

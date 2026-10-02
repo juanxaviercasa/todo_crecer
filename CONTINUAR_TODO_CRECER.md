@@ -1,10 +1,10 @@
 ﻿# TodoLima / HazloCrecer — estado y próximos pasos
 
-## Fase actual: 32
+## Fase actual: 33
 
 Ubicación de trabajo: `C:\Users\pc\Videos\todo_crecer\todo_crecer-repo`.
 
-La fase 32 prepara un piloto humano asistido con un único negocio. El expediente seleccionado es Silvana Verano por representar una operación individual adecuada para validar confianza, claridad y acompañamiento antes de ampliar la cohorte.
+La fase 33 implementa una sala privada para el recorrido posterior a la aceptación: identidad, BusinessTruth, activos, derechos, regeneración del sitio, comparación antes/después, correcciones y aceptación final.
 
 ## Ejecutar
 
@@ -12,33 +12,35 @@ La fase 32 prepara un piloto humano asistido con un único negocio. El expedient
 npm ci --ignore-scripts
 npm test
 npm run build
-npm run start:assisted-pilot
+npm run start:owner-room
 ```
 
-Abrir http://127.0.0.1:4206/.
+Abrir http://127.0.0.1:4207/.
 
 ## Estado comprobado
 
-- 237 contratos JSON Schema.
-- 917 pruebas aprobadas y 0 fallidas.
-- 51 pruebas específicas del piloto asistido.
+- 249 contratos JSON Schema.
+- 975 pruebas aprobadas y 0 fallidas.
+- 58 pruebas específicas de la fase 33.
 - 0 vulnerabilidades de producción y 0 secretos detectados.
-- Un candidato y seis artefactos operativos preparados.
-- Ensayo sintético con 8 de 8 controles aprobados.
-- 0 destinos reales, 0 mensajes externos y 0 publicaciones.
+- Un recorrido sintético completo para el expediente `biz_5`.
+- 3 activos sintéticos con derechos revisados.
+- 5 páginas privadas regeneradas y 5 dimensiones comparadas.
+- 1 ronda de cambios resuelta y aceptación de simulación registrada.
+- 0 contactos reales, 0 mensajes externos y 0 publicaciones.
 
-## Paquete preparado
+## Gate real
 
-1. Guion de apertura y cierre respetuoso.
-2. FAQ con escalamiento humano.
-3. Consentimiento privado y retiro.
-4. Entrevista estructurada.
-5. Carpeta segura de activos y derechos.
-6. Gate de destino y autorización exacta.
+La simulación está completa, pero la publicación necesita:
 
-## Fase 33 recomendada
+1. Identidad real del propietario.
+2. BusinessTruth real confirmado.
+3. Derechos reales de logo y fotografías.
+4. Aceptación real del sitio.
 
-**Sala privada de incorporación y regeneración del sitio.** Implementar la experiencia que usará el propietario después de aceptar: identidad, BusinessTruth, carga de activos, revisión del nuevo contenido, comparación visual y aceptación. Mientras no haya respuesta real, el flujo se validará con un expediente sintético claramente marcado.
+## Fase 34 recomendada
+
+**Motor de evidencia y sustitución controlada de fixtures.** Implementar la recepción de evidencia real con cifrado, clasificación de sensibilidad, redacción de datos innecesarios, revisión por dos personas, vencimientos y sustitución campo por campo del expediente sintético. Debe generar un paquete privado verificable sin habilitar todavía la publicación pública.
 
 ## Dominios previstos
 

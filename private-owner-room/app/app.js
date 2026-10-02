@@ -1,0 +1,1 @@
+'use strict';const buttons=[...document.querySelectorAll('nav button')],panels=[...document.querySelectorAll('[data-panel]')];buttons.forEach(button=>button.onclick=()=>{buttons.forEach(x=>x.classList.toggle('active',x===button));panels.forEach(panel=>panel.classList.toggle('hidden',panel.dataset.panel!==button.dataset.view))});

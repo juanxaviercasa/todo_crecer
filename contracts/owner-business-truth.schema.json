@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/owner-business-truth.schema.json",
+  "title": "owner-business-truth",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "truth_id",
+    "room_ref",
+    "business_name",
+    "services",
+    "service_areas",
+    "ideal_customer",
+    "differentiators",
+    "contact_permission",
+    "publication_scope",
+    "synthetic",
+    "truth_digest",
+    "submitted_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "truth_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "room_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "business_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "services": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "service_areas": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "ideal_customer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "differentiators": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "contact_permission": {
+      "type": "boolean"
+    },
+    "publication_scope": {
+      "enum": [
+        "private_preview",
+        "public_after_acceptance"
+      ]
+    },
+    "synthetic": {
+      "type": "boolean"
+    },
+    "truth_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "submitted_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

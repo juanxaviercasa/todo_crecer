@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/private-onboarding-room.schema.json",
+  "title": "private-onboarding-room",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "room_id",
+    "candidate_ref",
+    "mode",
+    "access",
+    "indexing",
+    "status",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "room_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "candidate_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "mode": {
+      "enum": [
+        "synthetic_rehearsal",
+        "real_owner"
+      ]
+    },
+    "access": {
+      "const": "private"
+    },
+    "indexing": {
+      "const": "noindex"
+    },
+    "status": {
+      "enum": [
+        "open",
+        "in_review",
+        "accepted",
+        "closed"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

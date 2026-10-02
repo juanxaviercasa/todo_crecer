@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/regenerated-site-package.schema.json",
+  "title": "regenerated-site-package",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "package_id",
+    "job_ref",
+    "room_ref",
+    "pages",
+    "content_blocks",
+    "indexing",
+    "contact_mode",
+    "access",
+    "synthetic",
+    "package_digest",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "package_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "job_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "room_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "pages": {
+      "type": "array",
+      "minItems": 4,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "content_blocks": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "key",
+          "value",
+          "source"
+        ],
+        "properties": {
+          "key": {
+            "type": "string",
+            "minLength": 1
+          },
+          "value": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "enum": [
+              "synthetic_owner_truth",
+              "verified_owner_truth"
+            ]
+          }
+        }
+      }
+    },
+    "indexing": {
+      "const": "noindex"
+    },
+    "contact_mode": {
+      "enum": [
+        "disabled",
+        "owner_confirmed"
+      ]
+    },
+    "access": {
+      "const": "private"
+    },
+    "synthetic": {
+      "type": "boolean"
+    },
+    "package_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

@@ -1,7 +1,7 @@
 {
   "format": "sha256-manifest-v1",
-  "package": "todolima-platform-phase32",
-  "version": "0.34.0",
+  "package": "todolima-platform-phase33",
+  "version": "0.35.0",
   "generated_at": "2026-09-30T00:00:00.000Z",
   "entries": [
     {
@@ -126,8 +126,8 @@
     },
     {
       "path": "CONTINUAR_TODO_CRECER.md",
-      "bytes": 1822,
-      "sha256": "b54d19ecf16cbfad41567d983800a5737f39d294212962740f0fa0b3322b9996"
+      "bytes": 1926,
+      "sha256": "4f541df14235b912b72bb75b8384298a4f91d16ca9f0d7f693d4ae7e244953d1"
     },
     {
       "path": "contracts/access-decision.schema.json",
@@ -193,6 +193,11 @@
       "path": "contracts/asset-rights-record.schema.json",
       "bytes": 1570,
       "sha256": "d24cb1b878135c1bcd4243e5d9d1ca72bc9f33909e47ba919a8e8a5d3d2ea2d7"
+    },
+    {
+      "path": "contracts/asset-rights-review.schema.json",
+      "bytes": 1364,
+      "sha256": "80fcf80499408f39a11659ffa3361f91886d09614b8cb037bd6a62dddcfcbf28"
     },
     {
       "path": "contracts/asset-usage-index.schema.json",
@@ -765,6 +770,16 @@
       "sha256": "d16d33d4816600354c3d20647e92d0d623bf8327a23576fbc1d59e98ea31749a"
     },
     {
+      "path": "contracts/owner-asset-batch.schema.json",
+      "bytes": 1979,
+      "sha256": "55299b4dfe9e44e212ee7dfa1489060756284b54a03fe1e1e55dc86610a64fb4"
+    },
+    {
+      "path": "contracts/owner-business-truth.schema.json",
+      "bytes": 1751,
+      "sha256": "fc292f93b0eed01df422b1ae7ba606dee439bd6c556966d129644f77eea60f02"
+    },
+    {
       "path": "contracts/owner-confirmation-record.schema.json",
       "bytes": 1300,
       "sha256": "28229a691172993bf3db86ed623e38a3632877824927c79a74dbd3b11a244b5d"
@@ -773,6 +788,11 @@
       "path": "contracts/owner-consent-invitation.schema.json",
       "bytes": 1196,
       "sha256": "fdd3df27b85d9e4c56a4ad15c6bd568221cfc59a3cacd819044b8a783e652a5a"
+    },
+    {
+      "path": "contracts/owner-identity-assertion.schema.json",
+      "bytes": 1197,
+      "sha256": "a0e39f1be2e1f47124986a04771c95d311833b93cf0d516e2be42cfbb2004805"
     },
     {
       "path": "contracts/owner-intake-case.schema.json",
@@ -820,6 +840,11 @@
       "sha256": "6a1e55caae900f085276379691d450c4a384464b08f43cabb7d95e81061245ba"
     },
     {
+      "path": "contracts/owner-review-round.schema.json",
+      "bytes": 1589,
+      "sha256": "c2a13d9ce27166638b6bc63031bfec7adb7cf90534610ed52d8fab3f495eb80e"
+    },
+    {
       "path": "contracts/owner-simulation-run.schema.json",
       "bytes": 1754,
       "sha256": "0e8b8c08c480ffffdfec45375b1abdaf497d174b6f5ef16247392a149105f118"
@@ -833,6 +858,11 @@
       "path": "contracts/owner-site-acceptance.schema.json",
       "bytes": 1434,
       "sha256": "06887de7f58f1064d3f384476f3f6a79a2baf0ddd23b20c3acceb761013adc22"
+    },
+    {
+      "path": "contracts/owner-site-approval.schema.json",
+      "bytes": 1389,
+      "sha256": "92b53ea861f8642b13a96aaf1bda5ad354eaa8b19dd851951228461ba7c65e2b"
     },
     {
       "path": "contracts/owner-submission.schema.json",
@@ -853,6 +883,11 @@
       "path": "contracts/phase31-readiness.schema.json",
       "bytes": 1100,
       "sha256": "8753a74e64118904d980c6f494e1281c07b56ee75181f6ef2b23b26922083a02"
+    },
+    {
+      "path": "contracts/phase33-publication-gate.schema.json",
+      "bytes": 1526,
+      "sha256": "02ca358b66ee65ff9af8ba85e67ff13fe21075829bee06a689d990e10412b05f"
     },
     {
       "path": "contracts/pilot-acceptance-audit-event.schema.json",
@@ -908,6 +943,11 @@
       "path": "contracts/private-demo-build.schema.json",
       "bytes": 1870,
       "sha256": "aff3a6a9476b15c9331906ab041650fc99c31a535eb9543aef705faeb4a001da"
+    },
+    {
+      "path": "contracts/private-onboarding-room.schema.json",
+      "bytes": 1035,
+      "sha256": "cbfe5336466acdb461e1e26b1874d10fb4673ab512982fbf6ec3095bd4e4efc5"
     },
     {
       "path": "contracts/private-pilot-cohort.schema.json",
@@ -1008,6 +1048,11 @@
       "path": "contracts/recovery-objective.schema.json",
       "bytes": 833,
       "sha256": "4bf124f67e6e100adb5ca816ae86f03730d7975642a945430ac25b800a02f0b1"
+    },
+    {
+      "path": "contracts/regenerated-site-package.schema.json",
+      "bytes": 2002,
+      "sha256": "67d0c13c4d5bf426e8dd0839071965ece49263ed6940efde0fbf7e5c225956b8"
     },
     {
       "path": "contracts/reminder-attempt.schema.json",
@@ -1140,9 +1185,24 @@
       "sha256": "ddb6f40c0d907456925dda3baf65bbb5d77aa3ddaa4f6fecec9b306a24fbdd19"
     },
     {
+      "path": "contracts/site-before-after-comparison.schema.json",
+      "bytes": 1558,
+      "sha256": "aec57a79a6ad806265539eeeb2be3ce0bd7f0cab7476579cf889fb41f8c3caaa"
+    },
+    {
+      "path": "contracts/site-change-request.schema.json",
+      "bytes": 1568,
+      "sha256": "63974f26377aeb355b23867c973efe671d62aef12dd755d452bcdfcf272fd42d"
+    },
+    {
       "path": "contracts/site-config.schema.json",
       "bytes": 5650,
       "sha256": "e1effaa8a007d8ed85688fcca3d5153be4199c91c41a0e7e3fa9e3655d05f9e4"
+    },
+    {
+      "path": "contracts/site-regeneration-job.schema.json",
+      "bytes": 1264,
+      "sha256": "58ab85b013ad86da4aadfab2eb201db0e183aa00db7352b5d5d3fdc885eff390"
     },
     {
       "path": "contracts/site-snapshot.schema.json",
@@ -1498,6 +1558,11 @@
       "path": "docs/adr/ADR-040-human-assisted-single-business-pilot.md",
       "bytes": 670,
       "sha256": "f05fe5f516f6262bf39a245ce647d8ce52ccf665c653e89533183566f5a12bc3"
+    },
+    {
+      "path": "docs/adr/ADR-041-private-owner-regeneration-room.md",
+      "bytes": 502,
+      "sha256": "098e4b5dcba83e9efe830a45d0283e3bcc2697b9ca4ffe1f0501c225a45915ff"
     },
     {
       "path": "docs/CHAT_WORKFLOW.md",
@@ -2090,6 +2155,31 @@
       "sha256": "a78f508eeccf36bd6eff4aa9f685321a0e90f3d81373c383737a22aec9fbcbc9"
     },
     {
+      "path": "docs/phase-33/BUSINESS_TRUTH_INTAKE.md",
+      "bytes": 265,
+      "sha256": "70c2e752b69155f32d32a0ac418ea275ce9c71e5b894575366e90462fd5d8202"
+    },
+    {
+      "path": "docs/phase-33/PRIVATE_OWNER_REGENERATION.md",
+      "bytes": 375,
+      "sha256": "d614d4671331e0c549d02e31e10b01f1b03a0cd8349d949836e81221b29613b4"
+    },
+    {
+      "path": "docs/phase-33/PUBLICATION_GATE.md",
+      "bytes": 227,
+      "sha256": "4db53e2ea8fc38c0112cc5a54cc32c0c59bff8f65c075fb56fb525c6e24a533a"
+    },
+    {
+      "path": "docs/phase-33/REGENERATION_AND_REVIEW.md",
+      "bytes": 336,
+      "sha256": "d10bb41f90d1654b6f1993e37a606c73c0984127aa9d07dc29cdc73eabb73a42"
+    },
+    {
+      "path": "docs/phase-33/VALIDATION.md",
+      "bytes": 1301,
+      "sha256": "ca24d744a80fa7b420ee45fe0fb2e15289cf9f9c1af8e56a3328e2af455eea75"
+    },
+    {
       "path": "docs/phase-4/OWNER_ONBOARDING.md",
       "bytes": 2599,
       "sha256": "ae057bddec20143bb65341766b1bd4a91a3a6890485576a7c06b1b0713070e16"
@@ -2627,12 +2717,12 @@
     {
       "path": "package-lock.json",
       "bytes": 4423,
-      "sha256": "90ccabc7caabc0081813a44c69cb52ef68133b90b40a37cfaa3d191168259d35"
+      "sha256": "d35e0d7439b2cfbf949bd9715dbeafe93a772b7f7198494ce60275da62ecc302"
     },
     {
       "path": "package.json",
-      "bytes": 6551,
-      "sha256": "91c3e44522a718f1deaf738e4716329ed82de01762dda034b94007a2a7691ed5"
+      "bytes": 6777,
+      "sha256": "5c69404cc7ca83bc61184108e1e707b49923af6a0533b3fa9363cba0a6f57153"
     },
     {
       "path": "packages/.gitkeep",
@@ -2770,6 +2860,11 @@
       "sha256": "4a1685fb1cddfe644b8baf3556534bcf233b01a1dede85e699505c87e380a6cf"
     },
     {
+      "path": "packages/private-owner-regeneration/index.cjs",
+      "bytes": 12594,
+      "sha256": "08420a86d6446ab1ece7bf95fb3bdb870de15fed7687dfc0851dc12712fc8e66"
+    },
+    {
       "path": "packages/profile-adapter/index.cjs",
       "bytes": 3013,
       "sha256": "75d394b82f7c52819bee50a132ff77f0b61d202a8c58af1f6c756740338122a5"
@@ -2828,6 +2923,11 @@
       "path": "phase32-verification.log",
       "bytes": 114300,
       "sha256": "3c3889297a10a68d384d239486d41c1be83313c2f8b20117b86b413c900e9282"
+    },
+    {
+      "path": "phase33-verification.log",
+      "bytes": 120254,
+      "sha256": "fe0c4f465adc1e2e0510ca8ed6813ed252146c09d0cc5dda9c8b7c0dfde3bf41"
     },
     {
       "path": "pilot/asset-sources.json",
@@ -3010,6 +3110,21 @@
       "sha256": "c1b8b1bd0f5f27d4bb40c09362140c8b821be15730d2feb0cf21af3bff3ba31f"
     },
     {
+      "path": "private-owner-room/app/app.js",
+      "bytes": 330,
+      "sha256": "c980fb5951fa904acb8e1a60d29b006480b2e3e65c3798200dac73015eb0cc1a"
+    },
+    {
+      "path": "private-owner-room/app/index.html",
+      "bytes": 4986,
+      "sha256": "fd2ef15057246d3c053ac69d0718883728c3ed8798690c4eaed8824664ced57f"
+    },
+    {
+      "path": "private-owner-room/app/styles.css",
+      "bytes": 5249,
+      "sha256": "a0d6c48ec7e55dc908cb06da5981d11c4b87417fcffa6609d250d85be7cde863"
+    },
+    {
       "path": "prompts/.gitkeep",
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -3036,8 +3151,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 41785,
-      "sha256": "be470a8ccbf83ccea90fd2ebad76e20d5ba03cc4642bb2b526329907350579a5"
+      "bytes": 42442,
+      "sha256": "2564603fc03af13fde112523212db2b2b84ed73b8c0fb78d3e395d30727b4a3e"
     },
     {
       "path": "review/app/app.js",
@@ -3180,6 +3295,11 @@
       "sha256": "f6f61921fdbc0e5feb11562816cb3884e9a01a3a13a26ff9862ddb7390df9367"
     },
     {
+      "path": "scripts/build-private-owner-regeneration.cjs",
+      "bytes": 4270,
+      "sha256": "76bda5b0eca16a7f34247b3087706fd0b71f8c30eca9614bfb3bd1b6a7cdfc43"
+    },
+    {
       "path": "scripts/build-publication-control.cjs",
       "bytes": 3816,
       "sha256": "f56b50c9a7a069a60af4cd793a3cf6e496257f01d37d25964921934396eac52c"
@@ -3227,7 +3347,7 @@
     {
       "path": "scripts/release-manifest.cjs",
       "bytes": 1095,
-      "sha256": "ccd80aafa7ae42bb4c66c1823795b47af13379d0687ecba9261859ed2964151f"
+      "sha256": "8180b6625596be9e999d39cd736cea8d322f3a11d444f46d4b7fb0505b2b23ff"
     },
     {
       "path": "scripts/run-cloudflare-discovery.cjs",
@@ -3358,6 +3478,11 @@
       "path": "scripts/serve-private-foundation.cjs",
       "bytes": 1531,
       "sha256": "f52b863b5c52225b528170fae66c50eeaf00d1e4a5076c9479001d5b40ba6063"
+    },
+    {
+      "path": "scripts/serve-private-owner-regeneration.cjs",
+      "bytes": 1503,
+      "sha256": "fafb35bb89a66dbfa8628a7a825c0c554298af8422b5351c7510ab0d3fc11bf5"
     },
     {
       "path": "scripts/serve-publication-control.cjs",
@@ -3588,6 +3713,11 @@
       "path": "tests/private-foundation.test.cjs",
       "bytes": 5695,
       "sha256": "84ba033e512d7edd9db4e02e1f5e05afaf5a2dc36fcb18743617c737987e3221"
+    },
+    {
+      "path": "tests/private-owner-regeneration.test.cjs",
+      "bytes": 12487,
+      "sha256": "198e96d7ef8face239a444ac15740d6362d2a0ebe05c7054310ea6f0e0c97024"
     },
     {
       "path": "tests/profile-adapter.test.cjs",

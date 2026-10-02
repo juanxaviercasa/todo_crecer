@@ -1,3 +1,14 @@
+# Fase 33 · Sala privada de incorporación y regeneración
+
+La plataforma ensaya el recorrido posterior a una aceptación: identidad, BusinessTruth, activos, regeneración, comparación, cambios y aprobación. El expediente ejecutable es sintético y no atribuye información inventada al negocio real.
+
+- Sala privada: `npm run build && npm run start:owner-room` → http://127.0.0.1:4207/
+- Documento: [docs/phase-33/PRIVATE_OWNER_REGENERATION.md](docs/phase-33/PRIVATE_OWNER_REGENERATION.md)
+- Gate: [docs/phase-33/PUBLICATION_GATE.md](docs/phase-33/PUBLICATION_GATE.md)
+- Decisión: [ADR-041](docs/adr/ADR-041-private-owner-regeneration-room.md)
+
+---
+
 # Fase 32 · Piloto asistido con un único negocio
 
 La plataforma prepara una conversación humana completa para un solo candidato: Silvana Verano. El paquete incluye guion, FAQ, consentimiento, entrevista, activos, ensayo y gate. El contacto real continúa bloqueado hasta verificar el destino y autorizar el texto exacto.

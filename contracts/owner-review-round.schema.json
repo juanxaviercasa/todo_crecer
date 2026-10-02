@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/owner-review-round.schema.json",
+  "title": "owner-review-round",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "round_id",
+    "room_ref",
+    "package_ref",
+    "round_number",
+    "decisions",
+    "status",
+    "synthetic",
+    "reviewed_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "round_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "room_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "package_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "round_number": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "decisions": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "section",
+          "decision"
+        ],
+        "properties": {
+          "section": {
+            "type": "string",
+            "minLength": 1
+          },
+          "decision": {
+            "enum": [
+              "approve",
+              "change"
+            ]
+          },
+          "comment": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "status": {
+      "enum": [
+        "approved",
+        "changes_requested"
+      ]
+    },
+    "synthetic": {
+      "type": "boolean"
+    },
+    "reviewed_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}
