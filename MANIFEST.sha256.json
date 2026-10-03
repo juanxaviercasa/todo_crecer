@@ -126,8 +126,8 @@
     },
     {
       "path": "CONTINUAR_TODO_CRECER.md",
-      "bytes": 2206,
-      "sha256": "e2f739a15b7eed528c8ceff7cd52918b54be57eb686a0ec4efbebe992645db28"
+      "bytes": 2105,
+      "sha256": "3234667a47c89faab38c449486af85c86e998daf8665268bf4c874bc0e377508"
     },
     {
       "path": "contracts/access-decision.schema.json",
@@ -1068,6 +1068,46 @@
       "path": "contracts/phase41-preflight-readiness.schema.json",
       "bytes": 1467,
       "sha256": "99153260d8ec03d56c2e4aa899ccd0f7e1ea052520412ecb2442a5dfbb8bea04"
+    },
+    {
+      "path": "contracts/phase42-decision-dossier.schema.json",
+      "bytes": 1627,
+      "sha256": "131cd0a0ae4f9ca5b80405975f1abc557f3acd0560cfbed0bf704e9a8450b6de"
+    },
+    {
+      "path": "contracts/phase42-evidence-submission.schema.json",
+      "bytes": 1488,
+      "sha256": "56b80e421479eeebe33d8adbadf173465223c1d58c7be6f7d4186b6418656ceb"
+    },
+    {
+      "path": "contracts/phase42-human-decision.schema.json",
+      "bytes": 1493,
+      "sha256": "4a47a3e2fd9afc001750984a79a914ac5c2b349f1169a08be4e7cf1e3c042b9d"
+    },
+    {
+      "path": "contracts/phase42-legal-review.schema.json",
+      "bytes": 1103,
+      "sha256": "c584e72aab2de4afe9b4a1635ee641f6a79e838c1cbd4f406ddd6a00fb24ee3b"
+    },
+    {
+      "path": "contracts/phase42-procurement-review.schema.json",
+      "bytes": 1121,
+      "sha256": "ecdcec28d3714b163f6036dfd861d60acb837b6e6ea9614b670f616ffcd4461b"
+    },
+    {
+      "path": "contracts/phase42-read-session-evidence.schema.json",
+      "bytes": 1405,
+      "sha256": "f9707769a1f9b434cea38a9e72096676b71d36eb5a1ca2afa9ec207ad9ed6d3e"
+    },
+    {
+      "path": "contracts/phase42-readiness.schema.json",
+      "bytes": 1449,
+      "sha256": "582187eba23041c45c9e8118e378c42f14899908f6d6204c98f40636f9f4d9f2"
+    },
+    {
+      "path": "contracts/phase42-reversal-plan.schema.json",
+      "bytes": 1114,
+      "sha256": "4bc04bb4467ad1ff14795857895c3d0ccb3d2926d8b385d927699c1d9b0b3611"
     },
     {
       "path": "contracts/pilot-acceptance-audit-event.schema.json",
@@ -2095,6 +2135,11 @@
       "sha256": "746a4aac57233884621d1bdf5c00c78d08241c773b21821629c1b2ff9f3c5514"
     },
     {
+      "path": "docs/adr/ADR-050-evidence-and-reversible-decision.md",
+      "bytes": 814,
+      "sha256": "c911a7cb51b624595b09b928dd11bbd1e688205e6d423f990854952002bf5abb"
+    },
+    {
       "path": "docs/CHAT_WORKFLOW.md",
       "bytes": 2343,
       "sha256": "f380a70bb8607190d78fd4600906ea8d2b04ab6d6d5e605c8f6edc4f3298399b"
@@ -2910,6 +2955,16 @@
       "sha256": "435751341c2786332e04cd488d4453d3a743a9a09dbda36c4ce186552596f294"
     },
     {
+      "path": "docs/phase-42/EVIDENCE_DECISION.md",
+      "bytes": 868,
+      "sha256": "b533ae413ff81e1408c5adb27c754dc6a95be776fa09b3d914cbdc1986a03fce"
+    },
+    {
+      "path": "docs/phase-42/VALIDATION.md",
+      "bytes": 559,
+      "sha256": "2d1f79333e9f97cb9aaa38f1b426a1e647cf5db8bfbfa17926bf55de72f16f4b"
+    },
+    {
       "path": "docs/phase-5/REVIEW_GATE.md",
       "bytes": 2008,
       "sha256": "42b379d6b02557f7ae632caf7ce44a5692096fc387c42611d8d5746c60b42243"
@@ -2998,6 +3053,16 @@
       "path": "evals/.gitkeep",
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence-decision-gate/app/index.html",
+      "bytes": 1153,
+      "sha256": "284f50b99f3a40c42167019e306ffae6f72a8478374ad73a1c1aa926245512c5"
+    },
+    {
+      "path": "evidence-decision-gate/app/styles.css",
+      "bytes": 647,
+      "sha256": "0a883b33a9aa721b971645eaadfb388861d30e37bb52e5f378ea344b49a9b253"
     },
     {
       "path": "examples/golden-business/agent-output.failed.json",
@@ -3452,12 +3517,12 @@
     {
       "path": "package-lock.json",
       "bytes": 4423,
-      "sha256": "2f69cc524a93c664f7b1d27602b360ffccf9a9212c4a937fd84d8f32f61804fd"
+      "sha256": "b629ee6ce8fbb748ae1f07168419878c6d494b18462842f1d12f90e6a02b9dcf"
     },
     {
       "path": "package.json",
-      "bytes": 8376,
-      "sha256": "d6026266381b190d33a475955ea90d6d3f4b220e8de0a821dafebf0c5771f712"
+      "bytes": 8559,
+      "sha256": "a3bcf62840bbace3ca43ea1c27a58223607615f95bc1f5a4fbaae4623ca7c7a2"
     },
     {
       "path": "packages/.gitkeep",
@@ -3508,6 +3573,11 @@
       "path": "packages/conversion-intelligence/index.cjs",
       "bytes": 16892,
       "sha256": "5acab6403846a4a2d294d9c860b6bfb6d22ad8e3a7b5eddcb8f0325de27b0ba2"
+    },
+    {
+      "path": "packages/evidence-decision-gate/index.cjs",
+      "bytes": 5920,
+      "sha256": "811c921a3ac39d5bd96a1e37c44defc04777e7f0cf5a9d081082f71ec9dd71ad"
     },
     {
       "path": "packages/fleet-governance/index.cjs",
@@ -4031,8 +4101,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 47296,
-      "sha256": "d1a272d45d7a7d28f3b1904cc420e8397c77fa6ee3162495d2448d92b72b9ced"
+      "bytes": 47589,
+      "sha256": "1e7c3768009fdb84d732fdedf6c86974fa55f3d2b454c02de40348701cc28ccf"
     },
     {
       "path": "review/app/app.js",
@@ -4093,6 +4163,11 @@
       "path": "scripts/build-conversion-intelligence.cjs",
       "bytes": 5416,
       "sha256": "37e81f57f6c17ddceb54f25f3734fc0d8d3b59c840e206b8486fbb32480e3749"
+    },
+    {
+      "path": "scripts/build-evidence-decision-gate.cjs",
+      "bytes": 1079,
+      "sha256": "5d7640f45f8204e8e463cb1ef257df229f9e2ab69847845baaf472f8b9d272d6"
     },
     {
       "path": "scripts/build-fleet-governance.cjs",
@@ -4313,6 +4388,11 @@
       "path": "scripts/serve-conversion-intelligence.cjs",
       "bytes": 1550,
       "sha256": "7e61459f4a1b83487ed528a08a372089b3dd0688f5f45fbec9e3ce2899decffb"
+    },
+    {
+      "path": "scripts/serve-evidence-decision-gate.cjs",
+      "bytes": 903,
+      "sha256": "60433a54a1818cbe0c1bb5fa0cfd269b8e789e17f1bb346cb33984772fa6c0a0"
     },
     {
       "path": "scripts/serve-experience.cjs",
@@ -4593,6 +4673,11 @@
       "path": "tests/engine.test.cjs",
       "bytes": 7625,
       "sha256": "9457cd4979afe732a971f43cf793f87584020ede8dc1f70aaef34c94daf9d3c0"
+    },
+    {
+      "path": "tests/evidence-decision-gate.test.cjs",
+      "bytes": 2612,
+      "sha256": "e62213590337a69a04c45a4efdcee319fbeae95c69e36653e45117a0d94cc1b0"
     },
     {
       "path": "tests/fleet-governance.test.cjs",

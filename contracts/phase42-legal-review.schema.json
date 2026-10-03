@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase42-legal-review.schema.json",
+  "title": "phase42-legal-review",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "review_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "submission_digest": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewer_role": {
+      "type": "string",
+      "const": "legal_reviewer"
+    },
+    "independent": {
+      "type": "boolean",
+      "const": true
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "changes_requested"
+      ]
+    },
+    "reviewed_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "review_id",
+    "candidate_id",
+    "submission_digest",
+    "reviewer_role",
+    "independent",
+    "decision",
+    "reviewed_at"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase42-evidence-submission.schema.json",
+  "title": "phase42-evidence-submission",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "submission_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_kind": {
+      "type": "string",
+      "enum": [
+        "terms",
+        "residency",
+        "encryption",
+        "lifecycle",
+        "cost"
+      ]
+    },
+    "evidence_digest": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_type": {
+      "type": "string",
+      "enum": [
+        "operator_supplied"
+      ]
+    },
+    "evidence_mode": {
+      "type": "string",
+      "enum": [
+        "synthetic_rehearsal",
+        "real"
+      ]
+    },
+    "raw_values_present": {
+      "type": "boolean",
+      "const": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending_review",
+        "accepted",
+        "rejected"
+      ]
+    },
+    "submitted_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "submission_id",
+    "candidate_id",
+    "evidence_kind",
+    "evidence_digest",
+    "source_type",
+    "evidence_mode",
+    "raw_values_present",
+    "status",
+    "submitted_at"
+  ]
+}

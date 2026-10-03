@@ -1,10 +1,10 @@
 ﻿# TodoLima / HazloCrecer — estado y próximos pasos
 
-## Fase actual: 41
+## Fase actual: 42
 
 Ubicación de trabajo: `C:\Users\pc\Videos\todo_crecer\todo_crecer-repo`.
 
-La fase 41 implementa el preflight de salida en solo lectura: comparación de dos candidatos sintéticos, sesiones con alcance metadata_read, sondas sin escritura, residencia, cifrado, ciclo de vida, rotación, observabilidad y coste. No realiza cambios externos.
+La fase 42 implementa el gate de evidencia y decisión reversible: entregas sanitizadas, revisiones legales y de compras independientes, sesiones de lectura verificables, dossier humano y plan dry-run de reversión. No realiza cambios externos.
 
 ## Ejecutar
 
@@ -12,16 +12,16 @@ La fase 41 implementa el preflight de salida en solo lectura: comparación de do
 npm ci --ignore-scripts
 npm test
 npm run build
-npm run start:preflight
+npm run start:evidence-gate
 ```
 
-Abrir http://127.0.0.1:4215/.
+Abrir http://127.0.0.1:4216/.
 
 ## Estado comprobado
 
 - 337 contratos JSON Schema.
 - 1.376 pruebas aprobadas y 0 fallidas.
-- 15 pruebas específicas de la fase 41.
+- 13 pruebas específicas de la fase 42.
 - 0 vulnerabilidades de producción y 0 patrones de credenciales detectados.
 - 2 expedientes placeholder y 16 solicitudes obligatorias.
 - 13 entregas sanitizadas con renovación programada.
@@ -35,9 +35,9 @@ Abrir http://127.0.0.1:4215/.
 
 La sala está operativa sin candidatos reales. Para habilitar una decisión humana se requieren 8/8 evidencias reales vigentes por candidato, cuatro revisiones aprobadas, cero riesgos críticos y autorización explícita de compras. La completitud placeholder nunca cuenta como evidencia real.
 
-## Fase 42 recomendada
+## Fase 43 recomendada
 
-**Evidencia real y decisión humana controlada.** Cuando exista un proveedor candidato, importar únicamente evidencia suministrada por el operador, cerrar la revisión legal y de compras, repetir el preflight con una sesión real de solo lectura y registrar una decisión humana reversible. Mantener bloqueada la aplicación hasta disponer de un manifiesto real sanitizado y una autorización de salida.
+**Primera incorporación real bajo control.** Cuando exista un candidato autorizado, importar su manifiesto sanitizado, cerrar legal y compras, verificar la sesión real read-only y registrar una única decisión reversible. Mantener bloqueado cualquier apply o publicación hasta una aprobación explícita posterior.
 
 ## Dominios previstos
 

@@ -1,3 +1,7 @@
+## Fase 42 — evidencia y decisión reversible
+
+Añade entregas sanitizadas, revisiones legales y de compras, sesiones de lectura verificables y un gate humano reversible. La aplicación externa permanece bloqueada. Ejecuta `npm run start:evidence-gate` para abrir `http://127.0.0.1:4216/`.
+
 ## Fase 41 — preflight de proveedor
 
 Añade comparación de candidatos, sondas de solo lectura, residencia, cifrado, ciclo de vida, coste y autorización separada. La aplicación externa permanece bloqueada. Ejecuta `npm run start:preflight` para abrir el panel local en `http://127.0.0.1:4215/`.

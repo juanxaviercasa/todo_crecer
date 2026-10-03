@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase42-read-session-evidence.schema.json",
+  "title": "phase42-read-session-evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "session_evidence_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "string",
+      "const": "metadata_read"
+    },
+    "reads": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "writes": {
+      "type": "integer",
+      "const": 0
+    },
+    "transport": {
+      "type": "string",
+      "enum": [
+        "synthetic_read_only",
+        "external_read_only"
+      ]
+    },
+    "credential_fingerprint": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_mode": {
+      "type": "string",
+      "enum": [
+        "synthetic_rehearsal",
+        "real"
+      ]
+    },
+    "verified": {
+      "type": "boolean"
+    },
+    "captured_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "session_evidence_id",
+    "candidate_id",
+    "scope",
+    "reads",
+    "writes",
+    "transport",
+    "credential_fingerprint",
+    "evidence_mode",
+    "verified",
+    "captured_at"
+  ]
+}
