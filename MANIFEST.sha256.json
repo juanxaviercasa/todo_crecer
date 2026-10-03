@@ -126,8 +126,8 @@
     },
     {
       "path": "CONTINUAR_TODO_CRECER.md",
-      "bytes": 2053,
-      "sha256": "68ea01d0e2773c7938039e3dc02f7504bee3a718d136837c09c7bf68b124dd9d"
+      "bytes": 2045,
+      "sha256": "94039e155d853fc2f82eecd4b6be4c25e4ef5b032d3d6f41772962e1198c607b"
     },
     {
       "path": "contracts/access-decision.schema.json",
@@ -1200,6 +1200,51 @@
       "sha256": "c6a5ee07b7d0a97af3aba3f321b2bef9d69f71f583772903c44aa394336d15ea"
     },
     {
+      "path": "contracts/phase45-final-authorization.schema.json",
+      "bytes": 1692,
+      "sha256": "b3ebb5e396ee4641edfd22dc0957044e661ca5a653e13e7c8e363df50c621b6a"
+    },
+    {
+      "path": "contracts/phase45-hypercare-checkpoint.schema.json",
+      "bytes": 1116,
+      "sha256": "2bfec2ee51688ec669ce3577e9b8bafed77e868192f5073f0b0938b960044673"
+    },
+    {
+      "path": "contracts/phase45-hypercare-closure.schema.json",
+      "bytes": 1543,
+      "sha256": "43ff96733b723959007d77bb173124b19d73357b660ce308790155e43dd3ebbc"
+    },
+    {
+      "path": "contracts/phase45-hypercare-policy.schema.json",
+      "bytes": 1459,
+      "sha256": "ec5e17f7d30da311254d2977330a879750d6872b1e1c0cfd1b4b615fd7e748d8"
+    },
+    {
+      "path": "contracts/phase45-immediate-revocation.schema.json",
+      "bytes": 1191,
+      "sha256": "434da502d986928a307aaec9673b8ff19bbcafe2d38221490e0efeb648706a67"
+    },
+    {
+      "path": "contracts/phase45-production-freeze.schema.json",
+      "bytes": 1295,
+      "sha256": "3acfe39722d63026a41ec207964a0f167e77c73f4f3ab0e2d524d0d97eb8ff8e"
+    },
+    {
+      "path": "contracts/phase45-production-rollback.schema.json",
+      "bytes": 1304,
+      "sha256": "c6d810275e93a615f2b2ddffa7f7ea39183e9a07359c0f8de3bf0009612de86d"
+    },
+    {
+      "path": "contracts/phase45-production-telemetry.schema.json",
+      "bytes": 1547,
+      "sha256": "9db99d8177a7a4df16b4bed9a7e4f72480fe27fc4de97bedcd70ecad604e79c8"
+    },
+    {
+      "path": "contracts/phase45-readiness.schema.json",
+      "bytes": 1442,
+      "sha256": "c8df501083d62f9ffc53c14cfe66a859f90663026fd23a1d94692844bb1c1e41"
+    },
+    {
       "path": "contracts/pilot-acceptance-audit-event.schema.json",
       "bytes": 1183,
       "sha256": "02f73530298e2e2f5daeb8eb015d007c4b15ac0e7cb35b2d5409587acba75711"
@@ -2240,6 +2285,11 @@
       "sha256": "0593ba2fae72b24da2c4a3c0b27a24880dd2e6fcf37bb0dcd51dd3eb13718d6b"
     },
     {
+      "path": "docs/adr/ADR-053-production-hypercare-control.md",
+      "bytes": 756,
+      "sha256": "8d8571468eeba443790c3fc84c5f390876d414e0267f1c0063b2e8ddbf51e4b4"
+    },
+    {
       "path": "docs/CHAT_WORKFLOW.md",
       "bytes": 2343,
       "sha256": "f380a70bb8607190d78fd4600906ea8d2b04ab6d6d5e605c8f6edc4f3298399b"
@@ -3085,6 +3135,16 @@
       "sha256": "aa1d4ff4e3694059f65afc4b2d39b4aece02af70b1e5f55f603ef7b083efca24"
     },
     {
+      "path": "docs/phase-45/PRODUCTION_HYPERCARE.md",
+      "bytes": 809,
+      "sha256": "3079056f05639a181af278d74574c10c097f3143fa5331405a7feb6d61943c26"
+    },
+    {
+      "path": "docs/phase-45/VALIDATION.md",
+      "bytes": 511,
+      "sha256": "6c032bbb4e29e7bf812ea3d235b4c3771a824a11a03aec19352d922c3974783b"
+    },
+    {
       "path": "docs/phase-5/REVIEW_GATE.md",
       "bytes": 2008,
       "sha256": "42b379d6b02557f7ae632caf7ce44a5692096fc387c42611d8d5746c60b42243"
@@ -3637,12 +3697,12 @@
     {
       "path": "package-lock.json",
       "bytes": 4423,
-      "sha256": "c2e85a5fbf76b27642fa65cfb6ec020937f862b6f7a81ac98b6c4e335dedb0e7"
+      "sha256": "31b5b1ec36a22b21656979122e5658f67dc1d2198ae30811da7271f891fff4e9"
     },
     {
       "path": "package.json",
-      "bytes": 8951,
-      "sha256": "447cdbf753a30ba5b3e00fd4ac5d53d95d69337091c3c75077bc40322a4dcbd2"
+      "bytes": 9124,
+      "sha256": "e8574889728ad21de94e0a6f4dae1dd7d1bebb891ea270769d1fcaff94a503a4"
     },
     {
       "path": "packages/.gitkeep",
@@ -3803,6 +3863,11 @@
       "path": "packages/private-owner-regeneration/index.cjs",
       "bytes": 12594,
       "sha256": "08420a86d6446ab1ece7bf95fb3bdb870de15fed7687dfc0851dc12712fc8e66"
+    },
+    {
+      "path": "packages/production-hypercare-control/index.cjs",
+      "bytes": 8191,
+      "sha256": "41e50c527a7ee50fb9cb905b5ef171a02120ab0a3937737326e1ad6812bd5c91"
     },
     {
       "path": "packages/production-vault-ceremony/index.cjs",
@@ -4135,6 +4200,16 @@
       "sha256": "a0d6c48ec7e55dc908cb06da5981d11c4b87417fcffa6609d250d85be7cde863"
     },
     {
+      "path": "production-hypercare/app/index.html",
+      "bytes": 1047,
+      "sha256": "524afac9aca1895b6dc42a832b081a9fc3a3086e27e69cd13815d1ce13059605"
+    },
+    {
+      "path": "production-hypercare/app/styles.css",
+      "bytes": 635,
+      "sha256": "378202d476ee47d970449ddb5bfe96d1a374c2370a5e10d5751c0e1c00176f4e"
+    },
+    {
       "path": "production-vault-ceremony/app/app.js",
       "bytes": 1146,
       "sha256": "9c5f932ac5eba39ddd6129cf29f2e91c461e1c741e9548626f8e87979e97835c"
@@ -4241,8 +4316,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 48082,
-      "sha256": "491a56d2d67ec0b37dba3e8d5b0cdfc745546c4982560f71f1df01e8870ab122"
+      "bytes": 48329,
+      "sha256": "f7188c3b6f6a3e2a1ad963351ada236808fb4335e94dac03f41980b76f75d51f"
     },
     {
       "path": "review/app/app.js",
@@ -4408,6 +4483,11 @@
       "path": "scripts/build-private-owner-regeneration.cjs",
       "bytes": 4270,
       "sha256": "76bda5b0eca16a7f34247b3087706fd0b71f8c30eca9614bfb3bd1b6a7cdfc43"
+    },
+    {
+      "path": "scripts/build-production-hypercare.cjs",
+      "bytes": 1924,
+      "sha256": "7298ff0969d4a0ab0ce53d80575725da20073f967e0901fb66bfc7ff99700330"
     },
     {
       "path": "scripts/build-production-vault-ceremony.cjs",
@@ -4648,6 +4728,11 @@
       "path": "scripts/serve-private-owner-regeneration.cjs",
       "bytes": 1503,
       "sha256": "fafb35bb89a66dbfa8628a7a825c0c554298af8422b5351c7510ab0d3fc11bf5"
+    },
+    {
+      "path": "scripts/serve-production-hypercare.cjs",
+      "bytes": 880,
+      "sha256": "137d83edb9c9d7b1165b433245acf6a11e039f263ca78c04a99135330ae3f6de"
     },
     {
       "path": "scripts/serve-production-vault-ceremony.cjs",
@@ -4948,6 +5033,11 @@
       "path": "tests/private-owner-regeneration.test.cjs",
       "bytes": 12487,
       "sha256": "198e96d7ef8face239a444ac15740d6362d2a0ebe05c7054310ea6f0e0c97024"
+    },
+    {
+      "path": "tests/production-hypercare.test.cjs",
+      "bytes": 4008,
+      "sha256": "22cf7975fde3e992abd931bd2c3e0b93ab93b5d0d43330d9617283010835109d"
     },
     {
       "path": "tests/production-vault-ceremony.test.cjs",

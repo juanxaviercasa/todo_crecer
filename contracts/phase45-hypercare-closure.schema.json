@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase45-hypercare-closure.schema.json",
+  "title": "phase45-hypercare-closure",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "closure_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authorization_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "checkpoint_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "revocation_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "rollback_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "freeze_released": {
+      "type": "boolean"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "healthy_closed",
+        "rolled_back_closed"
+      ]
+    },
+    "writes": {
+      "type": "integer",
+      "const": 0
+    },
+    "publications": {
+      "type": "integer",
+      "const": 0
+    },
+    "external_changes": {
+      "type": "boolean",
+      "const": false
+    },
+    "closed_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "closure_id",
+    "authorization_ref",
+    "checkpoint_refs",
+    "revocation_ref",
+    "rollback_ref",
+    "freeze_released",
+    "status",
+    "writes",
+    "publications",
+    "external_changes",
+    "closed_at"
+  ]
+}

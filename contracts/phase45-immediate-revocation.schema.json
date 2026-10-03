@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase45-immediate-revocation.schema.json",
+  "title": "phase45-immediate-revocation",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "revocation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authorization_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reason": {
+      "type": "string",
+      "enum": [
+        "slo_breach",
+        "integrity_breach",
+        "manual_stop"
+      ]
+    },
+    "credential_revoked": {
+      "type": "boolean"
+    },
+    "route_frozen": {
+      "type": "boolean"
+    },
+    "external_changes": {
+      "type": "boolean",
+      "const": false
+    },
+    "status": {
+      "type": "string",
+      "const": "simulated_verified"
+    },
+    "revoked_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "revocation_id",
+    "authorization_ref",
+    "reason",
+    "credential_revoked",
+    "route_frozen",
+    "external_changes",
+    "status",
+    "revoked_at"
+  ]
+}

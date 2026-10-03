@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase45-hypercare-checkpoint.schema.json",
+  "title": "phase45-hypercare-checkpoint",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "checkpoint_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "telemetry_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "checkpoint_hour": {
+      "type": "integer",
+      "enum": [
+        0,
+        1,
+        4,
+        24
+      ]
+    },
+    "passed": {
+      "type": "boolean"
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "continue",
+        "close",
+        "rollback"
+      ]
+    },
+    "reviewer_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewed_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "checkpoint_id",
+    "telemetry_ref",
+    "checkpoint_hour",
+    "passed",
+    "decision",
+    "reviewer_id",
+    "reviewed_at"
+  ]
+}

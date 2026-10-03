@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase45-production-rollback.schema.json",
+  "title": "phase45-production-rollback",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "rollback_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authorization_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revocation_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_restored": {
+      "type": "boolean"
+    },
+    "target_isolated": {
+      "type": "boolean"
+    },
+    "integrity_verified": {
+      "type": "boolean"
+    },
+    "rto_minutes": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "external_changes": {
+      "type": "boolean",
+      "const": false
+    },
+    "status": {
+      "type": "string",
+      "const": "simulated_passed"
+    },
+    "completed_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "rollback_id",
+    "authorization_ref",
+    "revocation_ref",
+    "source_restored",
+    "target_isolated",
+    "integrity_verified",
+    "rto_minutes",
+    "external_changes",
+    "status",
+    "completed_at"
+  ]
+}

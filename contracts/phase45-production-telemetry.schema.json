@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase45-production-telemetry.schema.json",
+  "title": "phase45-production-telemetry",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "telemetry_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authorization_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "checkpoint_hour": {
+      "type": "integer",
+      "enum": [
+        0,
+        1,
+        4,
+        24
+      ]
+    },
+    "availability": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "latency_p95_ms": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "error_rate": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "integrity_mismatches": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "request_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "contains_pii": {
+      "type": "boolean",
+      "const": false
+    },
+    "external_changes": {
+      "type": "boolean",
+      "const": false
+    },
+    "observed_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "telemetry_id",
+    "authorization_ref",
+    "checkpoint_hour",
+    "availability",
+    "latency_p95_ms",
+    "error_rate",
+    "integrity_mismatches",
+    "request_count",
+    "contains_pii",
+    "external_changes",
+    "observed_at"
+  ]
+}

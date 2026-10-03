@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase45-production-freeze.schema.json",
+  "title": "phase45-production-freeze",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "freeze_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "canary_dossier_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 3
+    },
+    "exceptions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "maxItems": 2
+    },
+    "creator_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "released"
+      ]
+    },
+    "external_changes": {
+      "type": "boolean",
+      "const": false
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "freeze_id",
+    "canary_dossier_ref",
+    "scope",
+    "exceptions",
+    "creator_id",
+    "status",
+    "external_changes",
+    "created_at"
+  ]
+}

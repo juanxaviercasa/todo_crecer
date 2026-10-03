@@ -1,10 +1,10 @@
 ﻿# TodoLima / HazloCrecer — estado y próximos pasos
 
-## Fase actual: 44
+## Fase actual: 45
 
 Ubicación de trabajo: `C:\Users\pc\Videos\todo_crecer\todo_crecer-repo`.
 
-La fase 44 implementa un canary sintético de proveedor con etapas 5/25/50/100, baseline de integridad, SLO, presupuesto, doble aprobación y rollback automático. No realiza cambios externos.
+La fase 45 implementa freeze, autorización final breve, telemetría agregada sin PII, checkpoints de hipercuidado, revocación inmediata, rollback y cierre verificable. No realiza cambios externos.
 
 ## Ejecutar
 
@@ -12,16 +12,16 @@ La fase 44 implementa un canary sintético de proveedor con etapas 5/25/50/100, 
 npm ci --ignore-scripts
 npm test
 npm run build
-npm run start:provider-canary
+npm run start:hypercare
 ```
 
-Abrir http://127.0.0.1:4218/.
+Abrir http://127.0.0.1:4219/.
 
 ## Estado comprobado
 
-- 373 contratos JSON Schema.
+- 382 contratos JSON Schema.
 - 1.376 pruebas aprobadas y 0 fallidas.
-- 19 pruebas específicas de la fase 44.
+- 21 pruebas específicas de la fase 45.
 - 0 vulnerabilidades de producción y 0 patrones de credenciales detectados.
 - 2 expedientes placeholder y 16 solicitudes obligatorias.
 - 13 entregas sanitizadas con renovación programada.
@@ -35,9 +35,9 @@ Abrir http://127.0.0.1:4218/.
 
 La sala está operativa sin candidatos reales. Para habilitar una decisión humana se requieren 8/8 evidencias reales vigentes por candidato, cuatro revisiones aprobadas, cero riesgos críticos y autorización explícita de compras. La completitud placeholder nunca cuenta como evidencia real.
 
-## Fase 45 recomendada
+## Fase 46 recomendada
 
-**Control de producción y cierre de hipercuidado.** Preparar freeze, autorización final de corta duración, telemetría de producción sin PII, checkpoints de hipercuidado, revocación inmediata y cierre verificable. Ensayar todo localmente y mantener apply bloqueado hasta disponer del expediente real de fase 43.
+**Gobierno de proveedor en operación.** Preparar scorecards periódicos, renovación de evidencia, control de SLA y coste, rotación de credenciales, auditoría de cambios, plan de sustitución y revisión trimestral. Mantener cualquier operación real bloqueada hasta disponer del expediente real aprobado.
 
 ## Dominios previstos
 

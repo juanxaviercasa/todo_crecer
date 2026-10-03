@@ -1,3 +1,7 @@
+## Fase 45 — control de producción e hipercuidado
+
+Añade freeze, autorización breve, telemetría sin PII, checkpoints 0/1/4/24 h, revocación inmediata y cierre verificable. Ejecuta `npm run start:hypercare` y abre `http://127.0.0.1:4219/`.
+
 ## Fase 44 — canary de proveedor
 
 Añade etapas 5/25/50/100, baseline de integridad, SLO, presupuesto, doble aprobación y rollback automático. Ejecuta `npm run start:provider-canary` y abre `http://127.0.0.1:4218/`.
