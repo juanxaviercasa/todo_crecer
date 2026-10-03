@@ -1,3 +1,7 @@
+## Fase 46 — gobierno del proveedor
+
+Añade scorecard trimestral, renovación de evidencia, SLA, coste, rotación, auditoría y sustitución. Ejecuta `npm run start:provider-governance` y abre `http://127.0.0.1:4220/`.
+
 ## Fase 45 — control de producción e hipercuidado
 
 Añade freeze, autorización breve, telemetría sin PII, checkpoints 0/1/4/24 h, revocación inmediata y cierre verificable. Ejecuta `npm run start:hypercare` y abre `http://127.0.0.1:4219/`.

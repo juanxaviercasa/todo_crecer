@@ -1,10 +1,10 @@
 ﻿# TodoLima / HazloCrecer — estado y próximos pasos
 
-## Fase actual: 45
+## Fase actual: 46
 
 Ubicación de trabajo: `C:\Users\pc\Videos\todo_crecer\todo_crecer-repo`.
 
-La fase 45 implementa freeze, autorización final breve, telemetría agregada sin PII, checkpoints de hipercuidado, revocación inmediata, rollback y cierre verificable. No realiza cambios externos.
+La fase 46 implementa gobierno trimestral del proveedor: scorecard, renovación de evidencia, SLA, coste, rotación, auditoría encadenada y plan de sustitución. No realiza cambios externos.
 
 ## Ejecutar
 
@@ -12,16 +12,16 @@ La fase 45 implementa freeze, autorización final breve, telemetría agregada si
 npm ci --ignore-scripts
 npm test
 npm run build
-npm run start:hypercare
+npm run start:provider-governance
 ```
 
-Abrir http://127.0.0.1:4219/.
+Abrir http://127.0.0.1:4220/.
 
 ## Estado comprobado
 
-- 382 contratos JSON Schema.
+- 391 contratos JSON Schema.
 - 1.376 pruebas aprobadas y 0 fallidas.
-- 21 pruebas específicas de la fase 45.
+- 21 pruebas específicas de la fase 46.
 - 0 vulnerabilidades de producción y 0 patrones de credenciales detectados.
 - 2 expedientes placeholder y 16 solicitudes obligatorias.
 - 13 entregas sanitizadas con renovación programada.
@@ -35,9 +35,9 @@ Abrir http://127.0.0.1:4219/.
 
 La sala está operativa sin candidatos reales. Para habilitar una decisión humana se requieren 8/8 evidencias reales vigentes por candidato, cuatro revisiones aprobadas, cero riesgos críticos y autorización explícita de compras. La completitud placeholder nunca cuenta como evidencia real.
 
-## Fase 46 recomendada
+## Fase 47 recomendada
 
-**Gobierno de proveedor en operación.** Preparar scorecards periódicos, renovación de evidencia, control de SLA y coste, rotación de credenciales, auditoría de cambios, plan de sustitución y revisión trimestral. Mantener cualquier operación real bloqueada hasta disponer del expediente real aprobado.
+**FinOps y capacidad multi-proveedor.** Preparar asignación de costes por tenant, forecast, presupuestos por cohorte, capacidad, simulación de picos, arbitraje entre proveedores y límites automáticos. Mantener cualquier compra o cambio de proveedor bloqueado hasta contar con evidencia real y aprobación financiera.
 
 ## Dominios previstos
 

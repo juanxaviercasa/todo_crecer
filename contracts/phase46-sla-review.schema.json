@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase46-sla-review.schema.json",
+  "title": "phase46-sla-review",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "review_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provider_fingerprint": {
+      "type": "string",
+      "minLength": 1
+    },
+    "availability_target": {
+      "type": "number"
+    },
+    "availability_measured": {
+      "type": "number"
+    },
+    "latency_target_ms": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "latency_measured_ms": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "breaches": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "met",
+        "breached"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "review_id",
+    "provider_fingerprint",
+    "availability_target",
+    "availability_measured",
+    "latency_target_ms",
+    "latency_measured_ms",
+    "breaches",
+    "status",
+    "created_at"
+  ]
+}

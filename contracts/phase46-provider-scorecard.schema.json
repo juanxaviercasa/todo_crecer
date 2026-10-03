@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase46-provider-scorecard.schema.json",
+  "title": "phase46-provider-scorecard",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "scorecard_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provider_fingerprint": {
+      "type": "string",
+      "minLength": 1
+    },
+    "period": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dimensions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "enum": [
+              "availability",
+              "latency",
+              "security",
+              "support",
+              "portability",
+              "cost"
+            ]
+          },
+          "score": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "name",
+          "score"
+        ]
+      },
+      "minItems": 6,
+      "maxItems": 6
+    },
+    "total_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "healthy",
+        "watch",
+        "replace_review"
+      ]
+    },
+    "synthetic_only": {
+      "type": "boolean",
+      "const": true
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "scorecard_id",
+    "provider_fingerprint",
+    "period",
+    "dimensions",
+    "total_score",
+    "status",
+    "synthetic_only",
+    "created_at"
+  ]
+}

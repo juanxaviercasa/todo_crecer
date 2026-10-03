@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase46-evidence-renewal.schema.json",
+  "title": "phase46-evidence-renewal",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "renewal_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provider_fingerprint": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_kinds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "terms",
+          "residency",
+          "security",
+          "lifecycle",
+          "insurance"
+        ]
+      },
+      "minItems": 5,
+      "maxItems": 5
+    },
+    "renewed_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "expired_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "next_review_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_mode": {
+      "type": "string",
+      "const": "synthetic_rehearsal"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "current",
+        "renewal_required"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "renewal_id",
+    "provider_fingerprint",
+    "evidence_kinds",
+    "renewed_count",
+    "expired_count",
+    "next_review_at",
+    "evidence_mode",
+    "status",
+    "created_at"
+  ]
+}

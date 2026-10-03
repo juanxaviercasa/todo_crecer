@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase46-substitution-plan.schema.json",
+  "title": "phase46-substitution-plan",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "plan_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provider_fingerprint": {
+      "type": "string",
+      "minLength": 1
+    },
+    "triggers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 3
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 5
+    },
+    "target_rto_minutes": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "target_rpo_minutes": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "dry_run": {
+      "type": "boolean",
+      "const": true
+    },
+    "external_changes": {
+      "type": "boolean",
+      "const": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "standby",
+        "review_required"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "plan_id",
+    "provider_fingerprint",
+    "triggers",
+    "steps",
+    "target_rto_minutes",
+    "target_rpo_minutes",
+    "dry_run",
+    "external_changes",
+    "status",
+    "created_at"
+  ]
+}

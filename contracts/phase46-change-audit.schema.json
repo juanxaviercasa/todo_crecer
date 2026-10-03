@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase46-change-audit.schema.json",
+  "title": "phase46-change-audit",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "provider_fingerprint": {
+      "type": "string",
+      "minLength": 1
+    },
+    "change_type": {
+      "type": "string",
+      "enum": [
+        "scorecard",
+        "evidence_renewal",
+        "sla_review",
+        "cost_review",
+        "credential_rotation",
+        "substitution_plan",
+        "quarterly_review"
+      ]
+    },
+    "payload_digest": {
+      "type": "string",
+      "minLength": 1
+    },
+    "previous_hash": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "event_hash": {
+      "type": "string",
+      "minLength": 1
+    },
+    "contains_secrets": {
+      "type": "boolean",
+      "const": false
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "event_id",
+    "sequence",
+    "provider_fingerprint",
+    "change_type",
+    "payload_digest",
+    "previous_hash",
+    "event_hash",
+    "contains_secrets",
+    "created_at"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase46-cost-review.schema.json",
+  "title": "phase46-cost-review",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "review_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provider_fingerprint": {
+      "type": "string",
+      "minLength": 1
+    },
+    "budget_cents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "actual_cents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "variance_percent": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "within_budget",
+        "over_budget"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "review_id",
+    "provider_fingerprint",
+    "budget_cents",
+    "actual_cents",
+    "variance_percent",
+    "status",
+    "created_at"
+  ]
+}

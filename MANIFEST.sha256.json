@@ -126,8 +126,8 @@
     },
     {
       "path": "CONTINUAR_TODO_CRECER.md",
-      "bytes": 2045,
-      "sha256": "94039e155d853fc2f82eecd4b6be4c25e4ef5b032d3d6f41772962e1198c607b"
+      "bytes": 2060,
+      "sha256": "6f6660bceb2203d19d93e100cd594e587e546f7f5fdd6946787a21f8cf62c01c"
     },
     {
       "path": "contracts/access-decision.schema.json",
@@ -1245,6 +1245,51 @@
       "sha256": "c8df501083d62f9ffc53c14cfe66a859f90663026fd23a1d94692844bb1c1e41"
     },
     {
+      "path": "contracts/phase46-change-audit.schema.json",
+      "bytes": 1416,
+      "sha256": "8067202c45c70ea22dfc7474936d8dca4c86b39e45926f7581c8aa0761fdbb6d"
+    },
+    {
+      "path": "contracts/phase46-cost-review.schema.json",
+      "bytes": 1054,
+      "sha256": "6a26ecca85225b3bb2e71f2e8142f14922207785ba2f104b534ff31b671d19be"
+    },
+    {
+      "path": "contracts/phase46-credential-rotation.schema.json",
+      "bytes": 1388,
+      "sha256": "9e31a1cd57ee8a26162f908d28fad50c84f490155303aa3d12cce6f5042123f5"
+    },
+    {
+      "path": "contracts/phase46-evidence-renewal.schema.json",
+      "bytes": 1505,
+      "sha256": "7317d5e52f154796759e0fd1c8477ad5979860c69d659231c50ad418da4799ff"
+    },
+    {
+      "path": "contracts/phase46-provider-scorecard.schema.json",
+      "bytes": 1790,
+      "sha256": "0ec961606b3ae6f6d579b751e21aedd0b9bebddced3dec5a8fca99cb2388326e"
+    },
+    {
+      "path": "contracts/phase46-quarterly-review.schema.json",
+      "bytes": 1754,
+      "sha256": "1f5dac200d76bceffcb5281e443298ac57bdfcc728f01c894fa27cd6eecd5b30"
+    },
+    {
+      "path": "contracts/phase46-readiness.schema.json",
+      "bytes": 1453,
+      "sha256": "23763e7cd6008c5ceedb026c6578d0fe29dfccd0f6a75dad36d323835084329d"
+    },
+    {
+      "path": "contracts/phase46-sla-review.schema.json",
+      "bytes": 1244,
+      "sha256": "3f0010ca9bab39f46e01fd762bbf033c10a11dc08298af6f1e8c48ff5c66419a"
+    },
+    {
+      "path": "contracts/phase46-substitution-plan.schema.json",
+      "bytes": 1503,
+      "sha256": "1c774491cd1a917486e642f8752fcd05ddd64649bb1b3b2315c20607032f2b17"
+    },
+    {
       "path": "contracts/pilot-acceptance-audit-event.schema.json",
       "bytes": 1183,
       "sha256": "02f73530298e2e2f5daeb8eb015d007c4b15ac0e7cb35b2d5409587acba75711"
@@ -2290,6 +2335,11 @@
       "sha256": "8d8571468eeba443790c3fc84c5f390876d414e0267f1c0063b2e8ddbf51e4b4"
     },
     {
+      "path": "docs/adr/ADR-054-continuous-provider-governance.md",
+      "bytes": 703,
+      "sha256": "02c119ee7b13ec355c95c37d733a2e51d09b0c7943ec1d90ae7dd9602e6d237b"
+    },
+    {
       "path": "docs/CHAT_WORKFLOW.md",
       "bytes": 2343,
       "sha256": "f380a70bb8607190d78fd4600906ea8d2b04ab6d6d5e605c8f6edc4f3298399b"
@@ -3145,6 +3195,16 @@
       "sha256": "6c032bbb4e29e7bf812ea3d235b4c3771a824a11a03aec19352d922c3974783b"
     },
     {
+      "path": "docs/phase-46/PROVIDER_GOVERNANCE.md",
+      "bytes": 757,
+      "sha256": "9d6a6e457e3a43d5535c3873ffa063dd7e5f0810b1fe94d16a399b99136f4378"
+    },
+    {
+      "path": "docs/phase-46/VALIDATION.md",
+      "bytes": 539,
+      "sha256": "59e877d1f3d4ce1aca496ae79c14b14a958efb2e989eb0809732589c18ad7ed8"
+    },
+    {
       "path": "docs/phase-5/REVIEW_GATE.md",
       "bytes": 2008,
       "sha256": "42b379d6b02557f7ae632caf7ce44a5692096fc387c42611d8d5746c60b42243"
@@ -3697,12 +3757,12 @@
     {
       "path": "package-lock.json",
       "bytes": 4423,
-      "sha256": "31b5b1ec36a22b21656979122e5658f67dc1d2198ae30811da7271f891fff4e9"
+      "sha256": "44d2d016c3e746bd34f5cbfc83db96d433e6c46d1e98dfbcc8ff2657beccfc57"
     },
     {
       "path": "package.json",
-      "bytes": 9124,
-      "sha256": "e8574889728ad21de94e0a6f4dae1dd7d1bebb891ea270769d1fcaff94a503a4"
+      "bytes": 9294,
+      "sha256": "b77bfb44a11adefe6785b2504c26c1b8051dea4f7a2ed4b4f9c9d2853b11b920"
     },
     {
       "path": "packages/.gitkeep",
@@ -3898,6 +3958,11 @@
       "path": "packages/provider-decision-room/index.cjs",
       "bytes": 14548,
       "sha256": "977ca481210e476f5ba3868face3d29b76d7f9f3d0086dcc0bf94e1a340362f2"
+    },
+    {
+      "path": "packages/provider-governance/index.cjs",
+      "bytes": 7731,
+      "sha256": "b2826a61d1c06755692879d8530d991d8d34843edb8f1e3136da38f357a0a1d8"
     },
     {
       "path": "packages/provider-preflight/index.cjs",
@@ -4285,6 +4350,16 @@
       "sha256": "9459daa13b606b8f12c4a0251f81e1398000f6b0bae32e60f0e6a3719acea3fe"
     },
     {
+      "path": "provider-governance/app/index.html",
+      "bytes": 1062,
+      "sha256": "7da22e9257399c05e6185e6e0b62788427f2e601a809a80cf1a335b8531fe80b"
+    },
+    {
+      "path": "provider-governance/app/styles.css",
+      "bytes": 615,
+      "sha256": "a0583b4b4f816f92312b8578fda69cac5ab10c94c821cf85f69c2cafb697e76f"
+    },
+    {
       "path": "provider-preflight/app/index.html",
       "bytes": 1084,
       "sha256": "fc9d0cd113a75552fd79ac2332836f5a6f41d899bc1b692dacebbd78ddf99288"
@@ -4316,8 +4391,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 48329,
-      "sha256": "f7188c3b6f6a3e2a1ad963351ada236808fb4335e94dac03f41980b76f75d51f"
+      "bytes": 48551,
+      "sha256": "1c1de1da0310ed0158ed7f220fbc73406e682339eda29f17ce344eee0f5343ba"
     },
     {
       "path": "review/app/app.js",
@@ -4513,6 +4588,11 @@
       "path": "scripts/build-provider-decision-room.cjs",
       "bytes": 3523,
       "sha256": "6f7803f3693bf4ec16ee1570f42535b1587915f370c57a4fd0b771e0c4c05f19"
+    },
+    {
+      "path": "scripts/build-provider-governance.cjs",
+      "bytes": 1492,
+      "sha256": "35dcbcfeb713de30f790a2c2db2044f5925ebf9c970863125c90dd39bfff0101"
     },
     {
       "path": "scripts/build-provider-preflight.cjs",
@@ -4758,6 +4838,11 @@
       "path": "scripts/serve-provider-decision-room.cjs",
       "bytes": 1481,
       "sha256": "30a76e96004b7557ab2487e9494f34faefc8a9d341bac09e109c8dcee5a26883"
+    },
+    {
+      "path": "scripts/serve-provider-governance.cjs",
+      "bytes": 878,
+      "sha256": "e0af7dd5f8c251933c6cbb4c81c4f0cfd39568d65c9a8c1e33d25acb2674c955"
     },
     {
       "path": "scripts/serve-provider-preflight.cjs",
@@ -5068,6 +5153,11 @@
       "path": "tests/provider-decision-room.test.cjs",
       "bytes": 12467,
       "sha256": "4c5e8f58a8abf18bfa9ca484576ef8dfef5e474cbd568ad3acd75e856d62ee6e"
+    },
+    {
+      "path": "tests/provider-governance.test.cjs",
+      "bytes": 3552,
+      "sha256": "741a03fa547c93cad1233cb90125bf7cdb0b6e3fa32f82d3745401095b7e7beb"
     },
     {
       "path": "tests/provider-preflight.test.cjs",

@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase46-quarterly-review.schema.json",
+  "title": "phase46-quarterly-review",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "review_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provider_fingerprint": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scorecard_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "renewal_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sla_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "cost_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rotation_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "substitution_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "continue_conditional",
+        "replacement_review"
+      ]
+    },
+    "approver_roles": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "const": "platform_owner"
+        },
+        {
+          "const": "risk_reviewer"
+        }
+      ],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "external_changes": {
+      "type": "boolean",
+      "const": false
+    },
+    "closed_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "review_id",
+    "provider_fingerprint",
+    "scorecard_ref",
+    "renewal_ref",
+    "sla_ref",
+    "cost_ref",
+    "rotation_ref",
+    "substitution_ref",
+    "decision",
+    "approver_roles",
+    "external_changes",
+    "closed_at"
+  ]
+}
