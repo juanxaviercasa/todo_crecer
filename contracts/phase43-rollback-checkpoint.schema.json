@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase43-rollback-checkpoint.schema.json",
+  "title": "phase43-rollback-checkpoint",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "checkpoint_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authorization_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 4
+    },
+    "source_recoverable": {
+      "type": "boolean"
+    },
+    "target_revocable": {
+      "type": "boolean"
+    },
+    "dry_run": {
+      "type": "boolean",
+      "const": true
+    },
+    "external_changes": {
+      "type": "boolean",
+      "const": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "prepared",
+        "rehearsed"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "checkpoint_id",
+    "authorization_ref",
+    "steps",
+    "source_recoverable",
+    "target_revocable",
+    "dry_run",
+    "external_changes",
+    "status",
+    "created_at"
+  ]
+}

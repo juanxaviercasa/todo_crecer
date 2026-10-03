@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase43-onboarding-dossier.schema.json",
+  "title": "phase43-onboarding-dossier",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "dossier_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "manifest_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "quarantine_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "closure_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 2
+    },
+    "verification_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authorization_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "window_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rollback_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "real_evidence_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "selected_candidate": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "rehearsal_blocked",
+        "ready_for_final_apply_approval"
+      ]
+    },
+    "external_changes": {
+      "type": "boolean",
+      "const": false
+    },
+    "publications": {
+      "type": "integer",
+      "const": 0
+    },
+    "sealed_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "dossier_id",
+    "manifest_ref",
+    "quarantine_ref",
+    "closure_refs",
+    "verification_ref",
+    "authorization_ref",
+    "window_ref",
+    "rollback_ref",
+    "real_evidence_count",
+    "selected_candidate",
+    "status",
+    "external_changes",
+    "publications",
+    "sealed_at"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase43-manifest-quarantine.schema.json",
+  "title": "phase43-manifest-quarantine",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "quarantine_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "manifest_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "passed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "name",
+          "passed"
+        ]
+      },
+      "minItems": 4
+    },
+    "secrets_found": {
+      "type": "integer",
+      "const": 0
+    },
+    "pii_found": {
+      "type": "integer",
+      "const": 0
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "accepted_for_review",
+        "rejected"
+      ]
+    },
+    "checked_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "quarantine_id",
+    "manifest_ref",
+    "checks",
+    "secrets_found",
+    "pii_found",
+    "status",
+    "checked_at"
+  ]
+}

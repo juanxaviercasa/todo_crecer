@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase43-readiness.schema.json",
+  "title": "phase43-readiness",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "readiness_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "passed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "name",
+          "passed"
+        ]
+      }
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "blocked",
+        "ready_for_final_apply_approval"
+      ]
+    },
+    "apply_status": {
+      "type": "string",
+      "const": "blocked"
+    },
+    "publications": {
+      "type": "integer",
+      "const": 0
+    },
+    "external_changes": {
+      "type": "boolean",
+      "const": false
+    },
+    "generated_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "readiness_id",
+    "checks",
+    "blockers",
+    "status",
+    "apply_status",
+    "publications",
+    "external_changes",
+    "generated_at"
+  ]
+}

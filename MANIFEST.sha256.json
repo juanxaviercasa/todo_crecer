@@ -126,8 +126,8 @@
     },
     {
       "path": "CONTINUAR_TODO_CRECER.md",
-      "bytes": 2105,
-      "sha256": "3234667a47c89faab38c449486af85c86e998daf8665268bf4c874bc0e377508"
+      "bytes": 2112,
+      "sha256": "cc3c1fc7c3e61cc695b4600ac1ac4cfcf50db68b9146466435d35e0cbbe4c785"
     },
     {
       "path": "contracts/access-decision.schema.json",
@@ -1108,6 +1108,51 @@
       "path": "contracts/phase42-reversal-plan.schema.json",
       "bytes": 1114,
       "sha256": "4bc04bb4467ad1ff14795857895c3d0ccb3d2926d8b385d927699c1d9b0b3611"
+    },
+    {
+      "path": "contracts/phase43-change-window.schema.json",
+      "bytes": 1213,
+      "sha256": "959d65a69372bba4cad49fa865be6c7e4918799d873839ef7256dc5236f1e5bf"
+    },
+    {
+      "path": "contracts/phase43-compliance-closure.schema.json",
+      "bytes": 1271,
+      "sha256": "3399fab6b0dc0142c5d9a7edd5c979e66f03f93772146c5c6d06b4494eca332d"
+    },
+    {
+      "path": "contracts/phase43-human-authorization.schema.json",
+      "bytes": 1419,
+      "sha256": "fa35276863d23da6e0348d8a3fde77bd76bd8579c225dd827b8a030fed43453b"
+    },
+    {
+      "path": "contracts/phase43-manifest-quarantine.schema.json",
+      "bytes": 1406,
+      "sha256": "d9bae70b2101be03c8f85d6d55bf904064b8a82700efb1da2f1c49807f2992b3"
+    },
+    {
+      "path": "contracts/phase43-onboarding-dossier.schema.json",
+      "bytes": 1883,
+      "sha256": "5fe792fa28233ea07142cd049af495071a410762745350397a025a35d31b917b"
+    },
+    {
+      "path": "contracts/phase43-provider-manifest.schema.json",
+      "bytes": 1462,
+      "sha256": "b350fc4fdeb3cf43d650e0b6c0f6ec2651e794e992ce48f245ede63ec510dce6"
+    },
+    {
+      "path": "contracts/phase43-readiness.schema.json",
+      "bytes": 1535,
+      "sha256": "cf07a1918f21ea59180e2a76b74b93a69e91250680f41b293a3fbbb5845b4034"
+    },
+    {
+      "path": "contracts/phase43-readonly-verification.schema.json",
+      "bytes": 1381,
+      "sha256": "3e602d05c3d5237ad477c542288b769ac3051a96d59ef755d6a77a7efbe4ce8d"
+    },
+    {
+      "path": "contracts/phase43-rollback-checkpoint.schema.json",
+      "bytes": 1305,
+      "sha256": "a942142ac81894f242d3c75535472d334e0ce03882c8bab14a44f7000ebf1a4c"
     },
     {
       "path": "contracts/pilot-acceptance-audit-event.schema.json",
@@ -2140,6 +2185,11 @@
       "sha256": "c911a7cb51b624595b09b928dd11bbd1e688205e6d423f990854952002bf5abb"
     },
     {
+      "path": "docs/adr/ADR-051-single-provider-onboarding.md",
+      "bytes": 927,
+      "sha256": "15d1ad6b0fc50d7d153bedb70abca349391d526a5b382a0c6627d4960e20cbe6"
+    },
+    {
       "path": "docs/CHAT_WORKFLOW.md",
       "bytes": 2343,
       "sha256": "f380a70bb8607190d78fd4600906ea8d2b04ab6d6d5e605c8f6edc4f3298399b"
@@ -2965,6 +3015,16 @@
       "sha256": "2d1f79333e9f97cb9aaa38f1b426a1e647cf5db8bfbfa17926bf55de72f16f4b"
     },
     {
+      "path": "docs/phase-43/SINGLE_PROVIDER_ONBOARDING.md",
+      "bytes": 812,
+      "sha256": "92b411d83491509d4c98913ff3b2e5f20dd9adbe5be5e7b21cda79d44b2f0a0d"
+    },
+    {
+      "path": "docs/phase-43/VALIDATION.md",
+      "bytes": 623,
+      "sha256": "9c6c71a60ddfe1093fd6dfa5b342e88ed9a39062156bb17d714271c34cd65304"
+    },
+    {
       "path": "docs/phase-5/REVIEW_GATE.md",
       "bytes": 2008,
       "sha256": "42b379d6b02557f7ae632caf7ce44a5692096fc387c42611d8d5746c60b42243"
@@ -3517,12 +3577,12 @@
     {
       "path": "package-lock.json",
       "bytes": 4423,
-      "sha256": "b629ee6ce8fbb748ae1f07168419878c6d494b18462842f1d12f90e6a02b9dcf"
+      "sha256": "582fbcba4826cb688a629251601f888e743c74962814d10ac55bd58556501569"
     },
     {
       "path": "package.json",
-      "bytes": 8559,
-      "sha256": "a3bcf62840bbace3ca43ea1c27a58223607615f95bc1f5a4fbaae4623ca7c7a2"
+      "bytes": 8767,
+      "sha256": "66d339f7c34c0f086e1e7286ae77498bca10eeda55bc16439de7a89e9e1d410f"
     },
     {
       "path": "packages/.gitkeep",
@@ -3733,6 +3793,11 @@
       "path": "packages/real-estate-renderer/styles.css",
       "bytes": 16443,
       "sha256": "1112123bfd1bc402d95ada29523105137591941c14198e0ad6f04d49babd9cab"
+    },
+    {
+      "path": "packages/single-provider-onboarding/index.cjs",
+      "bytes": 7557,
+      "sha256": "ee03fa7f525bfe8a9c495e81ed04327ecb6ee78dd7d4b66f6ee2a17102388214"
     },
     {
       "path": "packages/site-engine/index.cjs",
@@ -4101,8 +4166,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 47589,
-      "sha256": "1e7c3768009fdb84d732fdedf6c86974fa55f3d2b454c02de40348701cc28ccf"
+      "bytes": 47861,
+      "sha256": "8028f2a0277136c7931852e0e3e31e65ca8fb9f72c2dae9e4b8ed1ccdcae3baf"
     },
     {
       "path": "review/app/app.js",
@@ -4303,6 +4368,11 @@
       "path": "scripts/build-review.cjs",
       "bytes": 1704,
       "sha256": "8b43759502add7069c3d1898910c5b6018f0666eb1e165fbfa95cc79e541fffc"
+    },
+    {
+      "path": "scripts/build-single-provider-onboarding.cjs",
+      "bytes": 1302,
+      "sha256": "405f93ce116331ad09c3c23da3dd328dc72954e01faa7ea6181390d58bac5f1a"
     },
     {
       "path": "scripts/build-staging-activation.cjs",
@@ -4535,6 +4605,11 @@
       "sha256": "09df8cce7ace3b0c03b9d98df2c02253e4cdce8b8b91535be0e2e78ed76d326e"
     },
     {
+      "path": "scripts/serve-single-provider-onboarding.cjs",
+      "bytes": 892,
+      "sha256": "98947af2fedb2c6dc32a1ca3432858ea71357b095681c57275d0c476de11b80b"
+    },
+    {
       "path": "scripts/serve-staging-activation.cjs",
       "bytes": 1588,
       "sha256": "a5bad2f3be5c9d36f21f43c47be6979e43b8a439621d922f08ce81dc4fa1b264"
@@ -4568,6 +4643,16 @@
       "path": "scripts/validate.cjs",
       "bytes": 10844,
       "sha256": "244d11aa901710a6b4f2ddad17988cac0ceb85a0bc4171dc1b90591b552053f4"
+    },
+    {
+      "path": "single-provider-onboarding/app/index.html",
+      "bytes": 1139,
+      "sha256": "584f7a5bd53fd8b6b304e9f168a6cc3ce67aaeba4c620d54a56a9667ff0eec4f"
+    },
+    {
+      "path": "single-provider-onboarding/app/styles.css",
+      "bytes": 615,
+      "sha256": "3868a34c977fb5f42c75411573772b868bc7e7075c8eebc09d79a46dae65a892"
     },
     {
       "path": "staging-activation/app/app.js",
@@ -4823,6 +4908,11 @@
       "path": "tests/real-estate-renderer.test.cjs",
       "bytes": 3061,
       "sha256": "6c1f70ebc66b4e83a7f70d1d1775fe5386073a8c6e7178ab6958ea51a707ae89"
+    },
+    {
+      "path": "tests/single-provider-onboarding.test.cjs",
+      "bytes": 3069,
+      "sha256": "366ae50887f1d361167447e0ba3de70c3692bde6dddb2cd467619da25b812261"
     },
     {
       "path": "tests/staging-control-plane.test.cjs",

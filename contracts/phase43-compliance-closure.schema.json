@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase43-compliance-closure.schema.json",
+  "title": "phase43-compliance-closure",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "closure_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "manifest_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "domain": {
+      "type": "string",
+      "enum": [
+        "legal",
+        "procurement"
+      ]
+    },
+    "reviewer_role": {
+      "type": "string",
+      "minLength": 1
+    },
+    "independent": {
+      "type": "boolean",
+      "const": true
+    },
+    "evidence_mode": {
+      "type": "string",
+      "enum": [
+        "synthetic_rehearsal",
+        "real"
+      ]
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "conditional",
+        "approved",
+        "changes_requested"
+      ]
+    },
+    "closed_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "closure_id",
+    "manifest_ref",
+    "domain",
+    "reviewer_role",
+    "independent",
+    "evidence_mode",
+    "decision",
+    "closed_at"
+  ]
+}

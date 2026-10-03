@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase43-readonly-verification.schema.json",
+  "title": "phase43-readonly-verification",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "verification_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "manifest_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "string",
+      "const": "metadata_read"
+    },
+    "reads": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "writes": {
+      "type": "integer",
+      "const": 0
+    },
+    "credential_fingerprint": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_mode": {
+      "type": "string",
+      "enum": [
+        "synthetic_rehearsal",
+        "real"
+      ]
+    },
+    "verified_real": {
+      "type": "boolean"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "rehearsed",
+        "verified"
+      ]
+    },
+    "verified_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "verification_id",
+    "manifest_ref",
+    "scope",
+    "reads",
+    "writes",
+    "credential_fingerprint",
+    "evidence_mode",
+    "verified_real",
+    "status",
+    "verified_at"
+  ]
+}

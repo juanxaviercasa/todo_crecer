@@ -1,3 +1,7 @@
+## Fase 43 — incorporación de un proveedor
+
+Añade manifiesto sanitizado, cuarentena, doble cierre, sesión read-only, autorización reversible, ventana y rollback. El apply sigue bloqueado. Ejecuta `npm run start:provider-onboarding` y abre `http://127.0.0.1:4217/`.
+
 ## Fase 42 — evidencia y decisión reversible
 
 Añade entregas sanitizadas, revisiones legales y de compras, sesiones de lectura verificables y un gate humano reversible. La aplicación externa permanece bloqueada. Ejecuta `npm run start:evidence-gate` para abrir `http://127.0.0.1:4216/`.

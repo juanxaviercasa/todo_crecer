@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase43-change-window.schema.json",
+  "title": "phase43-change-window",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "window_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authorization_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "starts_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ends_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "freeze_scope": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 2
+    },
+    "apply_allowed": {
+      "type": "boolean",
+      "const": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "blocked",
+        "prepared"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "window_id",
+    "authorization_ref",
+    "starts_at",
+    "ends_at",
+    "freeze_scope",
+    "apply_allowed",
+    "status",
+    "created_at"
+  ]
+}
