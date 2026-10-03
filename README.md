@@ -1,3 +1,7 @@
+## Fase 44 — canary de proveedor
+
+Añade etapas 5/25/50/100, baseline de integridad, SLO, presupuesto, doble aprobación y rollback automático. Ejecuta `npm run start:provider-canary` y abre `http://127.0.0.1:4218/`.
+
 ## Fase 43 — incorporación de un proveedor
 
 Añade manifiesto sanitizado, cuarentena, doble cierre, sesión read-only, autorización reversible, ventana y rollback. El apply sigue bloqueado. Ejecuta `npm run start:provider-onboarding` y abre `http://127.0.0.1:4217/`.

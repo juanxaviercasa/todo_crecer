@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase44-canary-approval.schema.json",
+  "title": "phase44-canary-approval",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "approval_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "plan_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "plan_digest": {
+      "type": "string",
+      "minLength": 1
+    },
+    "approver_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "security_approver",
+        "platform_approver"
+      ]
+    },
+    "decision": {
+      "type": "string",
+      "const": "approved"
+    },
+    "approved_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "approval_id",
+    "plan_ref",
+    "plan_digest",
+    "approver_id",
+    "role",
+    "decision",
+    "approved_at"
+  ]
+}

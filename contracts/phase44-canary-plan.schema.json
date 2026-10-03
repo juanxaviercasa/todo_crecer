@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase44-canary-plan.schema.json",
+  "title": "phase44-canary-plan",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "plan_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "onboarding_dossier_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stages": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "const": 5
+        },
+        {
+          "const": 25
+        },
+        {
+          "const": 50
+        },
+        {
+          "const": 100
+        }
+      ],
+      "items": false,
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "data_mode": {
+      "type": "string",
+      "const": "synthetic_metadata"
+    },
+    "external_apply": {
+      "type": "boolean",
+      "const": false
+    },
+    "creator_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "approved",
+        "running",
+        "passed",
+        "rolled_back"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "plan_id",
+    "onboarding_dossier_ref",
+    "stages",
+    "data_mode",
+    "external_apply",
+    "creator_id",
+    "status",
+    "created_at"
+  ]
+}

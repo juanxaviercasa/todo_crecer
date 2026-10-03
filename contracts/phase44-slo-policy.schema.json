@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase44-slo-policy.schema.json",
+  "title": "phase44-slo-policy",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "policy_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "plan_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "availability_min": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "latency_p95_max_ms": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "error_rate_max": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "automatic_rollback": {
+      "type": "boolean",
+      "const": true
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "policy_id",
+    "plan_ref",
+    "availability_min",
+    "latency_p95_max_ms",
+    "error_rate_max",
+    "automatic_rollback",
+    "created_at"
+  ]
+}

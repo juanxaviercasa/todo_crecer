@@ -126,8 +126,8 @@
     },
     {
       "path": "CONTINUAR_TODO_CRECER.md",
-      "bytes": 2112,
-      "sha256": "cc3c1fc7c3e61cc695b4600ac1ac4cfcf50db68b9146466435d35e0cbbe4c785"
+      "bytes": 2053,
+      "sha256": "68ea01d0e2773c7938039e3dc02f7504bee3a718d136837c09c7bf68b124dd9d"
     },
     {
       "path": "contracts/access-decision.schema.json",
@@ -1153,6 +1153,51 @@
       "path": "contracts/phase43-rollback-checkpoint.schema.json",
       "bytes": 1305,
       "sha256": "a942142ac81894f242d3c75535472d334e0ce03882c8bab14a44f7000ebf1a4c"
+    },
+    {
+      "path": "contracts/phase44-activation-dossier.schema.json",
+      "bytes": 1809,
+      "sha256": "959c7e12054aca6618175faa7310e87aa526cc1217c3e39a7aab80c8b6c0b5e0"
+    },
+    {
+      "path": "contracts/phase44-auto-rollback.schema.json",
+      "bytes": 1345,
+      "sha256": "26e1931c595edde1d7a0f648c68a21a9d04f498524f370a77471655de93174ff"
+    },
+    {
+      "path": "contracts/phase44-budget-envelope.schema.json",
+      "bytes": 1134,
+      "sha256": "cd5965b5323bd6cd4d3b33bcad174bc15335682b0484ee0b57f94adec23f293c"
+    },
+    {
+      "path": "contracts/phase44-canary-approval.schema.json",
+      "bytes": 1059,
+      "sha256": "184b2f8ed875d5786ce688bce115045ab0509facb4aecd8692f46c3d7429c050"
+    },
+    {
+      "path": "contracts/phase44-canary-observation.schema.json",
+      "bytes": 1399,
+      "sha256": "62d1279533781d36962d0f8c3dd03f04b7063a01b3c81998235bbe05a0df07c6"
+    },
+    {
+      "path": "contracts/phase44-canary-plan.schema.json",
+      "bytes": 1455,
+      "sha256": "c4552888093054c62d575895e03b8918af3fdf71fdd46137814149aa77ba5d3f"
+    },
+    {
+      "path": "contracts/phase44-integrity-baseline.schema.json",
+      "bytes": 1141,
+      "sha256": "14ecc441c93c2773169e03f2b371a848ed637c18415ed003a8db33b580f5e496"
+    },
+    {
+      "path": "contracts/phase44-readiness.schema.json",
+      "bytes": 1439,
+      "sha256": "6d855824a909b1541e28fe164aa0f3f2716a861228b383f2ff0b927d45740cf6"
+    },
+    {
+      "path": "contracts/phase44-slo-policy.schema.json",
+      "bytes": 1081,
+      "sha256": "c6a5ee07b7d0a97af3aba3f321b2bef9d69f71f583772903c44aa394336d15ea"
     },
     {
       "path": "contracts/pilot-acceptance-audit-event.schema.json",
@@ -2190,6 +2235,11 @@
       "sha256": "15d1ad6b0fc50d7d153bedb70abca349391d526a5b382a0c6627d4960e20cbe6"
     },
     {
+      "path": "docs/adr/ADR-052-provider-canary-activation.md",
+      "bytes": 752,
+      "sha256": "0593ba2fae72b24da2c4a3c0b27a24880dd2e6fcf37bb0dcd51dd3eb13718d6b"
+    },
+    {
       "path": "docs/CHAT_WORKFLOW.md",
       "bytes": 2343,
       "sha256": "f380a70bb8607190d78fd4600906ea8d2b04ab6d6d5e605c8f6edc4f3298399b"
@@ -3025,6 +3075,16 @@
       "sha256": "9c6c71a60ddfe1093fd6dfa5b342e88ed9a39062156bb17d714271c34cd65304"
     },
     {
+      "path": "docs/phase-44/PROVIDER_CANARY.md",
+      "bytes": 780,
+      "sha256": "86dbb1c661bdf8fc6536b9746a5f0ea6698bfb70ced78004f1d8b14a2a1d9a94"
+    },
+    {
+      "path": "docs/phase-44/VALIDATION.md",
+      "bytes": 481,
+      "sha256": "aa1d4ff4e3694059f65afc4b2d39b4aece02af70b1e5f55f603ef7b083efca24"
+    },
+    {
       "path": "docs/phase-5/REVIEW_GATE.md",
       "bytes": 2008,
       "sha256": "42b379d6b02557f7ae632caf7ce44a5692096fc387c42611d8d5746c60b42243"
@@ -3577,12 +3637,12 @@
     {
       "path": "package-lock.json",
       "bytes": 4423,
-      "sha256": "582fbcba4826cb688a629251601f888e743c74962814d10ac55bd58556501569"
+      "sha256": "c2e85a5fbf76b27642fa65cfb6ec020937f862b6f7a81ac98b6c4e335dedb0e7"
     },
     {
       "path": "package.json",
-      "bytes": 8767,
-      "sha256": "66d339f7c34c0f086e1e7286ae77498bca10eeda55bc16439de7a89e9e1d410f"
+      "bytes": 8951,
+      "sha256": "447cdbf753a30ba5b3e00fd4ac5d53d95d69337091c3c75077bc40322a4dcbd2"
     },
     {
       "path": "packages/.gitkeep",
@@ -3758,6 +3818,11 @@
       "path": "packages/provider-adapter-certification/index.cjs",
       "bytes": 12902,
       "sha256": "1171e7fef12bc22941754ed414ee9d4ef0d4420ab2638d9e34c2c134f1a78ab1"
+    },
+    {
+      "path": "packages/provider-canary-activation/index.cjs",
+      "bytes": 6853,
+      "sha256": "6692aa53bf8ee5b28a8df4e50cefaaaa305e57db60e2aa87e03d8e6f7d7ff4ed"
     },
     {
       "path": "packages/provider-conformance-lab/index.cjs",
@@ -4105,6 +4170,16 @@
       "sha256": "df3e0b2aec1ec81d7c6fca11390d87664edcad423924a901d7730944897a3801"
     },
     {
+      "path": "provider-canary-activation/app/index.html",
+      "bytes": 1059,
+      "sha256": "71a6126caf7417c2faff3a2958e6cf06bb637fb904dd6d58f5145d963eaf9373"
+    },
+    {
+      "path": "provider-canary-activation/app/styles.css",
+      "bytes": 625,
+      "sha256": "f35934416901192f0eede0a502a340483ca924ef32fd84f7701758d0b35ac4c1"
+    },
+    {
       "path": "provider-conformance-lab/app/app.js",
       "bytes": 1141,
       "sha256": "e0f380df972e91e50291c85f1712a3b76146fcfbb719b06071cde2621c88d901"
@@ -4166,8 +4241,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 47861,
-      "sha256": "8028f2a0277136c7931852e0e3e31e65ca8fb9f72c2dae9e4b8ed1ccdcae3baf"
+      "bytes": 48082,
+      "sha256": "491a56d2d67ec0b37dba3e8d5b0cdfc745546c4982560f71f1df01e8870ab122"
     },
     {
       "path": "review/app/app.js",
@@ -4343,6 +4418,11 @@
       "path": "scripts/build-provider-adapter-certification.cjs",
       "bytes": 2654,
       "sha256": "6d00f11ac9550134b9e2960f5b4398ed218db9ac23cd2e97b63b4949667e2193"
+    },
+    {
+      "path": "scripts/build-provider-canary-activation.cjs",
+      "bytes": 1696,
+      "sha256": "08b1a5afd658234b33ea59f20edeadbaa22d07bcea8111b0d9ae71683e3e2ee4"
     },
     {
       "path": "scripts/build-provider-conformance-lab.cjs",
@@ -4578,6 +4658,11 @@
       "path": "scripts/serve-provider-adapter-certification.cjs",
       "bytes": 1488,
       "sha256": "8e654bc00845db8c2ef6f94d262e445ee291c95a417e68e8ff60f84c88805ba7"
+    },
+    {
+      "path": "scripts/serve-provider-canary-activation.cjs",
+      "bytes": 881,
+      "sha256": "a0304d368cd44a61d21ca9d19115f2d7c7c6fcc4da55574fb2aac18bfbb3608f"
     },
     {
       "path": "scripts/serve-provider-conformance-lab.cjs",
@@ -4878,6 +4963,11 @@
       "path": "tests/provider-adapter-certification.test.cjs",
       "bytes": 10576,
       "sha256": "0a6a845663e25206976471c09795270b56727ee6352b5e79c39f8f2f67f22c0a"
+    },
+    {
+      "path": "tests/provider-canary-activation.test.cjs",
+      "bytes": 3810,
+      "sha256": "31ed5dea995e90a9ae1e3f26c78eea4b30e639e4722e44c5a3ffd1ee79b067b0"
     },
     {
       "path": "tests/provider-conformance-lab.test.cjs",

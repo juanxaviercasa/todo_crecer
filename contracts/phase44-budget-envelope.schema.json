@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase44-budget-envelope.schema.json",
+  "title": "phase44-budget-envelope",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "budget_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "plan_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "expected_cents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "hard_limit_cents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "allow",
+        "block"
+      ]
+    },
+    "currency": {
+      "type": "string",
+      "const": "USD"
+    },
+    "approved_by": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "budget_id",
+    "plan_ref",
+    "expected_cents",
+    "hard_limit_cents",
+    "status",
+    "currency",
+    "approved_by",
+    "created_at"
+  ]
+}

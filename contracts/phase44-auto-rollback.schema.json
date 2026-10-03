@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase44-auto-rollback.schema.json",
+  "title": "phase44-auto-rollback",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "rollback_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "plan_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "trigger_stage": {
+      "type": "integer",
+      "enum": [
+        5,
+        25,
+        50,
+        100
+      ]
+    },
+    "reason": {
+      "type": "string",
+      "enum": [
+        "slo_breach",
+        "integrity_breach",
+        "budget_breach"
+      ]
+    },
+    "source_restored": {
+      "type": "boolean"
+    },
+    "target_revoked": {
+      "type": "boolean"
+    },
+    "external_changes": {
+      "type": "boolean",
+      "const": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "simulated_passed",
+        "not_required"
+      ]
+    },
+    "completed_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "rollback_id",
+    "plan_ref",
+    "trigger_stage",
+    "reason",
+    "source_restored",
+    "target_revoked",
+    "external_changes",
+    "status",
+    "completed_at"
+  ]
+}

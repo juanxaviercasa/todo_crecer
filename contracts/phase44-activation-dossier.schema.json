@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase44-activation-dossier.schema.json",
+  "title": "phase44-activation-dossier",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "dossier_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "plan_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "baseline_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "policy_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "budget_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "approval_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "observation_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "rollback_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "sealed_rehearsal",
+        "rolled_back_rehearsal"
+      ]
+    },
+    "writes": {
+      "type": "integer",
+      "const": 0
+    },
+    "external_changes": {
+      "type": "boolean",
+      "const": false
+    },
+    "publications": {
+      "type": "integer",
+      "const": 0
+    },
+    "sealed_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "dossier_id",
+    "plan_ref",
+    "baseline_ref",
+    "policy_ref",
+    "budget_ref",
+    "approval_refs",
+    "observation_refs",
+    "rollback_ref",
+    "status",
+    "writes",
+    "external_changes",
+    "publications",
+    "sealed_at"
+  ]
+}
