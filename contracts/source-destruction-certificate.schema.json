@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/source-destruction-certificate.schema.json",
+  "title": "source-destruction-certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "certificate_id",
+    "source_adapter",
+    "manifest_ref",
+    "target_integrity_ref",
+    "objects_deleted",
+    "keys_revoked",
+    "backup_absent",
+    "status",
+    "external_changes",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "certificate_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "source_adapter": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "manifest_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "target_integrity_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "objects_deleted": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "keys_revoked": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "backup_absent": {
+      "type": "boolean"
+    },
+    "status": {
+      "enum": [
+        "simulated_verified",
+        "blocked"
+      ]
+    },
+    "external_changes": {
+      "const": false
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

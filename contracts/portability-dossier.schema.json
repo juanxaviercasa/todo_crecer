@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/portability-dossier.schema.json",
+  "title": "portability-dossier",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "dossier_id",
+    "manifest_ref",
+    "rewrap_ref",
+    "integrity_ref",
+    "drill_ref",
+    "destruction_ref",
+    "status",
+    "selection_independent",
+    "external_changes",
+    "sealed_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "dossier_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "manifest_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "rewrap_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "integrity_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "drill_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "destruction_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "status": {
+      "const": "sealed_rehearsal"
+    },
+    "selection_independent": {
+      "const": true
+    },
+    "external_changes": {
+      "const": false
+    },
+    "sealed_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

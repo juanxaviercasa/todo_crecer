@@ -1,3 +1,14 @@
+# Fase 40 · Portabilidad y salida del proveedor
+
+La plataforma ensaya exportación neutral, reenvoltura de claves, migración, integridad, failover, RTO/RPO, coste y destrucción simulada. La salida real permanece bloqueada hasta autorización humana.
+
+- Consola: `npm run build && npm run start:portability` → http://127.0.0.1:4214/
+- Portabilidad: [docs/phase-40/PORTABILITY_EXIT.md](docs/phase-40/PORTABILITY_EXIT.md)
+- Gate: [docs/phase-40/EXIT_GATE.md](docs/phase-40/EXIT_GATE.md)
+- Decisión: [ADR-048](docs/adr/ADR-048-portability-and-provider-exit.md)
+
+---
+
 # Fase 39 · Sala de decisión de proveedores
 
 La plataforma puede abrir expedientes con placeholders explícitos, gestionar evidencia y caducidad, coordinar cuatro revisiones y preparar una comparación. La selección permanece bloqueada hasta recibir evidencia real completa y autorización humana.

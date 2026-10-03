@@ -1,7 +1,7 @@
 {
   "format": "sha256-manifest-v1",
-  "package": "todolima-platform-phase39",
-  "version": "0.41.0",
+  "package": "todolima-platform-phase40",
+  "version": "0.42.0",
   "generated_at": "2026-09-30T00:00:00.000Z",
   "entries": [
     {
@@ -126,8 +126,8 @@
     },
     {
       "path": "CONTINUAR_TODO_CRECER.md",
-      "bytes": 2161,
-      "sha256": "2dfd5926d59f3ace2f6bbbb15bb939dae64087fd7fca636486fabf7c445adea2"
+      "bytes": 2142,
+      "sha256": "4b937083b33c86a9ef9f57b32a969f7041149801de57a1edc61a4c64f5307b19"
     },
     {
       "path": "contracts/access-decision.schema.json",
@@ -790,6 +790,11 @@
       "sha256": "9b778651b36d051ba718baa2a823543a95f1a10443236199bac8d974136e28f3"
     },
     {
+      "path": "contracts/key-rewrap-plan.schema.json",
+      "bytes": 1152,
+      "sha256": "4d7b660ddfd92b2e80538e25c89da42416594dd49ce5ee3498a411112f62104e"
+    },
+    {
       "path": "contracts/key-rotation.schema.json",
       "bytes": 1327,
       "sha256": "a9735479addbaf1b62918be4e86444b13a2ba42ffcd9a6c4f9c427d6391f4b70"
@@ -838,6 +843,11 @@
       "path": "contracts/maintenance-window.schema.json",
       "bytes": 1022,
       "sha256": "862632c46e51dafc71890bbffb9b7e7adbc6c73476a520d7e71fb75795830452"
+    },
+    {
+      "path": "contracts/migration-integrity-check.schema.json",
+      "bytes": 1266,
+      "sha256": "928e339563a6952f5e08b41e13d0d7e5f1f675a560470ad89b88ce5f807bfe28"
     },
     {
       "path": "contracts/no-response-policy.schema.json",
@@ -1050,6 +1060,11 @@
       "sha256": "67a061dc653695cce30aa8f70065ca87b31f7233d36f45ea1088dda9b23f0e80"
     },
     {
+      "path": "contracts/phase40-portability-readiness.schema.json",
+      "bytes": 1550,
+      "sha256": "03152d8fbc5b9428fda6269be15023bd869c896045d85f0de48ede250c84f8a8"
+    },
+    {
       "path": "contracts/pilot-acceptance-audit-event.schema.json",
       "bytes": 1183,
       "sha256": "02f73530298e2e2f5daeb8eb015d007c4b15ac0e7cb35b2d5409587acba75711"
@@ -1073,6 +1088,46 @@
       "path": "contracts/pilot-review-decision.schema.json",
       "bytes": 2089,
       "sha256": "fac0c015f5d7732d5e290069405564a4d127649372693251568192be1bebed0e"
+    },
+    {
+      "path": "contracts/portability-dossier.schema.json",
+      "bytes": 1335,
+      "sha256": "0dc06de590653afa78657294da1d5f161535d80182e50d8fc4039c795fefa17d"
+    },
+    {
+      "path": "contracts/portability-exit-cost.schema.json",
+      "bytes": 1239,
+      "sha256": "d5f4e1119d8321a5162d54fd760dcd9d134e531c13d966c06828a56feaa0f49d"
+    },
+    {
+      "path": "contracts/portability-exit-risk.schema.json",
+      "bytes": 1604,
+      "sha256": "23804d085bcb25d39408fe1f376bf78a849cfeacb5d1809f57c1fccc4fae3e66"
+    },
+    {
+      "path": "contracts/portability-export-manifest.schema.json",
+      "bytes": 1133,
+      "sha256": "c741d74c9d4df76944541f5c468ddccc6ce4f0a5054503c050a02fe643f8a293"
+    },
+    {
+      "path": "contracts/portability-export-object.schema.json",
+      "bytes": 1073,
+      "sha256": "de5f7746b52f530417463762d61080c38cf6a0a73e7dbd926cc10e6065e5f56f"
+    },
+    {
+      "path": "contracts/portability-failover-drill.schema.json",
+      "bytes": 1376,
+      "sha256": "7edba7591eaec34f270690408ccd4e1292c1b7bac23317ed55195680d429bc7a"
+    },
+    {
+      "path": "contracts/portability-route-plan.schema.json",
+      "bytes": 1308,
+      "sha256": "152f1f3e739eb6224e45496cf1db6fbf1b72c1f791c6a847bffd20efad860611"
+    },
+    {
+      "path": "contracts/portability-rto-rpo-target.schema.json",
+      "bytes": 1056,
+      "sha256": "96a0ad548f268c6c400abf894d826fbeeeab40be09f9e06f3823740120939c0a"
     },
     {
       "path": "contracts/portal-audit-event.schema.json",
@@ -1513,6 +1568,11 @@
       "path": "contracts/smoke-test-suite.schema.json",
       "bytes": 1208,
       "sha256": "ceb29bfbe9b9b231dee952961207f3f9c7b4021f3f7bfdfff9f92ae9d7305872"
+    },
+    {
+      "path": "contracts/source-destruction-certificate.schema.json",
+      "bytes": 1385,
+      "sha256": "7d6bca24c171f1576b5653b7ce863f5896f049d360e530c9c699102511ba08e8"
     },
     {
       "path": "contracts/staging-apply-receipt.schema.json",
@@ -1973,6 +2033,11 @@
       "path": "docs/adr/ADR-047-provider-candidate-decision-room.md",
       "bytes": 529,
       "sha256": "99285eb02381b9e6a2e4ff118fd23e52a60c6d9931c43611b01cf00d1c17722e"
+    },
+    {
+      "path": "docs/adr/ADR-048-portability-and-provider-exit.md",
+      "bytes": 375,
+      "sha256": "c087ddd733b28dc221e5e92edc0ab449162989c605452f27c7db3f18527873f9"
     },
     {
       "path": "docs/CHAT_WORKFLOW.md",
@@ -2760,6 +2825,26 @@
       "sha256": "f6c395c7545a7a3561ecf00a26dbf6ae032c95f204ab90651ad69476a3d5bdb3"
     },
     {
+      "path": "docs/phase-40/EXIT_GATE.md",
+      "bytes": 222,
+      "sha256": "c75a41273ab051f6d57ca789abca4d45c2266c991a33005705e7692ee13c233f"
+    },
+    {
+      "path": "docs/phase-40/KEY_REWRAP.md",
+      "bytes": 193,
+      "sha256": "020ef2058ddd0e681bc18f682cb1608208c4f58b53c08617fc0348aa4c558da8"
+    },
+    {
+      "path": "docs/phase-40/PORTABILITY_EXIT.md",
+      "bytes": 279,
+      "sha256": "63f8b4f110ae1120b85ed6c883dd27b4b36243510a99c0f9fb88fddc17b6082c"
+    },
+    {
+      "path": "docs/phase-40/VALIDATION.md",
+      "bytes": 1269,
+      "sha256": "cfa17e701883508ef9e37d713c6fe195c64b7d3495cdda985603adfb854ba2a5"
+    },
+    {
       "path": "docs/phase-5/REVIEW_GATE.md",
       "bytes": 2008,
       "sha256": "42b379d6b02557f7ae632caf7ce44a5692096fc387c42611d8d5746c60b42243"
@@ -3302,12 +3387,12 @@
     {
       "path": "package-lock.json",
       "bytes": 4423,
-      "sha256": "b0ad5fc462c398ad2d282024b10ec399a154040cde7be77cfe440e3609e1c31f"
+      "sha256": "85a3fec6356b8e6f61b8b696313a4dc26656fbd17e3318fec0234949cce704ba"
     },
     {
       "path": "package.json",
-      "bytes": 8042,
-      "sha256": "bfcf5e06215001718b77ad65ff45ef1f4b114cdf0a9750c634dd8b45825d34be"
+      "bytes": 8231,
+      "sha256": "36cf879caca8b23e5a58741cbc9ba058de8459a3ae2698d4814fb21141d5f62d"
     },
     {
       "path": "packages/.gitkeep",
@@ -3428,6 +3513,11 @@
       "path": "packages/pilot-acceptance/index.cjs",
       "bytes": 15365,
       "sha256": "e9554caaac58b3bebb4c5b83546e89f8291ace09eadb8e33af1f270678939a9b"
+    },
+    {
+      "path": "packages/portability-exit-drill/index.cjs",
+      "bytes": 8851,
+      "sha256": "b76815915d373f6fd661e51d2d02d6140b3d11a611d375af36156daeb892d8ed"
     },
     {
       "path": "packages/private-cohort-pilot/index.cjs",
@@ -3725,6 +3815,21 @@
       "sha256": "33eb5838dd4a839db00b4c1ed6e67b096167505551cbba74134c8b57b424b724"
     },
     {
+      "path": "portability-exit-drill/app/app.js",
+      "bytes": 865,
+      "sha256": "d86bc42214a1de0a7308e9c5f55a0212f76486590130d018bd98755621c848b3"
+    },
+    {
+      "path": "portability-exit-drill/app/index.html",
+      "bytes": 3243,
+      "sha256": "b3d08e7648cda64e84f0a280a945322052868a3c286e8f271d69578c4c0de44d"
+    },
+    {
+      "path": "portability-exit-drill/app/styles.css",
+      "bytes": 3886,
+      "sha256": "cc08c270a8aed8db7321eedcc9338b3d93bc5eef7af97656ffac4d0162e1f397"
+    },
+    {
       "path": "powershell.bat",
       "bytes": 71,
       "sha256": "c1b8b1bd0f5f27d4bb40c09362140c8b821be15730d2feb0cf21af3bff3ba31f"
@@ -3846,8 +3951,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 46427,
-      "sha256": "8e1525c9cdcdb4ee86dde619467c8c0767ec8a646b3120165a4cab93cf3bb272"
+      "bytes": 46996,
+      "sha256": "b9eb99c6b6986bb4bd722a6309f99ec7e4f8d77774430f95378d5fa8c4cb0707"
     },
     {
       "path": "review/app/app.js",
@@ -3980,6 +4085,11 @@
       "sha256": "764a7e157169b89aff7181b4b5a01fafd3bc3033cefed5ecea90250d073723a7"
     },
     {
+      "path": "scripts/build-portability-exit-drill.cjs",
+      "bytes": 2421,
+      "sha256": "42d9959a237f429af4b1ffecd1bc4cb0fdc5a4215127af95b9befa27ac4eec15"
+    },
+    {
       "path": "scripts/build-private-cohort-pilot.cjs",
       "bytes": 8600,
       "sha256": "15a91e5194f0cd29641497ee18b61bdc52b309398f13103090e7b8c60cb179a8"
@@ -4072,7 +4182,7 @@
     {
       "path": "scripts/release-manifest.cjs",
       "bytes": 1095,
-      "sha256": "cc9ee1af19ac885e542895cb85f858562a8a47f1945baecb8dbeba293ed93a99"
+      "sha256": "6674aa32a2f60c8bb81f01709cad3a6537e852631fc976b292dda5304123a1f7"
     },
     {
       "path": "scripts/run-cloudflare-discovery.cjs",
@@ -4193,6 +4303,11 @@
       "path": "scripts/serve-pilot.cjs",
       "bytes": 1215,
       "sha256": "a8fd7e2f8ba151621628224a11c0bcced756c3d66b9eac7c7f2ad7b1330d10b7"
+    },
+    {
+      "path": "scripts/serve-portability-exit-drill.cjs",
+      "bytes": 1481,
+      "sha256": "89d061e8c51411ce9dfad022640abd71ae5e5ed52c2e4d6504354b03f9146850"
     },
     {
       "path": "scripts/serve-private-cohort-pilot.cjs",
@@ -4458,6 +4573,11 @@
       "path": "tests/pilot-acceptance.test.cjs",
       "bytes": 12033,
       "sha256": "c8d5c91c19d2bc3baaeacab5b0f5908d11b9c83a974b49eece775b9bda2debda"
+    },
+    {
+      "path": "tests/portability-exit-drill.test.cjs",
+      "bytes": 6763,
+      "sha256": "534b91f88e865cd2fc5d3b85f75b222771d0a801c496f86ccd2498d5f0c0351c"
     },
     {
       "path": "tests/private-cohort-pilot.test.cjs",

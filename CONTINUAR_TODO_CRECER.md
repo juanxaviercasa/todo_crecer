@@ -1,10 +1,10 @@
 ﻿# TodoLima / HazloCrecer — estado y próximos pasos
 
-## Fase actual: 39
+## Fase actual: 40
 
 Ubicación de trabajo: `C:\Users\pc\Videos\todo_crecer\todo_crecer-repo`.
 
-La fase 39 implementa una sala de incorporación y decisión con placeholders explícitos, ocho solicitudes obligatorias, renovación, términos, costes, revisiones independientes, riesgos y selección humana bloqueada.
+La fase 40 implementa un ensayo local de portabilidad y salida de proveedor: exportación neutral, reenvoltura de claves, integridad, RTO/RPO, coste, failover, rollback y destrucción simulada en origen. No realiza cambios externos.
 
 ## Ejecutar
 
@@ -12,16 +12,16 @@ La fase 39 implementa una sala de incorporación y decisión con placeholders ex
 npm ci --ignore-scripts
 npm test
 npm run build
-npm run start:decision-room
+npm run start:portability
 ```
 
-Abrir http://127.0.0.1:4213/.
+Abrir http://127.0.0.1:4214/.
 
 ## Estado comprobado
 
-- 318 contratos JSON Schema.
-- 1.330 pruebas aprobadas y 0 fallidas.
-- 58 pruebas específicas de la fase 39.
+- 337 contratos JSON Schema.
+- 1.376 pruebas aprobadas y 0 fallidas.
+- 46 pruebas específicas de la fase 40.
 - 0 vulnerabilidades de producción y 0 patrones de credenciales detectados.
 - 2 expedientes placeholder y 16 solicitudes obligatorias.
 - 13 entregas sanitizadas con renovación programada.
@@ -35,9 +35,9 @@ Abrir http://127.0.0.1:4213/.
 
 La sala está operativa sin candidatos reales. Para habilitar una decisión humana se requieren 8/8 evidencias reales vigentes por candidato, cuatro revisiones aprobadas, cero riesgos críticos y autorización explícita de compras. La completitud placeholder nunca cuenta como evidencia real.
 
-## Fase 40 recomendada
+## Fase 41 recomendada
 
-**Portabilidad, continuidad y ensayo de salida del proveedor.** Definir un formato neutral de exportación, reenvoltura de claves, verificación de integridad, migración entre adaptadores, RTO/RPO, coste de salida, eliminación verificable en origen y rollback. Todo debe ensayarse con dos proveedores simulados para demostrar que una futura elección no encierra el sistema en un único proveedor.
+**Preflight real de salida y continuidad controlada.** Cuando exista un proveedor candidato y autorización explícita, ejecutar únicamente descubrimiento de solo lectura, cotejo de términos y evidencia de residencia, sin aplicar migración. Después repetir el ensayo con manifiesto real sanitizado, aprobación humana de salida y un plan de destrucción reversible.
 
 ## Dominios previstos
 
