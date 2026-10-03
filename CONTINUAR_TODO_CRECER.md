@@ -1,10 +1,10 @@
 ﻿# TodoLima / HazloCrecer — estado y próximos pasos
 
-## Fase actual: 47
+## Fase actual: 48
 
 Ubicación de trabajo: `C:\Users\pc\Videos\todo_crecer\todo_crecer-repo`.
 
-La fase 47 implementa FinOps y capacidad multiproveedor: costes por tenant, presupuesto por cohorte, forecast, simulación de picos, arbitraje y límites automáticos simulados. No compra capacidad ni cambia proveedores.
+La fase 48 correlaciona SLO, presupuesto de error, burn rate y anomalías de coste. Deduplica alertas y ensaya incidente, runbook y rollback sin ejecutar remediación real.
 
 ## Ejecutar
 
@@ -12,17 +12,22 @@ La fase 47 implementa FinOps y capacidad multiproveedor: costes por tenant, pres
 npm ci --ignore-scripts
 npm test
 npm run build
-npm run start:finops
+npm run start:economic-observability
 ```
 
-Abrir http://127.0.0.1:4221/.
+Abrir http://127.0.0.1:4222/.
 
 ## Estado comprobado
 
-- 400 contratos JSON Schema.
+- 410 contratos JSON Schema.
 - 1.376 pruebas aprobadas y 0 fallidas.
-- 26 pruebas específicas de la fase 47; 1.508 pruebas acumuladas en la ejecución completa.
+- 29 pruebas específicas de la fase 48; 1.537 pruebas acumuladas en la ejecución completa.
 - 0 vulnerabilidades de producción y 0 patrones de credenciales detectados.
+- Baseline con 99,98% de disponibilidad, burn normal y coste +3,33%.
+- Incidente con 400% del error budget, burn 50×/8× y coste +108,33%.
+- 7 ocurrencias deduplicadas en un solo cluster crítico.
+- Rollback simulado recuperado a 99,95% con 5/5 checks de integridad.
+- 0 notificaciones externas y 0 remediaciones reales.
 - 2 cohorts sintéticas, 4 asignaciones de tenant y 2 proveedores por escenario.
 - Forecast base de 1.200 unidades con 108,33% de margen.
 - Pico degradado de 4.050 unidades con 1.950 unidades sin capacidad.
@@ -39,9 +44,9 @@ Abrir http://127.0.0.1:4221/.
 
 La sala está operativa sin candidatos reales. Para habilitar una decisión humana se requieren 8/8 evidencias reales vigentes por candidato, cuatro revisiones aprobadas, cero riesgos críticos y autorización explícita de compras. La completitud placeholder nunca cuenta como evidencia real.
 
-## Fase 48 recomendada
+## Fase 49 recomendada
 
-**SLO, observabilidad económica y respuesta automática simulada.** Unificar métricas técnicas y financieras, presupuestos de error, burn rate, anomalías de coste, alertas con deduplicación, runbooks y ensayos de respuesta. Mantener cualquier remediación real bloqueada hasta contar con telemetría productiva, aprobación del operador y controles de rollback.
+**Centro de mando de portafolio y priorización operativa.** Agregar salud, coste, conversión, evidencia y riesgo de todos los negocios; definir colas de trabajo, puntuación de prioridad, asignación de operador, SLA interno y simulación de escalamiento. Mantener acciones externas bloqueadas hasta contar con telemetría real y responsables autorizados.
 
 ## Dominios previstos
 

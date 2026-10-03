@@ -1,7 +1,7 @@
 {
   "format": "sha256-manifest-v1",
-  "package": "todolima-platform-phase47",
-  "version": "0.49.0",
+  "package": "todolima-platform-phase48",
+  "version": "0.50.0",
   "generated_at": "2026-10-03T00:00:00.000Z",
   "entries": [
     {
@@ -126,8 +126,8 @@
     },
     {
       "path": "CONTINUAR_TODO_CRECER.md",
-      "bytes": 2451,
-      "sha256": "a1a4910dc8c9976717afa1d015ef58825f7e2d7be3d620eb138289ad8f7c2f30"
+      "bytes": 2732,
+      "sha256": "571f446c329572c295ab07fe2bb7707023a3dbafd032029d5443243ad609615d"
     },
     {
       "path": "contracts/access-decision.schema.json",
@@ -1335,6 +1335,56 @@
       "sha256": "98820ab65bcc2da61e4c12f5d350d83c154ffc7fa7117ba982335d9c16e11c9e"
     },
     {
+      "path": "contracts/phase48-alert-cluster.schema.json",
+      "bytes": 900,
+      "sha256": "008899880caefb11c5349b0d3fba6e8a3f427da7abd3556902d78f6730f4a67a"
+    },
+    {
+      "path": "contracts/phase48-burn-rate.schema.json",
+      "bytes": 797,
+      "sha256": "86022e99ddf69e086bb54c21af7509e62c2d0b730a4cac2befac5b33af24661c"
+    },
+    {
+      "path": "contracts/phase48-cost-anomaly.schema.json",
+      "bytes": 768,
+      "sha256": "f821cb1e874792fba44f3830bb7b318cf33c96adcff96d0cc21df45b3dc7bf29"
+    },
+    {
+      "path": "contracts/phase48-error-budget.schema.json",
+      "bytes": 887,
+      "sha256": "af33fac7c1f2d8c736fc2f11468d78913d8817fdf17ffc3d4eb5e17a28754162"
+    },
+    {
+      "path": "contracts/phase48-incident.schema.json",
+      "bytes": 945,
+      "sha256": "218d332847be4557669de725471044dae7c943d93ccc766f5ce3cc41f0fde231"
+    },
+    {
+      "path": "contracts/phase48-readiness.schema.json",
+      "bytes": 902,
+      "sha256": "8b5ebddb8ecb1cfb656822d49e7b51528d829a33d3166795c236ba3c89bd40b5"
+    },
+    {
+      "path": "contracts/phase48-response-decision.schema.json",
+      "bytes": 1038,
+      "sha256": "9714fd3c957282a2bfcc8bc3bb40d71503fdc6ecc8e8d4e8e8e6f2892aefa7ac"
+    },
+    {
+      "path": "contracts/phase48-rollback-rehearsal.schema.json",
+      "bytes": 1058,
+      "sha256": "9952ef3e7811ec9abdb33f0dc974d980d6031ab837258b09eb2a4c0eac600aac"
+    },
+    {
+      "path": "contracts/phase48-runbook-execution.schema.json",
+      "bytes": 867,
+      "sha256": "0b45080679bbad26311977404408c5ba2102a6d03d91a389226149e3e5188af3"
+    },
+    {
+      "path": "contracts/phase48-technical-economic-snapshot.schema.json",
+      "bytes": 1096,
+      "sha256": "7e6342faa422f1edb518142cbdb9eb642d88c16fd90080d0be6552fa732c83df"
+    },
+    {
       "path": "contracts/pilot-acceptance-audit-event.schema.json",
       "bytes": 1183,
       "sha256": "02f73530298e2e2f5daeb8eb015d007c4b15ac0e7cb35b2d5409587acba75711"
@@ -2390,6 +2440,11 @@
       "sha256": "5ed0db8ec2bd0628cbd793a3ffb5aeb63bd74de6cc951da28a29323c64c01749"
     },
     {
+      "path": "docs/adr/ADR-056-economic-observability-response.md",
+      "bytes": 788,
+      "sha256": "9516981ab299edd308f48519819a03d0fb09b553689b35aa7734e1f384014b79"
+    },
+    {
       "path": "docs/CHAT_WORKFLOW.md",
       "bytes": 2343,
       "sha256": "f380a70bb8607190d78fd4600906ea8d2b04ab6d6d5e605c8f6edc4f3298399b"
@@ -3265,6 +3320,16 @@
       "sha256": "ab9b300719f41036e3e7a6be818e1de21e1be7a8aebd50fc586adc676f5a537d"
     },
     {
+      "path": "docs/phase-48/ECONOMIC_OBSERVABILITY.md",
+      "bytes": 1139,
+      "sha256": "f1ec54a8e972aff9e3067cfe6046d25ce5dd0dc706640e952d7bbf09de9dbecd"
+    },
+    {
+      "path": "docs/phase-48/VALIDATION.md",
+      "bytes": 884,
+      "sha256": "b4146c4daa501d295efdc21e7f4ec2759cad6bc279976d8eb79d0f44b05b0fd7"
+    },
+    {
       "path": "docs/phase-5/REVIEW_GATE.md",
       "bytes": 2008,
       "sha256": "42b379d6b02557f7ae632caf7ce44a5692096fc387c42611d8d5746c60b42243"
@@ -3348,6 +3413,16 @@
       "path": "docs/TODOLIMA_HAZLOCRECER_MASTER_BLUEPRINT.md",
       "bytes": 109104,
       "sha256": "8708baace647c2c85118e139c89d83a04200cf1162a415052cf577596d24c0db"
+    },
+    {
+      "path": "economic-observability/app/index.html",
+      "bytes": 2501,
+      "sha256": "e90515368b37ef5cfec529dcce0bc37d8d16c22dd1ba33a0aed3206a724d5673"
+    },
+    {
+      "path": "economic-observability/app/styles.css",
+      "bytes": 3408,
+      "sha256": "87e4b49ee8d483647b4ae178267015e4220bb46ce6663874efed7b08b44836db"
     },
     {
       "path": "evals/.gitkeep",
@@ -3827,12 +3902,12 @@
     {
       "path": "package-lock.json",
       "bytes": 4423,
-      "sha256": "0b1323caf301f222860a0fa7af1247ccb54e6aa585db6c80cd563f197ee09a5e"
+      "sha256": "937bf5e290e4b1b65043917ac3059466462e4f55e3c854eac212fd0915d07221"
     },
     {
       "path": "package.json",
-      "bytes": 9466,
-      "sha256": "3e69e231e7fa969335c6fe10b71708203586eb6c4037321c73f52f572cdb63cf"
+      "bytes": 9662,
+      "sha256": "86d31d73e0f2b4af4a4296df7536131e236f46c6007ac78d93f67fb16523d619"
     },
     {
       "path": "packages/.gitkeep",
@@ -3883,6 +3958,11 @@
       "path": "packages/conversion-intelligence/index.cjs",
       "bytes": 16892,
       "sha256": "5acab6403846a4a2d294d9c860b6bfb6d22ad8e3a7b5eddcb8f0325de27b0ba2"
+    },
+    {
+      "path": "packages/economic-observability/index.cjs",
+      "bytes": 12147,
+      "sha256": "1b6368bf941e50fcf3a0f9ce6742a880f0d7e1733e055da2af6e636e5ebf63cb"
     },
     {
       "path": "packages/evidence-decision-gate/index.cjs",
@@ -4530,6 +4610,11 @@
       "sha256": "37e81f57f6c17ddceb54f25f3734fc0d8d3b59c840e206b8486fbb32480e3749"
     },
     {
+      "path": "scripts/build-economic-observability.cjs",
+      "bytes": 1771,
+      "sha256": "a753da6b160b5828aaf83aba1ca5464e7ea1860452a71079ae9aefbd827f2f5c"
+    },
+    {
       "path": "scripts/build-evidence-decision-gate.cjs",
       "bytes": 1079,
       "sha256": "5d7640f45f8204e8e463cb1ef257df229f9e2ab69847845baaf472f8b9d272d6"
@@ -4732,7 +4817,7 @@
     {
       "path": "scripts/release-manifest.cjs",
       "bytes": 1095,
-      "sha256": "ee4306d702c2e55e7ac1c2b8fa1c64ee890c9a8129f40f05152f58debf023737"
+      "sha256": "b3aca964c780131db04dce8d2221fa43d1101efb3be96a7ce8934b495c30fa2c"
     },
     {
       "path": "scripts/run-cloudflare-discovery.cjs",
@@ -4778,6 +4863,11 @@
       "path": "scripts/serve-conversion-intelligence.cjs",
       "bytes": 1550,
       "sha256": "7e61459f4a1b83487ed528a08a372089b3dd0688f5f45fbec9e3ce2899decffb"
+    },
+    {
+      "path": "scripts/serve-economic-observability.cjs",
+      "bytes": 1059,
+      "sha256": "27ddc3c44332cb042ebae8ab201fd68db7cc4593c9cec4deb595bb806e5c4b9b"
     },
     {
       "path": "scripts/serve-evidence-decision-gate.cjs",
@@ -5093,6 +5183,11 @@
       "path": "tests/conversion-intelligence.test.cjs",
       "bytes": 14791,
       "sha256": "c29ac04b277d61af58238fb894449a071b193320a38d417309c1f0991709d256"
+    },
+    {
+      "path": "tests/economic-observability.test.cjs",
+      "bytes": 5810,
+      "sha256": "d3e085e1c2aa10c2ec8d34d57fe6f169ff691e1c85d8aa418f4ec60e4383ab4d"
     },
     {
       "path": "tests/engine.test.cjs",
