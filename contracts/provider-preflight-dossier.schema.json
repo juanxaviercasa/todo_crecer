@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/provider-preflight-dossier.schema.json",
+  "title": "provider-preflight-dossier",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "dossier_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 2
+    },
+    "selected_candidate": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "comparison_digest": {
+      "type": "string",
+      "minLength": 1
+    },
+    "read_only": {
+      "type": "boolean",
+      "const": true
+    },
+    "external_connections": {
+      "type": "integer",
+      "const": 0
+    },
+    "writes": {
+      "type": "integer",
+      "const": 0
+    },
+    "publications": {
+      "type": "integer",
+      "const": 0
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "sealed_synthetic",
+        "ready_for_read_only_preflight"
+      ]
+    },
+    "sealed_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "dossier_id",
+    "candidates",
+    "selected_candidate",
+    "comparison_digest",
+    "read_only",
+    "external_connections",
+    "writes",
+    "publications",
+    "status",
+    "sealed_at"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/provider-preflight-session.schema.json",
+  "title": "provider-preflight-session",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "session_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "string",
+      "const": "metadata_read"
+    },
+    "ttl_minutes": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 60
+    },
+    "credential_fingerprint": {
+      "type": "string",
+      "minLength": 1
+    },
+    "writes_allowed": {
+      "type": "boolean",
+      "const": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "closed",
+        "open"
+      ]
+    },
+    "opened_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "session_id",
+    "candidate_id",
+    "scope",
+    "ttl_minutes",
+    "credential_fingerprint",
+    "writes_allowed",
+    "status",
+    "opened_at"
+  ]
+}

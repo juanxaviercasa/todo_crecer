@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/provider-cost-envelope.schema.json",
+  "title": "provider-cost-envelope",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "estimate_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "monthly_cents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "egress_cents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "exit_cents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "hard_limit_cents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "total_cents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "allow",
+        "warn",
+        "block"
+      ]
+    },
+    "currency": {
+      "type": "string",
+      "const": "USD"
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "estimate_id",
+    "candidate_id",
+    "monthly_cents",
+    "egress_cents",
+    "exit_cents",
+    "hard_limit_cents",
+    "total_cents",
+    "status",
+    "currency",
+    "created_at"
+  ]
+}

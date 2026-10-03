@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/provider-preflight-candidate.schema.json",
+  "title": "provider-preflight-candidate",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "candidate_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provider": {
+      "type": "string",
+      "enum": [
+        "simulated_source",
+        "simulated_target",
+        "candidate_a",
+        "candidate_b"
+      ]
+    },
+    "region": {
+      "type": "string",
+      "minLength": 1
+    },
+    "transport": {
+      "type": "string",
+      "enum": [
+        "simulated_read_only",
+        "read_only_external"
+      ]
+    },
+    "credential_fingerprint": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "synthetic",
+        "read_only_ready"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "candidate_id",
+    "provider",
+    "region",
+    "transport",
+    "credential_fingerprint",
+    "status",
+    "created_at"
+  ]
+}

@@ -1,3 +1,7 @@
+## Fase 41 — preflight de proveedor
+
+Añade comparación de candidatos, sondas de solo lectura, residencia, cifrado, ciclo de vida, coste y autorización separada. La aplicación externa permanece bloqueada. Ejecuta `npm run start:preflight` para abrir el panel local en `http://127.0.0.1:4215/`.
+
 # Fase 40 · Portabilidad y salida del proveedor
 
 La plataforma ensaya exportación neutral, reenvoltura de claves, migración, integridad, failover, RTO/RPO, coste y destrucción simulada. La salida real permanece bloqueada hasta autorización humana.

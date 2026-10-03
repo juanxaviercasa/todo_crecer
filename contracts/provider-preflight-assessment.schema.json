@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/provider-preflight-assessment.schema.json",
+  "title": "provider-preflight-assessment",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "assessment_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "passed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "name",
+          "passed"
+        ]
+      }
+    },
+    "score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "mandatory_failures": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "eligible": {
+      "type": "boolean"
+    },
+    "synthetic_only": {
+      "type": "boolean",
+      "const": true
+    },
+    "assessed_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "assessment_id",
+    "candidate_id",
+    "checks",
+    "score",
+    "mandatory_failures",
+    "eligible",
+    "synthetic_only",
+    "assessed_at"
+  ]
+}

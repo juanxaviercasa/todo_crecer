@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/provider-terms-evidence.schema.json",
+  "title": "provider-terms-evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "terms_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "accepted": {
+      "type": "boolean"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "synthetic_placeholder",
+        "operator_supplied"
+      ]
+    },
+    "data_processing": {
+      "type": "string",
+      "enum": [
+        "unknown",
+        "reviewed"
+      ]
+    },
+    "exit_terms": {
+      "type": "string",
+      "enum": [
+        "unknown",
+        "reviewed"
+      ]
+    },
+    "captured_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "terms_id",
+    "candidate_id",
+    "version",
+    "accepted",
+    "source",
+    "data_processing",
+    "exit_terms",
+    "captured_at"
+  ]
+}

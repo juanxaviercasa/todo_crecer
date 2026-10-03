@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase41-preflight-readiness.schema.json",
+  "title": "phase41-preflight-readiness",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "readiness_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "passed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "name",
+          "passed"
+        ]
+      }
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "read_only_preflight_ready",
+        "blocked"
+      ]
+    },
+    "apply_status": {
+      "type": "string",
+      "const": "blocked"
+    },
+    "external_connections": {
+      "type": "boolean",
+      "const": false
+    },
+    "generated_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "readiness_id",
+    "checks",
+    "blockers",
+    "status",
+    "apply_status",
+    "external_connections",
+    "generated_at"
+  ]
+}

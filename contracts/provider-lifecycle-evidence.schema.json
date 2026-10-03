@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/provider-lifecycle-evidence.schema.json",
+  "title": "provider-lifecycle-evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "lifecycle_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "retention_days": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "legal_hold": {
+      "type": "boolean"
+    },
+    "deletion_verified": {
+      "type": "boolean"
+    },
+    "rotation_days": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "observability": {
+      "type": "boolean"
+    },
+    "evidence_source": {
+      "type": "string",
+      "enum": [
+        "synthetic_placeholder",
+        "operator_supplied"
+      ]
+    },
+    "captured_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "lifecycle_id",
+    "candidate_id",
+    "retention_days",
+    "legal_hold",
+    "deletion_verified",
+    "rotation_days",
+    "observability",
+    "evidence_source",
+    "captured_at"
+  ]
+}

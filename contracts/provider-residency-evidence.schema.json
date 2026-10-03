@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/provider-residency-evidence.schema.json",
+  "title": "provider-residency-evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "residency_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "regions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "required_region": {
+      "type": "string",
+      "minLength": 1
+    },
+    "match": {
+      "type": "boolean"
+    },
+    "encryption_at_rest": {
+      "type": "boolean"
+    },
+    "customer_managed_key": {
+      "type": "boolean"
+    },
+    "evidence_source": {
+      "type": "string",
+      "enum": [
+        "synthetic_placeholder",
+        "operator_supplied"
+      ]
+    },
+    "captured_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "residency_id",
+    "candidate_id",
+    "regions",
+    "required_region",
+    "match",
+    "encryption_at_rest",
+    "customer_managed_key",
+    "evidence_source",
+    "captured_at"
+  ]
+}
