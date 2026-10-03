@@ -1,3 +1,14 @@
+# Fase 36 · Adaptadores de producción y activación sellada
+
+La plataforma ya puede ensayar los contratos de object storage y KMS, mínimo privilegio, referencias de credenciales, migración dry-run, canary, rollback, coste, deriva y aprobación independiente. El expediente solo habilita el preflight externo; apply continúa bloqueado.
+
+- Consola: `npm run build && npm run start:vault-activation` → http://127.0.0.1:4210/
+- Documento: [docs/phase-36/PRODUCTION_ADAPTERS.md](docs/phase-36/PRODUCTION_ADAPTERS.md)
+- Expediente: [docs/phase-36/APPROVAL_DOSSIER.md](docs/phase-36/APPROVAL_DOSSIER.md)
+- Decisión: [ADR-044](docs/adr/ADR-044-production-vault-adapters-and-sealed-activation.md)
+
+---
+
 # Fase 35 · Bóveda operativa y ciclo de vida
 
 La plataforma ensaya el ciclo completo de evidencia cifrada: almacenamiento, acceso temporal, watermark, revocación, retención, legal hold, destrucción, backup, recuperación y auditoría. Los adaptadores son locales y producción permanece bloqueada.

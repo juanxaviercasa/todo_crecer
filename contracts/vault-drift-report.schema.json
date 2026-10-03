@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/vault-drift-report.schema.json",
+  "title": "vault-drift-report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "report_id",
+    "comparisons",
+    "drift_count",
+    "status",
+    "external_connections",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "report_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "comparisons": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "resource",
+          "desired_digest",
+          "observed_digest",
+          "match"
+        ],
+        "properties": {
+          "resource": {
+            "type": "string",
+            "pattern": "^[a-z0-9_-]{3,96}$"
+          },
+          "desired_digest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "observed_digest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "match": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "drift_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "status": {
+      "enum": [
+        "in_sync",
+        "drifted"
+      ]
+    },
+    "external_connections": {
+      "const": false
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

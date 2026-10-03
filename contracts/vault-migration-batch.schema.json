@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/vault-migration-batch.schema.json",
+  "title": "vault-migration-batch",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "batch_id",
+    "plan_ref",
+    "sequence",
+    "object_count",
+    "content_digest",
+    "status"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "batch_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "plan_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "object_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "content_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "status": {
+      "const": "dry_run_validated"
+    }
+  }
+}

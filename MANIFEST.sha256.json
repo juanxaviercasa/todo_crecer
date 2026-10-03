@@ -1,7 +1,7 @@
 {
   "format": "sha256-manifest-v1",
-  "package": "todolima-platform-phase35",
-  "version": "0.37.0",
+  "package": "todolima-platform-phase36",
+  "version": "0.38.0",
   "generated_at": "2026-09-30T00:00:00.000Z",
   "entries": [
     {
@@ -126,8 +126,8 @@
     },
     {
       "path": "CONTINUAR_TODO_CRECER.md",
-      "bytes": 2184,
-      "sha256": "c9d2f18776bc88685b32af5e6f6aa391f94311d39fad4cfd655178a971b7167e"
+      "bytes": 2321,
+      "sha256": "31061c0c747c31599c5e9ed660b7f1b1861cd690dbd264f64c59c4a00bdd056c"
     },
     {
       "path": "contracts/access-decision.schema.json",
@@ -136,8 +136,13 @@
     },
     {
       "path": "contracts/activation-approval.schema.json",
-      "bytes": 1214,
-      "sha256": "3dabf16b5c86fe9488e6f58ee56202835ed6246acfcb9b28eeb52838002a2d5c"
+      "bytes": 1274,
+      "sha256": "6b19e61939d66798d63f24a0ceb45ad12eda8c9979c97e141380cf7e2ac69ee3"
+    },
+    {
+      "path": "contracts/activation-dossier.schema.json",
+      "bytes": 1695,
+      "sha256": "fbdf05914a246d5b7f97de122f3a071a1835e16521550f87db038b4c99757568"
     },
     {
       "path": "contracts/activation-plan.schema.json",
@@ -300,6 +305,11 @@
       "sha256": "83c86a6b97042b67b945af176af6ed403afadef900d38e33c98116cc246aa1df"
     },
     {
+      "path": "contracts/canary-activation-plan.schema.json",
+      "bytes": 1536,
+      "sha256": "554fb6cf6a002d2a943412f9a83b631e4f3787607030d9eabf514f8a3fb9fd99"
+    },
+    {
       "path": "contracts/canary-check.schema.json",
       "bytes": 935,
       "sha256": "864ac9d1aab7847d46f4fd3b667aedefaf12f49b95eb57659c5e7a7f3f09f244"
@@ -428,6 +438,11 @@
       "path": "contracts/credential-closure.schema.json",
       "bytes": 1165,
       "sha256": "2d0e565ce8695c7a866404404d7c71f5765ffa07992be9ac43ba52cdd08d7090"
+    },
+    {
+      "path": "contracts/credential-reference-binding.schema.json",
+      "bytes": 1499,
+      "sha256": "255bddafe44958a3f4fb9684e49aaa7a12441584a39c5479e1da60eddeffe002"
     },
     {
       "path": "contracts/dead-letter-entry.schema.json",
@@ -755,6 +770,11 @@
       "sha256": "1670ae17ca0c8983b389ff4401ef49d4c3f839b15db5196d7a16d41e8fb97941"
     },
     {
+      "path": "contracts/least-privilege-verification.schema.json",
+      "bytes": 1385,
+      "sha256": "844522dbba824593e58e85998d173a01801c2b7fb5cfe5dbeea5fa64756e4c47"
+    },
+    {
       "path": "contracts/maintenance-window.schema.json",
       "bytes": 1022,
       "sha256": "862632c46e51dafc71890bbffb9b7e7adbc6c73476a520d7e71fb75795830452"
@@ -950,6 +970,11 @@
       "sha256": "fbce7c1d6f83e79036626755e7e06debbeb29517df5866b1cddebc9ab90bf696"
     },
     {
+      "path": "contracts/phase36-production-readiness.schema.json",
+      "bytes": 1545,
+      "sha256": "e0101d516ae8592388dc49dbb1e5c51488beaa37477314fb9b38f5b2edc934eb"
+    },
+    {
       "path": "contracts/pilot-acceptance-audit-event.schema.json",
       "bytes": 1183,
       "sha256": "02f73530298e2e2f5daeb8eb015d007c4b15ac0e7cb35b2d5409587acba75711"
@@ -1038,6 +1063,11 @@
       "path": "contracts/product-plan.schema.json",
       "bytes": 1194,
       "sha256": "78f4a9c2be54830c7787a4af2fad8488022eec9cc99c21c22c6c4cfe85490e9c"
+    },
+    {
+      "path": "contracts/production-vault-adapter.schema.json",
+      "bytes": 1189,
+      "sha256": "cb8d96f258eaabeb28bf2eba636c4fb2d7b07241f2285d7f671023d2a841b49f"
     },
     {
       "path": "contracts/professional-site-variant.schema.json",
@@ -1420,6 +1450,11 @@
       "sha256": "388286112310ad688fcb80afe2ce8fca68cd848c1bda53b487a8005d4c28c433"
     },
     {
+      "path": "contracts/vault-activation-approval.schema.json",
+      "bytes": 996,
+      "sha256": "43bdaefaf0b1bc21ff68ce7779c7a0bae1ec7e1767b262f50fbdc8d9ac1469ff"
+    },
+    {
       "path": "contracts/vault-audit-entry.schema.json",
       "bytes": 1337,
       "sha256": "2100a735ef2665ddc24040dab0c891dda70b554b2d1aa8a08a8f927edf80d252"
@@ -1430,9 +1465,19 @@
       "sha256": "4ed171c66c0d2b0a1de03a8965394b2ee60fb43485eba0afa03fc1b805d56498"
     },
     {
+      "path": "contracts/vault-cost-envelope.schema.json",
+      "bytes": 1450,
+      "sha256": "9c434058ea92cc319c2106ce03c7598c3b444b56ba69b91be15173a9c656646d"
+    },
+    {
       "path": "contracts/vault-destruction-certificate.schema.json",
       "bytes": 1316,
       "sha256": "d25514488aed66ff0b85c6e3f63e0a603b9ce9453aeff090da13e494126856e1"
+    },
+    {
+      "path": "contracts/vault-drift-report.schema.json",
+      "bytes": 1565,
+      "sha256": "a0757aa8b4224b8dfc93185d416606970be3f9606d85ae56701633aad0eb657a"
     },
     {
       "path": "contracts/vault-key-envelope.schema.json",
@@ -1443,6 +1488,16 @@
       "path": "contracts/vault-legal-hold.schema.json",
       "bytes": 1124,
       "sha256": "6e3422269f6aed0908f254a00a94727bac77736f7aa66ec478b4dfecff453391"
+    },
+    {
+      "path": "contracts/vault-migration-batch.schema.json",
+      "bytes": 915,
+      "sha256": "5deffc960293995ed9e8a10f9b3eb96d427cc29623754b26a1612273ee4de63b"
+    },
+    {
+      "path": "contracts/vault-migration-plan.schema.json",
+      "bytes": 1268,
+      "sha256": "e95e1da63d242ac8d337c0412c33a55d9e664b10d18d8b3afffc6ab6dfddae33"
     },
     {
       "path": "contracts/vault-object.schema.json",
@@ -1468,6 +1523,11 @@
       "path": "contracts/vault-revocation-record.schema.json",
       "bytes": 1040,
       "sha256": "5eecab4059a4a895efb37145e0093e7670336f42151dfa96d3658dcb46252d3c"
+    },
+    {
+      "path": "contracts/vault-rollback-plan.schema.json",
+      "bytes": 1000,
+      "sha256": "dd50cff59d5528bc2ae8041dbb3cacb2c56c3f0fafe323b44cf35be60abf3b4c"
     },
     {
       "path": "contracts/verified-destination.schema.json",
@@ -1708,6 +1768,11 @@
       "path": "docs/adr/ADR-043-operational-evidence-vault.md",
       "bytes": 497,
       "sha256": "e299b55cbdc0a26011defb37f76c83622b37d3bab5c3252f988f4d712bbd9948"
+    },
+    {
+      "path": "docs/adr/ADR-044-production-vault-adapters-and-sealed-activation.md",
+      "bytes": 554,
+      "sha256": "7e4b1370398f591f6d27456b5973e0dfc31659a5c6e911b0f3efbbb7b1f96d71"
     },
     {
       "path": "docs/CHAT_WORKFLOW.md",
@@ -2385,6 +2450,31 @@
       "sha256": "34d089ef90ca341dad693ce7384c86524d49c2e114c748e40a38106cfcd620a5"
     },
     {
+      "path": "docs/phase-36/APPROVAL_DOSSIER.md",
+      "bytes": 303,
+      "sha256": "e33c0fc7b3ec606660b0fea0a27667465c73ff7f9426cb8abe3975e6e0815c46"
+    },
+    {
+      "path": "docs/phase-36/CREDENTIAL_CEREMONY.md",
+      "bytes": 243,
+      "sha256": "fb53161a6534451e3b03d9f3307c069c90b894cf94d2b512e1f2964b2c1d600c"
+    },
+    {
+      "path": "docs/phase-36/MIGRATION_CANARY_ROLLBACK.md",
+      "bytes": 339,
+      "sha256": "fb78c9d358f5bf1ccded7a84c10ba53fd2e438329bd91b51de47335c4e0eb922"
+    },
+    {
+      "path": "docs/phase-36/PRODUCTION_ADAPTERS.md",
+      "bytes": 333,
+      "sha256": "bd7d8dbdc899e505e71c0776422b659a546ebf09c277c0d37b3e10f6e83f7456"
+    },
+    {
+      "path": "docs/phase-36/VALIDATION.md",
+      "bytes": 1092,
+      "sha256": "60d6471cc123b08e781cfcb6cfa2744ee26332f21415c4c454e7330886f3c952"
+    },
+    {
       "path": "docs/phase-4/OWNER_ONBOARDING.md",
       "bytes": 2599,
       "sha256": "ae057bddec20143bb65341766b1bd4a91a3a6890485576a7c06b1b0713070e16"
@@ -2937,12 +3027,12 @@
     {
       "path": "package-lock.json",
       "bytes": 4423,
-      "sha256": "d86812f46d24079c9fd0f4ae2ffcd572edabf14170640c78d48948be1ea99c2c"
+      "sha256": "4b16b364d6f6022d92b061db15e31a5fe26ffecd37f05b51f65c1f878b918e26"
     },
     {
       "path": "package.json",
-      "bytes": 7191,
-      "sha256": "5940ef506464d458628b6dbc0642344fc37491ebee4dd71b37d7340aa34e71a8"
+      "bytes": 7391,
+      "sha256": "0e18102f0b10238ccea5cdce6358711465ae74fd48c79647e8a95bcb9e2817be"
     },
     {
       "path": "packages/.gitkeep",
@@ -3093,6 +3183,11 @@
       "path": "packages/private-owner-regeneration/index.cjs",
       "bytes": 12594,
       "sha256": "08420a86d6446ab1ece7bf95fb3bdb870de15fed7687dfc0851dc12712fc8e66"
+    },
+    {
+      "path": "packages/production-vault-ceremony/index.cjs",
+      "bytes": 11871,
+      "sha256": "d34895a4ace582a2e327745b321fb9746623a236845e3f38819a54bc310ccc30"
     },
     {
       "path": "packages/profile-adapter/index.cjs",
@@ -3375,6 +3470,21 @@
       "sha256": "a0d6c48ec7e55dc908cb06da5981d11c4b87417fcffa6609d250d85be7cde863"
     },
     {
+      "path": "production-vault-ceremony/app/app.js",
+      "bytes": 1146,
+      "sha256": "9c5f932ac5eba39ddd6129cf29f2e91c461e1c741e9548626f8e87979e97835c"
+    },
+    {
+      "path": "production-vault-ceremony/app/index.html",
+      "bytes": 4077,
+      "sha256": "4d70e8ef8dfbe3ae420f5596792d3bfdf924707a22917359d651b66f8c5bfdaf"
+    },
+    {
+      "path": "production-vault-ceremony/app/styles.css",
+      "bytes": 3990,
+      "sha256": "f354c1385172d3df32616304189973faa0b390d05e33d334916c9c0de3e4b1c7"
+    },
+    {
       "path": "prompts/.gitkeep",
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -3401,8 +3511,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 43701,
-      "sha256": "3b31b44479f689b23a6f2d5810e75af8f56f68f074c1e1744677439dc7a0299d"
+      "bytes": 44403,
+      "sha256": "26dc0bc947194058b24ded90e92d22a2fbbb41475185e1f93985e5fe101b847c"
     },
     {
       "path": "review/app/app.js",
@@ -3560,6 +3670,11 @@
       "sha256": "76bda5b0eca16a7f34247b3087706fd0b71f8c30eca9614bfb3bd1b6a7cdfc43"
     },
     {
+      "path": "scripts/build-production-vault-ceremony.cjs",
+      "bytes": 3854,
+      "sha256": "dfbaa242238af726bdf1fe49a780e6202e9f7b4f8a835b4d4f9d9bd5c9befc0c"
+    },
+    {
       "path": "scripts/build-publication-control.cjs",
       "bytes": 3816,
       "sha256": "f56b50c9a7a069a60af4cd793a3cf6e496257f01d37d25964921934396eac52c"
@@ -3607,7 +3722,7 @@
     {
       "path": "scripts/release-manifest.cjs",
       "bytes": 1095,
-      "sha256": "2a952219f7c30085c6ac46916a35f8d1722be58d93d3596f50648b04ee2d69a9"
+      "sha256": "5ac49b0cd354f7f771f92b68a7af13fe470b19994953e369881276b53eed4aed"
     },
     {
       "path": "scripts/run-cloudflare-discovery.cjs",
@@ -3753,6 +3868,11 @@
       "path": "scripts/serve-private-owner-regeneration.cjs",
       "bytes": 1503,
       "sha256": "fafb35bb89a66dbfa8628a7a825c0c554298af8422b5351c7510ab0d3fc11bf5"
+    },
+    {
+      "path": "scripts/serve-production-vault-ceremony.cjs",
+      "bytes": 1537,
+      "sha256": "d9c3312fc12140d76410a7422d86db21e9c0ab77ba7d45e2558178de869e0249"
     },
     {
       "path": "scripts/serve-publication-control.cjs",
@@ -3998,6 +4118,11 @@
       "path": "tests/private-owner-regeneration.test.cjs",
       "bytes": 12487,
       "sha256": "198e96d7ef8face239a444ac15740d6362d2a0ebe05c7054310ea6f0e0c97024"
+    },
+    {
+      "path": "tests/production-vault-ceremony.test.cjs",
+      "bytes": 11709,
+      "sha256": "9b9d0bf8f7baadf2d4754d68f7cba14429e7e5537ea89b7ab0ce3bd02ab7a21d"
     },
     {
       "path": "tests/profile-adapter.test.cjs",

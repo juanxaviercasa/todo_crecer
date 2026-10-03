@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/activation-dossier.schema.json",
+  "title": "activation-dossier",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "dossier_id",
+    "evidence",
+    "approvals",
+    "status",
+    "apply_allowed",
+    "external_changes",
+    "sealed_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "dossier_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "kind",
+          "artifact_ref",
+          "digest",
+          "passed"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "pattern": "^[a-z0-9_-]{3,96}$"
+          },
+          "artifact_ref": {
+            "type": "string",
+            "pattern": "^[a-z0-9_-]{3,96}$"
+          },
+          "digest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "passed": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "approvals": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9_-]{3,96}$"
+      }
+    },
+    "status": {
+      "enum": [
+        "sealed_rehearsal",
+        "blocked"
+      ]
+    },
+    "apply_allowed": {
+      "const": false
+    },
+    "external_changes": {
+      "const": false
+    },
+    "sealed_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

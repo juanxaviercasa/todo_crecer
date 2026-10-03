@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/phase36-production-readiness.schema.json",
+  "title": "phase36-production-readiness",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "readiness_id",
+    "checks",
+    "blockers",
+    "status",
+    "apply_status",
+    "external_connections",
+    "publications",
+    "generated_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "readiness_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "checks": {
+      "type": "array",
+      "minItems": 10,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "passed"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[a-z0-9_-]{3,96}$"
+          },
+          "passed": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "blockers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9_-]{3,96}$"
+      }
+    },
+    "status": {
+      "enum": [
+        "ready_for_external_preflight",
+        "incomplete"
+      ]
+    },
+    "apply_status": {
+      "const": "blocked"
+    },
+    "external_connections": {
+      "const": false
+    },
+    "publications": {
+      "const": 0
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

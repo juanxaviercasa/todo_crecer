@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/vault-cost-envelope.schema.json",
+  "title": "vault-cost-envelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "cost_id",
+    "line_items",
+    "monthly_cents",
+    "warning_cents",
+    "hard_limit_cents",
+    "status",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "cost_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "line_items": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "resource",
+          "monthly_cents"
+        ],
+        "properties": {
+          "resource": {
+            "type": "string",
+            "pattern": "^[a-z0-9_-]{3,96}$"
+          },
+          "monthly_cents": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "monthly_cents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "warning_cents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "hard_limit_cents": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "status": {
+      "enum": [
+        "allow",
+        "warning",
+        "blocked"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

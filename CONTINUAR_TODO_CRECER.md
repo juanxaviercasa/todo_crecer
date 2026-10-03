@@ -1,10 +1,10 @@
 ﻿# TodoLima / HazloCrecer — estado y próximos pasos
 
-## Fase actual: 35
+## Fase actual: 36
 
 Ubicación de trabajo: `C:\Users\pc\Videos\todo_crecer\todo_crecer-repo`.
 
-La fase 35 implementa una bóveda operativa ensayada con datos sintéticos. Controla cifrado, claves separadas, acceso temporal, exportación marcada, revocación, retención, legal hold, destrucción verificable, backup, recuperación y auditoría encadenada.
+La fase 36 implementa contratos de object storage y KMS, referencias de credenciales sin secretos, mínimo privilegio, migración dry-run, canary, rollback, coste, deriva y un expediente de activación con aprobaciones independientes.
 
 ## Ejecutar
 
@@ -12,33 +12,34 @@ La fase 35 implementa una bóveda operativa ensayada con datos sintéticos. Cont
 npm ci --ignore-scripts
 npm test
 npm run build
-npm run start:vault
+npm run start:vault-activation
 ```
 
-Abrir http://127.0.0.1:4209/.
+Abrir http://127.0.0.1:4210/.
 
 ## Estado comprobado
 
-- 269 contratos JSON Schema.
-- 1.097 pruebas aprobadas y 0 fallidas.
-- 59 pruebas específicas de la fase 35.
+- 281 contratos JSON Schema.
+- 1.155 pruebas aprobadas y 0 fallidas.
+- 58 pruebas específicas de la fase 36.
 - 0 vulnerabilidades de producción y 0 patrones de credenciales detectados.
-- 2 objetos sintéticos cifrados con AES-256-GCM.
-- 1 acceso temporal de un solo uso y 1 exportación marcada.
-- 1 revocación comprobada.
-- 1 legal hold ensayado y liberado.
-- 1 recuperación íntegra después de pérdida simulada.
-- 1 destrucción verificada de ciphertext, clave y backup.
-- Cadena de auditoría válida.
-- 0 claves persistidas, 0 conexiones externas y 0 publicaciones.
+- 2 contratos de adaptador simulados: object storage y KMS.
+- 2 referencias de identidad y 0 secretos almacenados.
+- Política de mínimo privilegio aprobada sin wildcards globales.
+- 1.000 objetos sintéticos distribuidos en 10 lotes dry-run.
+- Canary 1/5/25/100 planificado.
+- Coste permitido y deriva en sincronía.
+- Rollback ensayado con resultado aprobado.
+- 3 aprobaciones independientes y 8 evidencias selladas.
+- `apply` bloqueado, 0 conexiones externas y 0 publicaciones.
 
 ## Gate real
 
-El comportamiento está probado localmente. Producción permanece bloqueada hasta configurar un object store cifrado, un KMS externo, identidades de servicio de mínimo privilegio, rotación de claves, backup separado y observabilidad operativa. Ninguna credencial real forma parte del repositorio.
+El expediente local permite avanzar al preflight externo. Producción permanece bloqueada por tres requisitos: evidencia real del proveedor, credenciales efímeras de producción y una autorización explícita de activación. Ninguna credencial real forma parte del repositorio.
 
-## Fase 36 recomendada
+## Fase 37 recomendada
 
-**Adaptadores de producción y ceremonia de activación sellada.** Definir los contratos de object storage y KMS, comprobar permisos de mínimo privilegio, inyectar credenciales fuera del repositorio, ejecutar migración dry-run, canary y rollback, medir coste y deriva, y producir un expediente de aprobación. La fase debe mantener `apply` bloqueado hasta una autorización explícita y verificable.
+**Laboratorio de conformidad de proveedores y preflight externo de solo lectura.** Crear suites de contrato para candidatos de object storage y KMS, probar capacidades, regiones, cifrado, versionado, lifecycle, rotación y observabilidad mediante transportes falsos; preparar además una sesión efímera de descubrimiento real que solo pueda leer metadatos. El resultado debe ser una matriz de selección y un expediente de preflight, manteniendo escrituras y `apply` bloqueados.
 
 ## Dominios previstos
 
