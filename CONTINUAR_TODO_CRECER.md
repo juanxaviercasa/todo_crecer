@@ -1,10 +1,10 @@
 ﻿# TodoLima / HazloCrecer — estado y próximos pasos
 
-## Fase actual: 48
+## Fase actual: 49
 
 Ubicación de trabajo: `C:\Users\pc\Videos\todo_crecer\todo_crecer-repo`.
 
-La fase 48 correlaciona SLO, presupuesto de error, burn rate y anomalías de coste. Deduplica alertas y ensaya incidente, runbook y rollback sin ejecutar remediación real.
+La fase 49 agrega salud, coste, conversión, evidencia y riesgo de cada negocio. Genera prioridades explicables, colas, asignaciones por capacidad, SLA internos y escalamientos simulados.
 
 ## Ejecutar
 
@@ -12,17 +12,22 @@ La fase 48 correlaciona SLO, presupuesto de error, burn rate y anomalías de cos
 npm ci --ignore-scripts
 npm test
 npm run build
-npm run start:economic-observability
+npm run start:portfolio-command
 ```
 
-Abrir http://127.0.0.1:4222/.
+Abrir http://127.0.0.1:4223/.
 
 ## Estado comprobado
 
-- 410 contratos JSON Schema.
+- 420 contratos JSON Schema.
 - 1.376 pruebas aprobadas y 0 fallidas.
-- 29 pruebas específicas de la fase 48; 1.537 pruebas acumuladas en la ejecución completa.
+- 32 pruebas específicas de la fase 49; 1.569 pruebas acumuladas en la ejecución completa.
 - 0 vulnerabilidades de producción y 0 patrones de credenciales detectados.
+- 8 negocios pseudonimizados en una cola priorizada.
+- Distribución operativa: 1 P0, 2 P1, 4 P2 y 1 P3.
+- 8 asignaciones simuladas y 0 trabajos sin operador.
+- 3 SLA internos vencidos y 3 escalamientos simulados.
+- 0 notificaciones externas y 0 ejecuciones reales.
 - Baseline con 99,98% de disponibilidad, burn normal y coste +3,33%.
 - Incidente con 400% del error budget, burn 50×/8× y coste +108,33%.
 - 7 ocurrencias deduplicadas en un solo cluster crítico.
@@ -44,9 +49,9 @@ Abrir http://127.0.0.1:4222/.
 
 La sala está operativa sin candidatos reales. Para habilitar una decisión humana se requieren 8/8 evidencias reales vigentes por candidato, cuatro revisiones aprobadas, cero riesgos críticos y autorización explícita de compras. La completitud placeholder nunca cuenta como evidencia real.
 
-## Fase 49 recomendada
+## Fase 50 recomendada
 
-**Centro de mando de portafolio y priorización operativa.** Agregar salud, coste, conversión, evidencia y riesgo de todos los negocios; definir colas de trabajo, puntuación de prioridad, asignación de operador, SLA interno y simulación de escalamiento. Mantener acciones externas bloqueadas hasta contar con telemetría real y responsables autorizados.
+**Certificación integrada y ensayo end-to-end del sistema.** Unificar el estado de los módulos, verificar dependencias y contratos entre fases, ejecutar un recorrido completo de un negocio, ensayar recuperación y producir un dossier go/no-go. Mantener cualquier activación real bloqueada hasta resolver evidencias y aprobaciones pendientes.
 
 ## Dominios previstos
 
