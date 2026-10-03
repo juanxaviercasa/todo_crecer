@@ -1,0 +1,47 @@
+const test=require('node:test'),assert=require('node:assert/strict'),http=require('node:http'),{createIntegratedCertification,sha}=require('../packages/integrated-system-certification/index.cjs'),{server}=require('../scripts/serve-integrated-certification.cjs');const actor=role=>({roles:[role]}),a={manager:actor('certification_manager'),module:actor('module_auditor'),dependency:actor('dependency_architect'),contract:actor('contract_auditor'),journey:actor('journey_operator'),custodian:actor('evidence_custodian'),evidence:actor('evidence_auditor'),recovery:actor('recovery_operator'),risk:actor('risk_reviewer'),audit:actor('certification_auditor')},moduleNames=['site-engine','owner-intake','evidence-engine','publication-control','observability','provider-governance','finops','economic-observability','portfolio-command','persistence-recovery'],modules=moduleNames.map(name=>({name,version:'0.52.0',artifact_digest:sha(name),present:true})),edges=moduleNames.slice(1).map((name,index)=>({from:name,to:moduleNames[index]})),blockers=[['owner','real_owner_consent','critical'],['data','real_business_truth','critical'],['assets','real_asset_rights','critical'],['legal','terms_approval','high'],['provider','provider_finance_approval','high'],['operations','activation_authorization','critical']].map(([domain,code,severity])=>({domain,code,severity,resolved:false}));
+function prepare({clear=false}={}){const x=createIntegratedCertification({now:()=>new Date('2026-10-03T23:00:00Z')});x.begin(a.manager,'release');const inventory=x.inventory(a.module,modules),dependencies=x.verifyDependencies(a.dependency,edges),contracts=x.verifyContracts(a.contract,{schemasTotal:430,schemasValid:430}),journey=x.runJourney(a.journey,'golden'),evidence=x.sealEvidence(a.custodian),recovery=x.recover(a.recovery),register=x.registerBlockers(a.risk,clear?blockers.map(item=>({...item,resolved:true})):blockers,clear?100:0),dossier=x.sealDossier(a.audit),decision=x.decide(a.manager,['executive_owner','risk_owner']);return{x,inventory,dependencies,contracts,journey,evidence,recovery,register,dossier,decision}}
+const cases=[
+['inventory contains ten modules',()=>assert.equal(prepare().inventory.total_modules,10)],
+['all critical modules are present',()=>assert.equal(prepare().inventory.present_modules,10)],
+['complete inventory passes',()=>assert.equal(prepare().inventory.status,'complete')],
+['missing module makes inventory incomplete',()=>{const x=createIntegratedCertification();x.begin(a.manager,'r');assert.equal(x.inventory(a.module,modules.map((m,i)=>i?m:{...m,present:false})).status,'incomplete')}],
+['duplicate module is rejected',()=>{const x=createIntegratedCertification();x.begin(a.manager,'r');assert.throws(()=>x.inventory(a.module,[...modules,modules[0]]),{code:'MODULE_DUPLICATE'})}],
+['dependency graph passes',()=>assert.equal(prepare().dependencies.status,'passed')],
+['dependency order begins with site engine',()=>assert.equal(prepare().dependencies.topological_order[0],'site-engine')],
+['dependency graph has no cycle',()=>assert.equal(prepare().dependencies.cycles_detected,0)],
+['missing dependency fails graph',()=>{const x=createIntegratedCertification();x.begin(a.manager,'r');x.inventory(a.module,modules);assert.equal(x.verifyDependencies(a.dependency,[{from:'site-engine',to:'missing'}]).status,'failed')}],
+['cycle fails graph',()=>{const x=createIntegratedCertification();x.begin(a.manager,'r');x.inventory(a.module,modules);assert.equal(x.verifyDependencies(a.dependency,[{from:'site-engine',to:'owner-intake'},{from:'owner-intake',to:'site-engine'}]).status,'failed')}],
+['all 430 contracts pass',()=>assert.equal(prepare().contracts.schemas_valid,430)],
+['contract verification is offline',()=>assert.equal(prepare().contracts.network_resolution,false)],
+['schema collision fails contracts',()=>{const x=createIntegratedCertification();x.begin(a.manager,'r');assert.equal(x.verifyContracts(a.contract,{schemasTotal:430,schemasValid:430,idCollisions:1}).status,'failed')}],
+['journey has ten ordered steps',()=>assert.deepEqual(prepare().journey.steps.map(s=>s.sequence),[1,2,3,4,5,6,7,8,9,10])],
+['journey rehearsal passes',()=>assert.equal(prepare().journey.status,'passed_rehearsal')],
+['journey performs zero external operations',()=>assert.equal(prepare().journey.external_operations,0)],
+['journey performs zero publications',()=>assert.equal(prepare().journey.publications,0)],
+['business identity is fingerprinted',()=>assert.match(prepare().journey.business_fingerprint,/^[a-f0-9]{64}$/)],
+['blocked stage blocks journey',()=>{const x=createIntegratedCertification();x.begin(a.manager,'r');assert.equal(x.runJourney(a.journey,'g',{owner_review:false}).status,'blocked')}],
+['evidence has one checkpoint per step',()=>assert.equal(prepare().evidence.checkpoints.length,10)],
+['evidence chain verifies',()=>assert.equal(prepare().x.verifyEvidence(a.evidence),true)],
+['evidence is tamper evident',()=>assert.equal(prepare().evidence.tamper_evident,true)],
+['recovery exercise passes',()=>assert.equal(prepare().recovery.status,'passed')],
+['recovery meets RTO',()=>assert(prepare().recovery.rto_observed_minutes<=prepare().recovery.rto_target_minutes)],
+['recovery meets RPO',()=>assert(prepare().recovery.rpo_observed_minutes<=prepare().recovery.rpo_target_minutes)],
+['slow recovery fails',()=>{const x=createIntegratedCertification();x.begin(a.manager,'r');x.runJourney(a.journey,'g');x.sealEvidence(a.custodian);assert.equal(x.recover(a.recovery,{rto:31,rpo:5,failed:[]}).status,'failed')}],
+['register carries six real blockers',()=>assert.equal(prepare().register.blockers.length,6)],
+['register identifies four critical blockers',()=>assert.equal(prepare().register.critical_open,4)],
+['real evidence remains zero',()=>assert.equal(prepare().register.real_evidence_percent,0)],
+['dossier is structurally complete',()=>assert.equal(prepare().dossier.structural_completeness_percent,100)],
+['default dossier is rehearsal only',()=>assert.equal(prepare().dossier.status,'sealed_rehearsal')],
+['dossier has deterministic digest shape',()=>assert.match(prepare().dossier.dossier_digest,/^[a-f0-9]{64}$/)],
+['production decision is no-go',()=>assert.equal(prepare().decision.decision,'no_go_production')],
+['next gate is supervised intake',()=>assert.equal(prepare().decision.next_gate,'supervised_real_business_intake')],
+['production is never auto-authorized',()=>assert.equal(prepare({clear:true}).decision.production_authorized,false)],
+['fully evidenced rehearsal permits controlled review',()=>assert.equal(prepare({clear:true}).decision.decision,'go_controlled')],
+['integrated readiness is certified',()=>assert.equal(prepare().x.readiness(a.audit).status,'integrated_rehearsal_certified')],
+['activation remains blocked',()=>assert.throws(()=>prepare().x.activate(),{code:'PRODUCTION_ACTIVATION_BLOCKED'})],
+['dual review is required',()=>{const p=prepare();assert.throws(()=>p.x.decide(a.manager,['executive_owner']),{code:'DUAL_REVIEW_REQUIRED'})}],
+['role is required',()=>assert.throws(()=>createIntegratedCertification().begin({roles:[]},'r'),{code:'ROLE_REQUIRED'})]
+];for(const [name,fn]of cases)test(name,fn);
+function request(instance,pathname,method='GET'){return new Promise((resolve,reject)=>{const req=http.request({hostname:'127.0.0.1',port:instance.address().port,path:pathname,method},response=>{let body='';response.on('data',chunk=>body+=chunk);response.on('end',()=>resolve({response,body}))});req.on('error',reject);req.end()})}
+test('integrated certification UI is private',async()=>{const instance=server();await new Promise(resolve=>instance.listen(0,'127.0.0.1',resolve));try{const result=await request(instance,'/');assert.equal(result.response.statusCode,200);assert.match(result.body,/Ensayo certificado/);assert.equal(result.response.headers['x-robots-tag'],'noindex, nofollow');assert.match(result.response.headers['content-security-policy'],/connect-src 'none'/)}finally{instance.close()}});
+test('integrated certification UI rejects writes and traversal',async()=>{const instance=server();await new Promise(resolve=>instance.listen(0,'127.0.0.1',resolve));try{assert.equal((await request(instance,'/','POST')).response.statusCode,405);assert.equal((await request(instance,'/%2e%2e/package.json')).response.statusCode,404)}finally{instance.close()}});

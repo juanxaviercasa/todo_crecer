@@ -1,10 +1,10 @@
 ﻿# TodoLima / HazloCrecer — estado y próximos pasos
 
-## Fase actual: 49
+## Fase actual: 50
 
 Ubicación de trabajo: `C:\Users\pc\Videos\todo_crecer\todo_crecer-repo`.
 
-La fase 49 agrega salud, coste, conversión, evidencia y riesgo de cada negocio. Genera prioridades explicables, colas, asignaciones por capacidad, SLA internos y escalamientos simulados.
+La fase 50 certifica el sistema integrado: inventario de módulos, dependencias, contratos, journey end-to-end, evidencia encadenada, recuperación y dossier go/no-go.
 
 ## Ejecutar
 
@@ -12,17 +12,22 @@ La fase 49 agrega salud, coste, conversión, evidencia y riesgo de cada negocio.
 npm ci --ignore-scripts
 npm test
 npm run build
-npm run start:portfolio-command
+npm run start:certification
 ```
 
-Abrir http://127.0.0.1:4223/.
+Abrir http://127.0.0.1:4224/.
 
 ## Estado comprobado
 
-- 420 contratos JSON Schema.
+- 430 contratos JSON Schema.
 - 1.376 pruebas aprobadas y 0 fallidas.
-- 32 pruebas específicas de la fase 49; 1.569 pruebas acumuladas en la ejecución completa.
+- 42 pruebas específicas de la fase 50; 1.611 pruebas acumuladas en la ejecución completa.
 - 0 vulnerabilidades de producción y 0 patrones de credenciales detectados.
+- 10/10 módulos críticos presentes y 9 dependencias verificadas.
+- 10/10 checkpoints end-to-end sellados en una cadena verificable.
+- Recuperación simulada con RTO 18/30 minutos y RPO 5/15 minutos.
+- Dossier con 100% de estructura y 0% de evidencia real.
+- Decisión `no_go_production`; siguiente gate `supervised_real_business_intake`.
 - 8 negocios pseudonimizados en una cola priorizada.
 - Distribución operativa: 1 P0, 2 P1, 4 P2 y 1 P3.
 - 8 asignaciones simuladas y 0 trabajos sin operador.
@@ -49,9 +54,9 @@ Abrir http://127.0.0.1:4223/.
 
 La sala está operativa sin candidatos reales. Para habilitar una decisión humana se requieren 8/8 evidencias reales vigentes por candidato, cuatro revisiones aprobadas, cero riesgos críticos y autorización explícita de compras. La completitud placeholder nunca cuenta como evidencia real.
 
-## Fase 50 recomendada
+## Fase 51 recomendada
 
-**Certificación integrada y ensayo end-to-end del sistema.** Unificar el estado de los módulos, verificar dependencias y contratos entre fases, ejecutar un recorrido completo de un negocio, ensayar recuperación y producir un dossier go/no-go. Mantener cualquier activación real bloqueada hasta resolver evidencias y aprobaciones pendientes.
+**Puente al primer intake real supervisado.** Preparar importadores, formularios de consentimiento, validación de Business Truth, control de derechos de imágenes, checklist del propietario y paquete de aprobación. Mantener publicación, contacto y cobro bloqueados hasta recibir un negocio voluntario y evidencia verificable.
 
 ## Dominios previstos
 

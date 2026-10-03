@@ -1,7 +1,7 @@
 {
   "format": "sha256-manifest-v1",
-  "package": "todolima-platform-phase49",
-  "version": "0.51.0",
+  "package": "todolima-platform-phase50",
+  "version": "0.52.0",
   "generated_at": "2026-10-03T00:00:00.000Z",
   "entries": [
     {
@@ -126,8 +126,8 @@
     },
     {
       "path": "CONTINUAR_TODO_CRECER.md",
-      "bytes": 2995,
-      "sha256": "633e34d31e3806c9fd4c0e87e9589c936a1c5a12b302da1b9dd3fdac4412cf31"
+      "bytes": 3295,
+      "sha256": "b60424d0fc6d70ee448992d737842e295831e056028f248d080b1eed45e5a4c3"
     },
     {
       "path": "contracts/access-decision.schema.json",
@@ -1435,6 +1435,56 @@
       "sha256": "bdccb4c2e634515d3708d8d91ef6427d87a16cb2c562f47393aee9404fa5a826"
     },
     {
+      "path": "contracts/phase50-blocker-register.schema.json",
+      "bytes": 1045,
+      "sha256": "60dd66d40bc52255b5bbf94dfc4b45fd9e5b81283fad2db7503cccbda36d5dcb"
+    },
+    {
+      "path": "contracts/phase50-certification-dossier.schema.json",
+      "bytes": 1186,
+      "sha256": "a7aab4a73aa6b69ecb3d5104fd87214a55edff06a2aefe9175d62ad99cecbdea"
+    },
+    {
+      "path": "contracts/phase50-checkpoint-evidence.schema.json",
+      "bytes": 1054,
+      "sha256": "1b2fa13de3acf5f26ce1b211f45c87537816de58ab4de361679e01c54442b3bd"
+    },
+    {
+      "path": "contracts/phase50-contract-verification.schema.json",
+      "bytes": 801,
+      "sha256": "456f84f8c2b343d86f7f303d9c748a17f85c7b11314d9e12661e1d7be417628e"
+    },
+    {
+      "path": "contracts/phase50-dependency-verification.schema.json",
+      "bytes": 1045,
+      "sha256": "c54b12f95ddfa1c8d0c58e1073e0d1090793ca02834d3f18f9e29f1f0ddadf3b"
+    },
+    {
+      "path": "contracts/phase50-e2e-journey.schema.json",
+      "bytes": 1068,
+      "sha256": "603053f8bb92d9442370e4082b3d07984c68fc3869e9c36aed6fe7eb73309f4e"
+    },
+    {
+      "path": "contracts/phase50-go-no-go.schema.json",
+      "bytes": 1041,
+      "sha256": "f98c6c6074f2e8307697a02dd005bede3762edb130791ddac9c14f0a98aa57fb"
+    },
+    {
+      "path": "contracts/phase50-module-inventory.schema.json",
+      "bytes": 962,
+      "sha256": "a81ee3ff0bac09de2d47b740ebc59a452706cb85aceda5158fb2087fd579f2f2"
+    },
+    {
+      "path": "contracts/phase50-readiness.schema.json",
+      "bytes": 891,
+      "sha256": "7cffa58fef006d5d98082c3aeeff3398a1e69c447410e8db535c7be6da8aaeca"
+    },
+    {
+      "path": "contracts/phase50-recovery-exercise.schema.json",
+      "bytes": 1140,
+      "sha256": "74c1ac73fb933e4708b3cea22086865fa0efb054053bbb651551e4c190734f02"
+    },
+    {
       "path": "contracts/pilot-acceptance-audit-event.schema.json",
       "bytes": 1183,
       "sha256": "02f73530298e2e2f5daeb8eb015d007c4b15ac0e7cb35b2d5409587acba75711"
@@ -2500,6 +2550,11 @@
       "sha256": "30e3cd8d7efe8e753ead186f904d8d6c564d04eeeda272e9d0386a2d3cb3f43c"
     },
     {
+      "path": "docs/adr/ADR-058-integrated-system-certification.md",
+      "bytes": 692,
+      "sha256": "350e1c08fc036dfd0bc3989dfe27242c2ac2f12a033fddce04d04879de1249d7"
+    },
+    {
       "path": "docs/CHAT_WORKFLOW.md",
       "bytes": 2343,
       "sha256": "f380a70bb8607190d78fd4600906ea8d2b04ab6d6d5e605c8f6edc4f3298399b"
@@ -3405,6 +3460,16 @@
       "sha256": "b14355c1d32afa5f0989850c2aa062d84638f702c464c2639a7cc6a01c38a977"
     },
     {
+      "path": "docs/phase-50/INTEGRATED_CERTIFICATION.md",
+      "bytes": 763,
+      "sha256": "83bcad399a5495fb0e82c9733f6924de89440bca8f85049d6259c30c3258932a"
+    },
+    {
+      "path": "docs/phase-50/VALIDATION.md",
+      "bytes": 809,
+      "sha256": "9eedb0d44c2a6707948f25a05041c08ef3d1e12b99c2e3a21cac740c41ca9e84"
+    },
+    {
       "path": "docs/phase-6/PRIVATE_DEMO.md",
       "bytes": 1840,
       "sha256": "4ddb98e30d86d4ae25837053794174fa33dadd6f2e645403f7f8d991e7d17de7"
@@ -3810,6 +3875,16 @@
       "sha256": "951c8745792b4270ec6960b74f5e6ac4609ce2431d817f3be5fca36fa91d25e9"
     },
     {
+      "path": "integrated-certification/app/index.html",
+      "bytes": 2655,
+      "sha256": "9fa42d5e6103f9dc27768dc9033e82c2aa1577c917e08ac9d027c3aa53805f8b"
+    },
+    {
+      "path": "integrated-certification/app/styles.css",
+      "bytes": 3158,
+      "sha256": "47d0615f3e6d407c1f776d7143d0fceead9b0b8bdfe80b4107d5f9504c8c514d"
+    },
+    {
       "path": "interaction-privacy/app/app.js",
       "bytes": 411,
       "sha256": "c8627b70e92881e8b669c7e61cc7bda8ad28a011d4cbba7ffc90bd325d79147c"
@@ -3967,12 +4042,12 @@
     {
       "path": "package-lock.json",
       "bytes": 4423,
-      "sha256": "d1bc282cdded6f3dcfbc35a649553e5c872aa7fd1d34e11bc54401975702465b"
+      "sha256": "5761ce20395d217105116672d6a23ee97b84e556d5c500cc9ccf19c267598916"
     },
     {
       "path": "package.json",
-      "bytes": 9859,
-      "sha256": "6135e29605c7d4e208dc3697650bfc456ae50d46bed1d8438283f4d1706fd3f9"
+      "bytes": 10024,
+      "sha256": "23951d0d370af44d4d6ecfcdc7ca247bc48d5757bcb449c0fb44d99c01e4eec2"
     },
     {
       "path": "packages/.gitkeep",
@@ -4053,6 +4128,11 @@
       "path": "packages/infrastructure-adapters/index.cjs",
       "bytes": 8947,
       "sha256": "77f5c890a25cee8f7035e4fb81bda58e4bd6e586b44b50c1d1d9f3c8cfb91809"
+    },
+    {
+      "path": "packages/integrated-system-certification/index.cjs",
+      "bytes": 11884,
+      "sha256": "7e7316479233984c75fc6994ca520f47e14b1626bf48ad8d816b05759e229e62"
     },
     {
       "path": "packages/interaction-privacy/index.cjs",
@@ -4720,6 +4800,11 @@
       "sha256": "5fc9c367ce713dc8e7d447d3e33f427b1b5f484703b7cc8685f39464a597d153"
     },
     {
+      "path": "scripts/build-integrated-certification.cjs",
+      "bytes": 3623,
+      "sha256": "2286877d235f02ddac252757aced662f0b782d93069c7085871fb8cee96cd155"
+    },
+    {
       "path": "scripts/build-interaction-privacy.cjs",
       "bytes": 2209,
       "sha256": "1f928e98e48080882d6979f6f5c3d2d17c1bd6b3d8cf3e1da5a092f1927a8531"
@@ -4902,7 +4987,7 @@
     {
       "path": "scripts/release-manifest.cjs",
       "bytes": 1095,
-      "sha256": "e14728a7ae70a0e53d76796cf5a2d23186a5968bee3300b07b9903e55bd6d8b3"
+      "sha256": "b660604df5b480f66152b71fc0bb3b68dc1d02828ee449c1b8b428e812f58931"
     },
     {
       "path": "scripts/run-cloudflare-discovery.cjs",
@@ -4983,6 +5068,11 @@
       "path": "scripts/serve-infrastructure-console.cjs",
       "bytes": 1743,
       "sha256": "16ab6c374bc8dbaff6bd03e97f5da5e13aaa38a68ee81ccd80360d6f71f9d2fd"
+    },
+    {
+      "path": "scripts/serve-integrated-certification.cjs",
+      "bytes": 1059,
+      "sha256": "3651d87942aa9e3036794d924cedae83dc4eb58ed69a8c233548e5c59883bab4"
     },
     {
       "path": "scripts/serve-interaction-privacy.cjs",
@@ -5308,6 +5398,11 @@
       "path": "tests/infrastructure-adapters.test.cjs",
       "bytes": 6858,
       "sha256": "19d5bfd38259a2e3b6f1a19e773803af4a9a8406503b2ea6440608ebd4748a35"
+    },
+    {
+      "path": "tests/integrated-system-certification.test.cjs",
+      "bytes": 8335,
+      "sha256": "28e6769ebdb6f739287b531f0b9997d32d54ac2c825dfa78775a03f8bc5ed98d"
     },
     {
       "path": "tests/interaction-privacy.test.cjs",
