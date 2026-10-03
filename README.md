@@ -1,3 +1,14 @@
+# Fase 39 · Sala de decisión de proveedores
+
+La plataforma puede abrir expedientes con placeholders explícitos, gestionar evidencia y caducidad, coordinar cuatro revisiones y preparar una comparación. La selección permanece bloqueada hasta recibir evidencia real completa y autorización humana.
+
+- Consola: `npm run build && npm run start:decision-room` → http://127.0.0.1:4213/
+- Sala: [docs/phase-39/DECISION_ROOM.md](docs/phase-39/DECISION_ROOM.md)
+- Gate humano: [docs/phase-39/HUMAN_SELECTION_GATE.md](docs/phase-39/HUMAN_SELECTION_GATE.md)
+- Decisión: [ADR-047](docs/adr/ADR-047-provider-candidate-decision-room.md)
+
+---
+
 # Fase 38 · Certificación independiente del proveedor
 
 La plataforma valida desde ahora la integración futura mediante un contrato portable, trece vectores adversariales y replay determinista de evidencia. Un proveedor real solo tendrá que implementar el adaptador y superar la misma suite.

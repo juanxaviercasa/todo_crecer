@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/candidate-human-selection.schema.json",
+  "title": "candidate-human-selection",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "selection_id",
+    "package_ref",
+    "candidate_ref",
+    "authorized_by",
+    "evidence_mode",
+    "status",
+    "selected_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "selection_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "package_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "candidate_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "authorized_by": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "evidence_mode": {
+      "const": "real"
+    },
+    "status": {
+      "const": "selected"
+    },
+    "selected_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

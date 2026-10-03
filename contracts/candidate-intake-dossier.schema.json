@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/candidate-intake-dossier.schema.json",
+  "title": "candidate-intake-dossier",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "candidate_id",
+    "display_name",
+    "provider_ref",
+    "intake_mode",
+    "contact_stored",
+    "status",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "candidate_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provider_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "intake_mode": {
+      "enum": [
+        "placeholder",
+        "real_candidate"
+      ]
+    },
+    "contact_stored": {
+      "const": false
+    },
+    "status": {
+      "const": "open"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

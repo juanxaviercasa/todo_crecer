@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/candidate-evidence-submission.schema.json",
+  "title": "candidate-evidence-submission",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "submission_id",
+    "candidate_ref",
+    "request_ref",
+    "kind",
+    "source_mode",
+    "evidence_digest",
+    "sanitized",
+    "secret_material",
+    "raw_contact",
+    "collected_at",
+    "expires_at",
+    "status"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "submission_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "candidate_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "request_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "kind": {
+      "enum": [
+        "provider_manifest",
+        "adapter_certificate",
+        "read_only_preflight",
+        "data_residency",
+        "security_controls",
+        "legal_terms",
+        "pricing",
+        "support_sla"
+      ]
+    },
+    "source_mode": {
+      "enum": [
+        "placeholder",
+        "synthetic",
+        "real_read_only"
+      ]
+    },
+    "evidence_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "sanitized": {
+      "const": true
+    },
+    "secret_material": {
+      "const": false
+    },
+    "raw_contact": {
+      "const": false
+    },
+    "collected_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "enum": [
+        "current",
+        "expired"
+      ]
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/candidate-cost-snapshot.schema.json",
+  "title": "candidate-cost-snapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "snapshot_id",
+    "candidate_ref",
+    "source_mode",
+    "currency",
+    "monthly_cents",
+    "migration_cents",
+    "egress_cents",
+    "support_cents",
+    "total_first_year_cents",
+    "status",
+    "captured_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "snapshot_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "candidate_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "source_mode": {
+      "enum": [
+        "placeholder",
+        "real_read_only"
+      ]
+    },
+    "currency": {
+      "const": "USD"
+    },
+    "monthly_cents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "migration_cents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "egress_cents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "support_cents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "total_first_year_cents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "status": {
+      "enum": [
+        "placeholder",
+        "reviewable",
+        "blocked"
+      ]
+    },
+    "captured_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

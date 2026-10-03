@@ -1,7 +1,7 @@
 {
   "format": "sha256-manifest-v1",
-  "package": "todolima-platform-phase38",
-  "version": "0.40.0",
+  "package": "todolima-platform-phase39",
+  "version": "0.41.0",
   "generated_at": "2026-09-30T00:00:00.000Z",
   "entries": [
     {
@@ -126,8 +126,8 @@
     },
     {
       "path": "CONTINUAR_TODO_CRECER.md",
-      "bytes": 2115,
-      "sha256": "930f7d5d250e241a78c9e9d5da6cf110a951554b1e62cfd80a4bd06573984b84"
+      "bytes": 2161,
+      "sha256": "2dfd5926d59f3ace2f6bbbb15bb939dae64087fd7fca636486fabf7c445adea2"
     },
     {
       "path": "contracts/access-decision.schema.json",
@@ -320,9 +320,69 @@
       "sha256": "7bd195eb7dbfcb1d2f5e9880d8c9bb7e8e0a091669a45c07617a71f388b3bfdf"
     },
     {
+      "path": "contracts/candidate-comparison-board.schema.json",
+      "bytes": 2008,
+      "sha256": "b9a4db07cf9ba3d49c0e9bac2ab624ba652667a41e9adff24556411969b298a2"
+    },
+    {
+      "path": "contracts/candidate-completeness-report.schema.json",
+      "bytes": 1907,
+      "sha256": "b4d702f73f8441e3a59ae66306ee59403f3fe77f8e278451d799ae2bc1652406"
+    },
+    {
+      "path": "contracts/candidate-cost-snapshot.schema.json",
+      "bytes": 1473,
+      "sha256": "32436548964aa81bb7bb89943590719afb04a78d091ff5a1f8b1bba0f53befaa"
+    },
+    {
+      "path": "contracts/candidate-decision-room-package.schema.json",
+      "bytes": 1618,
+      "sha256": "6252919ad8f8b597fa84b29f7c97651cc1697cc326bc7af8527122540bcefc52"
+    },
+    {
+      "path": "contracts/candidate-domain-review.schema.json",
+      "bytes": 1332,
+      "sha256": "506afad9b8003b7c61c0498e8094ed010a0239b96149ca7a2b5e418b822e1eef"
+    },
+    {
+      "path": "contracts/candidate-evidence-renewal.schema.json",
+      "bytes": 1356,
+      "sha256": "d3ccff7bb29305a93165f9d21b5c56d582dee23cc80b31b03441b3648c43fbb6"
+    },
+    {
+      "path": "contracts/candidate-evidence-request.schema.json",
+      "bytes": 1216,
+      "sha256": "7fe5998ad0214e0f830ae1e1bc4a1864fab26854b85f504beb29a9170642cd0a"
+    },
+    {
+      "path": "contracts/candidate-evidence-submission.schema.json",
+      "bytes": 1722,
+      "sha256": "43cbe4912886933087336ab7c955c1b970ff727908cc6b2f0b5e38c2fc92ef5d"
+    },
+    {
+      "path": "contracts/candidate-human-selection.schema.json",
+      "bytes": 1037,
+      "sha256": "f84df4d04c573a45f15eb6989a1be644a3a5824f4b8b3dbb5a53954950ede870"
+    },
+    {
+      "path": "contracts/candidate-intake-dossier.schema.json",
+      "bytes": 1019,
+      "sha256": "72642d4237cff7633d9a8f7afcdd4045fe565cd3d69fe4694d7eb202662147f8"
+    },
+    {
       "path": "contracts/candidate-publication-gate.schema.json",
       "bytes": 1507,
       "sha256": "c125e34278f38910fb9ce89c70c36bfe266ebb584aa16a6a9d49b38d38ba0314"
+    },
+    {
+      "path": "contracts/candidate-risk-matrix.schema.json",
+      "bytes": 1799,
+      "sha256": "c8b79dacce7a06b38df393ae55f6e56bb35490f75ad222888c41244f204529c6"
+    },
+    {
+      "path": "contracts/candidate-terms-snapshot.schema.json",
+      "bytes": 1550,
+      "sha256": "0bd35403c7aa4bbcdbf24e4085ce52da2b2a9e3d1fcf74f1b99d3dd8735d359d"
     },
     {
       "path": "contracts/change-freeze-record.schema.json",
@@ -983,6 +1043,11 @@
       "path": "contracts/phase38-simulation-readiness.schema.json",
       "bytes": 1543,
       "sha256": "b04a32fe4a2af813ba5715e24786b8334368f2f4c1715284bf8c1331800d831a"
+    },
+    {
+      "path": "contracts/phase39-decision-room-readiness.schema.json",
+      "bytes": 1640,
+      "sha256": "67a061dc653695cce30aa8f70065ca87b31f7233d36f45ea1088dda9b23f0e80"
     },
     {
       "path": "contracts/pilot-acceptance-audit-event.schema.json",
@@ -1905,6 +1970,11 @@
       "sha256": "9deeba2465f89833f0f82ad08e5e26f144146410d5fc6f170b114a3ab5effdba"
     },
     {
+      "path": "docs/adr/ADR-047-provider-candidate-decision-room.md",
+      "bytes": 529,
+      "sha256": "99285eb02381b9e6a2e4ff118fd23e52a60c6d9931c43611b01cf00d1c17722e"
+    },
+    {
       "path": "docs/CHAT_WORKFLOW.md",
       "bytes": 2343,
       "sha256": "f380a70bb8607190d78fd4600906ea8d2b04ab6d6d5e605c8f6edc4f3298399b"
@@ -2655,6 +2725,31 @@
       "sha256": "ca8039596e558714b305498a360cd6fcd53f1da232c76fe37dc34457113f2ee5"
     },
     {
+      "path": "docs/phase-39/DECISION_ROOM.md",
+      "bytes": 305,
+      "sha256": "69b19b9d22d272b59de5f159aaaeddbfb0ce7cf550eadda3dc512d4fe38ddc43"
+    },
+    {
+      "path": "docs/phase-39/DOMAIN_REVIEWS.md",
+      "bytes": 243,
+      "sha256": "da2ba5295f2b66f9fe17a3cab42a4f7877e81741a34f7d536e857855cc8548fd"
+    },
+    {
+      "path": "docs/phase-39/EVIDENCE_REQUESTS.md",
+      "bytes": 263,
+      "sha256": "dbeb306fdd789445c9710e40f7cb3a1e298741923b21fb313c7aee9170cecd17"
+    },
+    {
+      "path": "docs/phase-39/HUMAN_SELECTION_GATE.md",
+      "bytes": 266,
+      "sha256": "3f0caa81481e2187a82631c9457a00c11b1af59eb1aabadb9b312535030e0a50"
+    },
+    {
+      "path": "docs/phase-39/VALIDATION.md",
+      "bytes": 1056,
+      "sha256": "5a9d44413420615e8cca5303a341927927571409fc52e877ffe158ec3a4a00a6"
+    },
+    {
       "path": "docs/phase-4/OWNER_ONBOARDING.md",
       "bytes": 2599,
       "sha256": "ae057bddec20143bb65341766b1bd4a91a3a6890485576a7c06b1b0713070e16"
@@ -3207,12 +3302,12 @@
     {
       "path": "package-lock.json",
       "bytes": 4423,
-      "sha256": "5c9e131e1a1190dcb3700cd423135af54249dd005bf0c4f7a2d3265d2ff2e479"
+      "sha256": "b0ad5fc462c398ad2d282024b10ec399a154040cde7be77cfe440e3609e1c31f"
     },
     {
       "path": "package.json",
-      "bytes": 7846,
-      "sha256": "d815aa50536ef4ce336ee8046163d35aab48a1fdde737da07d93b243c0e96759"
+      "bytes": 8042,
+      "sha256": "bfcf5e06215001718b77ad65ff45ef1f4b114cdf0a9750c634dd8b45825d34be"
     },
     {
       "path": "packages/.gitkeep",
@@ -3383,6 +3478,11 @@
       "path": "packages/provider-conformance-lab/index.cjs",
       "bytes": 13436,
       "sha256": "75926db26f7b7d3becd846e75e0cff5195a0c71384e7ade7e60b99a9262f0218"
+    },
+    {
+      "path": "packages/provider-decision-room/index.cjs",
+      "bytes": 14548,
+      "sha256": "977ca481210e476f5ba3868face3d29b76d7f9f3d0086dcc0bf94e1a340362f2"
     },
     {
       "path": "packages/publication-control/index.cjs",
@@ -3710,6 +3810,21 @@
       "sha256": "b0f8ce78510f84fb2a4d893ee8ea37ec248549b642b81510b4bfa508cbea4d59"
     },
     {
+      "path": "provider-decision-room/app/app.js",
+      "bytes": 892,
+      "sha256": "46ec23e4517deeccb37d85aafeddb438d5673a56edc0880b43c65d5a46eb3c38"
+    },
+    {
+      "path": "provider-decision-room/app/index.html",
+      "bytes": 3541,
+      "sha256": "174a9ac77abbc0ca79b882a41a539553cd2b240dd90be2a4d06396a8a55391a8"
+    },
+    {
+      "path": "provider-decision-room/app/styles.css",
+      "bytes": 4177,
+      "sha256": "9459daa13b606b8f12c4a0251f81e1398000f6b0bae32e60f0e6a3719acea3fe"
+    },
+    {
       "path": "publication-control/app/app.js",
       "bytes": 424,
       "sha256": "484a09fab663e0e10d73232ede845f7e4646e6ff9fccc62db0d007c7525ef5be"
@@ -3731,8 +3846,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 45790,
-      "sha256": "0e85ecb7e04cabf3dfa466b3914fcd5011d82ed144a93409ec4869a2e4a2ef82"
+      "bytes": 46427,
+      "sha256": "8e1525c9cdcdb4ee86dde619467c8c0767ec8a646b3120165a4cab93cf3bb272"
     },
     {
       "path": "review/app/app.js",
@@ -3905,6 +4020,11 @@
       "sha256": "89ce9c379c22307314c13d104b0cd79d7d07e04c207815e6cec15732c6e7f870"
     },
     {
+      "path": "scripts/build-provider-decision-room.cjs",
+      "bytes": 3523,
+      "sha256": "6f7803f3693bf4ec16ee1570f42535b1587915f370c57a4fd0b771e0c4c05f19"
+    },
+    {
       "path": "scripts/build-publication-control.cjs",
       "bytes": 3816,
       "sha256": "f56b50c9a7a069a60af4cd793a3cf6e496257f01d37d25964921934396eac52c"
@@ -3952,7 +4072,7 @@
     {
       "path": "scripts/release-manifest.cjs",
       "bytes": 1095,
-      "sha256": "d919646112ba010a2a905269051e93c0a29800d5401e80052363aafcacd6dad2"
+      "sha256": "cc9ee1af19ac885e542895cb85f858562a8a47f1945baecb8dbeba293ed93a99"
     },
     {
       "path": "scripts/run-cloudflare-discovery.cjs",
@@ -4113,6 +4233,11 @@
       "path": "scripts/serve-provider-conformance-lab.cjs",
       "bytes": 1523,
       "sha256": "fe2fd6807cee11a92c1ce429fbc36782168f27beb5cf3a1d34c58fa46a4222f9"
+    },
+    {
+      "path": "scripts/serve-provider-decision-room.cjs",
+      "bytes": 1481,
+      "sha256": "30a76e96004b7557ab2487e9494f34faefc8a9d341bac09e109c8dcee5a26883"
     },
     {
       "path": "scripts/serve-publication-control.cjs",
@@ -4378,6 +4503,11 @@
       "path": "tests/provider-conformance-lab.test.cjs",
       "bytes": 14468,
       "sha256": "cede87e5ad50030f52471bf50096ddae9aef2960bb302bce2ec586d6c6a3fded"
+    },
+    {
+      "path": "tests/provider-decision-room.test.cjs",
+      "bytes": 12467,
+      "sha256": "4c5e8f58a8abf18bfa9ca484576ef8dfef5e474cbd568ad3acd75e856d62ee6e"
     },
     {
       "path": "tests/publication-control.test.cjs",

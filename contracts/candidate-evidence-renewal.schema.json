@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/candidate-evidence-renewal.schema.json",
+  "title": "candidate-evidence-renewal",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "renewal_id",
+    "submission_ref",
+    "candidate_ref",
+    "kind",
+    "renew_by",
+    "reason",
+    "status",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "renewal_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "submission_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "candidate_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "kind": {
+      "enum": [
+        "provider_manifest",
+        "adapter_certificate",
+        "read_only_preflight",
+        "data_residency",
+        "security_controls",
+        "legal_terms",
+        "pricing",
+        "support_sla"
+      ]
+    },
+    "renew_by": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "scheduled",
+        "overdue",
+        "not_required"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

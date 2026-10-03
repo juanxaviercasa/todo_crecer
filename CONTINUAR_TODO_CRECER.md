@@ -1,10 +1,10 @@
 ﻿# TodoLima / HazloCrecer — estado y próximos pasos
 
-## Fase actual: 38
+## Fase actual: 39
 
 Ubicación de trabajo: `C:\Users\pc\Videos\todo_crecer\todo_crecer-repo`.
 
-La fase 38 permite validar la integración antes de disponer de proveedores: contrato portable, adaptador de referencia, 13 vectores adversariales, evidencia sanitizada, replay determinista, riesgos y certificado de simulación.
+La fase 39 implementa una sala de incorporación y decisión con placeholders explícitos, ocho solicitudes obligatorias, renovación, términos, costes, revisiones independientes, riesgos y selección humana bloqueada.
 
 ## Ejecutar
 
@@ -12,32 +12,32 @@ La fase 38 permite validar la integración antes de disponer de proveedores: con
 npm ci --ignore-scripts
 npm test
 npm run build
-npm run start:adapter-certification
+npm run start:decision-room
 ```
 
-Abrir http://127.0.0.1:4212/.
+Abrir http://127.0.0.1:4213/.
 
 ## Estado comprobado
 
-- 305 contratos JSON Schema.
-- 1.272 pruebas aprobadas y 0 fallidas.
-- 59 pruebas específicas de la fase 38.
+- 318 contratos JSON Schema.
+- 1.330 pruebas aprobadas y 0 fallidas.
+- 58 pruebas específicas de la fase 39.
 - 0 vulnerabilidades de producción y 0 patrones de credenciales detectados.
-- Contrato portable v1.0.0 con 6 operaciones read-only.
-- 13 vectores adversariales aprobados.
-- 8 riesgos controlados.
-- Evidencia sanitizada con replay determinista y score 100.
-- Certificado de simulación válido por 30 días.
-- 0 proveedores reales seleccionados.
+- 2 expedientes placeholder y 16 solicitudes obligatorias.
+- 13 entregas sanitizadas con renovación programada.
+- 8 revisiones de legal, seguridad, finanzas y compras.
+- Un expediente con 100% de estructura y 0% de evidencia real.
+- 2 riesgos críticos abiertos por candidato.
+- Selección final bloqueada y 0 candidatos seleccionados.
 - 0 secretos, 0 escrituras, 0 conexiones externas y 0 publicaciones.
 
 ## Gate real
 
-El sistema y el adaptador de referencia están validados sin proveedor. Un candidato real deberá implementar el contrato, superar los mismos 13 vectores, aportar evidencia read-only sanitizada y pasar revisión legal y de compras. El certificado de simulación no selecciona producción.
+La sala está operativa sin candidatos reales. Para habilitar una decisión humana se requieren 8/8 evidencias reales vigentes por candidato, cuatro revisiones aprobadas, cero riesgos críticos y autorización explícita de compras. La completitud placeholder nunca cuenta como evidencia real.
 
-## Fase 39 recomendada
+## Fase 40 recomendada
 
-**Sala de incorporación y decisión de candidatos.** Implementar expedientes con placeholders para proveedores reales, solicitudes de evidencia, caducidad y renovación, revisión legal, seguridad, finanzas y compras, comparador de términos y un gate de selección. La sala debe aceptar datos parciales desde ahora y mantener bloqueada la decisión final mientras falte cualquier evidencia real obligatoria.
+**Portabilidad, continuidad y ensayo de salida del proveedor.** Definir un formato neutral de exportación, reenvoltura de claves, verificación de integridad, migración entre adaptadores, RTO/RPO, coste de salida, eliminación verificable en origen y rollback. Todo debe ensayarse con dos proveedores simulados para demostrar que una futura elección no encierra el sistema en un único proveedor.
 
 ## Dominios previstos
 

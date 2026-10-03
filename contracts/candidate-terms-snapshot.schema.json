@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/candidate-terms-snapshot.schema.json",
+  "title": "candidate-terms-snapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "snapshot_id",
+    "candidate_ref",
+    "source_mode",
+    "version_label",
+    "terms_digest",
+    "data_processing",
+    "liability_review",
+    "exit_assistance",
+    "status",
+    "captured_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "snapshot_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "candidate_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "source_mode": {
+      "enum": [
+        "placeholder",
+        "real_read_only"
+      ]
+    },
+    "version_label": {
+      "type": "string",
+      "minLength": 1
+    },
+    "terms_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "data_processing": {
+      "enum": [
+        "unknown",
+        "acceptable",
+        "unacceptable"
+      ]
+    },
+    "liability_review": {
+      "enum": [
+        "unknown",
+        "acceptable",
+        "unacceptable"
+      ]
+    },
+    "exit_assistance": {
+      "enum": [
+        "unknown",
+        "available",
+        "unavailable"
+      ]
+    },
+    "status": {
+      "enum": [
+        "placeholder",
+        "reviewable",
+        "blocked"
+      ]
+    },
+    "captured_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

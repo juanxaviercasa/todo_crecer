@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/candidate-evidence-request.schema.json",
+  "title": "candidate-evidence-request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "request_id",
+    "candidate_ref",
+    "kind",
+    "required",
+    "instructions",
+    "status",
+    "requested_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "request_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "candidate_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "kind": {
+      "enum": [
+        "provider_manifest",
+        "adapter_certificate",
+        "read_only_preflight",
+        "data_residency",
+        "security_controls",
+        "legal_terms",
+        "pricing",
+        "support_sla"
+      ]
+    },
+    "required": {
+      "const": true
+    },
+    "instructions": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "open",
+        "received",
+        "expired"
+      ]
+    },
+    "requested_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

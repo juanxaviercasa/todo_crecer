@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/candidate-completeness-report.schema.json",
+  "title": "candidate-completeness-report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "report_id",
+    "candidate_ref",
+    "required",
+    "received",
+    "current",
+    "real",
+    "placeholder",
+    "missing_kinds",
+    "completion_percent",
+    "real_percent",
+    "status",
+    "generated_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "report_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "candidate_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "required": {
+      "const": 8
+    },
+    "received": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 8
+    },
+    "current": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 8
+    },
+    "real": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 8
+    },
+    "placeholder": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 8
+    },
+    "missing_kinds": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "provider_manifest",
+          "adapter_certificate",
+          "read_only_preflight",
+          "data_residency",
+          "security_controls",
+          "legal_terms",
+          "pricing",
+          "support_sla"
+        ]
+      }
+    },
+    "completion_percent": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "real_percent": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "status": {
+      "enum": [
+        "placeholder_complete",
+        "partial",
+        "real_complete",
+        "expired"
+      ]
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}
