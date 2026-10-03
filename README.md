@@ -1,3 +1,14 @@
+# Fase 37 · Laboratorio de conformidad de proveedores
+
+La plataforma compara candidatos sintéticos de object storage y KMS con la misma suite de residencia, cifrado, lifecycle, rotación, observabilidad y coste. El informe permite preparar un preflight externo exclusivamente de lectura; toda escritura continúa bloqueada.
+
+- Consola: `npm run build && npm run start:provider-lab` → http://127.0.0.1:4211/
+- Laboratorio: [docs/phase-37/PROVIDER_CONFORMANCE_LAB.md](docs/phase-37/PROVIDER_CONFORMANCE_LAB.md)
+- Preflight: [docs/phase-37/READ_ONLY_PREFLIGHT.md](docs/phase-37/READ_ONLY_PREFLIGHT.md)
+- Decisión: [ADR-045](docs/adr/ADR-045-provider-conformance-and-read-only-preflight.md)
+
+---
+
 # Fase 36 · Adaptadores de producción y activación sellada
 
 La plataforma ya puede ensayar los contratos de object storage y KMS, mínimo privilegio, referencias de credenciales, migración dry-run, canary, rollback, coste, deriva y aprobación independiente. El expediente solo habilita el preflight externo; apply continúa bloqueado.

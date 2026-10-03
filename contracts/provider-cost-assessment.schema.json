@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/provider-cost-assessment.schema.json",
+  "title": "provider-cost-assessment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "assessment_id",
+    "candidate_ref",
+    "monthly_cents",
+    "migration_cents",
+    "egress_cents",
+    "hard_limit_cents",
+    "status",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "assessment_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "candidate_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "monthly_cents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "migration_cents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "egress_cents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "hard_limit_cents": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "status": {
+      "enum": [
+        "allow",
+        "warning",
+        "blocked"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

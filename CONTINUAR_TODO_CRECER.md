@@ -1,10 +1,10 @@
 ﻿# TodoLima / HazloCrecer — estado y próximos pasos
 
-## Fase actual: 36
+## Fase actual: 37
 
 Ubicación de trabajo: `C:\Users\pc\Videos\todo_crecer\todo_crecer-repo`.
 
-La fase 36 implementa contratos de object storage y KMS, referencias de credenciales sin secretos, mínimo privilegio, migración dry-run, canary, rollback, coste, deriva y un expediente de activación con aprobaciones independientes.
+La fase 37 implementa un laboratorio neutral para comparar combinaciones de object storage y KMS mediante residencia, cifrado, lifecycle, rotación, observabilidad y coste. Todas las evidencias actuales son fixtures sintéticos.
 
 ## Ejecutar
 
@@ -12,34 +12,31 @@ La fase 36 implementa contratos de object storage y KMS, referencias de credenci
 npm ci --ignore-scripts
 npm test
 npm run build
-npm run start:vault-activation
+npm run start:provider-lab
 ```
 
-Abrir http://127.0.0.1:4210/.
+Abrir http://127.0.0.1:4211/.
 
 ## Estado comprobado
 
-- 281 contratos JSON Schema.
-- 1.155 pruebas aprobadas y 0 fallidas.
-- 58 pruebas específicas de la fase 36.
+- 293 contratos JSON Schema.
+- 1.213 pruebas aprobadas y 0 fallidas.
+- 58 pruebas específicas de la fase 37.
 - 0 vulnerabilidades de producción y 0 patrones de credenciales detectados.
-- 2 contratos de adaptador simulados: object storage y KMS.
-- 2 referencias de identidad y 0 secretos almacenados.
-- Política de mínimo privilegio aprobada sin wildcards globales.
-- 1.000 objetos sintéticos distribuidos en 10 lotes dry-run.
-- Canary 1/5/25/100 planificado.
-- Coste permitido y deriva en sincronía.
-- Rollback ensayado con resultado aprobado.
-- 3 aprobaciones independientes y 8 evidencias selladas.
-- `apply` bloqueado, 0 conexiones externas y 0 publicaciones.
+- 2 candidatos sintéticos comparados.
+- 12 probes y 12 assessments ejecutados.
+- 2 sesiones efímeras cerradas con alcance exclusivo `metadata.read`.
+- 1 candidato elegible con 100/100 y 1 rechazado por controles obligatorios.
+- Informe comparativo sellado.
+- 0 secretos, 0 escrituras, 0 conexiones externas y 0 publicaciones.
 
 ## Gate real
 
-El expediente local permite avanzar al preflight externo. Producción permanece bloqueada por tres requisitos: evidencia real del proveedor, credenciales efímeras de producción y una autorización explícita de activación. Ninguna credencial real forma parte del repositorio.
+El laboratorio permite preparar una sesión externa de solo lectura. Las escrituras permanecen bloqueadas hasta obtener evidencia real, revisar términos contractuales y recibir aprobación humana de compras. Ningún fixture autoriza una decisión comercial.
 
-## Fase 37 recomendada
+## Fase 38 recomendada
 
-**Laboratorio de conformidad de proveedores y preflight externo de solo lectura.** Crear suites de contrato para candidatos de object storage y KMS, probar capacidades, regiones, cifrado, versionado, lifecycle, rotación y observabilidad mediante transportes falsos; preparar además una sesión efímera de descubrimiento real que solo pueda leer metadatos. El resultado debe ser una matriz de selección y un expediente de preflight, manteniendo escrituras y `apply` bloqueados.
+**Sala de decisión de proveedores y puente al preflight real.** Crear manifiestos para candidatos reales, un kit de adaptador verificable, importación sanitizada de evidencia read-only, snapshots de términos y costes, matriz de riesgos, caducidad de evidencias y un paquete de aprobación de compras. Debe poder trabajar inicialmente con placeholders y bloquear la selección definitiva mientras falten fuentes y sesiones reales.
 
 ## Dominios previstos
 
