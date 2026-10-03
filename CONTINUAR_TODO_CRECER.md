@@ -1,10 +1,10 @@
 ﻿# TodoLima / HazloCrecer — estado y próximos pasos
 
-## Fase actual: 46
+## Fase actual: 47
 
 Ubicación de trabajo: `C:\Users\pc\Videos\todo_crecer\todo_crecer-repo`.
 
-La fase 46 implementa gobierno trimestral del proveedor: scorecard, renovación de evidencia, SLA, coste, rotación, auditoría encadenada y plan de sustitución. No realiza cambios externos.
+La fase 47 implementa FinOps y capacidad multiproveedor: costes por tenant, presupuesto por cohorte, forecast, simulación de picos, arbitraje y límites automáticos simulados. No compra capacidad ni cambia proveedores.
 
 ## Ejecutar
 
@@ -12,17 +12,21 @@ La fase 46 implementa gobierno trimestral del proveedor: scorecard, renovación 
 npm ci --ignore-scripts
 npm test
 npm run build
-npm run start:provider-governance
+npm run start:finops
 ```
 
-Abrir http://127.0.0.1:4220/.
+Abrir http://127.0.0.1:4221/.
 
 ## Estado comprobado
 
-- 391 contratos JSON Schema.
+- 400 contratos JSON Schema.
 - 1.376 pruebas aprobadas y 0 fallidas.
-- 21 pruebas específicas de la fase 46.
+- 26 pruebas específicas de la fase 47; 1.508 pruebas acumuladas en la ejecución completa.
 - 0 vulnerabilidades de producción y 0 patrones de credenciales detectados.
+- 2 cohorts sintéticas, 4 asignaciones de tenant y 2 proveedores por escenario.
+- Forecast base de 1.200 unidades con 108,33% de margen.
+- Pico degradado de 4.050 unidades con 1.950 unidades sin capacidad.
+- 0 compras, 0 cambios de proveedor y límites únicamente simulados.
 - 2 expedientes placeholder y 16 solicitudes obligatorias.
 - 13 entregas sanitizadas con renovación programada.
 - 8 revisiones de legal, seguridad, finanzas y compras.
@@ -35,9 +39,9 @@ Abrir http://127.0.0.1:4220/.
 
 La sala está operativa sin candidatos reales. Para habilitar una decisión humana se requieren 8/8 evidencias reales vigentes por candidato, cuatro revisiones aprobadas, cero riesgos críticos y autorización explícita de compras. La completitud placeholder nunca cuenta como evidencia real.
 
-## Fase 47 recomendada
+## Fase 48 recomendada
 
-**FinOps y capacidad multi-proveedor.** Preparar asignación de costes por tenant, forecast, presupuestos por cohorte, capacidad, simulación de picos, arbitraje entre proveedores y límites automáticos. Mantener cualquier compra o cambio de proveedor bloqueado hasta contar con evidencia real y aprobación financiera.
+**SLO, observabilidad económica y respuesta automática simulada.** Unificar métricas técnicas y financieras, presupuestos de error, burn rate, anomalías de coste, alertas con deduplicación, runbooks y ensayos de respuesta. Mantener cualquier remediación real bloqueada hasta contar con telemetría productiva, aprobación del operador y controles de rollback.
 
 ## Dominios previstos
 

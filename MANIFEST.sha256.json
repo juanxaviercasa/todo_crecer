@@ -1,8 +1,8 @@
 {
   "format": "sha256-manifest-v1",
-  "package": "todolima-platform-phase40",
-  "version": "0.42.0",
-  "generated_at": "2026-09-30T00:00:00.000Z",
+  "package": "todolima-platform-phase47",
+  "version": "0.49.0",
+  "generated_at": "2026-10-03T00:00:00.000Z",
   "entries": [
     {
       "path": ".github/workflows/first-staging-launch.example.yml",
@@ -126,8 +126,8 @@
     },
     {
       "path": "CONTINUAR_TODO_CRECER.md",
-      "bytes": 2060,
-      "sha256": "6f6660bceb2203d19d93e100cd594e587e546f7f5fdd6946787a21f8cf62c01c"
+      "bytes": 2451,
+      "sha256": "a1a4910dc8c9976717afa1d015ef58825f7e2d7be3d620eb138289ad8f7c2f30"
     },
     {
       "path": "contracts/access-decision.schema.json",
@@ -1290,6 +1290,51 @@
       "sha256": "1c774491cd1a917486e642f8752fcd05ddd64649bb1b3b2315c20607032f2b17"
     },
     {
+      "path": "contracts/phase47-automatic-limit.schema.json",
+      "bytes": 862,
+      "sha256": "dd11b66d79aa168b6fcc28ed769bdec4609f53feb29a273ef23706493bef6a49"
+    },
+    {
+      "path": "contracts/phase47-capacity-plan.schema.json",
+      "bytes": 1155,
+      "sha256": "b8c6fee4768e33e7a560b89a52a3248cdb6153d6cf201f0bc642aa0f90937281"
+    },
+    {
+      "path": "contracts/phase47-cohort-budget.schema.json",
+      "bytes": 934,
+      "sha256": "1389ea618a891d1cde6249862d032df38afaa033d99efcd7ea98fa0654d4d6c4"
+    },
+    {
+      "path": "contracts/phase47-demand-forecast.schema.json",
+      "bytes": 840,
+      "sha256": "9bb5fcede182135dee57abbc2a3158ebaf9c471021f0b5fd5bbd0f82ce18242b"
+    },
+    {
+      "path": "contracts/phase47-finops-decision.schema.json",
+      "bytes": 1285,
+      "sha256": "7d09886883855e88c86d22daeaa523ce2a0ca4665a6d132b9f4ee897c778ed9c"
+    },
+    {
+      "path": "contracts/phase47-peak-simulation.schema.json",
+      "bytes": 973,
+      "sha256": "c1434b52fe297e1828415bc1bfda6a3a539a2a74336312d45451eb4a4df9b449"
+    },
+    {
+      "path": "contracts/phase47-provider-arbitration.schema.json",
+      "bytes": 1338,
+      "sha256": "481dd55a008cbb5472c4aa9112f0d12e1f2853a38001b03590ac9cca63789f29"
+    },
+    {
+      "path": "contracts/phase47-readiness.schema.json",
+      "bytes": 886,
+      "sha256": "6049171e1d994046e1a61981266555a1b82fdee26a347d0ec4907d1833146409"
+    },
+    {
+      "path": "contracts/phase47-tenant-cost-allocation.schema.json",
+      "bytes": 1142,
+      "sha256": "98820ab65bcc2da61e4c12f5d350d83c154ffc7fa7117ba982335d9c16e11c9e"
+    },
+    {
       "path": "contracts/pilot-acceptance-audit-event.schema.json",
       "bytes": 1183,
       "sha256": "02f73530298e2e2f5daeb8eb015d007c4b15ac0e7cb35b2d5409587acba75711"
@@ -2340,6 +2385,11 @@
       "sha256": "02c119ee7b13ec355c95c37d733a2e51d09b0c7943ec1d90ae7dd9602e6d237b"
     },
     {
+      "path": "docs/adr/ADR-055-multiprovider-finops-capacity.md",
+      "bytes": 915,
+      "sha256": "5ed0db8ec2bd0628cbd793a3ffb5aeb63bd74de6cc951da28a29323c64c01749"
+    },
+    {
       "path": "docs/CHAT_WORKFLOW.md",
       "bytes": 2343,
       "sha256": "f380a70bb8607190d78fd4600906ea8d2b04ab6d6d5e605c8f6edc4f3298399b"
@@ -3205,6 +3255,16 @@
       "sha256": "59e877d1f3d4ce1aca496ae79c14b14a958efb2e989eb0809732589c18ad7ed8"
     },
     {
+      "path": "docs/phase-47/MULTIPROVIDER_FINOPS.md",
+      "bytes": 1085,
+      "sha256": "d1e393ac5fe2fed87b1c9152add3329794c40e9ca5a9a983b7a2040587e6a392"
+    },
+    {
+      "path": "docs/phase-47/VALIDATION.md",
+      "bytes": 898,
+      "sha256": "ab9b300719f41036e3e7a6be818e1de21e1be7a8aebd50fc586adc676f5a537d"
+    },
+    {
       "path": "docs/phase-5/REVIEW_GATE.md",
       "bytes": 2008,
       "sha256": "42b379d6b02557f7ae632caf7ce44a5692096fc387c42611d8d5746c60b42243"
@@ -3640,6 +3700,16 @@
       "sha256": "41acd33a0e407e437609121041aa9672684791af9f433476a44819f9b7b1f7b2"
     },
     {
+      "path": "multiprovider-finops/app/index.html",
+      "bytes": 2621,
+      "sha256": "1996e3dceebcb2cef667c48e971de9bac5247e1c86a51973b98f98bb0ca7bfeb"
+    },
+    {
+      "path": "multiprovider-finops/app/styles.css",
+      "bytes": 2658,
+      "sha256": "8814f3915e9daf4defb946803ca5bded54f3615750bcc5de0693af43785bb5ae"
+    },
+    {
       "path": "observability/app/app.js",
       "bytes": 399,
       "sha256": "afd6b1a246d4afbbf1d7fdd792ff36dda7e31ac450fd4fa62bf4c08cbe72fa64"
@@ -3757,12 +3827,12 @@
     {
       "path": "package-lock.json",
       "bytes": 4423,
-      "sha256": "44d2d016c3e746bd34f5cbfc83db96d433e6c46d1e98dfbcc8ff2657beccfc57"
+      "sha256": "0b1323caf301f222860a0fa7af1247ccb54e6aa585db6c80cd563f197ee09a5e"
     },
     {
       "path": "package.json",
-      "bytes": 9294,
-      "sha256": "b77bfb44a11adefe6785b2504c26c1b8051dea4f7a2ed4b4f9c9d2853b11b920"
+      "bytes": 9466,
+      "sha256": "3e69e231e7fa969335c6fe10b71708203586eb6c4037321c73f52f572cdb63cf"
     },
     {
       "path": "packages/.gitkeep",
@@ -3848,6 +3918,11 @@
       "path": "packages/lead-inbox/index.cjs",
       "bytes": 9154,
       "sha256": "2a928060cdd5f36c446e73274b9daaa14fddd42ea5cb409b55e9e62603cf39db"
+    },
+    {
+      "path": "packages/multiprovider-finops/index.cjs",
+      "bytes": 12741,
+      "sha256": "b1313873f8330a0565fd774ecf3e523262bb295bccdbe14e253f534865dc8b0d"
     },
     {
       "path": "packages/observability-guardrails/index.cjs",
@@ -4490,6 +4565,11 @@
       "sha256": "90c8f87a5ba8dfd73c6e4eed55ac3d12761c1d18d9049a63221997e4795f0427"
     },
     {
+      "path": "scripts/build-multiprovider-finops.cjs",
+      "bytes": 2297,
+      "sha256": "fd2c7741b87dad2aa5694dd2ad30adceaba3a7b3d1c772df4d5682c7446c65a7"
+    },
+    {
       "path": "scripts/build-observability.cjs",
       "bytes": 3303,
       "sha256": "f60f3852727f55fcbc20c7f7373051621ad436339317c4e3fb580b97fbf0e199"
@@ -4652,7 +4732,7 @@
     {
       "path": "scripts/release-manifest.cjs",
       "bytes": 1095,
-      "sha256": "6674aa32a2f60c8bb81f01709cad3a6537e852631fc976b292dda5304123a1f7"
+      "sha256": "ee4306d702c2e55e7ac1c2b8fa1c64ee890c9a8129f40f05152f58debf023737"
     },
     {
       "path": "scripts/run-cloudflare-discovery.cjs",
@@ -4738,6 +4818,11 @@
       "path": "scripts/serve-lead-inbox.cjs",
       "bytes": 1526,
       "sha256": "30637dd97d74e39c7b7491f88e88eb3fa72a0f412bc79a58b030689211e3910e"
+    },
+    {
+      "path": "scripts/serve-multiprovider-finops.cjs",
+      "bytes": 1152,
+      "sha256": "ce71063db221aacbbc5aa83f8dd9d39638ef6a5154231b3b96de2a0a24697825"
     },
     {
       "path": "scripts/serve-observability.cjs",
@@ -5048,6 +5133,11 @@
       "path": "tests/lead-inbox.test.cjs",
       "bytes": 7532,
       "sha256": "a39bac0384a4fd0b5e88ee6249ed9a0519641f4f59f517b7fdbeae291143a44c"
+    },
+    {
+      "path": "tests/multiprovider-finops.test.cjs",
+      "bytes": 7334,
+      "sha256": "465bf9ac3bd72ba20b0f519bf9ec9fe6d4e692996980a7965c8437d2d53de18f"
     },
     {
       "path": "tests/observability-guardrails.test.cjs",
