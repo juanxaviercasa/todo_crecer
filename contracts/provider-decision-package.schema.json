@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/provider-decision-package.schema.json",
+  "title": "provider-decision-package",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "package_id",
+    "certificate_refs",
+    "evidence_mode",
+    "real_provider_selected",
+    "procurement_status",
+    "write_status",
+    "external_connections",
+    "sealed_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "package_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "certificate_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9_-]{3,96}$"
+      }
+    },
+    "evidence_mode": {
+      "const": "synthetic_replay"
+    },
+    "real_provider_selected": {
+      "const": false
+    },
+    "procurement_status": {
+      "const": "blocked"
+    },
+    "write_status": {
+      "const": "blocked"
+    },
+    "external_connections": {
+      "const": false
+    },
+    "sealed_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+    "$schema":  "https://json-schema.org/draft/2020-12/schema",
+    "$id":  "https://schemas.todolima.local/provider-contract-result.schema.json",
+    "title":  "provider-contract-result",
+    "type":  "object",
+    "additionalProperties":  false,
+    "required":  [
+                     "schema_version",
+                     "result_id",
+                     "adapter_ref",
+                     "vector_ref",
+                     "expected_code",
+                     "observed_code",
+                     "detected",
+                     "read_operations",
+                     "write_operations",
+                     "status",
+                     "evidence_digest",
+                     "executed_at"
+                 ],
+    "properties":  {
+                       "schema_version":  {
+                                              "const":  "0.1.0"
+                                          },
+                       "result_id":  {
+                                         "type":  "string",
+                                         "pattern":  "^[a-z0-9_-]{3,96}$"
+                                     },
+                       "adapter_ref":  {
+                                           "type":  "string",
+                                           "pattern":  "^[a-z0-9_-]{3,96}$"
+                                       },
+                       "vector_ref":  {
+                                          "type":  "string",
+                                          "pattern":  "^[a-z0-9_-]{3,96}$"
+                                      },
+                       "expected_code":  {
+                                             "type":  "string",
+                                             "minLength":  1
+                                         },
+                       "observed_code":  {
+                                             "type":  "string",
+                                             "minLength":  1
+                                         },
+                       "detected":  {
+                                        "type":  "boolean"
+                                    },
+                       "read_operations":  {
+                                               "type":  "integer",
+                                               "minimum":  0
+                                           },
+                       "write_operations":  {
+                                                "const":  0
+                                            },
+                       "status":  {
+                                      "enum":  [
+                                                   "passed",
+                                                   "failed"
+                                               ]
+                                  },
+                       "evidence_digest":  {
+                                               "type":  "string",
+                                               "pattern":  "^[a-f0-9]{64}$"
+                                           },
+                       "executed_at":  {
+                                           "type":  "string",
+                                           "format":  "date-time"
+                                       }
+                   }
+}

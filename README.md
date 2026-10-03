@@ -1,3 +1,14 @@
+# Fase 38 · Certificación independiente del proveedor
+
+La plataforma valida desde ahora la integración futura mediante un contrato portable, trece vectores adversariales y replay determinista de evidencia. Un proveedor real solo tendrá que implementar el adaptador y superar la misma suite.
+
+- Consola: `npm run build && npm run start:adapter-certification` → http://127.0.0.1:4212/
+- Certificación: [docs/phase-38/ADAPTER_CERTIFICATION.md](docs/phase-38/ADAPTER_CERTIFICATION.md)
+- Onboarding futuro: [docs/phase-38/REAL_PROVIDER_ONBOARDING.md](docs/phase-38/REAL_PROVIDER_ONBOARDING.md)
+- Decisión: [ADR-046](docs/adr/ADR-046-provider-independent-adapter-certification.md)
+
+---
+
 # Fase 37 · Laboratorio de conformidad de proveedores
 
 La plataforma compara candidatos sintéticos de object storage y KMS con la misma suite de residencia, cifrado, lifecycle, rotación, observabilidad y coste. El informe permite preparar un preflight externo exclusivamente de lectura; toda escritura continúa bloqueada.

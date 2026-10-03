@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/provider-evidence-freshness.schema.json",
+  "title": "provider-evidence-freshness",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "check_id",
+    "bundle_ref",
+    "age_seconds",
+    "remaining_seconds",
+    "digest_valid",
+    "status",
+    "checked_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "check_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "bundle_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "age_seconds": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "remaining_seconds": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "digest_valid": {
+      "type": "boolean"
+    },
+    "status": {
+      "enum": [
+        "fresh",
+        "expired",
+        "tampered"
+      ]
+    },
+    "checked_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

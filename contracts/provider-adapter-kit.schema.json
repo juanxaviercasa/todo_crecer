@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/provider-adapter-kit.schema.json",
+  "title": "provider-adapter-kit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "kit_id",
+    "contract_version",
+    "required_methods",
+    "vectors",
+    "command",
+    "portable",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "kit_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "contract_version": {
+      "const": "1.0.0"
+    },
+    "required_methods": {
+      "type": "array",
+      "minItems": 6,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9_-]{3,96}$"
+      }
+    },
+    "vectors": {
+      "type": "integer",
+      "minimum": 10
+    },
+    "command": {
+      "type": "string",
+      "minLength": 1
+    },
+    "portable": {
+      "const": true
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

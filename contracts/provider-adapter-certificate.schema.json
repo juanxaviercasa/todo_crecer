@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/provider-adapter-certificate.schema.json",
+  "title": "provider-adapter-certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "certificate_id",
+    "adapter_ref",
+    "contract_run_ref",
+    "evidence_replay_ref",
+    "risk_register_ref",
+    "valid_until",
+    "production_selected",
+    "status",
+    "certificate_digest",
+    "issued_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "certificate_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "adapter_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "contract_run_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "evidence_replay_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "risk_register_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "valid_until": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "production_selected": {
+      "const": false
+    },
+    "status": {
+      "enum": [
+        "certified_simulation",
+        "rejected"
+      ]
+    },
+    "certificate_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "issued_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

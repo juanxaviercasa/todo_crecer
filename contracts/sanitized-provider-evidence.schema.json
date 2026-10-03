@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/sanitized-provider-evidence.schema.json",
+  "title": "sanitized-provider-evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "bundle_id",
+    "adapter_ref",
+    "source_mode",
+    "items",
+    "bundle_digest",
+    "collected_at",
+    "expires_at",
+    "secret_material",
+    "raw_identifiers",
+    "status"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "bundle_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "adapter_ref": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "source_mode": {
+      "enum": [
+        "synthetic_replay",
+        "external_read_only"
+      ]
+    },
+    "items": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "dimension",
+          "passed",
+          "evidence_digest",
+          "sanitized"
+        ],
+        "properties": {
+          "dimension": {
+            "enum": [
+              "residency",
+              "encryption",
+              "lifecycle",
+              "rotation",
+              "observability",
+              "cost"
+            ]
+          },
+          "passed": {
+            "type": "boolean"
+          },
+          "evidence_digest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "sanitized": {
+            "const": true
+          }
+        }
+      }
+    },
+    "bundle_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "collected_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "secret_material": {
+      "const": false
+    },
+    "raw_identifiers": {
+      "const": false
+    },
+    "status": {
+      "const": "accepted"
+    }
+  }
+}

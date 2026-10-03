@@ -1,0 +1,51 @@
+{
+    "$schema":  "https://json-schema.org/draft/2020-12/schema",
+    "$id":  "https://schemas.todolima.local/provider-contract-vector.schema.json",
+    "title":  "provider-contract-vector",
+    "type":  "object",
+    "additionalProperties":  false,
+    "required":  [
+                     "schema_version",
+                     "vector_id",
+                     "name",
+                     "category",
+                     "expected_code",
+                     "mandatory",
+                     "input_digest"
+                 ],
+    "properties":  {
+                       "schema_version":  {
+                                              "const":  "0.1.0"
+                                          },
+                       "vector_id":  {
+                                         "type":  "string",
+                                         "pattern":  "^[a-z0-9_-]{3,96}$"
+                                     },
+                       "name":  {
+                                    "type":  "string",
+                                    "pattern":  "^[a-z0-9_-]{3,96}$"
+                                },
+                       "category":  {
+                                        "enum":  [
+                                                     "baseline",
+                                                     "transport",
+                                                     "security",
+                                                     "governance",
+                                                     "operations",
+                                                     "finance",
+                                                     "integrity"
+                                                 ]
+                                    },
+                       "expected_code":  {
+                                             "type":  "string",
+                                             "minLength":  1
+                                         },
+                       "mandatory":  {
+                                         "type":  "boolean"
+                                     },
+                       "input_digest":  {
+                                            "type":  "string",
+                                            "pattern":  "^[a-f0-9]{64}$"
+                                        }
+                   }
+}

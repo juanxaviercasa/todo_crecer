@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.todolima.local/provider-adapter-manifest.schema.json",
+  "title": "provider-adapter-manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "adapter_id",
+    "name",
+    "contract_version",
+    "operations",
+    "write_supported",
+    "transport",
+    "status",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "adapter_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{3,96}$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "contract_version": {
+      "const": "1.0.0"
+    },
+    "operations": {
+      "type": "array",
+      "minItems": 6,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9_-]{3,96}$"
+      }
+    },
+    "write_supported": {
+      "const": false
+    },
+    "transport": {
+      "enum": [
+        "synthetic",
+        "external_read_only"
+      ]
+    },
+    "status": {
+      "const": "registered"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}
